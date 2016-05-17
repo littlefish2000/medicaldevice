@@ -1,0 +1,25 @@
+// Spring Roo 1.3.2.RELEASE [rev 8c2549b] log opened at 2016-05-16 22:00:13
+project --topLevelPackage ca.gc.hc.mds --projectName MedicalDevice
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+entity jpa --class ~.domain.Application --table APPLICATION --identifierField id --identifierColumn APPLICATION_ID
+field string --fieldName applicationDesc --column APPLICATION_DESC --sizeMin 3 --sizeMax 30 --class ~.domain.Application
+field string --fieldName applcationName  --column APPLICATION_NAME  --notNull --sizeMin 3 --sizeMax 30
+finder add --finderName findApplicationsByApplcationNameLike --class ~.domain.Application
+finder add --finderName findApplicationsById --class ~.domain.Application
+test integration --entity ~.domain.Application
+web mvc setup
+web mvc all --package ~.web
+web mvc finder all
+web mvc language --code de
+web mvc language --code es
+jpa gvnix setup
+web mvc jquery setup
+web mvc datatables setup
+web mvc jquery all
+web mvc bootstrap setup
+selenium test --controller ~.web.ApplicationController
+logging setup --level INFO
+// script --file /Users/yuchenyang/Documents/Work/java/gvnmeddev.roo
+quit
+// Spring Roo 1.3.2.RELEASE [rev 8c2549b] log closed at 2016-05-16 22:00:48
+// Spring Roo 1.3.2.RELEASE [rev 8c2549b] log opened at 2016-05-16 22:01:16

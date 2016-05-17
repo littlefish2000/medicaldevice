@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_Application" items="${applications}" z="2+SUxp6R4OnkZkCKOdnRBCeFSO0=">
+        <table:table data="${applications}" id="l_ca_gc_hc_mds_domain_Application" path="/applications" z="KUt4gzRrzzkA4R2sRat0XtvUBAM=">
+            <table:column id="c_ca_gc_hc_mds_domain_Application_applicationDesc" property="applicationDesc" z="59npAvH+ytRibT8kgy7vik2m46o="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Application_applcationName" property="applcationName" z="K44Uq1Zlv2Yg26WqCCPHemLw4fc="/>
+        </table:table>
+    </page:list>
+</div>
