@@ -3,13 +3,20 @@
   <jsp:output omit-xml-declaration="yes"/>
 
 	<!-- Bootstrap -->
-	<spring:url value="/resources/styles/bootstrap/gvnix.bootstrap.css" var="bootstrap_min_css_url" />
+	<spring:url value="/resources/styles/bootstrap/bootstrap.css" var="bootstrap_min_css_url" />
 	<link href="${bootstrap_min_css_url}" media="screen,print" rel="stylesheet" type="text/css" />
+
+	<spring:url value="/resources/styles/bootstrap/bootstrap.min.css" var="bootstrap_css_url" />
+	<link href="${bootstrap_css_url}" media="screen,print" rel="stylesheet" type="text/css" />
 
 	<spring:url value="/resources/styles/bootstrap/offcanvas.css" var="offcanvas_css_url" />
 	<link href="${offcanvas_css_url}" media="screen,print" rel="stylesheet" type="text/css" />
 
 	<spring:url value="/resources/styles/bootstrap/print.css" var="bootstrap_print_css_url" />
 	<link href="${bootstrap_print_css_url}" media="screen,print" rel="stylesheet" type="text/css" />
+
+	<!-- deepblue theme -->
+	<spring:url value="/resources/vendors/Theme-DeepBlueAdmin/font-awesome/css/font-awesome.min.css" var="fontawesome_min_css_url" />
+	<link href="${fontawesome_min_css_url}" media="screen,print" rel="stylesheet" type="text/css" />
 
 </jsp:root>

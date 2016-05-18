@@ -5,8 +5,12 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
+import ca.gc.hc.mds.domain.ApplicationType;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -24,9 +28,21 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     
     public Application ApplicationDataOnDemand.getNewTransientApplication(int index) {
         Application obj = new Application();
+        setApplType(obj, index);
         setApplcationName(obj, index);
-        setApplicationDesc(obj, index);
+        setEntryDate(obj, index);
+        setHomeuseCode(obj, index);
+        setLicenceName(obj, index);
+        setNearPatient(obj, index);
+        setOrginLicenseId(obj, index);
+        setPointofCare(obj, index);
+        setReceiptDate(obj, index);
         return obj;
+    }
+    
+    public void ApplicationDataOnDemand.setApplType(Application obj, int index) {
+        ApplicationType applType = ApplicationType.class.getEnumConstants()[0];
+        obj.setApplType(applType);
     }
     
     public void ApplicationDataOnDemand.setApplcationName(Application obj, int index) {
@@ -37,12 +53,42 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setApplcationName(applcationName);
     }
     
-    public void ApplicationDataOnDemand.setApplicationDesc(Application obj, int index) {
-        String applicationDesc = "applicationDesc_" + index;
-        if (applicationDesc.length() > 30) {
-            applicationDesc = applicationDesc.substring(0, 30);
+    public void ApplicationDataOnDemand.setEntryDate(Application obj, int index) {
+        Date entryDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
+        obj.setEntryDate(entryDate);
+    }
+    
+    public void ApplicationDataOnDemand.setHomeuseCode(Application obj, int index) {
+        Boolean homeuseCode = true;
+        obj.setHomeuseCode(homeuseCode);
+    }
+    
+    public void ApplicationDataOnDemand.setLicenceName(Application obj, int index) {
+        String licenceName = "licenceName_" + index;
+        if (licenceName.length() > 150) {
+            licenceName = licenceName.substring(0, 150);
         }
-        obj.setApplicationDesc(applicationDesc);
+        obj.setLicenceName(licenceName);
+    }
+    
+    public void ApplicationDataOnDemand.setNearPatient(Application obj, int index) {
+        Boolean nearPatient = true;
+        obj.setNearPatient(nearPatient);
+    }
+    
+    public void ApplicationDataOnDemand.setOrginLicenseId(Application obj, int index) {
+        Long orginLicenseId = new Integer(index).longValue();
+        obj.setOrginLicenseId(orginLicenseId);
+    }
+    
+    public void ApplicationDataOnDemand.setPointofCare(Application obj, int index) {
+        Boolean pointofCare = true;
+        obj.setPointofCare(pointofCare);
+    }
+    
+    public void ApplicationDataOnDemand.setReceiptDate(Application obj, int index) {
+        Date receiptDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
+        obj.setReceiptDate(receiptDate);
     }
     
     public Application ApplicationDataOnDemand.getSpecificApplication(int index) {

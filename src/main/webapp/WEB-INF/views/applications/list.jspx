@@ -4,8 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ca_gc_hc_mds_domain_Application" items="${applications}" z="2+SUxp6R4OnkZkCKOdnRBCeFSO0=">
         <table:table data="${applications}" id="l_ca_gc_hc_mds_domain_Application" path="/applications" z="KUt4gzRrzzkA4R2sRat0XtvUBAM=">
-            <table:column id="c_ca_gc_hc_mds_domain_Application_applicationDesc" property="applicationDesc" z="59npAvH+ytRibT8kgy7vik2m46o="/>
             <table:column id="c_ca_gc_hc_mds_domain_Application_applcationName" property="applcationName" z="K44Uq1Zlv2Yg26WqCCPHemLw4fc="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Application_orginLicenseId" property="orginLicenseId" z="Rl0mxLIc8oSnLApmmrAOwoCjZII="/>
+            <table:column date="true" dateTimePattern="${application_entrydate_date_format}" id="c_ca_gc_hc_mds_domain_Application_entryDate" property="entryDate" z="xdYBzDUGWfNkjnW4VZ5gLk+iKGU="/>
+            <table:column date="true" dateTimePattern="${application_receiptdate_date_format}" id="c_ca_gc_hc_mds_domain_Application_receiptDate" property="receiptDate" z="Qh6m7o4+pYvvvgPeYa53ezGJHho="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Application_licenceName" property="licenceName" z="Y1wR4hHKvQQOY8DjWWhCZCnd94I="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Application_pointofCare" property="pointofCare" z="wBALGeOrT0fCwnyoTLYbEYuOqcg="/>
         </table:table>
     </page:list>
 </div>

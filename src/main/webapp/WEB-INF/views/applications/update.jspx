@@ -3,7 +3,14 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_Application" modelAttribute="application" path="/applications" versionField="Version" z="yIeYrwr30iOPHMDDNsmbgZzt98g=">
-        <field:input field="applicationDesc" id="c_ca_gc_hc_mds_domain_Application_applicationDesc" max="30" min="3" required="true" z="mPEGx5JlHLgB+2IkaXlUi09Xy8c="/>
         <field:input field="applcationName" id="c_ca_gc_hc_mds_domain_Application_applcationName" max="30" min="3" required="true" z="7ugs8MoZLhYv00W3V1FtQsHEWQg="/>
+        <field:input field="orginLicenseId" id="c_ca_gc_hc_mds_domain_Application_orginLicenseId" required="true" z="8+BtDXuvu5Qmbjscqsm9tGF2GZ4="/>
+        <field:datetime dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Application_entryDate" required="true" z="VWdH4RmPoY6jwjThay6ZDGwTYzI="/>
+        <field:datetime dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="c_ca_gc_hc_mds_domain_Application_receiptDate" required="true" z="7E07uu1BbJygq7M+BnmF/bxP3MI="/>
+        <field:textarea field="licenceName" id="c_ca_gc_hc_mds_domain_Application_licenceName" required="true" z="5nO0NwPlSUEAJzfyUwpEe1iuFgg="/>
+        <field:checkbox field="pointofCare" id="c_ca_gc_hc_mds_domain_Application_pointofCare" z="bZd9pNPGzu6v5sFW4P12AjqH4Ww="/>
+        <field:checkbox field="homeuseCode" id="c_ca_gc_hc_mds_domain_Application_homeuseCode" z="0ZoXdfqywq968Ou0aSZoAYXb8Ug="/>
+        <field:checkbox field="nearPatient" id="c_ca_gc_hc_mds_domain_Application_nearPatient" z="dQ9JumxXjsdlT+jw2NVe8p1Uww8="/>
+        <field:select field="applType" id="c_ca_gc_hc_mds_domain_Application_applType" items="${applicationtypes}" path="applicationtypes" z="0ojREN/D5iRsGFurOL73yYUzCAY="/>
     </form:update>
 </div>

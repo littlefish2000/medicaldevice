@@ -3,7 +3,17 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_ca_gc_hc_mds_domain_Application" object="${application}" path="/applications" z="Mtn4AdkbIDzvlGPuUK+98LggXWc=">
-        <field:display field="applicationDesc" id="s_ca_gc_hc_mds_domain_Application_applicationDesc" object="${application}" z="cuRUtnIh6vJQ3q8jaFOoi5JeEtM="/>
         <field:display field="applcationName" id="s_ca_gc_hc_mds_domain_Application_applcationName" object="${application}" z="MGN7q6TQvfm7D8rtW8t9jVRKgT8="/>
+        <field:display field="orginLicenseId" id="s_ca_gc_hc_mds_domain_Application_orginLicenseId" object="${application}" z="RwvgRblhlN8alfgKY1wg8Ey6ntI="/>
+        <field:display date="true" dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Application_entryDate" object="${application}" z="Kx8xU+8CUtm88mBlA9P9OO5i8so="/>
+        <field:display date="true" dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="s_ca_gc_hc_mds_domain_Application_receiptDate" object="${application}" z="lvTX6Wfjo6+JUz3i9aUXNaXCrBg="/>
+        <field:display field="licenceName" id="s_ca_gc_hc_mds_domain_Application_licenceName" object="${application}" z="XyCm9uckqK89K7LX+l36A/v+CsI="/>
+        <field:display field="pointofCare" id="s_ca_gc_hc_mds_domain_Application_pointofCare" object="${application}" z="mvQ4n2E3NqRZxw2TSbXtCpWwtMA="/>
+        <field:display field="homeuseCode" id="s_ca_gc_hc_mds_domain_Application_homeuseCode" object="${application}" z="pOQqbsGDuHHUvRfve8na13QZVO8="/>
+        <field:display field="nearPatient" id="s_ca_gc_hc_mds_domain_Application_nearPatient" object="${application}" z="1VlG88ny+vEixPszvJ7+eix5xyM="/>
+        <field:display field="applType" id="s_ca_gc_hc_mds_domain_Application_applType" object="${application}" z="cHUCacVW9OvHj5+isJrYusPAGC0="/>
     </page:show>
+    <div class="avisolargo"><jsp:include page="applicationshow.jspx" />
+    </div>
+    
 </div>

@@ -4,16 +4,10 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.ApplicationType;
+import java.util.Date;
 
 privileged aspect Application_Roo_JavaBean {
-    
-    public String Application.getApplicationDesc() {
-        return this.applicationDesc;
-    }
-    
-    public void Application.setApplicationDesc(String applicationDesc) {
-        this.applicationDesc = applicationDesc;
-    }
     
     public String Application.getApplcationName() {
         return this.applcationName;
@@ -21,6 +15,70 @@ privileged aspect Application_Roo_JavaBean {
     
     public void Application.setApplcationName(String applcationName) {
         this.applcationName = applcationName;
+    }
+    
+    public long Application.getOrginLicenseId() {
+        return this.orginLicenseId;
+    }
+    
+    public void Application.setOrginLicenseId(long orginLicenseId) {
+        this.orginLicenseId = orginLicenseId;
+    }
+    
+    public Date Application.getEntryDate() {
+        return this.entryDate;
+    }
+    
+    public void Application.setEntryDate(Date entryDate) {
+        this.entryDate = entryDate;
+    }
+    
+    public Date Application.getReceiptDate() {
+        return this.receiptDate;
+    }
+    
+    public void Application.setReceiptDate(Date receiptDate) {
+        this.receiptDate = receiptDate;
+    }
+    
+    public String Application.getLicenceName() {
+        return this.licenceName;
+    }
+    
+    public void Application.setLicenceName(String licenceName) {
+        this.licenceName = licenceName;
+    }
+    
+    public boolean Application.isPointofCare() {
+        return this.pointofCare;
+    }
+    
+    public void Application.setPointofCare(boolean pointofCare) {
+        this.pointofCare = pointofCare;
+    }
+    
+    public boolean Application.isHomeuseCode() {
+        return this.homeuseCode;
+    }
+    
+    public void Application.setHomeuseCode(boolean homeuseCode) {
+        this.homeuseCode = homeuseCode;
+    }
+    
+    public boolean Application.isNearPatient() {
+        return this.nearPatient;
+    }
+    
+    public void Application.setNearPatient(boolean nearPatient) {
+        this.nearPatient = nearPatient;
+    }
+    
+    public ApplicationType Application.getApplType() {
+        return this.applType;
+    }
+    
+    public void Application.setApplType(ApplicationType applType) {
+        this.applType = applType;
     }
     
 }

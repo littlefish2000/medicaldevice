@@ -28,6 +28,7 @@ privileged aspect ApplicationController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("applications", Application.findApplicationsByApplcationNameLike(applcationName, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "applications/list";
     }
     
@@ -47,6 +48,7 @@ privileged aspect ApplicationController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("applications", Application.findApplicationsById(id, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "applications/list";
     }
     

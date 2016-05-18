@@ -14,7 +14,7 @@ privileged aspect Application_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Application.entityManager;
     
-    public static final List<String> Application.fieldNames4OrderClauseFilter = java.util.Arrays.asList("applicationDesc", "applcationName");
+    public static final List<String> Application.fieldNames4OrderClauseFilter = java.util.Arrays.asList("applcationName", "orginLicenseId", "entryDate", "receiptDate", "licenceName", "pointofCare", "homeuseCode", "nearPatient", "applType");
     
     public static final EntityManager Application.entityManager() {
         EntityManager em = new Application().entityManager;

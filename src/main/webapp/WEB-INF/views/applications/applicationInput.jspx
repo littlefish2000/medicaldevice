@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Application" object="${application}" path="/applications" z="Mtn4AdkbIDzvlGPuUK+98LggXWc=">
+        <field:display field="applcationName" id="s_ca_gc_hc_mds_domain_Application_applcationName" object="${application}" z="MGN7q6TQvfm7D8rtW8t9jVRKgT8="/>
+        <field:display field="orginLicenseId" id="s_ca_gc_hc_mds_domain_Application_orginLicenseId" object="${application}" z="RwvgRblhlN8alfgKY1wg8Ey6ntI="/>
+        <field:display date="true" dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Application_entryDate" object="${application}" z="Kx8xU+8CUtm88mBlA9P9OO5i8so="/>
+        <field:display date="true" dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="s_ca_gc_hc_mds_domain_Application_receiptDate" object="${application}" z="lvTX6Wfjo6+JUz3i9aUXNaXCrBg="/>
+        <field:display field="licenceName" id="s_ca_gc_hc_mds_domain_Application_licenceName" object="${application}" z="XyCm9uckqK89K7LX+l36A/v+CsI="/>
+        <field:display field="pointofCare" id="s_ca_gc_hc_mds_domain_Application_pointofCare" object="${application}" z="mvQ4n2E3NqRZxw2TSbXtCpWwtMA="/>
+        <field:display field="homeuseCode" id="s_ca_gc_hc_mds_domain_Application_homeuseCode" object="${application}" z="pOQqbsGDuHHUvRfve8na13QZVO8="/>
+        <field:display field="nearPatient" id="s_ca_gc_hc_mds_domain_Application_nearPatient" object="${application}" z="1VlG88ny+vEixPszvJ7+eix5xyM="/>
+        <field:display field="applType" id="s_ca_gc_hc_mds_domain_Application_applType" object="${application}" z="cHUCacVW9OvHj5+isJrYusPAGC0="/>
+    </page:show>
+    
+    <div class="role">
+    	<div class="col-lg-6">
+    		<fieldset class="fieldset">
+    			<legend class="original">Find</legend>
+                    <form role="form">
+                        <fieldset disabled>
+                            <div class="form-group">
+                                <label for="disabledSelect">Disabled input</label>
+                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect">Disabled select menu</label>
+                                <select id="disabledSelect" class="form-control">
+                                    <option>Disabled select</option>
+                                </select>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    Disabled Checkbox
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Disabled Button</button>
+                        </fieldset>
+                    </form>    			
+    		</fieldset>
+    	</div>
+    	<div class="col-lg-6">
+    	</div>
+    </div>
+    
+  	<div class='container'>
+	    <fieldset class="fieldset">
+		<div id="content">
+		    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+		        <li class="active"><a href="#red" data-toggle="tab">Contacts</a></li>
+		        <li><a href="#orange" data-toggle="tab">Device</a></li>
+		        <li><a href="#yellow" data-toggle="tab">Info</a></li>
+		        <li><a href="#green" data-toggle="tab">Licence</a></li>
+		        <li><a href="#blue" data-toggle="tab">Certifacate</a></li>
+		        <li><a href="#black" data-toggle="tab">Other</a></li>
+		    </ul>
+		    <div id="my-tab-content" class="tab-content">
+		        <div class="tab-pane active" id="red">
+		            <h1>Red</h1>
+		            <p>red red red red red red</p>
+		        </div>
+		        <div class="tab-pane" id="orange">
+		            <h1>Orange</h1>
+		            <p>orange orange orange orange orange</p>
+		        </div>
+		        <div class="tab-pane" id="yellow">
+		            <h1>Yellow</h1>
+		            <p>yellow yellow yellow yellow yellow</p>
+		        </div>
+		        <div class="tab-pane" id="green">
+		            <h1>Green</h1>
+		            <p>green green green green green</p>
+		        </div>
+		        <div class="tab-pane" id="blue">
+		            <h1>Blue</h1>
+		            <p>blue blue blue blue blue</p>
+		        </div>
+		        <div class="tab-pane" id="black">
+		            <h1>Blue</h1>
+		            <p>blue blue blue blue blue</p>
+		        </div>
+		    </div>
+		</div>
+	    </fieldset>
+    </div>
+</div>

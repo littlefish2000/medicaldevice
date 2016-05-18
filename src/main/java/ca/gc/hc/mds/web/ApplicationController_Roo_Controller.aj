@@ -4,10 +4,14 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.ApplicationType;
 import ca.gc.hc.mds.web.ApplicationController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +42,7 @@ privileged aspect ApplicationController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ApplicationController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("application", Application.findApplication(id));
         uiModel.addAttribute("itemId", id);
         return "applications/show";
@@ -54,6 +59,7 @@ privileged aspect ApplicationController_Roo_Controller {
         } else {
             uiModel.addAttribute("applications", Application.findAllApplications(sortFieldName, sortOrder));
         }
+        addDateTimeFormatPatterns(uiModel);
         return "applications/list";
     }
     
@@ -84,8 +90,15 @@ privileged aspect ApplicationController_Roo_Controller {
         return "redirect:/applications";
     }
     
+    void ApplicationController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("application_entrydate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("application_receiptdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void ApplicationController.populateEditForm(Model uiModel, Application application) {
         uiModel.addAttribute("application", application);
+        addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
     }
     
     String ApplicationController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
