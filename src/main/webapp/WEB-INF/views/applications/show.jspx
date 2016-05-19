@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"  xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    <c:set var="application" value="${application}" scope="request"/>
     <page:show id="ps_ca_gc_hc_mds_domain_Application" object="${application}" path="/applications" z="Mtn4AdkbIDzvlGPuUK+98LggXWc=">
         <field:display field="applcationName" id="s_ca_gc_hc_mds_domain_Application_applcationName" object="${application}" z="MGN7q6TQvfm7D8rtW8t9jVRKgT8="/>
         <field:display field="orginLicenseId" id="s_ca_gc_hc_mds_domain_Application_orginLicenseId" object="${application}" z="RwvgRblhlN8alfgKY1wg8Ey6ntI="/>
@@ -13,7 +14,9 @@
         <field:display field="nearPatient" id="s_ca_gc_hc_mds_domain_Application_nearPatient" object="${application}" z="1VlG88ny+vEixPszvJ7+eix5xyM="/>
         <field:display field="applType" id="s_ca_gc_hc_mds_domain_Application_applType" object="${application}" z="cHUCacVW9OvHj5+isJrYusPAGC0="/>
     </page:show>
-    <div class="avisolargo"><jsp:include page="applicationshow.jspx" />
+    <div class="avisolargo">
+    	<jsp:include page="applicationshow.jspx">
+    	</jsp:include>
     </div>
     
 </div>
