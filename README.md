@@ -5,4 +5,4 @@
    3. mvn clean package tomcat7:run will run the application with tomcat7 
    4. at internet explore open http://localhost:8080/MedicalDevice/
    
-#
+#Configuration
