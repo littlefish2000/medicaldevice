@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Company" object="${company}" path="/companys" z="QkamL7NTMI49Yo6C+FYC7vqoOjc=">
+        <field:display field="companyName" id="s_ca_gc_hc_mds_domain_Company_companyName" object="${company}" z="qP19pR7NKifQvgSHEAh/Bi3FHZM="/>
+        <field:display field="addressLine1" id="s_ca_gc_hc_mds_domain_Company_addressLine1" object="${company}" z="64ulupbk9cBHlgRAt5XT82GTbCk="/>
+        <field:display field="addressLine2" id="s_ca_gc_hc_mds_domain_Company_addressLine2" object="${company}" z="lBZk9P4s616axHWZ+D5P6YKhCJs="/>
+        <field:display field="postCode" id="s_ca_gc_hc_mds_domain_Company_postCode" object="${company}" z="0cSiti/dz0iSnEev0KGm1g73ODg="/>
+        <field:display field="city" id="s_ca_gc_hc_mds_domain_Company_city" object="${company}" z="avLh00dukDyXD+zQ3XnQiGVRLf8="/>
+    </page:show>
+</div>

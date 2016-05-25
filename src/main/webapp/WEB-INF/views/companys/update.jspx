@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ca_gc_hc_mds_domain_Company" idField="companyId" modelAttribute="company" path="/companys" versionField="Version" z="zdh49b4mNcslbLVt0cFHsDVLPAI=">
+        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" z="3A1ZAuuyMJflMC2QoDzB50KLU40="/>
+        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
+        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
+        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA="/>
+        <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Company_city" z="wg0iJehPUq4OeYYJMIji+dkXNoE="/>
+    </form:update>
+</div>

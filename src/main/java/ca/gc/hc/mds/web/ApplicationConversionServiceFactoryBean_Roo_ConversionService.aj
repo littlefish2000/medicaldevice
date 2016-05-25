@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -37,10 +38,37 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Company, String> ApplicationConversionServiceFactoryBean.getCompanyToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Company, java.lang.String>() {
+            public String convert(Company company) {
+                return new StringBuilder().append(company.getCompanyName()).append(' ').append(company.getAddressLine1()).append(' ').append(company.getAddressLine2()).append(' ').append(company.getPostCode()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Company> ApplicationConversionServiceFactoryBean.getIdToCompanyConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.Company>() {
+            public ca.gc.hc.mds.domain.Company convert(java.lang.Long id) {
+                return Company.findCompany(id);
+            }
+        };
+    }
+    
+    public Converter<String, Company> ApplicationConversionServiceFactoryBean.getStringToCompanyConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Company>() {
+            public ca.gc.hc.mds.domain.Company convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Company.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getApplicationToStringConverter());
         registry.addConverter(getIdToApplicationConverter());
         registry.addConverter(getStringToApplicationConverter());
+        registry.addConverter(getCompanyToStringConverter());
+        registry.addConverter(getIdToCompanyConverter());
+        registry.addConverter(getStringToCompanyConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
