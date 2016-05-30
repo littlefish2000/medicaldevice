@@ -9,6 +9,14 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Company_Roo_Finder {
     
+    public static Long Company.countFindCompanysByCompanyId(Long companyId) {
+        if (companyId == null) throw new IllegalArgumentException("The companyId argument is required");
+        EntityManager em = Company.entityManager();
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Company AS o WHERE o.companyId = :companyId", Long.class);
+        q.setParameter("companyId", companyId);
+        return ((Long) q.getSingleResult());
+    }
+    
     public static Long Company.countFindCompanysByCompanyNameLike(String companyName) {
         if (companyName == null || companyName.length() == 0) throw new IllegalArgumentException("The companyName argument is required");
         companyName = companyName.replace('*', '%');
@@ -22,6 +30,29 @@ privileged aspect Company_Roo_Finder {
         TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Company AS o WHERE LOWER(o.companyName) LIKE LOWER(:companyName)", Long.class);
         q.setParameter("companyName", companyName);
         return ((Long) q.getSingleResult());
+    }
+    
+    public static TypedQuery<Company> Company.findCompanysByCompanyId(Long companyId) {
+        if (companyId == null) throw new IllegalArgumentException("The companyId argument is required");
+        EntityManager em = Company.entityManager();
+        TypedQuery<Company> q = em.createQuery("SELECT o FROM Company AS o WHERE o.companyId = :companyId", Company.class);
+        q.setParameter("companyId", companyId);
+        return q;
+    }
+    
+    public static TypedQuery<Company> Company.findCompanysByCompanyId(Long companyId, String sortFieldName, String sortOrder) {
+        if (companyId == null) throw new IllegalArgumentException("The companyId argument is required");
+        EntityManager em = Company.entityManager();
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Company AS o WHERE o.companyId = :companyId");
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            queryBuilder.append(" ORDER BY ").append(sortFieldName);
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                queryBuilder.append(" ").append(sortOrder);
+            }
+        }
+        TypedQuery<Company> q = em.createQuery(queryBuilder.toString(), Company.class);
+        q.setParameter("companyId", companyId);
+        return q;
     }
     
     public static TypedQuery<Company> Company.findCompanysByCompanyNameLike(String companyName) {

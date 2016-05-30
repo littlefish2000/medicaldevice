@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ca_gc_hc_mds_domain_Company" modelAttribute="company" path="/companys" render="${empty dependencies}" z="y0TDk7ATFrerk2km+Up/LJNkadk=">
@@ -8,6 +8,14 @@
         <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
         <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA="/>
         <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Company_city" z="wg0iJehPUq4OeYYJMIji+dkXNoE="/>
+        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Company_addressLine3" z="VIdmE9DsQPHw9CVz5cV6+PKGpVE="/>
+        <field:textarea field="addressLine4" id="c_ca_gc_hc_mds_domain_Company_addressLine4" z="MqyYmhEp9cNXQDPsNoapbm0HLsQ="/>
+        <field:textarea field="addressLine5" id="c_ca_gc_hc_mds_domain_Company_addressLine5" z="u7tWVeT1kxeg8I6DBN0lr82A6GI="/>
+        <field:input field="regionCode" id="c_ca_gc_hc_mds_domain_Company_regionCode" max="12" min="0" required="true" z="X/HZwzQE0SD9wdPqh+IphGX86fo="/>
+        <field:input field="country" id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" required="true" z="rpyvQr672yLX1c7alU34ZC96cqc="/>
+        <field:input field="region" id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0" required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4="/>
+        <field:datetime dateTimePattern="${company_statusdate_date_format}" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z="4T0Qs7ELjSidOo751XexPq4kFWw="/>
+        <field:select field="companyStatus" id="c_ca_gc_hc_mds_domain_Company_companyStatus" items="${statustypes}" path="statustypes" required="true" z="KDsQR4tvOWOGmipi2VEjCAvXBSo="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Company" render="${not empty dependencies}" z="oznRL3Gd6gbUGXU/bszfRrIh8kk="/>
 </div>

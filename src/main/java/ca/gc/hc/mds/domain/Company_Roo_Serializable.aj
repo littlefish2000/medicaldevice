@@ -4,13 +4,12 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Company;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.io.Serializable;
 
-privileged aspect Company_Roo_Jpa_Entity {
+privileged aspect Company_Roo_Serializable {
     
-    declare @type: Company: @Entity;
+    declare parents: Company implements Serializable;
     
-    declare @type: Company: @Table(schema = "MDSDB", name = "COMPANY");
+    private static final long Company.serialVersionUID = 1L;
     
 }

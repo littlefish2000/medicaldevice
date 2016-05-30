@@ -4,8 +4,18 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Company;
+import ca.gc.hc.mds.domain.StatusType;
+import java.util.Date;
 
 privileged aspect Company_Roo_JavaBean {
+    
+    public Long Company.getCompanyId() {
+        return this.companyId;
+    }
+    
+    public void Company.setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
     
     public String Company.getCompanyName() {
         return this.companyName;
@@ -31,6 +41,30 @@ privileged aspect Company_Roo_JavaBean {
         this.addressLine2 = addressLine2;
     }
     
+    public String Company.getAddressLine3() {
+        return this.addressLine3;
+    }
+    
+    public void Company.setAddressLine3(String addressLine3) {
+        this.addressLine3 = addressLine3;
+    }
+    
+    public String Company.getAddressLine4() {
+        return this.addressLine4;
+    }
+    
+    public void Company.setAddressLine4(String addressLine4) {
+        this.addressLine4 = addressLine4;
+    }
+    
+    public String Company.getAddressLine5() {
+        return this.addressLine5;
+    }
+    
+    public void Company.setAddressLine5(String addressLine5) {
+        this.addressLine5 = addressLine5;
+    }
+    
     public String Company.getPostCode() {
         return this.postCode;
     }
@@ -39,12 +73,52 @@ privileged aspect Company_Roo_JavaBean {
         this.postCode = postCode;
     }
     
+    public String Company.getRegionCode() {
+        return this.regionCode;
+    }
+    
+    public void Company.setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
+    
     public String Company.getCity() {
         return this.city;
     }
     
     public void Company.setCity(String city) {
         this.city = city;
+    }
+    
+    public String Company.getCountry() {
+        return this.country;
+    }
+    
+    public void Company.setCountry(String country) {
+        this.country = country;
+    }
+    
+    public String Company.getRegion() {
+        return this.region;
+    }
+    
+    public void Company.setRegion(String region) {
+        this.region = region;
+    }
+    
+    public StatusType Company.getCompanyStatus() {
+        return this.companyStatus;
+    }
+    
+    public void Company.setCompanyStatus(StatusType companyStatus) {
+        this.companyStatus = companyStatus;
+    }
+    
+    public Date Company.getStatusDate() {
+        return this.statusDate;
+    }
+    
+    public void Company.setStatusDate(Date statusDate) {
+        this.statusDate = statusDate;
     }
     
 }

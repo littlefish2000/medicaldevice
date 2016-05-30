@@ -4,10 +4,14 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Company;
+import ca.gc.hc.mds.domain.StatusType;
 import ca.gc.hc.mds.web.CompanyController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +42,7 @@ privileged aspect CompanyController_Roo_Controller {
     
     @RequestMapping(value = "/{companyId}", produces = "text/html")
     public String CompanyController.show(@PathVariable("companyId") Long companyId, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("company", Company.findCompany(companyId));
         uiModel.addAttribute("itemId", companyId);
         return "companys/show";
@@ -54,6 +59,7 @@ privileged aspect CompanyController_Roo_Controller {
         } else {
             uiModel.addAttribute("companys", Company.findAllCompanys(sortFieldName, sortOrder));
         }
+        addDateTimeFormatPatterns(uiModel);
         return "companys/list";
     }
     
@@ -84,8 +90,14 @@ privileged aspect CompanyController_Roo_Controller {
         return "redirect:/companys";
     }
     
+    void CompanyController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("company_statusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
+        addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
     }
     
     String CompanyController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

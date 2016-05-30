@@ -11,9 +11,15 @@
         <put-attribute name="body" value="/WEB-INF/views/companys/create.jspx"/>
     </definition>
 <definition extends="default" name="companys/update">
-        <put-attribute name="body" value="/WEB-INF/views/companys/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/companys/companyupdate.jspx"/>
     </definition>
 <definition extends="default" name="companys/findCompanysByCompanyNameLike">
         <put-attribute name="body" value="/WEB-INF/views/companys/findCompanysByCompanyNameLike.jspx"/>
+    </definition>
+<definition extends="default" name="companys/findCompanysByAddressLine1Like">
+        <put-attribute name="body" value="/WEB-INF/views/companys/findCompanysByAddressLine1Like.jspx"/>
+    </definition>
+<definition extends="default" name="companys/findCompanysByCompanyId">
+        <put-attribute name="body" value="/WEB-INF/views/companys/findCompanysByCompanyId.jspx"/>
     </definition>
 </tiles-definitions>

@@ -15,6 +15,7 @@
         <menu:category id="c_company" z="tmJjNcrRZwdZqruFqwG+TB5GMek=">
             <menu:item id="i_company_new" messageCode="global_menu_new" url="/companys?form" z="SWjXbZ96+4L3yJZ+Q7yyqEFQPV4="/>
             <menu:item id="i_company_list" messageCode="global_menu_list" url="/companys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="vk1qspgPYbGCO4tYu2Ikm8DhmbY="/>
+            <menu:item id="fi_company_companyid" messageCode="global_menu_find" url="/companys?find=ByCompanyId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="2Xa3lJrBMLBJAb7zX3hmO2hU1yI="/>
             <menu:item id="fi_company_companynamelike" messageCode="global_menu_find" url="/companys?find=ByCompanyNameLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="cdWOsKkLMk4S/Sz4re7VEgvzbiw="/>
         </menu:category>
     </menu:menu>

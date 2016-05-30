@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"  xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_ca_gc_hc_mds_domain_Company" object="${company}" path="/companys" z="QkamL7NTMI49Yo6C+FYC7vqoOjc=">
@@ -8,5 +8,13 @@
         <field:display field="addressLine2" id="s_ca_gc_hc_mds_domain_Company_addressLine2" object="${company}" z="lBZk9P4s616axHWZ+D5P6YKhCJs="/>
         <field:display field="postCode" id="s_ca_gc_hc_mds_domain_Company_postCode" object="${company}" z="0cSiti/dz0iSnEev0KGm1g73ODg="/>
         <field:display field="city" id="s_ca_gc_hc_mds_domain_Company_city" object="${company}" z="avLh00dukDyXD+zQ3XnQiGVRLf8="/>
+        <field:display field="addressLine3" id="s_ca_gc_hc_mds_domain_Company_addressLine3" object="${company}" z="P8NT7HX8gvHjxrdDLZYct0h14q0="/>
+        <field:display field="addressLine4" id="s_ca_gc_hc_mds_domain_Company_addressLine4" object="${company}" z="51jhkTyRrjE7FtzZRqehoNV7Mmo="/>
+        <field:display field="addressLine5" id="s_ca_gc_hc_mds_domain_Company_addressLine5" object="${company}" z="aezw2x+/u2gaPjMdJB6ULO8MY6w="/>
+        <field:display field="regionCode" id="s_ca_gc_hc_mds_domain_Company_regionCode" object="${company}" z="KGlDn8so5yj29L2Kg4iVgtlJL0w="/>
+        <field:display field="country" id="s_ca_gc_hc_mds_domain_Company_country" object="${company}" z="iHh6JJ3TkeMi9Mc7U/dPqE7bzZU="/>
+        <field:display field="region" id="s_ca_gc_hc_mds_domain_Company_region" object="${company}" z="HeMKYsAHuXRQpZnFyzHolamA90Q="/>
+        <field:display date="true" dateTimePattern="${company_statusdate_date_format}" field="statusDate" id="s_ca_gc_hc_mds_domain_Company_statusDate" object="${company}" z="NoazcYh3Txi2ZP5sGdMRWxJx4AU="/>
+        <field:display field="companyStatus" id="s_ca_gc_hc_mds_domain_Company_companyStatus" object="${company}" z="e72SHW5KtUY2oeb+tENObvWQRRc="/>
     </page:show>
 </div>
