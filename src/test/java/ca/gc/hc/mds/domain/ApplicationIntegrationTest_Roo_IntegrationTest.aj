@@ -6,23 +6,17 @@ package ca.gc.hc.mds.domain;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
 import ca.gc.hc.mds.domain.ApplicationIntegrationTest;
-import java.util.Iterator;
 import java.util.List;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect ApplicationIntegrationTest_Roo_IntegrationTest {
     
     declare @type: ApplicationIntegrationTest: @RunWith(SpringJUnit4ClassRunner.class);
-    
-    declare @type: ApplicationIntegrationTest: @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext*.xml");
     
     declare @type: ApplicationIntegrationTest: @Transactional;
     
@@ -48,16 +42,6 @@ privileged aspect ApplicationIntegrationTest_Roo_IntegrationTest {
     }
     
     @Test
-    public void ApplicationIntegrationTest.testFindAllApplications() {
-        Assert.assertNotNull("Data on demand for 'Application' failed to initialize correctly", dod.getRandomApplication());
-        long count = Application.countApplications();
-        Assert.assertTrue("Too expensive to perform a find all test for 'Application', as there are " + count + " entries; set the findAllMaximum to exceed this value or set findAll=false on the integration test annotation to disable the test", count < 250);
-        List<Application> result = Application.findAllApplications();
-        Assert.assertNotNull("Find all method for 'Application' illegally returned null", result);
-        Assert.assertTrue("Find all method for 'Application' failed to return any data", result.size() > 0);
-    }
-    
-    @Test
     public void ApplicationIntegrationTest.testFindApplicationEntries() {
         Assert.assertNotNull("Data on demand for 'Application' failed to initialize correctly", dod.getRandomApplication());
         long count = Application.countApplications();
@@ -67,38 +51,6 @@ privileged aspect ApplicationIntegrationTest_Roo_IntegrationTest {
         List<Application> result = Application.findApplicationEntries(firstResult, maxResults);
         Assert.assertNotNull("Find entries method for 'Application' illegally returned null", result);
         Assert.assertEquals("Find entries method for 'Application' returned an incorrect number of entries", count, result.size());
-    }
-    
-    @Test
-    public void ApplicationIntegrationTest.testPersist() {
-        Assert.assertNotNull("Data on demand for 'Application' failed to initialize correctly", dod.getRandomApplication());
-        Application obj = dod.getNewTransientApplication(Integer.MAX_VALUE);
-        Assert.assertNotNull("Data on demand for 'Application' failed to provide a new transient entity", obj);
-        Assert.assertNull("Expected 'Application' identifier to be null", obj.getApplicationId());
-        try {
-            obj.persist();
-        } catch (final ConstraintViolationException e) {
-            final StringBuilder msg = new StringBuilder();
-            for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
-                final ConstraintViolation<?> cv = iter.next();
-                msg.append("[").append(cv.getRootBean().getClass().getName()).append(".").append(cv.getPropertyPath()).append(": ").append(cv.getMessage()).append(" (invalid value = ").append(cv.getInvalidValue()).append(")").append("]");
-            }
-            throw new IllegalStateException(msg.toString(), e);
-        }
-        obj.flush();
-        Assert.assertNotNull("Expected 'Application' identifier to no longer be null", obj.getApplicationId());
-    }
-    
-    @Test
-    public void ApplicationIntegrationTest.testRemove() {
-        Application obj = dod.getRandomApplication();
-        Assert.assertNotNull("Data on demand for 'Application' failed to initialize correctly", obj);
-        Long id = obj.getApplicationId();
-        Assert.assertNotNull("Data on demand for 'Application' failed to provide an identifier", id);
-        obj = Application.findApplication(id);
-        obj.remove();
-        obj.flush();
-        Assert.assertNull("Failed to remove 'Application' with identifier '" + id + "'", Application.findApplication(id));
     }
     
 }
