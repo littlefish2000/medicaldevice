@@ -3,7 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <div class="container">
-    	<form:update id="fu_ca_gc_hc_mds_domain_Application" modelAttribute="application" path="/applications" versionField="Version" z="">
             <div class="row">
                 <div class="col-lg-6 text-center">
                     <div class="panel  panel-primary">
@@ -14,14 +13,13 @@
                             <div class="row">
                             	<div class="col-lg-3">
                             		<p>Appl ID</p>
-                            		<field:display field="orginLicenseId" id="s_ca_gc_hc_mds_domain_Application_applcationName" object="${application}" z=""/>
                             	</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                            <field:textarea field="licenceName" id="c_ca_gc_hc_mds_domain_Application_licenceName" required="true" z="5nO0NwPlSUEAJzfyUwpEe1iuFgg="/>
+						<p>sdsfsfd</p>
                 </div>
             </div>
             
@@ -65,6 +63,5 @@
 			    </div>
 			</div>
             
-		</form:update>
     </div>
 </div>

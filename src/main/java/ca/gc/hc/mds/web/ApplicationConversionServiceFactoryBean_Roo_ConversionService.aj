@@ -17,7 +17,15 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Application, String> ApplicationConversionServiceFactoryBean.getApplicationToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Application, java.lang.String>() {
             public String convert(Application application) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(application.getOrginLicenseId()).append(' ').append(application.getEntryDate()).append(' ').append(application.getReceiptDate()).append(' ').append(application.getApplicationDesc()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Application> ApplicationConversionServiceFactoryBean.getIdToApplicationConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.Application>() {
+            public ca.gc.hc.mds.domain.Application convert(java.lang.Long id) {
+                return Application.findApplication(id);
             }
         };
     }
@@ -56,6 +64,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getApplicationToStringConverter());
+        registry.addConverter(getIdToApplicationConverter());
         registry.addConverter(getStringToApplicationConverter());
         registry.addConverter(getCompanyToStringConverter());
         registry.addConverter(getIdToCompanyConverter());
