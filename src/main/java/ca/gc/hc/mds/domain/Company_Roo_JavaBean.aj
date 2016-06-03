@@ -4,8 +4,11 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Company;
+import ca.gc.hc.mds.domain.CompanyContact;
+import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.reference.StatusType;
 import java.util.Date;
+import java.util.Set;
 
 privileged aspect Company_Roo_JavaBean {
     
@@ -119,6 +122,22 @@ privileged aspect Company_Roo_JavaBean {
     
     public void Company.setStatusDate(Date statusDate) {
         this.statusDate = statusDate;
+    }
+    
+    public Set<CompanyContact> Company.getContacts() {
+        return this.contacts;
+    }
+    
+    public void Company.setContacts(Set<CompanyContact> contacts) {
+        this.contacts = contacts;
+    }
+    
+    public Set<CompanyHistory> Company.getHistorys() {
+        return this.historys;
+    }
+    
+    public void Company.setHistorys(Set<CompanyHistory> historys) {
+        this.historys = historys;
     }
     
 }
