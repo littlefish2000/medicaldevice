@@ -4,7 +4,7 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Company;
-import ca.gc.hc.mds.domain.StatusType;
+import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.web.CompanyController;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;

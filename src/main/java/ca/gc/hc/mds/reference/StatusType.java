@@ -1,7 +1,6 @@
-package ca.gc.hc.mds.domain;
+package ca.gc.hc.mds.reference;
 
 public enum StatusType {
 	A,
 	I
-	
 }

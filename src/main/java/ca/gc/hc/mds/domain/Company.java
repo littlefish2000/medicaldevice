@@ -7,6 +7,8 @@ import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import ca.gc.hc.mds.reference.StatusType;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,7 +19,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-//import javax.persistence.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -26,7 +27,6 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 @RooSerializable
-//@RooJpaActiveRecord(versionField = "",table = "COMPANY", schema = "MDSDB", identifierField ="companyId", identifierColumn ="COMPANY_ID", finders = { "findCompanysByCompanyNameLike"})
 @RooJpaActiveRecord(versionField = "", table = "COMPANY", schema = "MDSDB",identifierColumn = "COMPANY_ID", identifierField = "companyId", finders = { "findCompanysByCompanyNameLike", "findCompanysByCompanyId" })
 public class Company {
 
