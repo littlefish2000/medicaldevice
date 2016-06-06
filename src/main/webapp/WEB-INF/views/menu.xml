@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <gvnix-menu id="_menu" rooMenuBasePath="/">
-<menu-item id="c_application" labelCode="menu_category_application_label" name="Application">
-    <menu-item hidden="false" id="i_application_new" labelCode="menu_item_application_new_label" messageCode="global_menu_new" roles="" url="/applications?form"/>
-    <menu-item hidden="false" id="i_application_list" labelCode="menu_item_application_list_label" messageCode="global_menu_list" roles="" url="/applications?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_application_applicationid" labelCode="menu_item_application_applicationid_label" messageCode="global_menu_find" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    </menu-item>
+<menu-item id="c_device" labelCode="menu_category_device_label" name="Device">
+    <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
+    <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_find" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+</menu-item>
+<menu-item id="c_licence" labelCode="menu_category_licence_label" name="Licence">
+
+</menu-item>
 <menu-item id="c_company" labelCode="menu_category_company_label" name="Company">
     <menu-item hidden="false" id="i_company_new" labelCode="menu_item_company_new_label" messageCode="global_menu_new" roles="" url="/companys?form"/>
     <menu-item hidden="false" id="i_company_list" labelCode="menu_item_company_list_label" messageCode="global_menu_list" roles="" url="/companys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_company_companyid" labelCode="menu_item_company_companyid_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_company_companynamelike" labelCode="menu_item_company_companynamelike_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyNameLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
+<menu-item id="c_masschange" labelCode="menu_category_masschange_label" name="Masschange">
+
+</menu-item>
+<menu-item id="c_application" labelCode="menu_category_application_label" name="Application">
+    <menu-item hidden="false" id="i_application_new" labelCode="menu_item_application_new_label" messageCode="global_menu_new" roles="" url="/applications?form"/>
+    <menu-item hidden="false" id="i_application_list" labelCode="menu_item_application_list_label" messageCode="global_menu_list" roles="" url="/applications?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_application_applicationid" labelCode="menu_item_application_applicationid_label" messageCode="global_menu_find" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+</menu-item>
+<menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
+
+</menu-item>
+<menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
+
+</menu-item>
+<menu-item id="c_finance" labelCode="menu_category_finance_label" name="Finance">
+
+</menu-item>
+<!-- menu-item id="c_correspondence" labelCode="menu_category_correspondence_label" name="Correspondenc">
+</menu-item-->
+<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
+</menu-item>
+<!-- menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
+</menu-item-->
+
 <!-- menu-item id="c_seleniumtests" labelCode="menu_category_seleniumtests_label" name="Seleniumtests">
         <menu-item hidden="false" id="si_seleniumtests_test" labelCode="menu_item_seleniumtests_test_label" messageCode="selenium_menu_test_suite" roles="" url="/resources/selenium/test-suite.xhtml"/>
 </menu-item-->
-<menu-item id="c_device" labelCode="menu_category_device_label" name="Device">
-        <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
-    <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_find" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    </menu-item>
-<menu-item id="c_companyhistory" labelCode="menu_category_companyhistory_label" name="CompanyHistory">
+<!-- menu-item id="c_companyhistory" labelCode="menu_category_companyhistory_label" name="CompanyHistory">
         <menu-item hidden="false" id="i_companyhistory_new" labelCode="menu_item_companyhistory_new_label" messageCode="global_menu_new" roles="" url="/companyhistorys?form"/>
     <menu-item hidden="false" id="i_companyhistory_list" labelCode="menu_item_companyhistory_list_label" messageCode="global_menu_list" roles="" url="/companyhistorys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_companyhistory_company" labelCode="menu_item_companyhistory_company_label" messageCode="global_menu_find" roles="" url="/companyhistorys?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    </menu-item>
-<menu-item id="c_companycontact" labelCode="menu_category_companycontact_label" name="CompanyContact">
+    </menu-item-->
+<!-- menu-item id="c_companycontact" labelCode="menu_category_companycontact_label" name="CompanyContact">
         <menu-item hidden="false" id="i_companycontact_new" labelCode="menu_item_companycontact_new_label" messageCode="global_menu_new" roles="" url="/companycontacts?form"/>
     <menu-item hidden="false" id="i_companycontact_list" labelCode="menu_item_companycontact_list_label" messageCode="global_menu_list" roles="" url="/companycontacts?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_companycontact_company" labelCode="menu_item_companycontact_company_label" messageCode="global_menu_find" roles="" url="/companycontacts?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    </menu-item>
+    </menu-item-->
 </gvnix-menu>

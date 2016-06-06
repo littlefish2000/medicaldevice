@@ -99,8 +99,8 @@ privileged aspect CompanyController_Roo_Controller {
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("companycontacts", CompanyContact.findAllCompanyContacts());
-        uiModel.addAttribute("companyhistorys", CompanyHistory.findAllCompanyHistorys());
+        uiModel.addAttribute("companycontacts", CompanyContact.findCompanyContactsByCompany(company));
+        uiModel.addAttribute("companyhistorys", CompanyHistory.findCompanyHistorysByCompany(company));
         uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
     }
     
