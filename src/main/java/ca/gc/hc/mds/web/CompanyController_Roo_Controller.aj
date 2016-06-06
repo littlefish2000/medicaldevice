@@ -96,6 +96,8 @@ privileged aspect CompanyController_Roo_Controller {
     
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
+        System.out.println("conamny contact size is: "+company.getContacts().size());
+        
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
     }

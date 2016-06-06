@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(versionField = "", table = "COMPANY_HISTORY", schema = "MDSDB",identifierColumn = "COMPANY_HISTORY_ID", identifierField = "companyHistoryId")
+@RooJpaActiveRecord(versionField = "", table = "COMPANY_HISTORY", schema = "MDSDB",identifierColumn = "COMPANY_HISTORY_ID", identifierField = "companyHistoryId",  finders = { "findCompanyHistorysByCompany" })
 
 public class CompanyHistory {
 	@Id

@@ -43,7 +43,9 @@ privileged aspect Company_Roo_Jpa_ActiveRecord {
     
     public static Company Company.findCompany(Long companyId) {
         if (companyId == null) return null;
-        return entityManager().find(Company.class, companyId);
+        Company company = entityManager().find(Company.class, companyId);
+        company.getContacts();
+        return company;
     }
     
     public static List<Company> Company.findCompanyEntries(int firstResult, int maxResults) {
