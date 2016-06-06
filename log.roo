@@ -107,3 +107,5 @@ web mvc jquery all
 menu setup
 security setup
 web mvc bootstrap update
+entity jpa --class ~.domain.Device --table DEVICE --identifierField deviceId --identifierColumn DEVICE_ID
+web mvc finder all
