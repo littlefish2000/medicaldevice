@@ -2,5 +2,7 @@ package ca.gc.hc.mds.reference;
 
 public enum StatusType {
 	A,
-	I
+	I,
+	D,
+	X
 }

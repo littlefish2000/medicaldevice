@@ -140,4 +140,6 @@
     <script src="${js_jquery_datatables_advancedfilter_url}" type="text/javascript">
         <!--required for FF3 and Opera-->
     </script>
+<spring:url value="/resources/styles/menu/dropdown-submenu.css" var="css_bootstrap_menu_url"/>
+    <link href="${css_bootstrap_menu_url}" media="screen,print" rel="stylesheet" type="text/css"/>
 </jsp:root>

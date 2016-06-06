@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div  class="well" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Admin page</title>
+</head>
+<body>
+    Dear <strong>${user}</strong>, Welcome to Admin Page.
+    <a href="<c:url value="/logout" />">Logout</a>
+</body>
+</html></div>

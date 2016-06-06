@@ -15,6 +15,8 @@
   <jsp:directive.attribute name="disableFormBinding" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Set to true to disable Spring form binding" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="renderLabel" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of the label should be rendered (default 'true')" />
+  <jsp:directive.attribute name="value" type="java.lang.String" required="false" rtexprvalue="true" description="Value of current datetime element. Only available if disableFormBinding is true." />
+  <jsp:directive.attribute name="timeStep" type="java.lang.Integer" required="false" rtexprvalue="true" description="Step in minutes for time selector. Only available if field has time format. Default value 5" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
 
   <c:if test="${empty render or render}">
@@ -28,6 +30,9 @@
     <c:set var="sec_field">
       <spring:escapeBody javaScriptEscape="true" >${field}</spring:escapeBody>
     </c:set>
+    <c:if test="${empty timeStep}">
+      <c:set value="5" var="timeStep" />
+    </c:if>
 
     <c:if test="${empty required}">
       <c:set value="false" var="required" />
@@ -36,8 +41,7 @@
       <label for="_${sec_field}_id" class="control-label">
         <c:choose>
           <c:when test="${empty renderLabel or renderLabel}">
-            <c:out value="${fn:escapeXml(label)}" />
-            :
+            <c:out value="${fn:escapeXml(label)}" />:
           </c:when>
           <c:otherwise>
             &amp;nbsp;
@@ -60,18 +64,20 @@
         <spring:escapeBody javaScriptEscape="true">${field_required}</spring:escapeBody>
       </c:set>
 
+      <c:set value="datetimepicker" var="datePickerClass" />
+
       <div class="controls datetime">
       <c:choose>
         <c:when test="${disableFormBinding}">
-          <input id="_${sec_field}_id" name="${sec_field}" cssClass="datepicker form-control input-sm"
-            title="${fn:escapeXml(field_validation)}" data-required="${required}"
+          <input id="_${sec_field}_id" name="${sec_field}" class="${datePickerClass} form-control input-sm"
+            title="${fn:escapeXml(field_validation)}" data-required="${required}" data-timestep="${timeStep}"
             data-invalid="${fn:escapeXml(field_invalid)}" data-missing="${fn:escapeXml(sec_field_required)}"
-            data-regex="${validationRegex}" data-dateformat="${dateTimePattern}" />
+            data-regex="${validationRegex}" data-dateformat="${dateTimePattern}" value="${value}" />
         </c:when>
         <c:otherwise>
           <form:input id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}"
-            cssClass="datepicker form-control input-sm" title="${field_validation}" data-required="${required}"
-            data-invalid="${field_invalid}" data-missing="${sec_field_required}"
+            cssClass="${datePickerClass} form-control input-sm" title="${field_validation}" data-required="${required}"
+            data-invalid="${field_invalid}" data-missing="${sec_field_required}" data-timestep="${timeStep}"
             data-regex="${validationRegex}" data-dateformat="${dateTimePattern}" />
           <form:errors cssClass="errors alert alert-danger" id="_${sec_field}_error_id" path="${sec_field}" />
         </c:otherwise>
