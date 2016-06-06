@@ -17,5 +17,6 @@
         <field:input field="region" id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0" required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4="/>
         <field:datetime dateTimePattern="${company_statusdate_date_format}" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z="4T0Qs7ELjSidOo751XexPq4kFWw="/>
         <field:select field="companyStatus" id="c_ca_gc_hc_mds_domain_Company_companyStatus" items="${statustypes}" path="statustypes" required="true" z="KDsQR4tvOWOGmipi2VEjCAvXBSo="/>
+        <field:simple field="historys" id="c_ca_gc_hc_mds_domain_Company_historys" messageCode="entity_reference_not_managed" messageCodeAttribute="Company History" z="X4nzwI1uZrgEifQMG8pIl61rsfk="/>
     </form:update>
 </div>

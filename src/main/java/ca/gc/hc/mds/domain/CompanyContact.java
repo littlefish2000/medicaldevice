@@ -48,7 +48,7 @@ public class CompanyContact {
 	private String e_MAIL;
 	
 
-    @ManyToOne(targetEntity=Company.class, fetch=FetchType.EAGER)	
+    @ManyToOne(targetEntity=Company.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="COMPANY_ID", referencedColumnName="COMPANY_ID", nullable=false) })	
 	//@org.hibernate.annotations.Index(name="COMP_CON_IDX")	

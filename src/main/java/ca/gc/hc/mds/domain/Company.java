@@ -102,8 +102,7 @@ public class Company {
 
     /**
      */
-    @Column(name = "COMPANY_STATUS", nullable = false, columnDefinition = "char(1) default 'A'")
-    @Basic
+    @Column(name = "COMPANY_STATUS", nullable = false, length=1,columnDefinition = "char(1) default 'A'")
     @Enumerated(EnumType.STRING)
     private StatusType companyStatus = StatusType.A;
 
