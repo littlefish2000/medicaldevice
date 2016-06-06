@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="companyhistorys/list">
+        <put-attribute name="body" value="/WEB-INF/views/companyhistorys/list.jspx"/>
+    </definition>
+<definition extends="default" name="companyhistorys/show">
+        <put-attribute name="body" value="/WEB-INF/views/companyhistorys/show.jspx"/>
+    </definition>
+<definition extends="default" name="companyhistorys/create">
+        <put-attribute name="body" value="/WEB-INF/views/companyhistorys/create.jspx"/>
+    </definition>
+<definition extends="default" name="companyhistorys/update">
+        <put-attribute name="body" value="/WEB-INF/views/companyhistorys/update.jspx"/>
+    </definition>
+<definition extends="default" name="companyhistorys/findCompanyHistorysByCompany">
+        <put-attribute name="body" value="/WEB-INF/views/companyhistorys/findCompanyHistorysByCompany.jspx"/>
+    </definition>
+</tiles-definitions>

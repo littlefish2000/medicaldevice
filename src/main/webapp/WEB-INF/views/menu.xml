@@ -14,4 +14,19 @@
 <!-- menu-item id="c_seleniumtests" labelCode="menu_category_seleniumtests_label" name="Seleniumtests">
         <menu-item hidden="false" id="si_seleniumtests_test" labelCode="menu_item_seleniumtests_test_label" messageCode="selenium_menu_test_suite" roles="" url="/resources/selenium/test-suite.xhtml"/>
 </menu-item-->
+<menu-item id="c_device" labelCode="menu_category_device_label" name="Device">
+        <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
+    <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_find" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item id="c_companyhistory" labelCode="menu_category_companyhistory_label" name="CompanyHistory">
+        <menu-item hidden="false" id="i_companyhistory_new" labelCode="menu_item_companyhistory_new_label" messageCode="global_menu_new" roles="" url="/companyhistorys?form"/>
+    <menu-item hidden="false" id="i_companyhistory_list" labelCode="menu_item_companyhistory_list_label" messageCode="global_menu_list" roles="" url="/companyhistorys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_companyhistory_company" labelCode="menu_item_companyhistory_company_label" messageCode="global_menu_find" roles="" url="/companyhistorys?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item id="c_companycontact" labelCode="menu_category_companycontact_label" name="CompanyContact">
+        <menu-item hidden="false" id="i_companycontact_new" labelCode="menu_item_companycontact_new_label" messageCode="global_menu_new" roles="" url="/companycontacts?form"/>
+    <menu-item hidden="false" id="i_companycontact_list" labelCode="menu_item_companycontact_list_label" messageCode="global_menu_list" roles="" url="/companycontacts?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_companycontact_company" labelCode="menu_item_companycontact_company_label" messageCode="global_menu_find" roles="" url="/companycontacts?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 </gvnix-menu>

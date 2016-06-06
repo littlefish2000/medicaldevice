@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_CompanyContact" object="${companycontact}" path="/companycontacts" z="EWQWAcTAcG9ETfV+e0jzDiYtlAw=">
+        <field:display date="true" dateTimePattern="${companyContact_statusdate_date_format}" field="statusDate" id="s_ca_gc_hc_mds_domain_CompanyContact_statusDate" object="${companycontact}" z="HvvLKBl8GwFXqPJwu0SrKdVNTiE="/>
+        <field:display field="contactName" id="s_ca_gc_hc_mds_domain_CompanyContact_contactName" object="${companycontact}" z="Tf4VCG/J+4xHwZYID5i0VFte8iA="/>
+        <field:display field="contactTitle" id="s_ca_gc_hc_mds_domain_CompanyContact_contactTitle" object="${companycontact}" z="Gykh095p5cEekXta8xMvrqt8cSg="/>
+        <field:display field="e_MAIL" id="s_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" object="${companycontact}" z="QRJc0tgoDrlqIf8E3CTE8tfl0C8="/>
+        <field:display field="company" id="s_ca_gc_hc_mds_domain_CompanyContact_company" object="${companycontact}" z="GBjjgQ7dZL6mh4mHNN8rDky9Ytg="/>
+    </page:show>
+</div>

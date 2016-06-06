@@ -109,3 +109,7 @@ security setup
 web mvc bootstrap update
 entity jpa --class ~.domain.Device --table DEVICE --identifierField deviceId --identifierColumn DEVICE_ID
 web mvc finder all
+// [failed] web mvc finder add --class ~.domain.Device  --formBackingType Device.class
+// [failed] web mvc finder add --class ~.domain.Device  --formBackingType Device
+web mvc all --package ~.web
+web mvc finder all

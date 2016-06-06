@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory" items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
+        <table:table data="${companyhistorys}" id="l_ca_gc_hc_mds_domain_CompanyHistory" path="/companyhistorys" typeIdFieldName="companyHistoryId" z="xiGXRcf3ViCuoZbP1Vac4oRwcSM=">
+            <table:column date="true" dateTimePattern="${companyHistory_changedate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyHistory_changeDate" property="changeDate" z="pz2lpAR+iirvO2EugFwRR3JKGeA="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_companyName" property="companyName" z="OB859vKciXSAiB01u7/zhqLMeZQ="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" property="addressLine1" z="OTFjYexMZszJcWfKpNcJTz1R9t4="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" property="addressLine2" z="JwB0X3+SLRJxknwezjzGI7q14mU="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" property="addressLine3" z="gHA5uu8+LehOTIQizAywALHn6js="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" property="addressLine4" z="fkkxsUwBpRrWhJt+19wL6McBNb4="/>
+        </table:table>
+    </page:list>
+</div>

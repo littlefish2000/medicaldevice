@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_CompanyHistory" object="${companyhistory}" path="/companyhistorys" z="kVcs2jNLFw/hMrHwJgywA6a+jo0=">
+        <field:display date="true" dateTimePattern="${companyHistory_changedate_date_format}" field="changeDate" id="s_ca_gc_hc_mds_domain_CompanyHistory_changeDate" object="${companyhistory}" z="989YautB7HjMA8/ukEiu0lvNXEw="/>
+        <field:display field="companyName" id="s_ca_gc_hc_mds_domain_CompanyHistory_companyName" object="${companyhistory}" z="wne4pIi4DowwbUROXd5RbBUKVaM="/>
+        <field:display field="addressLine1" id="s_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" object="${companyhistory}" z="2vb2bBr6oeMPHdjnZB0EU61msWQ="/>
+        <field:display field="addressLine2" id="s_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" object="${companyhistory}" z="+7EpZWHGCY6fiWh8/QgQplyxF1k="/>
+        <field:display field="addressLine3" id="s_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" object="${companyhistory}" z="UsaL/Hx2WrW3xm/voEmikTGOsCM="/>
+        <field:display field="addressLine4" id="s_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" object="${companyhistory}" z="zSaUgfD80pfImK0iyJZT1lkD4Rw="/>
+        <field:display field="addressLine5" id="s_ca_gc_hc_mds_domain_CompanyHistory_addressLine5" object="${companyhistory}" z="lzQ29Tyg+7///7GD/4QMW94bT7A="/>
+        <field:display field="postCode" id="s_ca_gc_hc_mds_domain_CompanyHistory_postCode" object="${companyhistory}" z="Qs8vVLCp8qVaKXmmUkbI1oaqXyQ="/>
+        <field:display field="regionCode" id="s_ca_gc_hc_mds_domain_CompanyHistory_regionCode" object="${companyhistory}" z="D2mirtsadOOEOOQfNLOb2OVPies="/>
+        <field:display field="city" id="s_ca_gc_hc_mds_domain_CompanyHistory_city" object="${companyhistory}" z="8d4oWhSGwzsEhiNA0wtPJoYFw6U="/>
+        <field:display field="country" id="s_ca_gc_hc_mds_domain_CompanyHistory_country" object="${companyhistory}" z="mQK21RErFuZwkSFKmMO5qsB5X1k="/>
+        <field:display field="region" id="s_ca_gc_hc_mds_domain_CompanyHistory_region" object="${companyhistory}" z="tpAjIy/3U87wXL971S8EkEB2WJc="/>
+        <field:display field="company" id="s_ca_gc_hc_mds_domain_CompanyHistory_company" object="${companyhistory}" z="Qn52jz1u4J3h3Dsg2boysHoRr9w="/>
+    </page:show>
+</div>

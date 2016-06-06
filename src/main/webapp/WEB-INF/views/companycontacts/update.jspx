@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ca_gc_hc_mds_domain_CompanyContact" idField="companyContactId" modelAttribute="companyContact" path="/companycontacts" versionField="none" z="2AaIx5WwEK4r+Btzf8q6EdG4Ou8=">
+        <field:datetime dateTimePattern="${companyContact_statusdate_date_format}" field="statusDate" id="c_ca_gc_hc_mds_domain_CompanyContact_statusDate" required="true" z="qqFPp7TkCE06AzZDVXIM4bp5irA="/>
+        <field:input field="contactName" id="c_ca_gc_hc_mds_domain_CompanyContact_contactName" required="true" z="pGVY2q19NgYFMIyGF5QowmOHVXg="/>
+        <field:input field="contactTitle" id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle" required="true" z="Bt9zKZsUAmRSgbNk6bBRh2Gti5o="/>
+        <field:input field="e_MAIL" id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" required="true" z="s9wnkjmJdl4Uv+Xmj8/HU9EnGP0="/>
+        <field:select field="company" id="c_ca_gc_hc_mds_domain_CompanyContact_company" itemValue="companyId" items="${companys}" path="/companys" z="WapCiobTOoDgTljGMBreFgFzZLc="/>
+    </form:update>
+</div>
