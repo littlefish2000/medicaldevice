@@ -31,10 +31,15 @@
 <menu-item id="c_finance" labelCode="menu_category_finance_label" name="Finance">
 
 </menu-item>
+
+<menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
+	<menu-item id="c_correspondence" labelCode="menu_category_correspondence_label" name="Correspondenc">
+	</menu-item>
+	<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
+	</menu-item>	
+</menu-item>
 <!-- menu-item id="c_correspondence" labelCode="menu_category_correspondence_label" name="Correspondenc">
 </menu-item-->
-<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
-</menu-item>
 <!-- menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 </menu-item-->
 
