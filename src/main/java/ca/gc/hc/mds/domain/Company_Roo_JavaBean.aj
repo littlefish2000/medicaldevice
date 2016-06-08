@@ -124,6 +124,22 @@ privileged aspect Company_Roo_JavaBean {
         this.statusDate = statusDate;
     }
     
+    public String Company.getTaxNumber1() {
+        return this.taxNumber1;
+    }
+    
+    public void Company.setTaxNumber1(String taxNumber1) {
+        this.taxNumber1 = taxNumber1;
+    }
+    
+    public String Company.getTaxNumber4() {
+        return this.taxNumber4;
+    }
+    
+    public void Company.setTaxNumber4(String taxNumber4) {
+        this.taxNumber4 = taxNumber4;
+    }
+    
     public Set<CompanyContact> Company.getContacts() {
         return this.contacts;
     }

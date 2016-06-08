@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform" xmlns:jsp="http://java.sun.com/JSP/Page" 
-xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"  xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform" xmlns:jsp="http://java.sun.com/JSP/Page" 
+xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util" xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_Company" idField="companyId" modelAttribute="company" path="/companys" versionField="none" z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
@@ -129,42 +129,16 @@ xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:c="http://java.sun.com/jsp/js
 					        </div>
 			           	</div>
 			           <div class="tab-pane" id="tab2">
-				           <fieldset  class="scheduler-border">
-		                	<legend class="scheduler-border">Contact List</legend>
-								<table class="table table-striped">
-								  <thead>
-								    <tr>
-								      <th>#</th>
-								      <th>Contact Name</th>
-								      <th>Phone</th>
-								      <th>Ext</th>
-								      <th>Email</th>
-								      <th>Fax</th>
-								      <th>Status</th>
-								    </tr>
-								  </thead>
-								  <tbody>
-								    <tr>
-								      <th scope="row">1</th>
-								      <td>Yvan Cote</td>
-								      <td>5143369922</td>
-								      <td>235</td>
-								      <td>YCote@companySite.com</td>
-								      <td>514335-9922</td>
-								      <td>Active</td>
-								    </tr>
-								    <tr>
-								      <th scope="row">2</th>
-								      <td>Mario Boni</td>
-								      <td>5143359922</td>
-								      <td>235</td>
-								      <td>YCote@companySite.com</td>
-								      <td>514335-9922</td>
-								      <td>Active</td>
-								    </tr>
-								  </tbody>
-								</table>
-		                	</fieldset>
+						    <page:list id="pl_ca_gc_hc_mds_domain_CompanyContact" items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
+						        <table:table data="${companycontacts}" id="l_ca_gc_hc_mds_domain_CompanyContact" path="/companycontacts" typeIdFieldName="companyContactId" z="g4lowgLIJ0EKaBJqQarSL7RvgcA=">
+						            <table:column date="true" dateTimePattern="${companyContact_statusdate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyContact_statusDate" property="statusDate" z="Hgh4cGSYSg02Fn6ma1XzkURt5zg="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactName" property="contactName" z="faoXyR25Usg1ZfFqjnh6oHE831o="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle" property="contactTitle" z="M3e3FaDi8bDd59yxfOHpWCidGzo="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" property="e_MAIL" z="6QdwuSu8tgtS1eXchLlswgcqEEs="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_company" property="company" z="hwjAQAmMVYU5J8tmoq+Q8K1OzRU="/>
+						        </table:table>
+						    </page:list>
+		                	<br></br>
 		                	<div class="row">
 			                	<div class="col-lg-3">
 			                            <label class="col-lg-3">Name: </label><input class="col-lg-9"  type="text"></input>
@@ -220,53 +194,18 @@ xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:c="http://java.sun.com/jsp/js
 			                		</div>
 			                	</div>	
 			                	<br></br>
-		                			                				                	                	
 						</div>
 			           <div class="tab-pane" id="tab3">
-							<fieldset class="scheduler-border">
-							<table class="table table-striped">
-							  <thead>
-							    <tr>
-							      <th>#</th>
-							      <th>Change Date</th>
-							      <th>Address</th>
-							      <th>Region</th>
-							      <th>Postal Code</th>
-							      <th>Country</th>
-							      <th>Status</th>
-							      <th>Fee Red</th>
-							      <th>Gross Rev</th>
-							      <th>MDB Bill-to</th>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr>
-							      <th scope="row">1</th>
-							      <td>2010/02/03</td>
-							      <td>2715 Bristol Circle Unitt 1</td>
-							      <td>Ontario</td>
-							      <td>L6H6X5</td>
-							      <td>Canada</td>
-							      <td>Active</td>
-							      <td>No</td>
-							      <td>$0.000</td>
-							      <td>101101</td>
-							    </tr>
-							    <tr>
-							      <th scope="row">1</th>
-							      <td>2010/02/03</td>
-							      <td>2715 Bristol Circle Unitt 2</td>
-							      <td>Ontario</td>
-							      <td>L6H6X5</td>
-							      <td>Canada</td>
-							      <td>Active</td>
-							      <td>No</td>
-							      <td>$0.000</td>
-							      <td>101101</td>
-							    </tr>
-							  </tbody>
-							</table>
-							</fieldset>			           		
+						    <page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory" items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
+						        <table:table data="${companyhistorys}" id="l_ca_gc_hc_mds_domain_CompanyHistory" path="/companyhistorys" typeIdFieldName="companyHistoryId" z="xiGXRcf3ViCuoZbP1Vac4oRwcSM=">
+						            <table:column date="true" dateTimePattern="${companyHistory_changedate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyHistory_changeDate" property="changeDate" z="pz2lpAR+iirvO2EugFwRR3JKGeA="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_companyName" property="companyName" z="OB859vKciXSAiB01u7/zhqLMeZQ="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" property="addressLine1" z="OTFjYexMZszJcWfKpNcJTz1R9t4="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" property="addressLine2" z="JwB0X3+SLRJxknwezjzGI7q14mU="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" property="addressLine3" z="gHA5uu8+LehOTIQizAywALHn6js="/>
+						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" property="addressLine4" z="fkkxsUwBpRrWhJt+19wL6McBNb4="/>
+						        </table:table>
+						    </page:list>		           		
 			           </div>
 			           <div class="tab-pane" id="tab4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 			

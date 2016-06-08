@@ -116,6 +116,18 @@ public class Company {
 
     /**
      */
+    @Column(name = "TAX_NUMBER1", columnDefinition = "char")
+    @Size(min = 0, max = 16)
+    private String taxNumber1;
+
+    /**
+     */
+    @Column(name = "TAX_NUMBER4", columnDefinition = "char")
+    @Size(min = 0, max = 16)
+    private String taxNumber4;
+
+    /**
+     */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", targetEntity=CompanyContact.class,fetch = FetchType.EAGER)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
