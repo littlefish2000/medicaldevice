@@ -4,7 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ca_gc_hc_mds_domain_Device" items="${devices}" z="/Xf7BRLniSLW2uQwVjSNWHcqa0c=">
         <table:table data="${devices}" id="l_ca_gc_hc_mds_domain_Device" path="/devices" typeIdFieldName="deviceId" z="YpPiCLJ6u4W3BpsXeJSqxlZQUbw=">
+            <table:column id="c_ca_gc_hc_mds_domain_Device_deviceId" property="deviceId" z="e9uDKqV1bqgv359ZU9V1smGAuWE="/>
             <table:column id="c_ca_gc_hc_mds_domain_Device_tradeName" property="tradeName" z="e9uDKqV1bqgv359ZU9V1smGAuWE="/>
-        </table:table>
+         </table:table>
     </page:list>
 </div>
