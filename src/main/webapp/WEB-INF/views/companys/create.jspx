@@ -18,6 +18,12 @@
         <field:select field="companyStatus" id="c_ca_gc_hc_mds_domain_Company_companyStatus" items="${statustypes}" path="statustypes" required="true" z="KDsQR4tvOWOGmipi2VEjCAvXBSo="/>
         <field:simple field="historys" id="c_ca_gc_hc_mds_domain_Company_historys" messageCode="entity_reference_not_managed" messageCodeAttribute="Company History" z="X4nzwI1uZrgEifQMG8pIl61rsfk="/>
         <field:simple field="contacts" id="c_ca_gc_hc_mds_domain_Company_contacts" messageCode="entity_reference_not_managed" messageCodeAttribute="Company Contact" z="JyTJ/6AxDx0vrucpXBiPK0DEZaA="/>
+        <field:input field="taxNumber1" id="c_ca_gc_hc_mds_domain_Company_taxNumber1" max="16" min="0" required="true" z="USSqWVqep1Y5X5WfmoISvA6nMU8="/>
+        <field:input field="taxNumber4" id="c_ca_gc_hc_mds_domain_Company_taxNumber4" max="16" min="0" required="true" z="92XCD8AfX83HsltXkSZuisvWqP0="/>
+        <field:input field="industry" id="c_ca_gc_hc_mds_domain_Company_industry" max="4" min="0" required="true" z="Kez/AeB9+hctPU0y6iSJVd6apjU="/>
+        <field:input field="billToId" id="c_ca_gc_hc_mds_domain_Company_billToId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="WBxO9zOiWK3UqG40r2gJdq6MIas="/>
+        <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" min="0" required="true" z="zaim1/iuei0Y5XbE2aSjQRzzK/M="/>
+        <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="R8YVvdA2S299EfDZo0HsNsKj4H8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Company" render="${not empty dependencies}" z="oznRL3Gd6gbUGXU/bszfRrIh8kk="/>
 </div>

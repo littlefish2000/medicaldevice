@@ -119,8 +119,10 @@ xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:util="urn:jsptagdir:/WEB-INF/
 			           <div class="tab-pane active" id="tab1">
 			           		<div class="row">
 			           			<div class="col-lg-6 text-center">
-						        <field:input field="addressLine1" label="Street" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
-						        <field:input field="addressLine2" label=" " id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
+						        <field:input field="addressLine1" label="address1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
+						        <field:input field="addressLine2" label="address2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
+						        <field:input field="addressLine3" label="address3" id="c_ca_gc_hc_mds_domain_Company_addressLine3" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
+						        <field:input field="addressLine4" label="address4" id="c_ca_gc_hc_mds_domain_Company_addressLine4" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
 						        <field:input field="city" id="c_ca_gc_hc_mds_domain_Company_city" z="wg0iJehPUq4OeYYJMIji+dkXNoE="/>
 						        <field:input field="country" id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" required="true" z="rpyvQr672yLX1c7alU34ZC96cqc="/>
 						        <field:input field="region" id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0" required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4="/>

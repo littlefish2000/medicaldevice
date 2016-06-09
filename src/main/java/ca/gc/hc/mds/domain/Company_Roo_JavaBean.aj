@@ -140,6 +140,38 @@ privileged aspect Company_Roo_JavaBean {
         this.taxNumber4 = taxNumber4;
     }
     
+    public Long Company.getBillToId() {
+        return this.billToId;
+    }
+    
+    public void Company.setBillToId(Long billToId) {
+        this.billToId = billToId;
+    }
+    
+    public Long Company.getContactId() {
+        return this.contactId;
+    }
+    
+    public void Company.setContactId(Long contactId) {
+        this.contactId = contactId;
+    }
+    
+    public String Company.getIndustry() {
+        return this.industry;
+    }
+    
+    public void Company.setIndustry(String industry) {
+        this.industry = industry;
+    }
+    
+    public String Company.getCommonMethod() {
+        return this.commonMethod;
+    }
+    
+    public void Company.setCommonMethod(String commonMethod) {
+        this.commonMethod = commonMethod;
+    }
+    
     public Set<CompanyContact> Company.getContacts() {
         return this.contacts;
     }

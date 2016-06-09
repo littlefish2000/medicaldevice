@@ -125,7 +125,33 @@ public class Company {
     @Column(name = "TAX_NUMBER4", columnDefinition = "char")
     @Size(min = 0, max = 16)
     private String taxNumber4;
+    
+    
+    /**
+     */
+    @Column(name = "MDB_BILL_TO", columnDefinition="NUMBER")
+    @Size(min = 0, max = 16)
+    private Long billToId;    
+    
+    /**
+     */
+    @Column(name = "MDB_FIN_CONTACT_ID", columnDefinition="NUMBER")
+    @Size(min = 0, max = 16)
+    private Long contactId;     
+    
+    /**
+     */
+    @Column(name = "INDUSTRY", columnDefinition="char")
+    @Size(min = 0, max = 4)
+    private String industry;     
 
+    
+    /**
+     */
+    @Column(name = "STD_COMM_METHOD", columnDefinition="char")
+    @Size(min = 0, max = 3)
+    private String commonMethod;    
+    
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", targetEntity=CompanyContact.class,fetch = FetchType.EAGER)

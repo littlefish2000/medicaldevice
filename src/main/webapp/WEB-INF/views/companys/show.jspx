@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core"  xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_ca_gc_hc_mds_domain_Company" object="${company}" path="/companys" z="QkamL7NTMI49Yo6C+FYC7vqoOjc=">
@@ -16,5 +16,11 @@
         <field:display field="region" id="s_ca_gc_hc_mds_domain_Company_region" object="${company}" z="HeMKYsAHuXRQpZnFyzHolamA90Q="/>
         <field:display date="true" dateTimePattern="${company_statusdate_date_format}" field="statusDate" id="s_ca_gc_hc_mds_domain_Company_statusDate" object="${company}" z="NoazcYh3Txi2ZP5sGdMRWxJx4AU="/>
         <field:display field="companyStatus" id="s_ca_gc_hc_mds_domain_Company_companyStatus" object="${company}" z="e72SHW5KtUY2oeb+tENObvWQRRc="/>
+        <field:display field="taxNumber1" id="s_ca_gc_hc_mds_domain_Company_taxNumber1" object="${company}" z="RaeSh2U9/yAQOZJMqz5RHy6/Vms="/>
+        <field:display field="taxNumber4" id="s_ca_gc_hc_mds_domain_Company_taxNumber4" object="${company}" z="XIAGjTzVo+kXNiCNGrb4qd+aij4="/>
+        <field:display field="industry" id="s_ca_gc_hc_mds_domain_Company_industry" object="${company}" z="YzwROJvBVFgkIyTt9er0yquBKNQ="/>
+        <field:display field="billToId" id="s_ca_gc_hc_mds_domain_Company_billToId" object="${company}" z="tD0qEYyJ++rHVmxrWBX5Y6I+6KM="/>
+        <field:display field="commonMethod" id="s_ca_gc_hc_mds_domain_Company_commonMethod" object="${company}" z="Vl7qw96w4iBeIO5YG4hCJXC8WbU="/>
+        <field:display field="contactId" id="s_ca_gc_hc_mds_domain_Company_contactId" object="${company}" z="Lyd5fQlNHxLAtcTdnuVyK9QEGUU="/>
     </page:show>
 </div>
