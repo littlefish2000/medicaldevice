@@ -8,7 +8,7 @@
         <put-attribute name="body" value="/WEB-INF/views/companys/show.jspx"/>
     </definition>
 <definition extends="default" name="companys/create">
-        <put-attribute name="body" value="/WEB-INF/views/companys/create.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/companys/companyupdate.jspx"/>
     </definition>
 <definition extends="default" name="companys/update">
         <put-attribute name="body" value="/WEB-INF/views/companys/companyupdate.jspx"/>
