@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ca_gc_hc_mds_domain_Company" items="${companys}" z="FM5zdDbjQQiaRDeY/10Jb9qN8Nc=">
-        <table:table data="${companys}" id="l_ca_gc_hc_mds_domain_Company" path="/companys" typeIdFieldName="companyId" z="O+zkQCnOxQt6fro/3/wrDWS6VK4=">
+        <table:table create="false" data="${companys}" delete="false" id="l_ca_gc_hc_mds_domain_Company" path="/companys" typeIdFieldName="companyId" z="user-managed">
             <table:column id="c_ca_gc_hc_mds_domain_Company_companyId" property="companyId" z="oeHbkwIM08sl3i5NmzhXuck1pOw="/>
             <table:column id="c_ca_gc_hc_mds_domain_Company_companyName" property="companyName" z="oeHbkwIM08sl3i5NmzhXuck1pOw="/>
             <table:column id="c_ca_gc_hc_mds_domain_Company_addressLine1" property="addressLine1" z="Sz8rlkxgIhLl48LH+reZWewdgfw="/>
