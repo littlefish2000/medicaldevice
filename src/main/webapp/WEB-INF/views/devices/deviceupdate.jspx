@@ -7,6 +7,7 @@
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util"
 	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:spring="http://www.springframework.org/tags" 
 	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
 
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
@@ -21,10 +22,14 @@
 			<div class="row">
 
 				<div class="col-lg-3">
-
-					<label class="col-lg-4">Device ID: </label><input class="col-lg-7"
-						type="text"></input>
-				</div>
+                	<div class="row">
+                	<spring:eval expression="device.getDeviceId()" var="compidvar"/>
+                	<label for="s_ca_gc_hc_mds_domain_Company_deviceId" class="control-label col-lg-6">Device ID:</label>
+                	<div class="col-lg-5">
+                	<input id="s_ca_gc_hc_mds_domain_Company_deviceId" type="text" class="form-control" 
+                	placeholder="${compidvar}" readonly="readonly"/>
+                	</div>
+                	</div>				</div>
 				<div class="col-lg-5">
 					<label class="col-lg-3">Trade Name: </label><input class="col-lg-8"
 						type="text"></input>

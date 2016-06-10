@@ -11,7 +11,7 @@
         <put-attribute name="body" value="/WEB-INF/views/devices/create.jspx"/>
     </definition>
 <definition extends="default" name="devices/update">
-        <put-attribute name="body" value="/WEB-INF/views/devices/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/devices/deviceupdate.jspx"/>
     </definition>
 <definition extends="default" name="devices/findDevicesByDeviceId">
         <put-attribute name="body" value="/WEB-INF/views/devices/findDevicesByDeviceId.jspx"/>

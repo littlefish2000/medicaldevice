@@ -8,8 +8,13 @@ import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.web.CompanyController;
+import ca.gc.hc.mds.web.menu.MenuItem;
+
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
@@ -100,9 +105,18 @@ privileged aspect CompanyController_Roo_Controller {
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("companycontacts", CompanyContact.findAllCompanyContacts());
-        uiModel.addAttribute("companyhistorys", CompanyHistory.findAllCompanyHistorys());
+        
+        List<CompanyContact> contactList = new ArrayList<CompanyContact>();
+        List<CompanyHistory> historyList = new ArrayList<CompanyHistory>();
+        
+		    if (company.getCompanyId() !=null) {
+		        contactList = CompanyContact.findCompanyContactsByCompany(company).getResultList();
+		        historyList = CompanyHistory.findCompanyHistorysByCompany(company).getResultList();
+		    }
         uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
+        uiModel.addAttribute("companycontacts",contactList);
+        uiModel.addAttribute("companyhistorys", historyList);
+        
     }
     
     String CompanyController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
