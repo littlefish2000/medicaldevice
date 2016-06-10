@@ -14,7 +14,7 @@ privileged aspect Device_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Device.entityManager;
     
-    public static final List<String> Device.fieldNames4OrderClauseFilter = java.util.Arrays.asList("deviceId", "tradeName");
+    public static final List<String> Device.fieldNames4OrderClauseFilter = java.util.Arrays.asList("deviceId", "tradeName", "perfnameCode", "entryDate", "lastChangeDate");
     
     public static final EntityManager Device.entityManager() {
         EntityManager em = new Device().entityManager;

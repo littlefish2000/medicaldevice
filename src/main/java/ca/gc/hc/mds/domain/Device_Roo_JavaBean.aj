@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Device;
+import java.util.Date;
 
 privileged aspect Device_Roo_JavaBean {
     
@@ -21,6 +22,30 @@ privileged aspect Device_Roo_JavaBean {
     
     public void Device.setTradeName(String tradeName) {
         this.tradeName = tradeName;
+    }
+    
+    public String Device.getPerfnameCode() {
+        return this.perfnameCode;
+    }
+    
+    public void Device.setPerfnameCode(String perfnameCode) {
+        this.perfnameCode = perfnameCode;
+    }
+    
+    public Date Device.getEntryDate() {
+        return this.entryDate;
+    }
+    
+    public void Device.setEntryDate(Date entryDate) {
+        this.entryDate = entryDate;
+    }
+    
+    public Date Device.getLastChangeDate() {
+        return this.lastChangeDate;
+    }
+    
+    public void Device.setLastChangeDate(Date lastChangeDate) {
+        this.lastChangeDate = lastChangeDate;
     }
     
 }

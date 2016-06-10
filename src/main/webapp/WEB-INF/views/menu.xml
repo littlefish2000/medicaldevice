@@ -4,7 +4,8 @@
     <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
     <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_find" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-</menu-item>
+<menu-item hidden="false" id="fi_device_perfnamecode" labelCode="menu_item_device_perfnamecode_label" messageCode="global_menu_find" roles="" url="/devices?find=ByPerfnameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 <menu-item id="c_licence" labelCode="menu_category_licence_label" name="Licence">
 
 </menu-item>

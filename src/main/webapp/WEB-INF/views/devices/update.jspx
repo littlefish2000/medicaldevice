@@ -4,5 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_Device" idField="deviceId" modelAttribute="device" path="/devices" versionField="none" z="C7Iqni1AoAUuaWvjRhflznKkOKg=">
         <field:textarea field="tradeName" id="c_ca_gc_hc_mds_domain_Device_tradeName" z="kMxI9b3S/zm+ny7eSjzlIEJLvLY="/>
+        <field:input field="perfnameCode" id="c_ca_gc_hc_mds_domain_Device_perfnameCode" max="6" min="6" required="true" z="jFx91MKl6T7kGyeKlZjUiy5YBi0="/>
+        <field:datetime dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Device_entryDate" required="true" z="MZGzzt4vbaRnJXRA+kFgVt8D7Xg="/>
+        <field:datetime dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Device_lastChangeDate" required="true" z="gOJs4zIV9uJbK06EWRxLcwAfNNQ="/>
     </form:update>
 </div>

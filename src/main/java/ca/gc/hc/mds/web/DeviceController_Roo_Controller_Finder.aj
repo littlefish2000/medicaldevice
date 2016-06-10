@@ -28,6 +28,27 @@ privileged aspect DeviceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("devices", Device.findDevicesByDeviceId(deviceId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
+        return "devices/list";
+    }
+    
+    @RequestMapping(params = { "find=ByPerfnameCode", "form" }, method = RequestMethod.GET)
+    public String DeviceController.findDevicesByPerfnameCodeForm(Model uiModel) {
+        return "devices/findDevicesByPerfnameCode";
+    }
+    
+    @RequestMapping(params = "find=ByPerfnameCode", method = RequestMethod.GET)
+    public String DeviceController.findDevicesByPerfnameCode(@RequestParam("perfnameCode") String perfnameCode, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("devices", Device.findDevicesByPerfnameCode(perfnameCode, sortFieldName, sortOrder).setFirstResult(firstResult).setMaxResults(sizeNo).getResultList());
+            float nrOfPages = (float) Device.countFindDevicesByPerfnameCode(perfnameCode) / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("devices", Device.findDevicesByPerfnameCode(perfnameCode, sortFieldName, sortOrder).getResultList());
+        }
+        addDateTimeFormatPatterns(uiModel);
         return "devices/list";
     }
     

@@ -116,7 +116,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Device, String> ApplicationConversionServiceFactoryBean.getDeviceToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Device, java.lang.String>() {
             public String convert(Device device) {
-                return new StringBuilder().append(device.getTradeName()).toString();
+                return new StringBuilder().append(device.getTradeName()).append(' ').append(device.getPerfnameCode()).append(' ').append(device.getEntryDate()).append(' ').append(device.getLastChangeDate()).toString();
             }
         };
     }

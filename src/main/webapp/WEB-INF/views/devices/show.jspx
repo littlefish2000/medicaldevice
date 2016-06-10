@@ -4,5 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_ca_gc_hc_mds_domain_Device" object="${device}" path="/devices" z="0h43iv3k2JznfCiOe5mgH99553c=">
         <field:display field="tradeName" id="s_ca_gc_hc_mds_domain_Device_tradeName" object="${device}" z="CImaqVXGHl5q0xRMZTne9Ba2UHo="/>
+        <field:display field="perfnameCode" id="s_ca_gc_hc_mds_domain_Device_perfnameCode" object="${device}" z="V92Ky8uBO71SpgIC8zaCnM9EbOo="/>
+        <field:display date="true" dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Device_entryDate" object="${device}" z="swxasIP4LD8rhcSKLCCeqf4yHuQ="/>
+        <field:display date="true" dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="s_ca_gc_hc_mds_domain_Device_lastChangeDate" object="${device}" z="70stHEWWppocB0cAiH5iccIzyDs="/>
     </page:show>
 </div>

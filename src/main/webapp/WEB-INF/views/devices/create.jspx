@@ -4,6 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ca_gc_hc_mds_domain_Device" modelAttribute="device" path="/devices" render="${empty dependencies}" z="KNgl5m5TH9rQoAp10OKOiTU0Pck=">
         <field:textarea field="tradeName" id="c_ca_gc_hc_mds_domain_Device_tradeName" z="kMxI9b3S/zm+ny7eSjzlIEJLvLY="/>
+        <field:input field="perfnameCode" id="c_ca_gc_hc_mds_domain_Device_perfnameCode" max="6" min="6" required="true" z="jFx91MKl6T7kGyeKlZjUiy5YBi0="/>
+        <field:datetime dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Device_entryDate" required="true" z="MZGzzt4vbaRnJXRA+kFgVt8D7Xg="/>
+        <field:datetime dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Device_lastChangeDate" required="true" z="gOJs4zIV9uJbK06EWRxLcwAfNNQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Device" render="${not empty dependencies}" z="cqUanAird9mhDt6Ej0Ehsgg/cq4="/>
 </div>
