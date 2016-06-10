@@ -172,6 +172,14 @@ privileged aspect Company_Roo_JavaBean {
         this.commonMethod = commonMethod;
     }
     
+    public Date Company.getLastChangeDate() {
+        return this.lastChangeDate;
+    }
+    
+    public void Company.setLastChangeDate(Date lastChangeDate) {
+        this.lastChangeDate = lastChangeDate;
+    }
+    
     public Set<CompanyContact> Company.getContacts() {
         return this.contacts;
     }

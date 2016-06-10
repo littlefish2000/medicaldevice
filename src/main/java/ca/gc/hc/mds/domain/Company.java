@@ -152,6 +152,15 @@ public class Company {
     @Size(min = 0, max = 3)
     private String commonMethod;    
     
+    
+    /**
+     */
+    @NotNull
+    @Column(name = "FEE_REDUCTION_DT", columnDefinition = "DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date lastChangeDate;
+    
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", targetEntity=CompanyContact.class,fetch = FetchType.EAGER)

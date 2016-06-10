@@ -99,12 +99,13 @@ privileged aspect CompanyController_Roo_Controller {
     
     void CompanyController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("company_statusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("company_lastchangedate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
         addDateTimeFormatPatterns(uiModel);
-       
+        
         List<CompanyContact> contactList = new ArrayList<CompanyContact>();
         List<CompanyHistory> historyList = new ArrayList<CompanyHistory>();
         

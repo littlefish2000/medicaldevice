@@ -186,21 +186,42 @@ xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:util="urn:jsptagdir:/WEB-INF/
 						        </table:table>
 						    </page:list>		           		
 			           </div>
-			           <div class="tab-pane" id="tab4">
+			           <div class="tab-pane form-horizontal" id="tab4">
 			           		<div class="row">
-			           			<div class="col-lg-6">
-			           			<field:input field="billToId" label="Bill ID" id="c_ca_gc_hc_mds_domain_Company_bill_id" z=""/>
-			           			<field:input field="taxNumber1" label="Tax Number 1" id="c_ca_gc_hc_mds_domain_Company_tax_number1" z=""/>
-			           			<field:input field="taxNumber4" label="Tax Number 4" id="c_ca_gc_hc_mds_domain_Company_tax_number4" z=""/>
-			           			</div>
-			           			<div class="col-lg-6">
-			           			<field:input field="industry" label="Industry" id="c_ca_gc_hc_mds_domain_Company_industry" z=""/>
-			           			<field:input field="commonMethod" label="Comm Mthd" id="c_ca_gc_hc_mds_domain_Company_commonMethod" z=""/>
-			           			<field:input field="contactId" label="Industry" id="c_ca_gc_hc_mds_domain_Company_contactId" z=""/>
+			           			<div class="col-lg-4">
+			           				<field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Bill-to ID" id="c_ca_gc_hc_mds_domain_Company_bill_id" z=""/>
+		           				</div>
+		           				<div class="col-lg-4">
+		           					<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname" type="text" class="form-control" 
+						                	placeholder="Brand Canada Inc." readonly="readonly"/>
+		           				</div>
+			           			<div class="col-lg-4">
+			           				<field:input field="taxNumber1" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Tax Number 1" id="c_ca_gc_hc_mds_domain_Company_tax_number1" z=""/>
 			           			</div>
 			           		</div>
+			           		<div class="row">
+			           			<div class="col-lg-4">
+			           				<field:datetime dateTimePattern="${company_lastchangedate_date_format}" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-6" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-5" label="Last Change Date" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" required="true" z=""/>
+			           			</div>
+			           			<div class="col-lg-4">
+			           				<field:input field="industry" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Industry" id="c_ca_gc_hc_mds_domain_Company_industry" z=""/>
+								</div>
+			           			<div class="col-lg-4">
+			           				<field:input field="taxNumber4" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Tax Number 4" id="c_ca_gc_hc_mds_domain_Company_tax_number4" z=""/>
+			           			</div>			           			
+			           		</div>
+			           		<div class="row">
+			           			<div class="col-lg-4">			           		
+                      			<field:input labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" field="contactId" label="Contact ID" id="c_ca_gc_hc_mds_domain_Company_contactId" z=""/>
+                      			</div>
+                      			<div class="col-lg-4">
+						            <input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname" type="text" class="form-control" placeholder="Brand Canada Inc." readonly="readonly"/>
+					            </div> 
+			           			<div class="col-lg-4">
+			           				<field:input field="commonMethod" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Comm Mthd" id="c_ca_gc_hc_mds_domain_Company_commonMethod" z=""/>
+			           			</div>			           			
+			           		</div>
 			           </div>
-                         
 			        </div>
 			    </div>
 			    </div>

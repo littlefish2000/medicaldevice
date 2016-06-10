@@ -24,6 +24,7 @@
         <field:input field="billToId" id="c_ca_gc_hc_mds_domain_Company_billToId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="WBxO9zOiWK3UqG40r2gJdq6MIas="/>
         <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" min="0" required="true" z="zaim1/iuei0Y5XbE2aSjQRzzK/M="/>
         <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="R8YVvdA2S299EfDZo0HsNsKj4H8="/>
+        <field:datetime dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" required="true" z="EMGJJqERwORsk1Dcp7q0cEigTRw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Company" render="${not empty dependencies}" z="oznRL3Gd6gbUGXU/bszfRrIh8kk="/>
 </div>
