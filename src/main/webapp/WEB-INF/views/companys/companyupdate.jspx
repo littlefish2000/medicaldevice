@@ -78,7 +78,7 @@ xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:util="urn:jsptagdir:/WEB-INF/
                  </div>
 
                 <div class="col-lg-3">
-               		 <field:datetime dateTimePattern="${company_statusdate_date_format}" labelclass="col-lg-4"  fieldclass="col-lg-8" label="Date" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z=""/>
+               		 <field:datetime dateTimePattern="${company_statusdate_date_format}" labelclass="col-lg-4"  fieldclass="col-lg-8" label="Status Date" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z=""/>
                 </div>                
             </div>
 			<div class="row">
