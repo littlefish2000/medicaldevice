@@ -4,21 +4,10 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Company;
-import ca.gc.hc.mds.domain.CompanyContact;
-import ca.gc.hc.mds.domain.CompanyHistory;
-import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.web.CompanyController;
-import ca.gc.hc.mds.web.menu.MenuItem;
-
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -95,28 +84,6 @@ privileged aspect CompanyController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/companys";
-    }
-    
-    void CompanyController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("company_statusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("company_lastchangedate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-    }
-    
-    void CompanyController.populateEditForm(Model uiModel, Company company) {
-        uiModel.addAttribute("company", company);
-        addDateTimeFormatPatterns(uiModel);
-        
-        List<CompanyContact> contactList = new ArrayList<CompanyContact>();
-        List<CompanyHistory> historyList = new ArrayList<CompanyHistory>();
-        
-		    if (company.getCompanyId() !=null) {
-		        contactList = CompanyContact.findCompanyContactsByCompany(company).getResultList();
-		        historyList = CompanyHistory.findCompanyHistorysByCompany(company).getResultList();
-		    }
-        uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
-        uiModel.addAttribute("companycontacts",contactList);
-        uiModel.addAttribute("companyhistorys", historyList);
-        
     }
     
     String CompanyController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
