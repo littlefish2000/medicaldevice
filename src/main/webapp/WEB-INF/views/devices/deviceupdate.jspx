@@ -23,16 +23,24 @@
 
 				<div class="col-lg-3">
                 	<div class="row">
-                	<spring:eval expression="device.getDeviceId()" var="compidvar"/>
-                	<label for="s_ca_gc_hc_mds_domain_Company_deviceId" class="control-label col-lg-6">Device ID:</label>
-                	<div class="col-lg-5">
-                	<input id="s_ca_gc_hc_mds_domain_Company_deviceId" type="text" class="form-control" 
-                	placeholder="${compidvar}" readonly="readonly"/>
-                	</div>
-                	</div>				</div>
+	                	<spring:eval expression="device.getDeviceId()" var="compidvar"/>
+	                	<label for="s_ca_gc_hc_mds_domain_Company_deviceId" class="control-label col-lg-6">Device ID:</label>
+	                	<div class="col-lg-5">
+	                	<input id="s_ca_gc_hc_mds_domain_Company_deviceId" type="text" class="form-control" 
+	                	placeholder="${compidvar}" readonly="readonly"/>
+	                	</div>
+                	</div>				
+                </div>
 				<div class="col-lg-5">
-					<label class="col-lg-3">Trade Name: </label><input class="col-lg-8"
-						type="text"></input>
+						
+                	<div class="row">
+	                	<spring:eval expression="device.getTradeName()" var="tradnamevar"/>
+	                	<label for="s_ca_gc_hc_mds_domain_Company_tradnameId" class="control-label col-lg-6">Trade Name:</label>
+	                	<div class="col-lg-5">
+	                	<input id="s_ca_gc_hc_mds_domain_Company_tradnameId" type="text" class="form-control" 
+	                	placeholder="${tradnamevar}" readonly="readonly"/>
+	                	</div>
+                	</div>							
 				</div>
 
 				<div class="col-lg-4">
