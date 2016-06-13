@@ -131,3 +131,7 @@ web mvc scaffold --class ~.web.SpecialAccessController --backingType ~.domain.Sp
 
 web mvc finder all
 web mvc jquery all
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-13 11:00:56
+web mvc scaffold --class ~.web.SpecialAccessController --backingType ~.domain.SpecialAccess --path SpecialAccess
+web mvc jquery all
+web mvc jquery all

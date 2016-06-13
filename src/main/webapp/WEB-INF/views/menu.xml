@@ -24,8 +24,8 @@
     <menu-item hidden="false" id="fi_application_applicationid" labelCode="menu_item_application_applicationid_label" messageCode="global_menu_find" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 </menu-item>web
 <menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
-<menu-item hidden="false" id="i_specialaccess_new" labelCode="menu_item_specialaccess_new_label" messageCode="global_menu_new" roles="" url="/SpecialAccesslist?form"/>
-    <menu-item hidden="false" id="i_specialaccess_list" labelCode="menu_item_specialaccess_list_label" messageCode="global_menu_list" roles="" url="/SpecialAccesslist?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+<menu-item hidden="false" id="i_specialaccess_new" labelCode="menu_item_specialaccess_new_label" messageCode="global_menu_new" roles="" url="/SpecialAccess?form"/>
+    <menu-item hidden="false" id="i_specialaccess_list" labelCode="menu_item_specialaccess_list_label" messageCode="global_menu_list" roles="" url="/SpecialAccess?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 
 <menu-item id="c_correspondence" labelCode="menu_category_correspondence_label" name="Correspondenc">

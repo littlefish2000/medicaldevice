@@ -25,17 +25,17 @@ privileged aspect SpecialAccessController_Roo_Controller {
     public String SpecialAccessController.create(@Valid SpecialAccess specialAccess, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, specialAccess);
-            return "SpecialAccesslist/create";
+            return "SpecialAccess/create";
         }
         uiModel.asMap().clear();
         specialAccess.persist();
-        return "redirect:/SpecialAccesslist/" + encodeUrlPathSegment(specialAccess.getSpecialId().toString(), httpServletRequest);
+        return "redirect:/SpecialAccess/" + encodeUrlPathSegment(specialAccess.getSpecialId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
     public String SpecialAccessController.createForm(Model uiModel) {
         populateEditForm(uiModel, new SpecialAccess());
-        return "SpecialAccesslist/create";
+        return "SpecialAccess/create";
     }
     
     @RequestMapping(value = "/{specialId}", produces = "text/html")
@@ -43,7 +43,7 @@ privileged aspect SpecialAccessController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("specialaccess", SpecialAccess.findSpecialAccess(specialId));
         uiModel.addAttribute("itemId", specialId);
-        return "SpecialAccesslist/show";
+        return "SpecialAccess/show";
     }
     
     @RequestMapping(produces = "text/html")
@@ -58,24 +58,24 @@ privileged aspect SpecialAccessController_Roo_Controller {
             uiModel.addAttribute("specialaccesses", SpecialAccess.findAllSpecialAccesses(sortFieldName, sortOrder));
         }
         addDateTimeFormatPatterns(uiModel);
-        return "SpecialAccesslist/list";
+        return "SpecialAccess/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
     public String SpecialAccessController.update(@Valid SpecialAccess specialAccess, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, specialAccess);
-            return "SpecialAccesslist/update";
+            return "SpecialAccess/update";
         }
         uiModel.asMap().clear();
         specialAccess.merge();
-        return "redirect:/SpecialAccesslist/" + encodeUrlPathSegment(specialAccess.getSpecialId().toString(), httpServletRequest);
+        return "redirect:/SpecialAccess/" + encodeUrlPathSegment(specialAccess.getSpecialId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{specialId}", params = "form", produces = "text/html")
     public String SpecialAccessController.updateForm(@PathVariable("specialId") Long specialId, Model uiModel) {
         populateEditForm(uiModel, SpecialAccess.findSpecialAccess(specialId));
-        return "SpecialAccesslist/update";
+        return "SpecialAccess/update";
     }
     
     @RequestMapping(value = "/{specialId}", method = RequestMethod.DELETE, produces = "text/html")
@@ -85,7 +85,7 @@ privileged aspect SpecialAccessController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/SpecialAccesslist";
+        return "redirect:/SpecialAccess";
     }
     
     void SpecialAccessController.addDateTimeFormatPatterns(Model uiModel) {

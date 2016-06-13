@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 
-@RequestMapping("/SpecialAccesslist")
+@RequestMapping("/SpecialAccess")
 @Controller
-@RooWebScaffold(path = "SpecialAccesslist", formBackingObject = SpecialAccess.class)
+@RooWebScaffold(path = "SpecialAccess", formBackingObject = SpecialAccess.class)
 @RooWebFinder
 @GvNIXWebJQuery
 public class SpecialAccessController {
