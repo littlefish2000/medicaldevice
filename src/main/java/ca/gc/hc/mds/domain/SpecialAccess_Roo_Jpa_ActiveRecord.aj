@@ -14,7 +14,7 @@ privileged aspect SpecialAccess_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager SpecialAccess.entityManager;
     
-    public static final List<String> SpecialAccess.fieldNames4OrderClauseFilter = java.util.Arrays.asList("specialId", "physicianId", "facilityId", "requestDate", "actionDate");
+    public static final List<String> SpecialAccess.fieldNames4OrderClauseFilter = java.util.Arrays.asList("specialId", "physicianId", "facilityId", "requestDate", "actionDate", "aiReceiptDate", "reference");
     
     public static final EntityManager SpecialAccess.entityManager() {
         EntityManager em = new SpecialAccess().entityManager;

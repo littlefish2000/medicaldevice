@@ -48,4 +48,20 @@ privileged aspect SpecialAccess_Roo_JavaBean {
         this.actionDate = actionDate;
     }
     
+    public Date SpecialAccess.getAiReceiptDate() {
+        return this.aiReceiptDate;
+    }
+    
+    public void SpecialAccess.setAiReceiptDate(Date aiReceiptDate) {
+        this.aiReceiptDate = aiReceiptDate;
+    }
+    
+    public String SpecialAccess.getReference() {
+        return this.reference;
+    }
+    
+    public void SpecialAccess.setReference(String reference) {
+        this.reference = reference;
+    }
+    
 }

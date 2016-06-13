@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -16,7 +17,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierColumn = "SPECIAL_ACCESS_ID", identifierField = "specialId", table = "SPECIAL_ACCESS", finders = { "findSpecialAccesssByspecialId" })
+@RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierColumn = "SPECIAL_ACCESS_ID", identifierField = "specialId", table = "SPECIAL_ACCESS", finders = { "findSpecialAccessesBySpecialId" })
 public class SpecialAccess {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +25,10 @@ public class SpecialAccess {
 	private Long specialId;
 
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "PHYSICIAN_ID")
+	@Column(name = "PHYSICIAN_ID", columnDefinition="NUMBER")
 	private Long physicianId;
 			
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "FACILITY_ID")
+	@Column(name = "FACILITY_ID", columnDefinition="NUMBER")
 	private Long facilityId;
 	
     /**
@@ -39,7 +38,7 @@ public class SpecialAccess {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date requestDate;	
-	
+
     /**
      */
     @NotNull
@@ -47,5 +46,21 @@ public class SpecialAccess {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date actionDate;	
+
+    /**
+     */
+    @NotNull
+    @Column(name = "AI_RECEIPT_DT", columnDefinition = "DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date aiReceiptDate;	    
+    
+    
+    /**
+     */
+    @Column(name = "REFERENCE", columnDefinition = "char")
+    @Size(min = 0, max = 60)
+    private String reference;    
+	    
 			
 }

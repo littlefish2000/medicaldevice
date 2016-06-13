@@ -91,6 +91,7 @@ privileged aspect SpecialAccessController_Roo_Controller {
     void SpecialAccessController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("specialAccess_requestdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("specialAccess_actiondate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("specialAccess_aireceiptdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     void SpecialAccessController.populateEditForm(Model uiModel, SpecialAccess specialAccess) {

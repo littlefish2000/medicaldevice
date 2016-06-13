@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util"
+	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ca_gc_hc_mds_domain_SpecialAccess" idField="specialId" modelAttribute="specialAccess" path="/SpecialAccess" versionField="none" z="IlW1oKQCJu5eIsK45QKZK4wq25A=">
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                	<div class="row">
+                	<spring:eval expression="specialAccess.getSpecialId()" var="specialaccessidvar"/>
+                	<label for="s_ca_gc_hc_mds_domain_specialAccess_specialId" class="control-label col-lg-8">Special Access ID:</label>
+                	<div class="col-lg-4">
+                	<input id="s_ca_gc_hc_mds_domain_specialAccess_specialId" type="text" class="form-control" 
+                	placeholder="${specialaccessidvar}" readonly="readonly"/>
+                	</div>
+                	</div>
+                </div>
+                <div class="col-lg-3">
+                	<p>    </p>
+                </div>
+                <div class="col-lg-3">
+               		<label class="col-lg-8 col-md-offset-0">Helath Care Pefer:</label><input
+						class="col-lg-4" type="text"></input>
+                </div>
+                <div class="col-lg-3">
+               		 <input type="text" class="form-control" placeholder="Nicolo Pizza MD" readonly="readonly"/>
+                </div>                
+            </div>
+            <br></br>
+            <div class="row">
+               	<div class="col-lg-3">
+               		<field:input field="facilityId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" 
+               		fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" 
+               		 label="Facility" id="c_ca_gc_hc_mds_domain_SepcialAccess_facilityId" z=""/>
+                </div>
+                <div class="col-lg-3">
+               		 <input id="s_ca_gc_hc_mds_domain_specialAccess_facilityref" type="text" class="form-control" placeholder="Royal Victorica Hospital" readonly="readonly"/>
+                </div> 
+                <div class="col-lg-6">
+					<label class="col-lg-4">Application Type: </label> <select
+						id="disabledSelect">
+						<option>Previously Authorised</option>
+						<option>2</option>
+						<option>3</option>
+					</select>                
+				</div> 
+            </div>  
+
+            <div class="row">
+               	<div class="col-lg-3">
+               		<label class="col-lg-7">Compy From: </label><input
+						class="col-lg-5" type="text"></input>
+                </div>
+                <div class="col-lg-3">
+	  				<field:datetime dateTimePattern="${specialAccess_requestdate_date_format}" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-7" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-5" label="RequestDate" field="requestDate" id="c_ca_gc_hc_mds_domain_SpecialAccess_requestDate" required="true" z=""/>
+                </div> 
+                <div class="col-lg-3">
+					<label class="col-lg-7">Action Taken: </label> <select
+						id="disabledSelect">
+						<option>Yes</option>
+						<option>No</option>
+					</select>                
+				</div> 
+                <div class="col-lg-3">
+					<label class="col-lg-7">Total Units: </label> <select
+						id="disabledSelect">
+						<option>5</option>
+						<option>4</option>
+						<option>3</option>
+						<option>2</option>
+						<option>1</option>						
+					</select>                
+				</div>				
+            </div>            
+                      
+			<div class="row">
+			    <div class="panel with-nav-tabs panel-primary">
+			    	 <div class="panel-heading">	
+			       <ul class="nav nav-tabs responsive">
+			           <li class="active" ><a href="#tab1" data-toggle="tab">Special Access Companies 15</a></li>
+			           <li><a href="#tab2" data-toggle="tab">Associated Device 20</a></li>
+			       </ul>
+			       </div>
+			       <div class="panel-body">
+				       <div class="tab-content">
+				           <div class="tab-pane active" id="tab1">
+				           	</div>
+				           <div class="tab-pane" id="tab2">
+							</div>
+	
+				        </div>
+			    	</div>
+			    </div>
+			</div>
+    </div>
+    </form:update>
+</div>

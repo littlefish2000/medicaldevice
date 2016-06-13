@@ -11,6 +11,9 @@
         <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/create.jspx"/>
     </definition>
 <definition extends="default" name="SpecialAccess/update">
-        <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/SpecialAccessUpdate.jspx"/>
+    </definition>
+<definition extends="default" name="SpecialAccess/findSpecialAccessesBySpecialId">
+        <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/findSpecialAccessesBySpecialId.jspx"/>
     </definition>
 </tiles-definitions>
