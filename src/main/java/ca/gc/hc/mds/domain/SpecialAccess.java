@@ -1,0 +1,51 @@
+package ca.gc.hc.mds.domain;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.tostring.RooToString;
+
+@RooJavaBean
+@RooToString
+@RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierColumn = "SPECIAL_ACCESS_ID", identifierField = "specialId", table = "SPECIAL_ACCESS", finders = { "findSpecialAccesssByspecialId" })
+public class SpecialAccess {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "SPECIAL_ACCESS_ID")
+	private Long specialId;
+
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "PHYSICIAN_ID")
+	private Long physicianId;
+			
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "FACILITY_ID")
+	private Long facilityId;
+	
+    /**
+     */
+    @NotNull
+    @Column(name = "REQUESTED_DT", columnDefinition = "DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date requestDate;	
+	
+    /**
+     */
+    @NotNull
+    @Column(name = "ACTION_DT", columnDefinition = "DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date actionDate;	
+			
+}

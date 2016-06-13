@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_SpecialAccess" object="${specialaccess}" path="/SpecialAccesslist" z="MOoYYPjpoLehisGorBy3poJ8pU8=">
+        <field:display field="physicianId" id="s_ca_gc_hc_mds_domain_SpecialAccess_physicianId" object="${specialaccess}" z="u9KDmM1fMkx9nesmDfzcoVY7zr8="/>
+        <field:display field="facilityId" id="s_ca_gc_hc_mds_domain_SpecialAccess_facilityId" object="${specialaccess}" z="Mi+882riJlxmlWq/Fpsbo83Usf4="/>
+        <field:display date="true" dateTimePattern="${specialAccess_requestdate_date_format}" field="requestDate" id="s_ca_gc_hc_mds_domain_SpecialAccess_requestDate" object="${specialaccess}" z="ZhUTniYbI/8vAvifUpgbp/m3IpY="/>
+        <field:display date="true" dateTimePattern="${specialAccess_actiondate_date_format}" field="actionDate" id="s_ca_gc_hc_mds_domain_SpecialAccess_actionDate" object="${specialaccess}" z="hvhBjG6fPOnMj31j/P4r7EifFPA="/>
+    </page:show>
+</div>

@@ -8,6 +8,7 @@ import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -137,6 +138,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<SpecialAccess, String> ApplicationConversionServiceFactoryBean.getSpecialAccessToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.SpecialAccess, java.lang.String>() {
+            public String convert(SpecialAccess specialAccess) {
+                return new StringBuilder().append(specialAccess.getPhysicianId()).append(' ').append(specialAccess.getFacilityId()).append(' ').append(specialAccess.getRequestDate()).append(' ').append(specialAccess.getActionDate()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, SpecialAccess> ApplicationConversionServiceFactoryBean.getIdToSpecialAccessConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.SpecialAccess>() {
+            public ca.gc.hc.mds.domain.SpecialAccess convert(java.lang.Long id) {
+                return SpecialAccess.findSpecialAccess(id);
+            }
+        };
+    }
+    
+    public Converter<String, SpecialAccess> ApplicationConversionServiceFactoryBean.getStringToSpecialAccessConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.SpecialAccess>() {
+            public ca.gc.hc.mds.domain.SpecialAccess convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), SpecialAccess.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getApplicationToStringConverter());
         registry.addConverter(getIdToApplicationConverter());
@@ -153,6 +178,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getSpecialAccessToStringConverter());
+        registry.addConverter(getIdToSpecialAccessConverter());
+        registry.addConverter(getStringToSpecialAccessConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

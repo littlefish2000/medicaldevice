@@ -1,15 +1,15 @@
 package ca.gc.hc.mds.web;
-import ca.gc.hc.mds.domain.CompanyHistory;
+import ca.gc.hc.mds.domain.SpecialAccess;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 
-@RequestMapping("/companyhistorys")
+@RequestMapping("/SpecialAccesslist")
 @Controller
-@RooWebScaffold(path = "companyhistorys", formBackingObject = CompanyHistory.class)
+@RooWebScaffold(path = "SpecialAccesslist", formBackingObject = SpecialAccess.class)
 @RooWebFinder
 @GvNIXWebJQuery
-public class CompanyHistoryController {
+public class SpecialAccessController {
 }
