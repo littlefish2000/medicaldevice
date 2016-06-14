@@ -122,6 +122,7 @@
 			       <div class="panel-body">
 				       <div class="tab-content">
 				           <div class="tab-pane active" id="tab1">
+				           	<utilold:panel id="s_ca_gc_hc_mds_domain_specialAccess_companylist_id" title="Company List">
 								<table class="table">
 									<thead class="thead-inverse">
 										<tr>
@@ -160,11 +161,10 @@
 											<td>US</td>
 											<td>55432</td>
 											<td>100032</td>
-
 										</tr>
 									</tbody>	
-		                		
 								</table>	
+								</utilold:panel>
 								
 								<fieldset  class="scheduler-border">
 		                			<legend class="scheduler-border">Search</legend>
@@ -222,6 +222,44 @@
 				           	</div>
 				           	
 				           <div class="tab-pane" id="tab2">
+				           		<utilold:panel id="s_ca_gc_hc_mds_domain_specialAccess_devicelist_id" title="Device List">
+								<table class="table">
+									<thead class="thead-inverse">
+										<tr>
+											<th>Device ID</th>
+											<th>Trade Name</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>400370</td>
+											<td>Datex-Ohmeda Tonometrics Catheters</td>
+										</tr>
+										<tr>
+											<td>400380</td>
+											<td>Sensicare Advantix Powderfree Medical Examination Gloves</td>
+										</tr>
+										<tr>
+											<td>400390</td>
+											<td>Datex-Ohmeda Tonometric Catheters</td>
+										</tr>
+									</tbody>	
+								</table>				           		
+				           		</utilold:panel>
+				           		<br></br>
+				           		<div class="row">
+				           			<div class="col-lg-4">
+				           				<p>  </p>
+				           			</div>
+									<div class="col-lg-4">
+					               		<label class="col-lg-5 col-md-offset-0">Device ID:</label><input
+											class="col-lg-5" type="text"></input>
+					                </div>
+				           			<div class="col-lg-4">
+				           				<p>  </p>
+				           			</div>					                
+				                </div>		
+				                <br></br>		           		
 		                		<div class="row">
 		                		 	<div class="col-lg-2"><p>  </p></div>
 					                <div class="col-lg-8">
