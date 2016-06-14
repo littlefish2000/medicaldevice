@@ -1968,3 +1968,7 @@ fieldset.scheduler-border {
     display:inline-block;
     vertical-align: middle;
 }
+
+.form-horizontal .control-label{
+    text-align: left;
+}
