@@ -87,8 +87,9 @@
 			    <div class="panel with-nav-tabs panel-primary">
 			    	 <div class="panel-heading">	
 			       <ul class="nav nav-tabs responsive">
-			           <li class="active" ><a href="#tab1" data-toggle="tab">Special Access Companies 15</a></li>
-			           <li><a href="#tab2" data-toggle="tab">Associated Device 20</a></li>
+			           <li class="active" ><a href="#tab1" data-toggle="tab">Special Access Companies</a></li>
+			           <li><a href="#tab2" data-toggle="tab">Associated Devices</a></li>
+			           <li><a href="#tab3" data-toggle="tab">Associated Device Assignment</a></li>
 			       </ul>
 			       </div>
 			       <div class="panel-body">
@@ -111,7 +112,6 @@
 									</thead>
 									<tbody>
 										<tr>
-											<th scope="row">1</th>
 											<td>Manufacturer</td>
 											<td>129811</td>
 											<td>Medtronic Inc</td>
@@ -124,7 +124,6 @@
 
 										</tr>
 										<tr>
-											<th scope="row">1</th>
 											<td>Manufacturer</td>
 											<td>129811</td>
 											<td>Medtronic Inc</td>
@@ -136,11 +135,104 @@
 											<td>100032</td>
 
 										</tr>
-									</tbody>
-								</table>				           
+									</tbody>	
+		                		
+								</table>	
+								
+								<fieldset  class="scheduler-border">
+		                			<legend class="scheduler-border">Search</legend>
+		                			<div class="row">
+		                				<div class="col-lg-3">
+			                				<label class="col-lg-8 col-md-offset-0">Company ID:</label><input
+											class="col-lg-4" type="text"></input>
+		                				</div>
+		                				<div class="col-lg-2">
+		                					<button class="btn btn-primary">Search</button>
+		                				</div>
+						                <div class="col-lg-6">
+						               		<label class="col-lg-4 col-md-offset-0">Company Name:</label><input
+												class="col-lg-7" placeholder="Medtronic Inc" readonly="readonly" type="text"></input>
+						                </div>
+		                			</div>
+		                		</fieldset>
+		                		
+		                		<div class="row">
+		                		 	<div class="col-lg-3"><p>  </p></div>
+					                <div class="col-lg-3">
+										<label class="col-lg-7">Manufacturer: </label> <select
+											id="disabledSelect">
+											<option>Yes</option>
+											<option>No</option>
+										</select>                
+									</div> 
+					                <div class="col-lg-3">
+										<label class="col-lg-7">Importer: </label> <select
+											id="disabledSelect">
+											<option>Yes</option>
+											<option>No</option>
+										</select>                
+									</div> 									
+		                			<div class="col-lg-3"><p>  </p></div>
+		                		</div>
+		                		<br></br>
+		                		<div class="row">
+		                		 	<div class="col-lg-2"><p>  </p></div>
+					                <div class="col-lg-8">
+					                	<div class="row">
+					                		<div class="col-lg-4 text-center">
+					                		<button class="btn btn-success center-block"> Add </button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Save</button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Cancel</button>
+					                		</div> 						                							                		
+										</div>              
+									</div> 
+		                			<div class="col-lg-2"><p>  </p></div>
+		                		</div>		                		
 				           	</div>
+				           	
 				           <div class="tab-pane" id="tab2">
+		                		<div class="row">
+		                		 	<div class="col-lg-2"><p>  </p></div>
+					                <div class="col-lg-8">
+					                	<div class="row">
+					                		<div class="col-lg-4 text-center">
+					                		<button class="btn btn-success center-block"> Add </button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Save</button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Cancel</button>
+					                		</div> 						                							                		
+										</div>              
+									</div> 
+		                			<div class="col-lg-2"><p>  </p></div>
+		                		</div>						           
 							</div>
+							
+				           <div class="tab-pane" id="tab3">
+		                		<div class="row">
+		                		 	<div class="col-lg-2"><p>  </p></div>
+					                <div class="col-lg-8">
+					                	<div class="row">
+					                		<div class="col-lg-4 text-center">
+					                		<button class="btn btn-success center-block"> Add </button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Save</button>
+					                		</div> 	
+					                		<div class="col-lg-4 text-center">
+					                		<button class="center-block btn btn-success">Cancel</button>
+					                		</div> 						                							                		
+										</div>              
+									</div> 
+		                			<div class="col-lg-2"><p>  </p></div>
+		                		</div>						           
+							</div>							
 	
 				        </div>
 			    	</div>
