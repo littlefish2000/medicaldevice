@@ -3,7 +3,7 @@
 <menu-item id="c_device" labelCode="menu_category_device_label" name="Device">
     <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
     <menu-item id="c_device" labelCode="menu_category_device_search_label" name="Device">
-	    <menu-item hidden="true" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	    <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_device_searchid" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 		<menu-item hidden="false" id="fi_device_perfnamecode" labelCode="menu_item_device_perfnamecode_label" messageCode="global_menu_device_searchperfnamecode" roles="" url="/devices?find=ByPerfnameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
