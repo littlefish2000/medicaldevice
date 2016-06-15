@@ -8,8 +8,12 @@
 		<menu-item hidden="false" id="fi_device_perfnamecode" labelCode="menu_item_device_perfnamecode_label" messageCode="global_menu_device_searchperfnamecode" roles="" url="/devices?find=ByPerfnameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 </menu-item>
-<menu-item id="c_licence" labelCode="menu_category_licence_label" name="Licence">
-
+<menu-item id="c_Renewal" labelCode="menu_category_Renewal_label" name="Renewal">
+	<menu-item id="c_device" labelCode="menu_category_device_search_label" name="RenewSearch">
+        <menu-item hidden="false" id="fi_renew_searchcompany" messageCode="menures_renew_search_company" roles="" url="/renewal/index"/>
+         <menu-item hidden="false" id="fi_renew_searchlicence" messageCode="menures_renew_search_licence" roles="" url="/renewal/index"/>
+	</menu-item> 
+	<menu-item hidden="false" id="i_controller__renewalindex_id"  messageCode="menures_renew_batchcontrol" roles="" url="/renewal/index"/>
 </menu-item>
 <menu-item id="c_company" labelCode="menu_category_company_label" name="Company">
     <menu-item hidden="false" id="i_company_new" labelCode="menu_item_company_new_label" messageCode="global_menu_new" roles="" url="/companys?form"/>
