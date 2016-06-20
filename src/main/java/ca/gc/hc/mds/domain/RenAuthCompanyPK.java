@@ -17,6 +17,10 @@ public class RenAuthCompanyPK  implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	public long getSerialVersionUID() {
+		return serialVersionUID;		
+	}
+		
     @Column(name = "RENEWAL_RUN_DT", nullable = false)
     private Calendar renewalRunDt;
     
