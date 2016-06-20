@@ -1,13 +1,18 @@
 package ca.gc.hc.mds.domain;
 
 import javax.persistence.Column;
+import javax.persistence.TypedQuery;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(identifierType = RenAuthCompanyPK.class, versionField = "", table = "REN_AUTH_COMPANY", schema = "MDSDB")
+@RooJpaActiveRecord(identifierType = RenAuthCompanyPK.class, versionField = "", table = "REN_AUTH_COMPANY", 
+finders = { "findRenAuthCompanysByCompanyAuthNameEquals" },schema = "MDSDB")
 public class RenAuthCompany {
 
 	
@@ -49,5 +54,14 @@ public class RenAuthCompany {
 	
 	@Column(name="COMPLETE_PACKAGE",columnDefinition = "char", nullable=false, length=1)	
 	private char compeletePackage;	
+	
+	
+	public static TypedQuery<RenAuthCompany> findRenAuthCompanyByCompanyAuthorId(Long companyAuthId) {
+        if (companyAuthId == null) throw new IllegalArgumentException("The deviceId argument is required");
+        EntityManager em = Device.entityManager();
+        TypedQuery<RenAuthCompany> q = em.createQuery("SELECT o FROM RenAuthCompany AS o WHERE o.RenAuthCompanyPK.companyAuthId = :companyAuthId", RenAuthCompany.class);
+        q.setParameter("companyAuthId", companyAuthId);
+        return q;
+    }	
 	
 }
