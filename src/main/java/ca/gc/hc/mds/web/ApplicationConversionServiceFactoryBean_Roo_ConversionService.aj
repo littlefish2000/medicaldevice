@@ -8,7 +8,6 @@ import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Device;
-import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -184,22 +183,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getStringToSpecialAccessConverter());
     }
     
-    public Converter<RenAuthCompanyPK, String> ApplicationConversionServiceFactoryBean.getRenAuthCompanyPKToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.RenAuthCompanyPK, java.lang.String>() {
-            public String convert(RenAuthCompanyPK renAuthCompanyPK) {
-                return new StringBuilder().append(renAuthCompanyPK.getSerialVersionUID()).append(" ").append(renAuthCompanyPK.getRenewalRunDt()).append(" ").append(renAuthCompanyPK.getCompanyAuthId()).append(" ").toString();
-            }
-        };
-    }
-    
-    public void ApplicationConversionServiceFactoryBean.installEmbeddableConverters(FormatterRegistry registry) {
-        registry.addConverter(getRenAuthCompanyPKToStringConverter());
-    }
-    
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
         super.afterPropertiesSet();
         installLabelConverters(getObject());
-        installEmbeddableConverters(getObject());
     }
     
 }

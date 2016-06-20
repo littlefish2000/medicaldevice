@@ -156,3 +156,4 @@ finder list --class  ~.domain.Renewal --depth 1
 finder list --class  ~.domain.Renewal
 finder list --class  ~.domain.Renewal
 finder list --class  ~.domain.RenAuthCompany --depth 1
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-20 15:48:06
