@@ -13,6 +13,7 @@ import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @RooToString
@@ -21,7 +22,7 @@ import java.util.List;
 public class RenAuthCompanyPK  implements Serializable{
 	
     @Column(name = "RENEWAL_RUN_DT", nullable = false)
-    private Calendar renewalRunDt;
+    private Date renewalRunDt;
     
     @Column(name = "COMPANY_AUTH_ID", nullable = false)
     private BigDecimal companyAuthId;

@@ -5,14 +5,14 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.Embeddable;
 
 privileged aspect RenAuthCompanyPK_Roo_Identifier {
     
     declare @type: RenAuthCompanyPK: @Embeddable;
     
-    public RenAuthCompanyPK.new(Calendar renewalRunDt, BigDecimal companyAuthId) {
+    public RenAuthCompanyPK.new(Date renewalRunDt, BigDecimal companyAuthId) {
         super();
         this.renewalRunDt = renewalRunDt;
         this.companyAuthId = companyAuthId;
@@ -22,7 +22,7 @@ privileged aspect RenAuthCompanyPK_Roo_Identifier {
         super();
     }
 
-    public Calendar RenAuthCompanyPK.getRenewalRunDt() {
+    public Date RenAuthCompanyPK.getRenewalRunDt() {
         return renewalRunDt;
     }
     
