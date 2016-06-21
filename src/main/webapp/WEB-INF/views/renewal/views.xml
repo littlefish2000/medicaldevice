@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="renewal/index">
+    <definition extends="default" name="renewal/renewcompanyupdate">
         <put-attribute name="body" value="/WEB-INF/views/renewal/renewcompanyupdate.jspx"/>
     </definition>
+    <definition extends="default" name="renewal/findlicencerenewbyregulatory">
+        <put-attribute name="body" value="/WEB-INF/views/renewal/findlicencerenewbyregulatory.jspx"/>
+    </definition>   
+    <definition extends="default" name="renewal/findlicencerenewbylicence">
+        <put-attribute name="body" value="/WEB-INF/views/renewal/findlicencerenewbylicence.jspx"/>
+    </definition>       
+    <definition extends="default" name="renewal/renewauthorcompanylist">
+        <put-attribute name="body" value="/WEB-INF/views/renewal/renewauthorcompanylist.jspx"/>
+    </definition>     
 </tiles-definitions>

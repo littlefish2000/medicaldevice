@@ -1,5 +1,7 @@
 package ca.gc.hc.mds.domain;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.TypedQuery;
 
@@ -54,7 +56,6 @@ public class RenAuthCompany {
 	
 	@Column(name="COMPLETE_PACKAGE",columnDefinition = "char", nullable=false, length=1)	
 	private char compeletePackage;	
-	
 	
 	public static TypedQuery<RenAuthCompany> findRenAuthCompanyByCompanyAuthorId(Long companyAuthId) {
         if (companyAuthId == null) throw new IllegalArgumentException("The deviceId argument is required");

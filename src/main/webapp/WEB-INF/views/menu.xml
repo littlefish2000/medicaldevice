@@ -10,8 +10,8 @@
 </menu-item>
 <menu-item id="c_Renewal" labelCode="menu_category_Renewal_label" name="Renewal">
 	<menu-item id="c_device" labelCode="menu_category_device_search_label" name="RenewSearch">
-		 <menu-item hidden="false" id="fi_renew_searchcompany" messageCode="menures_renew_search_company" roles="" url="/renewal/index"/>
-         <menu-item hidden="false" id="fi_renew_searchlicence" messageCode="menures_renew_search_licence" roles="" url="/renewal/index"/>
+		 <menu-item hidden="false" id="fi_renew_searchcompany" messageCode="menures_renew_search_regulatory" roles="" url="/renewal/licence?find=ByRegulatoryId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+         <menu-item hidden="false" id="fi_renew_searchlicence" messageCode="menures_renew_search_licence" roles="" url="/renewal/licence?find=ByLicenceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	</menu-item> 
 	<menu-item hidden="false" id="i_controller__renewalindex_id" messageCode="menures_renew_batchcontrol" roles="" url="/renewal/index">
 		<menu-item hidden="false" id="i_renew_batch_new" messageCode="menures_renew_new" roles="" url="/devices?form"/>
