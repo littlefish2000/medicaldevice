@@ -46,12 +46,10 @@
 				<br></br> <br></br>
 			    <page:list id="pl_ca_gc_hc_mds_domain_RenAuthCompany" items="${renauthcompanys}" z="mpVkKTGsJiLtRJXJLK1zgJdluYA=">
 			        <table:table create="false" show="false" delete="false" data="${renauthcompanys}" id="l_ca_gc_hc_mds_domain_RenAuthCompany" path="/renauthcompanys" z="OdjrIz0YgrkeGUoRh2ujFUEtc0g=">
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_companyAuthName" property="companyAuthName" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_authAddr1" property="authAddr1" z="Sx5xCul+2Fpl/M3MNTwLAaFJI1A="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_authAddr2" property="authAddr2" z="ng1OVRkmK2n+ZlXyCWWIUb3mgA4="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_authAddr3" property="authAddr3" z="eBTqnvTf7KYYYGnNtCPljJKeIUc="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_city" property="city" z="YYqArwhKIGPTjjmS5O4lCGbvdKs="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_countryCd" property="countryCd" z="q+5urU2BuxeQCAco3uwtVX2U/us="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_id" label="Company Run Date" property="id" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_companyAuthName" label="Author Compan Name" property="companyAuthName" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_receiptDate" label="Receipt Date" property="receiptDate" z="Sx5xCul+2Fpl/M3MNTwLAaFJI1A="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_RenAuthCompany_rejectDate" label="Reject Date" property="rejectDate" z="ng1OVRkmK2n+ZlXyCWWIUb3mgA4="/>
 			        </table:table>
 			    </page:list>
 			</div>

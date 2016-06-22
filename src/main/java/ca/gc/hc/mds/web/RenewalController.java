@@ -40,8 +40,25 @@ public class RenewalController {
    
 	@RequestMapping(value = "/renewal/licence", params = { "find=ByLicenceId", "form" }, method = RequestMethod.GET)
     public String findLicenceRenewsByLicenceIdForm(Model uiModel) {
-        return "renewal/findlicencerenewbylicence";
+		uiModel.addAttribute("licenceId","");
+        return "renewal/renewbylicencelist";
     }
+	
+	@RequestMapping(value = "/renewal/licence",params = "find=ByLicenceId", method = RequestMethod.GET)
+    public String findLicenceRenewsByLicenceIdForm(@RequestParam("authorizeId") Long authorizeId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+		uiModel.addAttribute("licenceId",authorizeId);
+
+		if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("renauthcompanys", RenAuthCompany.findRenAuthCompanyEntries(firstResult, sizeNo, sortFieldName, sortOrder));
+            float nrOfPages = (float) RenAuthCompany.countRenAuthCompanys() / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("renauthcompanys", RenAuthCompany.findAllRenAuthCompanys(sortFieldName, sortOrder));
+        }
+		return "renewal/renewauthorcompanylist";
+    }	
 	
 	@RequestMapping(value = "/renewal/licence", params = { "find=ByRegulatoryId", "form" }, method = RequestMethod.GET)
     public String findLicenceRenewsByRegulatoryIdForm(Model uiModel) {
