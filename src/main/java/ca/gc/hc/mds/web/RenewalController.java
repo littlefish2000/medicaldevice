@@ -45,12 +45,17 @@ public class RenewalController {
 	
 	@RequestMapping(value = "/renewal/licence", params = { "find=ByRegulatoryId", "form" }, method = RequestMethod.GET)
     public String findLicenceRenewsByRegulatoryIdForm(Model uiModel) {
-        return "renewal/findlicencerenewbyregulatory";
+		uiModel.addAttribute("authorizeId","");
+		uiModel.addAttribute("companyname","");
+		return "renewal/renewauthorcompanylist";
     }
 	
 	@RequestMapping(value = "/renewal/licence",params = "find=ByRegulatoryId", method = RequestMethod.GET)
-    public String findLicenceRenewsByRegulatory(@RequestParam("authorizeId") Long deviceId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
-        if (page != null || size != null) {
+    public String findLicenceRenewsByRegulatory(@RequestParam("authorizeId") Long authorizeId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+        
+		uiModel.addAttribute("authorizeId",authorizeId);
+		uiModel.addAttribute("companyname","Arthocarte Corporation");
+		if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
             uiModel.addAttribute("renauthcompanys", RenAuthCompany.findRenAuthCompanyEntries(firstResult, sizeNo, sortFieldName, sortOrder));

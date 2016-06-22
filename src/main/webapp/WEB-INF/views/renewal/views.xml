@@ -13,4 +13,7 @@
     <definition extends="default" name="renewal/renewauthorcompanylist">
         <put-attribute name="body" value="/WEB-INF/views/renewal/renewauthorcompanylist.jspx"/>
     </definition>     
+    <definition extends="default" name="renewal/renewbylicencelist">
+        <put-attribute name="body" value="/WEB-INF/views/renewal/renewcompanyupdate.jspx"/>
+    </definition>       
 </tiles-definitions>
