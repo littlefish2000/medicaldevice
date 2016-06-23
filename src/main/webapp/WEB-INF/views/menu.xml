@@ -14,8 +14,8 @@
          <menu-item hidden="false" id="fi_renew_searchlicence" messageCode="menures_renew_search_licence" roles="" url="/renewal/licence?find=ByLicenceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	</menu-item> 
 	<menu-item hidden="false" id="i_controller__renewalindex_id" messageCode="menures_renew_batchcontrol" roles="" url="/renewal/index">
-		<menu-item hidden="false" id="i_renew_batch_new" messageCode="menures_renew_new" roles="" url="/devices?form"/>
-		<menu-item hidden="false" id="i_renew_batch_fiscalyear" messageCode="menures_renew_search_fiscal_year" roles="" url="/devices?form"/>
+		<menu-item hidden="false" id="i_renew_batch_new" messageCode="menures_renew_new" roles="" url="/renewal/batchcontrol?find=New&amp;form"/>
+		<menu-item hidden="false" id="i_renew_batch_fiscalyear" messageCode="menures_renew_search_fiscal_year" roles="" url="/renewal/batchcontrol?find=ByFiscalYear&amp;form"/>
 	</menu-item>
 </menu-item>
 <menu-item id="c_company" labelCode="menu_category_company_label" name="Company">

@@ -8,7 +8,7 @@
         <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/show.jspx"/>
     </definition>
 <definition extends="default" name="SpecialAccess/create">
-        <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/create.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/SpecialAccessUpdate.jspx"/>
     </definition>
 <definition extends="default" name="SpecialAccess/update">
         <put-attribute name="body" value="/WEB-INF/views/SpecialAccess/SpecialAccessUpdate.jspx"/>

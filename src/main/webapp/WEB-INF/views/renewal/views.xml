@@ -15,5 +15,8 @@
     </definition>     
     <definition extends="default" name="renewal/renewbylicencelist">
         <put-attribute name="body" value="/WEB-INF/views/renewal/renewbylicencelist.jspx"/>
+    </definition>  
+             <definition extends="default" name="renewal/batchcontrolbyfiscalyear">
+        <put-attribute name="body" value="/WEB-INF/views/renewal/batchcontrolbyfiscalyear.jspx"/>
     </definition>       
 </tiles-definitions>

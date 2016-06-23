@@ -115,5 +115,20 @@ public class RenewalController {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
         } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
-    }    
+    } 
+	
+	
+	
+	   
+	@RequestMapping(value = "/renewal/batchcontrol", params = { "find=ByFiscalYear", "form" }, method = RequestMethod.GET)
+    public String findBatchControlRenewsByFiscalYear(Model uiModel) {
+		//uiModel.addAttribute("licenceId","");
+        return "renewal/batchcontrolbyfiscalyear";
+    }	
+	
+	@RequestMapping(value = "/renewal/batchcontrol", params = { "find=New", "form" }, method = RequestMethod.GET)
+    public String BatchControlNew(Model uiModel) {
+		//uiModel.addAttribute("licenceId","");
+        return "renewal/batchcontrolbyfiscalyear";
+    }		
 }
