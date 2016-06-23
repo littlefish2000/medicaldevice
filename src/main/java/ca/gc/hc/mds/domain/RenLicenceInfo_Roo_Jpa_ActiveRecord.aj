@@ -15,7 +15,7 @@ privileged aspect RenLicenceInfo_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager RenLicenceInfo.entityManager;
     
-    public static final List<String> RenLicenceInfo.fieldNames4OrderClauseFilter = java.util.Arrays.asList("licenceName", "dateIssued", "receiptDt", "postDt", "invoiceDt");
+    public static final List<String> RenLicenceInfo.fieldNames4OrderClauseFilter = java.util.Arrays.asList("licenceName", "dateIssued", "receiptDt", "postDt", "invoiceDt", "licenceStatus");
     
     public static final EntityManager RenLicenceInfo.entityManager() {
         EntityManager em = new RenLicenceInfo().entityManager;

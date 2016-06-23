@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.RenLicenceInfo;
+import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.util.Date;
 
 privileged aspect RenLicenceInfo_Roo_JavaBean {
@@ -46,6 +47,14 @@ privileged aspect RenLicenceInfo_Roo_JavaBean {
     
     public void RenLicenceInfo.setInvoiceDt(Date invoiceDt) {
         this.invoiceDt = invoiceDt;
+    }
+    
+    public LicenceStatusType RenLicenceInfo.getLicenceStatus() {
+        return this.licenceStatus;
+    }
+    
+    public void RenLicenceInfo.setLicenceStatus(LicenceStatusType licenceStatus) {
+        this.licenceStatus = licenceStatus;
     }
     
 }

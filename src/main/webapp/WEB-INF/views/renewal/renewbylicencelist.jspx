@@ -47,11 +47,37 @@
 			        <table:table create="false" show="false" delete="false" data="${licences}" id="l_ca_gc_hc_mds_domain_RenLicenceInfo" path="/renauthcompanys" z="">
 			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_licenceName" label="Licence Name" property="licenceName" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
 			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_receiptDt" label="Receipt Date" property="receiptDt" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
-			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_ldateIssued" label="Issue Date" property="dateIssued" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_licenceStatus" label="Licence Status" property="licenceStatus" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
+			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_dateIssued" label="Issue Date" property="dateIssued" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
 			            <table:column id="c_ca_gc_hc_mds_domain_RenLicenceInfo_postDt" label="Post Date" property="postDt" z="tz7hCTdJX8dd7A+08e8TpR1odO8="/>
 			        </table:table>
 			    </page:list>
 			</div>
+			<br></br>
+			<div class="row">
+				<div class="col-lg-3 col-md-offset-2">
+
+					<label class="col-lg-4">Fee Flag </label> <select
+						id="disabledSelect">
+						<option>Yes</option>
+						<option>No</option>
+					</select>
+
+				</div>
+				<label class="col-lg-1">Fee Date: </label><input class="col-lg-2"
+					type="text" placeholder="YYYY/MM/DD"></input>
+
+			</div>
+			<br></br>
+			<div class="row">
+				<div class="col-lg-3 text-center col-md-offset-2">
+					<button class="center-block btn btn-success">Save</button>
+				</div>
+				<div class="col-lg-3 text-center">
+					<button class="center-block btn btn-success">Cancel</button>
+				</div>
+
+			</div>			
 		</div>
 	</util:panel>
 </div>

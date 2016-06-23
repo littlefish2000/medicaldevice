@@ -53,6 +53,16 @@
 			        </table:table>
 			    </page:list>
 			</div>
+			<br></br>
+			<div class="row">
+				<div class="col-lg-3 text-center col-md-offset-2">
+					<button class="center-block btn btn-success">Select</button>
+				</div>
+				<div class="col-lg-3 text-center">
+					<button class="center-block btn btn-success">Cancel</button>
+				</div>
+
+			</div>			
 		</div>
 	</util:panel>
 </div>

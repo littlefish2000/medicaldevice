@@ -8,6 +8,7 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfoPK;
+import ca.gc.hc.mds.reference.LicenceStatusType;
 
 /**
  * A central place to register application converters and formatters. 
@@ -22,6 +23,17 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
             }
         };
     }	
+    
+    Converter<LicenceStatusType, String> getLicenceStatusTypeConverter() {
+        return new Converter<LicenceStatusType, String>() {
+            public String convert(LicenceStatusType properties) {
+            	if (LicenceStatusType.I.equals(properties))
+            		return "Issued";  
+            	else 
+            		return "Not Issued"; // 1
+            }
+        };
+    }	    
     
     Converter<RenLicenceInfoPK, String> getRenLicenceInfoPKConverter() {
         return new Converter<RenLicenceInfoPK, String>() {
@@ -39,5 +51,6 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		// Register application converters and formatters
 		registry.addConverter(getRenAuthCompanyPKConverter());
 		registry.addConverter(getRenLicenceInfoPKConverter());
+		registry.addConverter(getLicenceStatusTypeConverter());
 	}
 }

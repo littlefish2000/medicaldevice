@@ -11,7 +11,12 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.reference.StatusType;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.TypedQuery;
 
 @RooJavaBean
@@ -37,6 +42,12 @@ public class RenLicenceInfo {
 	
     @Column(name = "INVOICE_DT", nullable = false)
     private Date invoiceDt;  
+    
+    /**
+     */
+    @Column(name = "LICENCE_STATUS", nullable = false, length=1,columnDefinition = "char(1) default 'A'")
+    @Enumerated(EnumType.STRING)
+    private LicenceStatusType licenceStatus = LicenceStatusType.O;    
     
     
     public static  List<RenLicenceInfo> findRenLicenceInfosByLicenceNo(BigDecimal originalLicenceNo) {
