@@ -7,6 +7,7 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 
 
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
+import ca.gc.hc.mds.domain.RenLicenceInfoPK;
 
 /**
  * A central place to register application converters and formatters. 
@@ -21,11 +22,22 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
             }
         };
     }	
+    
+    Converter<RenLicenceInfoPK, String> getRenLicenceInfoPKConverter() {
+        return new Converter<RenLicenceInfoPK, String>() {
+            public String convert(RenLicenceInfoPK properties) {
+                return properties.getCompanyAuthId().toString()+' '+properties.getCompanyId().toString()
+                		+' '+properties.getOriginalLicenceNo().toString()+' '+properties.getRenewalRunDt().toString();      // 1
+            }
+        };
+    }    
+	    
 	
 	@Override
 	protected void installFormatters(FormatterRegistry registry) {
 		super.installFormatters(registry);
 		// Register application converters and formatters
 		registry.addConverter(getRenAuthCompanyPKConverter());
+		registry.addConverter(getRenLicenceInfoPKConverter());
 	}
 }
