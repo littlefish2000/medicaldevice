@@ -162,3 +162,7 @@ entity jpa --class ~.domain.RenLicenceInfo --table REN_LICENCE_INFO --identifier
 finder list --class  ~.domain.RenLicenceInfo
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-23 06:25:50
 enum type --class ~.reference.LicenceStatusType
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-24 06:42:34
+finder list --class ~.domain.Device
+finder add --finderName  findDevicesByPerfnameCodeLike --class ~.domain.Device
+web mvc jquery all

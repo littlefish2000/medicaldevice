@@ -19,4 +19,7 @@
 <definition extends="default" name="devices/findDevicesByPerfnameCode">
         <put-attribute name="body" value="/WEB-INF/views/devices/findDevicesByPerfnameCode.jspx"/>
     </definition>
+<definition extends="default" name="devices/findDevicesByPerfnameCodeLike">
+        <put-attribute name="body" value="/WEB-INF/views/devices/findDevicesByPerfnameCodeLike.jspx"/>
+    </definition>
 </tiles-definitions>
