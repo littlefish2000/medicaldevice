@@ -166,3 +166,5 @@ enum type --class ~.reference.LicenceStatusType
 finder list --class ~.domain.Device
 finder add --finderName  findDevicesByPerfnameCodeLike --class ~.domain.Device
 web mvc jquery all
+web mvc controller --class ~.web.CorrespondenceController
+web mvc jquery all

@@ -41,7 +41,8 @@
 	</menu-item>
 </menu-item>
 
-<menu-item id="c_correspondence" labelCode="menu_category_correspondence_label" name="Correspondenc">
+<menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
+	<menu-item hidden="false" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/correspondence/index"/>
 </menu-item>
 	
 <menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
