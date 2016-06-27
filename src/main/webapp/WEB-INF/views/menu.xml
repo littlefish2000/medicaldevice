@@ -54,6 +54,7 @@
 </menu-item>
 	
 <menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
+        <menu-item hidden="false" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
 </menu-item>
 
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
