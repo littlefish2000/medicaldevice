@@ -1,16 +1,287 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ca_gc_hc_mds_domain_Correspondence" idField="seqcorrId" modelAttribute="correspondence" path="/correspondences" versionField="none" z="zBB8D+Kd2LNZhukSAB0PcY09ch0=">
-        <field:input field="applicationId" id="c_ca_gc_hc_mds_domain_Correspondence_applicationId" validationMessageCode="field_invalid_integer" z="WmzURCuVxpOar8knWA2GQ0j/Xc8="/>
-        <field:input field="orginallicenceId" id="c_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" validationMessageCode="field_invalid_integer" z="rV3fPIeSPhUTHhdwOi05kaIXP70="/>
-        <field:input field="companyId" id="c_ca_gc_hc_mds_domain_Correspondence_companyId" validationMessageCode="field_invalid_integer" z="Cn4Wv6+clmEmLh1mMXkK3RrEJ5A="/>
-        <field:input field="certificateId" id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" z="4pi+NfMNnB2/Q3zDxncF0N85EQE="/>
-        <field:input field="incidentId" id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" validationMessageCode="field_invalid_integer" z="xygayxoaf2hHjaGgY+Eue2zZuDU="/>
-        <field:input field="corrcompanyId" id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" validationMessageCode="field_invalid_integer" z="FAM2FjLvZ0yl+guHJIgmmjNeUqM="/>
-        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine1" z="0djIFJ1iqCMAMNSJ/p4CfO6xtnc="/>
-        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine2" z="fGabnaAH3AnANQKt982JKXWMDe8="/>
-        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine3" z="xMCpdhJ0D7n9wF2hEYVzkV96bAc="/>
-    </form:update>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<spring:message code="label_renewal_index" htmlEscape="false"
+		var="title" />
+	<util:panel id="title" title="${title}">
+		<spring:message code="application_name" htmlEscape="false"
+			var="app_name" />
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="form-group">
+						<label class="col-lg-5">Correspondence ID: </label><input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">License No: </label><input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Reg. Section: </label><input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Area: </label> <select width="100"
+							style="width: 150px">
+							<option>DED</option>
+							<option>two</option>
+							<option>three</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-5">Response RCVD: </label> <select
+							width="100" style="width: 150px">
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-lg-5">Reg/Mfg: </label> <select width="100"
+							style="width: 150px">
+							<option>Reg</option>
+							<option>MFG</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="col-lg-5">Application ID: </label><input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Certificate ID: </label><input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Letter Date: </label><input
+							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Corr. In/Out: </label><input
+							class="col-lg-4" type="text" placeholder="#"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Bf Date: </label><input class="col-lg-4"
+							type="text" placeholder="YYYY/MM/DD"></input>
+					</div>
+					<br></br>
+					<div class="form-group">
+						<label class="col-lg-5">Division Code: </label> <select
+							width="100" style="width: 150px">
+							<option>Cardiovascular</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="form-group">
+						<legend>Company Info:</legend>
+						<label class="col-lg-5">Company ID: </label> <input
+							class="col-lg-4" type="text" placeholder="Input #"></input>
+					</div>
+					<textarea class="col-lg-12" rows="3">Auto generated Company Info</textarea>
+
+				</div>
+
+				<div class="col-lg-9">
+					<label class="col-lg-2 ">Remark: </label>
+					<textarea class="col-lg-10" rows="3">Remarks to make..</textarea>
+				</div>
+			</div>
+			<br></br>
+			<div class="row">
+				<div class="panel with-nav-tabs panel-primary">
+					<div class="panel-heading">
+						<ul class="nav nav-tabs responsive">
+							<li class="active"><a href="#tab1" data-toggle="tab">Correspondence
+									Licenses</a></li>
+							<li><a href="#tab2" data-toggle="tab">Correspondence
+									Tracking</a></li>
+
+						</ul>
+					</div>
+
+					<div class="panel-body">
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<table class="table">
+									<thead class="thead-inverse">
+										<tr>
+											<th>Status</th>
+											<th>ID</th>
+											<th>Evaluator Name</th>
+											<th>Start Date</th>
+											<th>End Date</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>YYYY/MM/DD</td>
+											<td>YYYY/MM/DD</td>
+										</tr>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>YYYY/MM/DD</td>
+											<td>YYYY/MM/DD</td>
+										</tr>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>YYYY/MM/DD</td>
+											<td>YYYY/MM/DD</td>
+										</tr>
+									</tbody>
+								</table>
+
+
+								<div class="row">
+									<br></br>
+									<div class="col-lg-4">
+
+										<label class="col-lg-4">Status: </label> <select
+											id="disabledSelect">
+											<option>Application Creation</option>
+										</select>
+									</div>
+									<div class="col-lg-4">
+										<label class="col-lg-4">Status Date </label><input
+											class="col-lg-7 " type="text" placeholder="YYYY/MM/DD"></input>
+										<br></br>
+
+									</div>
+									<div class="col-lg-4">
+										<label class="col-lg-4">End Date </label><input
+											class="col-lg-7 " type="text" placeholder="YYYY/MM/DD"></input>
+										<br></br>
+
+									</div>
+
+									<br></br>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<br></br>
+
+										<textarea class="col-lg-12" rows="3">Add Comments</textarea>
+									</div>
+								</div>
+
+								<br></br>
+
+
+								<div class="row">
+									<div class="col-lg-4 text-center">
+										<button class="btn btn-success center-block">Add</button>
+									</div>
+									<div class="col-lg-4 text-center">
+										<button class="center-block btn btn-success">Save</button>
+									</div>
+									<div class="col-lg-4 text-center">
+										<button class="center-block btn btn-success">Cancel</button>
+									</div>
+								</div>
+
+
+							</div>
+
+
+
+							<div class="tab-pane" id="tab2">
+								<table class="table">
+									<thead class="thead-inverse">
+										<tr>
+											<th>License Number</th>
+											<th>Name</th>
+											<th>Current Status</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+
+										</tr>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+
+										</tr>
+										<tr>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+
+										</tr>
+									</tbody>
+								</table>
+
+
+								<div class="row">
+									<legend>Company Search</legend>
+
+									<br></br>
+
+									<div class="col-lg-6">
+										<label class="col-lg-3 col-md-offset-1">Licenses
+											Number </label><input class="col-lg-5 " type="text"
+											placeholder="####"></input> <br></br>
+
+									</div>
+									<div class="col-lg-6">
+										<textarea class="col-lg-8" rows="1">Add Comments</textarea>
+									</div>
+
+									<br></br>
+
+								</div>
+								<br></br> <br></br>
+								<div class="col-lg-12">
+									<div class="row">
+										<div class="col-lg-4 text-center col-md-offset-2">
+											<button class="btn btn-success center-block">Search</button>
+										</div>
+										<div class="col-lg-4 text-center">
+											<button class="center-block btn btn-success">Add</button>
+										</div>
+
+									</div>
+
+
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</util:panel>
 </div>
+
+
