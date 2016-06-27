@@ -171,3 +171,7 @@ web mvc jquery all
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-27 06:45:20
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-27 07:24:31
 web mvc controller --class ~.web.QualitySystemController
+entity jpa --class ~.domain.Correspondence --table CORRESPONDENCE
+finder list --class ~.domain.Correspondence
+finder list --class ~.domain.Correspondence
+finder list --class ~.domain.Correspondence

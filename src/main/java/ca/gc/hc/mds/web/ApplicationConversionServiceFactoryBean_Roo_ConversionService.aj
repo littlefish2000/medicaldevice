@@ -7,6 +7,7 @@ import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
+import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.Device;
 import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
@@ -114,6 +115,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Correspondence, String> ApplicationConversionServiceFactoryBean.getCorrespondenceToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Correspondence, java.lang.String>() {
+            public String convert(Correspondence correspondence) {
+                return new StringBuilder().append(correspondence.getApplicationId()).append(' ').append(correspondence.getOrginallicenceId()).append(' ').append(correspondence.getCompanyId()).append(' ').append(correspondence.getCertificateId()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Correspondence> ApplicationConversionServiceFactoryBean.getIdToCorrespondenceConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.Correspondence>() {
+            public ca.gc.hc.mds.domain.Correspondence convert(java.lang.Long id) {
+                return Correspondence.findCorrespondence(id);
+            }
+        };
+    }
+    
+    public Converter<String, Correspondence> ApplicationConversionServiceFactoryBean.getStringToCorrespondenceConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Correspondence>() {
+            public ca.gc.hc.mds.domain.Correspondence convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Correspondence.class);
+            }
+        };
+    }
+    
     public Converter<Device, String> ApplicationConversionServiceFactoryBean.getDeviceToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Device, java.lang.String>() {
             public String convert(Device device) {
@@ -175,6 +200,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCompanyHistoryToStringConverter());
         registry.addConverter(getIdToCompanyHistoryConverter());
         registry.addConverter(getStringToCompanyHistoryConverter());
+        registry.addConverter(getCorrespondenceToStringConverter());
+        registry.addConverter(getIdToCorrespondenceConverter());
+        registry.addConverter(getStringToCorrespondenceConverter());
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Correspondence" object="${correspondence}" path="/correspondences" z="Y1zk9myEEXxqBG7ovsT2+u8A7TM=">
+        <field:display field="applicationId" id="s_ca_gc_hc_mds_domain_Correspondence_applicationId" object="${correspondence}" z="dbBnoyY3h0N+aFoELcEirtlhgMk="/>
+        <field:display field="orginallicenceId" id="s_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" object="${correspondence}" z="EAXsGU/w/9otc22Cmx1qo9ITb6k="/>
+        <field:display field="companyId" id="s_ca_gc_hc_mds_domain_Correspondence_companyId" object="${correspondence}" z="ez2NDkxoMj+2sVklOYjkbeiyl5I="/>
+        <field:display field="certificateId" id="s_ca_gc_hc_mds_domain_Correspondence_certificateId" object="${correspondence}" z="BTwss4whxH1Sw8Q/oH47MG7M45s="/>
+        <field:display field="incidentId" id="s_ca_gc_hc_mds_domain_Correspondence_incidentId" object="${correspondence}" z="JRUEOW/xJj6UgFFCJgfn76HKFv0="/>
+        <field:display field="corrcompanyId" id="s_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" object="${correspondence}" z="vhtjQ6RNLUgT1/uHjsA+5dcyvn4="/>
+        <field:display field="addressLine1" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine1" object="${correspondence}" z="bGxhxUK5RCCxT7VGonNR4KXP8mc="/>
+        <field:display field="addressLine2" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine2" object="${correspondence}" z="qNb02eNcqIt0mvMojhWkzDlxsAI="/>
+        <field:display field="addressLine3" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine3" object="${correspondence}" z="Uj/q4cYne3RTfeHWkqiRvTxRB+c="/>
+    </page:show>
+</div>

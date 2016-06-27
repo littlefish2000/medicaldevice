@@ -22,7 +22,7 @@
 <menu-item id="c_company" labelCode="menu_category_company_label" name="Company">
     <menu-item hidden="false" id="i_company_new" labelCode="menu_item_company_new_label" messageCode="global_menu_new" roles="" url="/companys?form"/>
     <menu-item id="c_company_search" labelCode="menu_category_device_search_label" name="CompanySearch">
-	    <menu-item hidden="false" id="i_company_list" labelCode="menu_item_company_list_label" messageCode="global_menu_list" roles="" url="/companys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="true" id="i_company_list" labelCode="menu_item_company_list_label" messageCode="global_menu_list" roles="" url="/companys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	    <menu-item hidden="false" id="fi_company_companyid" labelCode="menu_item_company_companyid_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	    <menu-item hidden="true" id="fi_company_companynamelike" labelCode="menu_item_company_companynamelike_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyNameLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
@@ -42,6 +42,17 @@
 </menu-item>
 
 <menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
+<menu-item hidden="false" id="i_correspondence_new" labelCode="menu_item_correspondence_new_label" messageCode="global_menu_new" roles="" url="/correspondences?form"/>
+    <menu-item hidden="false" id="i_correspondence_list" labelCode="menu_item_correspondence_list_label" messageCode="global_menu_list" roles="" url="/correspondences?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_correspondence_applicationid" labelCode="menu_item_correspondence_applicationid_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_correspondence_certificateidequals" labelCode="menu_item_correspondence_certificateidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByCertificateIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_correspondence_companyidequals" labelCode="menu_item_correspondence_companyidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByCompanyIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_correspondence_orginallicenceidequals" labelCode="menu_item_correspondence_orginallicenceidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByOrginallicenceIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_correspondence_seqcorrid" labelCode="menu_item_correspondence_seqcorrid_label" messageCode="global_menu_find" roles="" url="/correspondences?find=BySeqcorrId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+	
+<menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
+        <menu-item hidden="false" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
 	<menu-item hidden="true" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/correspondence/index"/>
 	<menu-item id="c_correspondence_certw" messageCode="menures_renew_corespondence_certificate" name="corespondence_cert">
 		<menu-item hidden="false" id="i_correspondence_cert_new" messageCode="menures_renew_corespondence_new" roles="" url="/correspondence/index"/>
@@ -51,10 +62,6 @@
 	</menu-item>
 		<menu-item hidden="false" id="i_correspondence_table_maintain" messageCode="menures_renew_corespondence_table_maintain" roles="" url="/correspondence/index"/>
 		<menu-item hidden="false" id="i_correspondence_validity" messageCode="menures_renew_corespondence_validity" roles="" url="/correspondence/index"/>
-</menu-item>
-	
-<menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
-        <menu-item hidden="false" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
 </menu-item>
 
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">

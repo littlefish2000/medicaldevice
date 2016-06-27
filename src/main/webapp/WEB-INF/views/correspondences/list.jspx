@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_Correspondence" items="${correspondences}" z="mnWR45AiwV7e7TT3BVonVr/csZg=">
+        <table:table data="${correspondences}" id="l_ca_gc_hc_mds_domain_Correspondence" path="/correspondences" typeIdFieldName="seqcorrId" z="UkaGG4glJfVSpLaomNkYsf4AVzc=">
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_applicationId" property="applicationId" z="ftE0sl83pV/ZeJGwbF1soFvW+6c="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" property="orginallicenceId" z="lTBUbkNyOOzixZLXoUmUWvlvM2Q="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_companyId" property="companyId" z="CTHCM5Q0a5zQtOW1JTumrDJEfSo="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" property="certificateId" z="J2dpNOo4Slr5JO8iSsrOaYFoW+Q="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" property="incidentId" z="oPnKIPB3roUuA77PCUK1wLkjNgo="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" property="corrcompanyId" z="JIFWWizvOaWvCFJV6vsIcwOUTbM="/>
+        </table:table>
+    </page:list>
+</div>
