@@ -42,15 +42,16 @@
 </menu-item>
 
 <menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
-<menu-item hidden="false" id="i_correspondence_new" labelCode="menu_item_correspondence_new_label" messageCode="global_menu_new" roles="" url="/correspondences?form"/>
-    <menu-item hidden="false" id="i_correspondence_list" labelCode="menu_item_correspondence_list_label" messageCode="global_menu_list" roles="" url="/correspondences?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_correspondence_applicationid" labelCode="menu_item_correspondence_applicationid_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_correspondence_certificateidequals" labelCode="menu_item_correspondence_certificateidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByCertificateIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_correspondence_companyidequals" labelCode="menu_item_correspondence_companyidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByCompanyIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_correspondence_orginallicenceidequals" labelCode="menu_item_correspondence_orginallicenceidequals_label" messageCode="global_menu_find" roles="" url="/correspondences?find=ByOrginallicenceIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_correspondence_seqcorrid" labelCode="menu_item_correspondence_seqcorrid_label" messageCode="global_menu_find" roles="" url="/correspondences?find=BySeqcorrId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	<menu-item hidden="false" id="i_correspondence_new" messageCode="menures_label_new" roles="" url="/correspondences?form"/>
+	<menu-item id="c_correspondence_search" messageCode="menures_label_search" name="correspondence_search">
+	    <menu-item hidden="true" id="i_correspondence_list" labelCode="menu_item_correspondence_list_label" messageCode="global_menu_list" roles="" url="/correspondences?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_seqcorrid" messageCode="menures_corespondence_correspondenceid" roles="" url="/correspondences?find=BySeqcorrId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_applicationid" messageCode="menures_corespondence_applicationid" roles="" url="/correspondences?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_orginallicenceidequals" messageCode="menures_corespondence_licenceno" roles="" url="/correspondences?find=ByOrginallicenceIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_certificateidequals" messageCode="menures_corespondence_certificateid" roles="" url="/correspondences?find=ByCertificateIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_companyidequals" messageCode="menures_corespondence_companyid" roles="" url="/correspondences?find=ByCompanyIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
-	
+    </menu-item>
 <menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
         <menu-item hidden="false" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
 	<menu-item hidden="true" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/correspondence/index"/>

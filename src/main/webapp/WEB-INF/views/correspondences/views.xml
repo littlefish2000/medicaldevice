@@ -8,10 +8,10 @@
         <put-attribute name="body" value="/WEB-INF/views/correspondences/show.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/create">
-        <put-attribute name="body" value="/WEB-INF/views/correspondences/create.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/correspondenceupdate.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/update">
-        <put-attribute name="body" value="/WEB-INF/views/correspondences/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/correspondenceupdate.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/findCorrespondencesByApplicationId">
         <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesByApplicationId.jspx"/>
