@@ -43,7 +43,7 @@
 
 <menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
 	<menu-item hidden="true" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/correspondence/index"/>
-	<menu-item id="c_correspondence_certw" messageCode="menures_renew_corespondence_certificate"  name="corespondence_cert">
+	<menu-item id="c_correspondence_certw" messageCode="menures_renew_corespondence_certificate" name="corespondence_cert">
 		<menu-item hidden="false" id="i_correspondence_cert_new" messageCode="menures_renew_corespondence_new" roles="" url="/correspondence/index"/>
 		<menu-item hidden="false" id="i_correspondence_cert_orig" messageCode="menures_renew_corespondence_search_orig" roles="" url="/correspondence/index"/>
 		<menu-item hidden="false" id="i_correspondence_cert_company" messageCode="menures_renew_corespondence_search_company" roles="" url="/correspondence/index"/>
