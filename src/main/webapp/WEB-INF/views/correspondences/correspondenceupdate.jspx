@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
-	<spring:message code="label_renewal_index" htmlEscape="false"
-		var="title" />
-	<util:panel id="title" title="${title}">
+   <form:update id="fu_ca_gc_hc_mds_domain_Correspondence" idField="seqcorrId" modelAttribute="correspondence" path="/correspondences" versionField="none" z="zBB8D+Kd2LNZhukSAB0PcY09ch0=">
+
 		<spring:message code="application_name" htmlEscape="false"
 			var="app_name" />
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
-					<div class="form-group">
-						<label class="col-lg-5">Correspondence ID: </label><input
-							class="col-lg-4" type="text" placeholder="Input #"></input>
-					</div>
-					<br></br>
-					<div class="form-group">
-						<label class="col-lg-5">License No: </label><input
-							class="col-lg-4" type="text" placeholder="Input #"></input>
-					</div>
 
-					<br></br>
-					<div class="form-group">
+	        	<field:input field="seqcorrId" labelclass="col-lg-5" fieldclass="col-lg-4" label="Correspondence ID" id="c_ca_gc_hc_mds_domain_Correspondence_companyId" validationMessageCode="field_invalid_integer" z="Cn4Wv6+clmEmLh1mMXkK3RrEJ5A="/>
+       			<field:input labelclass="col-lg-5" fieldclass="col-lg-4" label="License No:" field="orginallicenceId" id="c_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" validationMessageCode="field_invalid_integer" z="rV3fPIeSPhUTHhdwOi05kaIXP70="/>
+
+					<div class="control-group form-group">
 						<label class="col-lg-5">Reg. Section: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Area: </label> <select width="100"
 							style="width: 150px">
 							<option>DED</option>
@@ -37,7 +31,7 @@
 						</select>
 					</div>
 
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Response RCVD: </label> <select
 							width="100" style="width: 150px">
 							<option>Yes</option>
@@ -45,7 +39,7 @@
 						</select>
 					</div>
 
-					<div class="form-group">
+					<div class="control-group form-group">
 
 						<label class="col-lg-5">Reg/Mfg: </label> <select width="100"
 							style="width: 150px">
@@ -55,32 +49,32 @@
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Application ID: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Certificate ID: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Letter Date: </label><input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Corr. In/Out: </label><input
 							class="col-lg-4" type="text" placeholder="#"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Bf Date: </label><input class="col-lg-4"
 							type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
 					<br></br>
-					<div class="form-group">
+					<div class="control-group form-group">
 						<label class="col-lg-5">Division Code: </label> <select
 							width="100" style="width: 150px">
 							<option>Cardiovascular</option>
@@ -88,7 +82,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div class="form-group">
+					<div class="control-group form-group">
 						<legend>Company Info:</legend>
 						<label class="col-lg-5">Company ID: </label> <input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
@@ -281,7 +275,7 @@
 			</div>
 
 		</div>
-	</util:panel>
+	</form:update>
 </div>
 
 
