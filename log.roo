@@ -175,3 +175,5 @@ entity jpa --class ~.domain.Correspondence --table CORRESPONDENCE
 finder list --class ~.domain.Correspondence
 finder list --class ~.domain.Correspondence
 finder list --class ~.domain.Correspondence
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-30 13:57:39
+entity jpa --class ~.domain.Certificate --table CERTIFICATE
