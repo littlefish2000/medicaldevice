@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Certificate;
+import ca.gc.hc.mds.reference.CertificateStatusType;
 import java.util.Date;
 
 privileged aspect Certificate_Roo_JavaBean {
@@ -46,6 +47,14 @@ privileged aspect Certificate_Roo_JavaBean {
     
     public void Certificate.setEntryDate(Date entryDate) {
         this.entryDate = entryDate;
+    }
+    
+    public CertificateStatusType Certificate.getLicenceStatus() {
+        return this.licenceStatus;
+    }
+    
+    public void Certificate.setLicenceStatus(CertificateStatusType licenceStatus) {
+        this.licenceStatus = licenceStatus;
     }
     
     public String Certificate.getSystemuserId() {

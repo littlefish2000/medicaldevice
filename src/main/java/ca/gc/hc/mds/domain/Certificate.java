@@ -3,6 +3,8 @@ import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,9 +18,13 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import ca.gc.hc.mds.reference.CertificateStatusType;
+import ca.gc.hc.mds.reference.LicenceStatusType;
+
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(versionField = "",  schema = "MDSDB",table = "CERTIFICATE",identifierColumn="ORIG_CERTIFICATE_ID", identifierField = "origcertificateId", identifierType = String.class)
+@RooJpaActiveRecord(versionField = "",  schema = "MDSDB",table = "CERTIFICATE",identifierColumn="ORIG_CERTIFICATE_ID",
+identifierField = "origcertificateId", identifierType = String.class, finders = { "findCertificatesByCertificateIdEquals","findCertificatesByOrigcertificateId" })
 public class Certificate {
 
 	@PrePersist
@@ -56,6 +62,12 @@ public class Certificate {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date entryDate;    
+    
+    /**
+     */
+    @Column(name = "CERTIFICATE_STATUS_CD", nullable = false, length=1,columnDefinition = "char(1) default 'C'")
+    @Enumerated(EnumType.STRING)
+    private CertificateStatusType licenceStatus = CertificateStatusType.C;  
     
     
 	@Column(name = "SYSTEM_USER_ID", columnDefinition = "char")
