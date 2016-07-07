@@ -107,29 +107,21 @@
 					</div>
 
 					<div class="form-group">
-
-
-						<label class="col-lg-6">Receipt Date: </label><input
+						<br></br> <label class="col-lg-6">Receipt Date: </label><input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 
 					</div>
-					<br></br>
 					<div class="form-group">
 
-
-						<label class="col-lg-6">Expiry Date: </label><input
+						<br></br> <label class="col-lg-6">Expiry Date: </label><input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 
 					</div>
-					<br></br>
 					<div class="form-group">
-
-
-						<label class="col-lg-6">Effective Date: </label><input
+						<br></br> <label class="col-lg-6">Effective Date: </label><input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 
 					</div>
-					<br></br>
 
 
 				</div>
@@ -177,34 +169,59 @@
 								<table class="table">
 									<thead class="thead-inverse">
 										<tr>
-											<th>Certificate No</th>
+											<th>Changed Date</th>
 											<th>Type</th>
-											<th>Receipt Date</th>
+											<th>Certificate Number</th>
+											<th>Originator</th>
 											<th>Status</th>
 											<th>Status Date</th>
+											<th>Receipt Date</th>
+											<th>Quality Std Cd</th>
+											<th>Registrar Code</th>
+											<th>Scope</th>
+											<th>Remarks</th>
+
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
+											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
 										</tr>
 										<tr>
+											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
 										</tr>
 										<tr>
+											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
 											<td>YYYY/MM/DD</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
+											<td>AutoFill</td>
 										</tr>
 									</tbody>
 								</table>
@@ -716,7 +733,7 @@
 												class="col-lg-5" type="text" placeholder="YYYY/MM/DD"></input>
 											<br></br>
 										</div>
-	
+
 									</div>
 									<div class="col-lg-4">
 										<div class="form-group">
@@ -738,7 +755,7 @@
 											<br></br>
 										</div>
 
-										
+
 
 									</div>
 								</div>
@@ -779,6 +796,3 @@
 		</div>
 	</util:panel>
 </div>
-
-
-

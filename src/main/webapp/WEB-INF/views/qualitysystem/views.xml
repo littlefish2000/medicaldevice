@@ -4,4 +4,7 @@
     <definition extends="default" name="qualitysystem/cert/new">
         <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certcreate.jspx"/>
     </definition>
+    <definition extends="default" name="qualitysystem/cert/update">
+        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certcreate.jspx"/>
+    </definition>    
 </tiles-definitions>

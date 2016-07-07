@@ -1,0 +1,131 @@
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<spring:message code="label_renewal_index" htmlEscape="false"
+		var="title" />
+	<util:panel id="title" title="${title}">
+		<spring:message code="application_name" htmlEscape="false"
+			var="app_name" />
+		<div class="container">
+			<div class="row">
+				<legend>Batch Control Entry and Maintenance:</legend>
+				<table class="table">
+					<thead class="thead-inverse">
+						<tr>
+							<th>Batch Date</th>
+							<th>Expiry Start Date</th>
+							<th>Expiry End Date</th>
+							<th>Execution Run Date</th>
+							<th>Status</th>
+							<th>Tracking Flag</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+							<td>AutoFill</td>
+
+						</tr>
+						<tr>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+							<td>AutoFill</td>
+						</tr>
+						<tr>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+							<td>AutoFill</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-lg-3">
+						<label class="col-lg-5">Batch Date: </label> <input
+							class="col-lg-5" type="text" placeholder="YYYY/MM/DD"></input>
+
+					</div>
+					<div class="col-lg-3">
+						<label class="col-lg-5">Expiry Start Date: </label> <input
+							class="col-lg-5" type="text" placeholder="YYYY/MM/DD"></input>
+
+					</div>
+					<div class="col-lg-3">
+						<label class="col-lg-5">Execution Run Date Date: </label> <input
+							class="col-lg-5" type="text" placeholder="YYYY/MM/DD"></input>
+
+					</div>
+					<div class="col-lg-3">
+						<label class="col-lg-5">Execution Run Date Date: </label> <input
+							class="col-lg-5" type="text" placeholder="YYYY/MM/DD"></input>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6">
+
+						<label class="col-lg-3 col-md-offset-2">Status: </label> <select>
+							<option>Moved To Other Cert.</option>
+							<option>two</option>
+
+						</select>
+					</div>
+
+					<div class="col-lg-6">
+						<label class="col-lg-3 col-md-offset-2">Tracking Flag : </label> <select	>
+							<option>Track Response</option>
+							<option>Inactive</option>
+
+						</select>
+					</div>
+
+
+
+
+				</div>
+				<br></br>
+				<div class="row">
+
+					<div class="col-lg-12">
+						<div class="col-lg-4 text-center">
+							<button class="btn btn-success center-block">Add</button>
+						</div>
+						<div class="col-lg-4 text-center">
+							<button class="center-block btn btn-success">Save</button>
+						</div>
+						<div class="col-lg-4 text-center">
+							<button class="btn btn-success center-block">Cancle</button>
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</util:panel>
+</div>
+
+
+
+
+
