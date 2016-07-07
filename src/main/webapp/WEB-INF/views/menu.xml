@@ -56,6 +56,13 @@
         <menu-item hidden="true" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
 	<menu-item hidden="true" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/cert/create"/>
 	<menu-item id="c_correspondence_certw" messageCode="menures_renew_corespondence_certificate" name="corespondence_cert">
+
+       <menu-item hidden="false" id="i_certificate_new" labelCode="menu_item_certificate_new_label" messageCode="global_menu_new" roles="" url="/qualitysystem/certificates?form"/>
+    <menu-item hidden="false" id="i_certificate_list" labelCode="menu_item_certificate_list_label" messageCode="global_menu_list" roles="" url="/qualitysystem/certificates?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_certificateidlike" labelCode="menu_item_certificate_certificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_origcertificateidlike" labelCode="menu_item_certificate_origcertificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+
+
 		<menu-item hidden="false" id="i_correspondence_cert_new" messageCode="menures_renew_corespondence_new" roles="" url="/qualitysystem/cert/new?form"/>
 		<menu-item hidden="false" id="i_correspondence_cert_orig" messageCode="menures_renew_corespondence_search_orig" roles="" url="/correspondence/index"/>
 		<menu-item hidden="false" id="i_correspondence_cert_company" messageCode="menures_renew_corespondence_search_company" roles="" url="/correspondence/index"/>
@@ -84,4 +91,10 @@
     <menu-item hidden="false" id="i_companyhistory_list" labelCode="menu_item_companyhistory_list_label" messageCode="global_menu_list" roles="" url="/companyhistorys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_companyhistory_company" labelCode="menu_item_companyhistory_company_label" messageCode="global_menu_find" roles="" url="/companyhistorys?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 </menu-item>
+<menu-item hidden="true" id="c_certificate" labelCode="menu_category_certificate_label" name="Certificate">
+        
+    <menu-item hidden="false" id="i_certificate_list" labelCode="menu_item_certificate_list_label" messageCode="global_menu_list" roles="" url="/qualitysystem/certificates?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_certificateidlike" labelCode="menu_item_certificate_certificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_origcertificateidlike" labelCode="menu_item_certificate_origcertificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 </gvnix-menu>

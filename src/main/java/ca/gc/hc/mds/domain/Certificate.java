@@ -24,7 +24,7 @@ import ca.gc.hc.mds.reference.LicenceStatusType;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "",  schema = "MDSDB",table = "CERTIFICATE",identifierColumn="ORIG_CERTIFICATE_ID",
-identifierField = "origcertificateId", identifierType = String.class, finders = { "findCertificatesByCertificateIdEquals","findCertificatesByOrigcertificateId" })
+identifierField = "origcertificateId", identifierType = String.class, finders = { "findCertificatesByCertificateIdLike","findCertificatesByOrigcertificateIdLike" })
 public class Certificate {
 
 	@PrePersist

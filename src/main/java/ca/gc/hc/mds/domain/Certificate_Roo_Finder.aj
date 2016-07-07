@@ -9,34 +9,62 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Certificate_Roo_Finder {
     
-    public static Long Certificate.countFindCertificatesByCertificateIdEquals(String certificateId) {
+    public static Long Certificate.countFindCertificatesByCertificateIdLike(String certificateId) {
         if (certificateId == null || certificateId.length() == 0) throw new IllegalArgumentException("The certificateId argument is required");
+        certificateId = certificateId.replace('*', '%');
+        if (certificateId.charAt(0) != '%') {
+            certificateId = "%" + certificateId;
+        }
+        if (certificateId.charAt(certificateId.length() - 1) != '%') {
+            certificateId = certificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Certificate AS o WHERE o.certificateId = :certificateId", Long.class);
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Certificate AS o WHERE LOWER(o.certificateId) LIKE LOWER(:certificateId)", Long.class);
         q.setParameter("certificateId", certificateId);
         return ((Long) q.getSingleResult());
     }
     
-    public static Long Certificate.countFindCertificatesByOrigcertificateId(String origcertificateId) {
+    public static Long Certificate.countFindCertificatesByOrigcertificateIdLike(String origcertificateId) {
         if (origcertificateId == null || origcertificateId.length() == 0) throw new IllegalArgumentException("The origcertificateId argument is required");
+        origcertificateId = origcertificateId.replace('*', '%');
+        if (origcertificateId.charAt(0) != '%') {
+            origcertificateId = "%" + origcertificateId;
+        }
+        if (origcertificateId.charAt(origcertificateId.length() - 1) != '%') {
+            origcertificateId = origcertificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Certificate AS o WHERE o.origcertificateId = :origcertificateId", Long.class);
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Certificate AS o WHERE LOWER(o.origcertificateId) LIKE LOWER(:origcertificateId)", Long.class);
         q.setParameter("origcertificateId", origcertificateId);
         return ((Long) q.getSingleResult());
     }
     
-    public static TypedQuery<Certificate> Certificate.findCertificatesByCertificateIdEquals(String certificateId) {
+    public static TypedQuery<Certificate> Certificate.findCertificatesByCertificateIdLike(String certificateId) {
         if (certificateId == null || certificateId.length() == 0) throw new IllegalArgumentException("The certificateId argument is required");
+        certificateId = certificateId.replace('*', '%');
+        if (certificateId.charAt(0) != '%') {
+            certificateId = "%" + certificateId;
+        }
+        if (certificateId.charAt(certificateId.length() - 1) != '%') {
+            certificateId = certificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        TypedQuery<Certificate> q = em.createQuery("SELECT o FROM Certificate AS o WHERE o.certificateId = :certificateId", Certificate.class);
+        TypedQuery<Certificate> q = em.createQuery("SELECT o FROM Certificate AS o WHERE LOWER(o.certificateId) LIKE LOWER(:certificateId)", Certificate.class);
         q.setParameter("certificateId", certificateId);
         return q;
     }
     
-    public static TypedQuery<Certificate> Certificate.findCertificatesByCertificateIdEquals(String certificateId, String sortFieldName, String sortOrder) {
+    public static TypedQuery<Certificate> Certificate.findCertificatesByCertificateIdLike(String certificateId, String sortFieldName, String sortOrder) {
         if (certificateId == null || certificateId.length() == 0) throw new IllegalArgumentException("The certificateId argument is required");
+        certificateId = certificateId.replace('*', '%');
+        if (certificateId.charAt(0) != '%') {
+            certificateId = "%" + certificateId;
+        }
+        if (certificateId.charAt(certificateId.length() - 1) != '%') {
+            certificateId = certificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Certificate AS o WHERE o.certificateId = :certificateId");
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Certificate AS o WHERE LOWER(o.certificateId) LIKE LOWER(:certificateId)");
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             queryBuilder.append(" ORDER BY ").append(sortFieldName);
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
@@ -48,18 +76,32 @@ privileged aspect Certificate_Roo_Finder {
         return q;
     }
     
-    public static TypedQuery<Certificate> Certificate.findCertificatesByOrigcertificateId(String origcertificateId) {
+    public static TypedQuery<Certificate> Certificate.findCertificatesByOrigcertificateIdLike(String origcertificateId) {
         if (origcertificateId == null || origcertificateId.length() == 0) throw new IllegalArgumentException("The origcertificateId argument is required");
+        origcertificateId = origcertificateId.replace('*', '%');
+        if (origcertificateId.charAt(0) != '%') {
+            origcertificateId = "%" + origcertificateId;
+        }
+        if (origcertificateId.charAt(origcertificateId.length() - 1) != '%') {
+            origcertificateId = origcertificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        TypedQuery<Certificate> q = em.createQuery("SELECT o FROM Certificate AS o WHERE o.origcertificateId = :origcertificateId", Certificate.class);
+        TypedQuery<Certificate> q = em.createQuery("SELECT o FROM Certificate AS o WHERE LOWER(o.origcertificateId) LIKE LOWER(:origcertificateId)", Certificate.class);
         q.setParameter("origcertificateId", origcertificateId);
         return q;
     }
     
-    public static TypedQuery<Certificate> Certificate.findCertificatesByOrigcertificateId(String origcertificateId, String sortFieldName, String sortOrder) {
+    public static TypedQuery<Certificate> Certificate.findCertificatesByOrigcertificateIdLike(String origcertificateId, String sortFieldName, String sortOrder) {
         if (origcertificateId == null || origcertificateId.length() == 0) throw new IllegalArgumentException("The origcertificateId argument is required");
+        origcertificateId = origcertificateId.replace('*', '%');
+        if (origcertificateId.charAt(0) != '%') {
+            origcertificateId = "%" + origcertificateId;
+        }
+        if (origcertificateId.charAt(origcertificateId.length() - 1) != '%') {
+            origcertificateId = origcertificateId + "%";
+        }
         EntityManager em = Certificate.entityManager();
-        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Certificate AS o WHERE o.origcertificateId = :origcertificateId");
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Certificate AS o WHERE LOWER(o.origcertificateId) LIKE LOWER(:origcertificateId)");
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             queryBuilder.append(" ORDER BY ").append(sortFieldName);
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {

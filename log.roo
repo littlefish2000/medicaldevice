@@ -179,3 +179,5 @@ finder list --class ~.domain.Correspondence
 entity jpa --class ~.domain.Certificate --table CERTIFICATE
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-07-04 14:09:15
 finder list --class ~.domain.Certificate
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-07-07 14:57:44
+web mvc scaffold --class ~.web.QualitySystemController --backingType ~.domain.Certificate --path qualitysystem/certificates

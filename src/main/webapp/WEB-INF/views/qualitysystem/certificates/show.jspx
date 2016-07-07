@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Certificate" object="${certificate}" path="/qualitysystem/certificates" z="etQozWpvM4bheEZ2FQMhUgsX/7A=">
+        <field:display field="certificateId" id="s_ca_gc_hc_mds_domain_Certificate_certificateId" object="${certificate}" z="vag3HntdCA3ERZz7dQPOGKcs81c="/>
+        <field:display date="true" dateTimePattern="${certificate_statusdate_date_format}" field="statusDate" id="s_ca_gc_hc_mds_domain_Certificate_statusDate" object="${certificate}" z="oMrnk67nHUnxykIJJouznEpZfzc="/>
+        <field:display date="true" dateTimePattern="${certificate_receiptdate_date_format}" field="receiptDate" id="s_ca_gc_hc_mds_domain_Certificate_receiptDate" object="${certificate}" z="afVOz3hnmrcVF8KdJMLfkzHpOQU="/>
+        <field:display date="true" dateTimePattern="${certificate_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Certificate_entryDate" object="${certificate}" z="8s3KIs2o2ePRw+1qVX4DSqtiabQ="/>
+        <field:display field="licenceStatus" id="s_ca_gc_hc_mds_domain_Certificate_licenceStatus" object="${certificate}" z="8aobN0DaE2+3NAzFIV49AeAQkmE="/>
+        <field:display field="systemuserId" id="s_ca_gc_hc_mds_domain_Certificate_systemuserId" object="${certificate}" z="2oY61rIZYa/Tsr3pvqTEVNaLMtQ="/>
+    </page:show>
+</div>

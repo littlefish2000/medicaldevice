@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.Certificate;
 import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
@@ -39,6 +40,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Application>() {
             public ca.gc.hc.mds.domain.Application convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Application.class);
+            }
+        };
+    }
+    
+    public Converter<Certificate, String> ApplicationConversionServiceFactoryBean.getCertificateToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Certificate, java.lang.String>() {
+            public String convert(Certificate certificate) {
+                return new StringBuilder().append(certificate.getCertificateId()).append(' ').append(certificate.getStatusDate()).append(' ').append(certificate.getReceiptDate()).append(' ').append(certificate.getEntryDate()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, Certificate> ApplicationConversionServiceFactoryBean.getIdToCertificateConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Certificate>() {
+            public ca.gc.hc.mds.domain.Certificate convert(java.lang.String id) {
+                return Certificate.findCertificate(id);
             }
         };
     }
@@ -191,6 +208,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getApplicationToStringConverter());
         registry.addConverter(getIdToApplicationConverter());
         registry.addConverter(getStringToApplicationConverter());
+        registry.addConverter(getCertificateToStringConverter());
+        registry.addConverter(getIdToCertificateConverter());
         registry.addConverter(getCompanyToStringConverter());
         registry.addConverter(getIdToCompanyConverter());
         registry.addConverter(getStringToCompanyConverter());
