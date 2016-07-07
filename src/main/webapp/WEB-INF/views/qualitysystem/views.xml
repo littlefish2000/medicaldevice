@@ -7,4 +7,10 @@
     <definition extends="default" name="qualitysystem/cert/update">
         <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certcreate.jspx"/>
     </definition>    
+    <definition extends="default" name="qualitysystem/validity/batchtracking">
+        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/BatchTracking.jspx"/>
+    </definition>      
+    <definition extends="default" name="qualitysystem/validity/batchcontrolupdate">
+        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/BatchControlEntry.jspx"/>
+    </definition>       
 </tiles-definitions>

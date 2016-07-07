@@ -65,8 +65,8 @@
 	<menu-item hidden="true" id="i_correspondence_table_maintain" messageCode="menures_renew_corespondence_table_maintain" roles="" url="/correspondence/index"/>
 	<menu-item hidden="false" id="i_correspondence_validity" messageCode="menures_renew_corespondence_validity" roles="" url="/correspondence/index">
 		<menu-item hidden="false" id="i_certificate_validity_searchbatchcontrol" messageCode="menures_certificate_validity_searchbatchcontrol" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-		<menu-item hidden="false" id="i_certificate_validity_newbatchcontrol" messageCode="menures_certificate_validity_newbatchcontrol" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-		<menu-item hidden="false" id="i_certificate_validity_batchtracking" messageCode="menures_certificate_validity_batchtracking" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_certificate_validity_newbatchcontrol" messageCode="menures_certificate_validity_newbatchcontrol" roles="" url="/qualitysystem/validity/batchcontrols?form"/>
+		<menu-item hidden="false" id="i_certificate_validity_batchtracking" messageCode="menures_certificate_validity_batchtracking" roles="" url="/qualitysystem/validity?batchtracking&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 		<menu-item hidden="false" id="i_certificate_validity_processbatch" messageCode="menures_certificate_validity_processbatch" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	</menu-item>
 </menu-item>

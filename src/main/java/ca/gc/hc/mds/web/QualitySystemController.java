@@ -15,22 +15,33 @@ import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 
-@RequestMapping("/qualitysystem/certificates")
+//@RequestMapping("/qualitysystem/certificates")
 @Controller
 @RooWebFinder
 @RooWebScaffold(path = "qualitysystem/certificates", formBackingObject = Certificate.class)
 public class QualitySystemController {
 
-	@RequestMapping(params = { "find=ByCertificateIdLike", "form" }, method = RequestMethod.GET)
+	private ConversionService conversionService;
+
+	@Autowired
+    public QualitySystemController(ConversionService conversionService) {
+        super();
+        this.conversionService = conversionService;
+    }
+		
+	
+	@RequestMapping(value = "/qualitysystem/certificates", params = { "find=ByCertificateIdLike", "form" }, method = RequestMethod.GET)
     public String findCertificatesByCertificateIdLikeForm(Model uiModel) {
         return "qualitysystem/certificates/findCertificatesByCertificateIdLike";
     }
 
-	@RequestMapping(params = "find=ByCertificateIdLike", method = RequestMethod.GET)
+	@RequestMapping(value = "/qualitysystem/certificates", params = "find=ByCertificateIdLike", method = RequestMethod.GET)
     public String findCertificatesByCertificateIdLike(@RequestParam("certificateId") String certificateId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
@@ -45,12 +56,12 @@ public class QualitySystemController {
         return "qualitysystem/certificates/list";
     }
 
-	@RequestMapping(params = { "find=ByOrigcertificateIdLike", "form" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/qualitysystem/certificates", params = { "find=ByOrigcertificateIdLike", "form" }, method = RequestMethod.GET)
     public String findCertificatesByOrigcertificateIdLikeForm(Model uiModel) {
         return "qualitysystem/certificates/findCertificatesByOrigcertificateIdLike";
     }
 
-	@RequestMapping(params = "find=ByOrigcertificateIdLike", method = RequestMethod.GET)
+	@RequestMapping(value = "/qualitysystem/certificates", params = "find=ByOrigcertificateIdLike", method = RequestMethod.GET)
     public String findCertificatesByOrigcertificateIdLike(@RequestParam("origcertificateId") String origcertificateId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
@@ -65,7 +76,7 @@ public class QualitySystemController {
         return "qualitysystem/certificates/list";
     }
 
-	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates", method = RequestMethod.POST, produces = "text/html")
     public String create(@Valid Certificate certificate, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, certificate);
@@ -77,14 +88,14 @@ public class QualitySystemController {
         return "redirect:/qualitysystem/certificates/" + encodeUrlPathSegment(certificate.getOrigcertificateId().toString(), httpServletRequest);
     }
 
-	@RequestMapping(params = "form", produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates", params = "form", produces = "text/html")
     public String createForm(Model uiModel) {
         populateEditForm(uiModel, new Certificate());
         //return "qualitysystem/certificates/create";
         return "qualitysystem/cert/new";
     }
 
-	@RequestMapping(value = "/{origcertificateId}", produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates/{origcertificateId}", produces = "text/html")
     public String show(@PathVariable("origcertificateId") String origcertificateId, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("certificate", Certificate.findCertificate(origcertificateId));
@@ -92,7 +103,7 @@ public class QualitySystemController {
         return "qualitysystem/certificates/show";
     }
 
-	@RequestMapping(produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates",produces = "text/html")
     public String list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
@@ -107,7 +118,7 @@ public class QualitySystemController {
         return "qualitysystem/certificates/list";
     }
 
-	@RequestMapping(method = RequestMethod.PUT, produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates",method = RequestMethod.PUT, produces = "text/html")
     public String update(@Valid Certificate certificate, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, certificate);
@@ -119,14 +130,14 @@ public class QualitySystemController {
         return "redirect:/qualitysystem/certificates/" + encodeUrlPathSegment(certificate.getOrigcertificateId().toString(), httpServletRequest);
     }
 
-	@RequestMapping(value = "/{origcertificateId}", params = "form", produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates/{origcertificateId}", params = "form", produces = "text/html")
     public String updateForm(@PathVariable("origcertificateId") String origcertificateId, Model uiModel) {
         populateEditForm(uiModel, Certificate.findCertificate(origcertificateId));
         //return "qualitysystem/certificates/update";
         return "qualitysystem/cert/update";
     }
 
-	@RequestMapping(value = "/{origcertificateId}", method = RequestMethod.DELETE, produces = "text/html")
+	@RequestMapping(value = "/qualitysystem/certificates/{origcertificateId}", method = RequestMethod.DELETE, produces = "text/html")
     public String delete(@PathVariable("origcertificateId") String origcertificateId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Certificate certificate = Certificate.findCertificate(origcertificateId);
         certificate.remove();
@@ -158,4 +169,16 @@ public class QualitySystemController {
         } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
+	
+	
+	@RequestMapping(value = "/qualitysystem/validity", params = { "batchtracking", "form" }, method = RequestMethod.GET)
+    public String findBatchControl(Model uiModel) {
+        return "qualitysystem/validity/batchtracking";
+    }	
+	@RequestMapping(value = "/qualitysystem/validity/batchcontrols", params = "form", produces = "text/html")
+    public String createNewBatchControlForm(Model uiModel) {
+        //populateEditForm(uiModel, new Certificate());
+        return "qualitysystem/validity/batchcontrolupdate";
+    }	
+	
 }
