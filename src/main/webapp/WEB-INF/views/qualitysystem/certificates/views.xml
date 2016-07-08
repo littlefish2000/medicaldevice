@@ -20,4 +20,9 @@
 <definition extends="default" name="qualitysystem/certificates/create">
         <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certificates/create.jspx"/>
     </definition>
+    
+<definition extends="default" name="qualitysystem/certificatecompanys/findCertificateCompanysByByCompanyIdLike">
+        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certificates/findCertificateCompanysByCompanyIdLike.jspx"/>
+</definition>
+        
 </tiles-definitions>
