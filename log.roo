@@ -181,3 +181,6 @@ entity jpa --class ~.domain.Certificate --table CERTIFICATE
 finder list --class ~.domain.Certificate
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-07-07 14:57:44
 web mvc scaffold --class ~.web.QualitySystemController --backingType ~.domain.Certificate --path qualitysystem/certificates
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-07-07 15:18:27
+entity jpa --class ~.domain.CertificateCompany --table CERTIFICATE_COMPANY --identifierType ~.domain.CertificateCompanyPK
+finder list --class ~.domain.CertificateCompany
