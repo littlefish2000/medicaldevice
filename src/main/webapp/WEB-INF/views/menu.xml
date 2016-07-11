@@ -70,6 +70,10 @@
 	</menu-item>
 </menu-item>
 
+<menu-item id="c_finance"  messageCode="menures_finance" name="Finance">
+
+</menu-item>
+
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 	<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
 	</menu-item>
