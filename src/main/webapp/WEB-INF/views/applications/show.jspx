@@ -10,6 +10,7 @@
         <field:display field="applicationDesc" id="s_ca_gc_hc_mds_domain_Application_applicationDesc" object="${application}" z="cuRUtnIh6vJQ3q8jaFOoi5JeEtM="/>
         <field:display date="true" dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="s_ca_gc_hc_mds_domain_Application_licenceStatusDate" object="${application}" z="bxikJ3mzRASQGhmoydXfYEEW+2g="/>
         <field:display field="licenceStatus" id="s_ca_gc_hc_mds_domain_Application_licenceStatus" object="${application}" z="UnUVMjTfq783EfboaBsnpI3WxS0="/>
+        <field:display field="companyId" id="s_ca_gc_hc_mds_domain_Application_companyId" object="${application}" z="ckAUjVBc4b9e3IjblQeDxUOB+Ls="/>
     </page:show>
     <div class="avisolargo">
         <!-- jsp:include page="applicationshow.jspx"/-->

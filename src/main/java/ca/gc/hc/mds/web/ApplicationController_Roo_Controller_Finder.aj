@@ -32,4 +32,24 @@ privileged aspect ApplicationController_Roo_Controller_Finder {
         return "applications/list";
     }
     
+    @RequestMapping(params = { "find=ByOrginLicenseId", "form" }, method = RequestMethod.GET)
+    public String ApplicationController.findApplicationsByOrginLicenseIdForm(Model uiModel) {
+        return "applications/findApplicationsByOrginLicenseId";
+    }
+    
+    @RequestMapping(params = "find=ByOrginLicenseId", method = RequestMethod.GET)
+    public String ApplicationController.findApplicationsByOrginLicenseId(@RequestParam("orginLicenseId") long orginLicenseId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("applications", Application.findApplicationsByOrginLicenseId(orginLicenseId, sortFieldName, sortOrder).setFirstResult(firstResult).setMaxResults(sizeNo).getResultList());
+            float nrOfPages = (float) Application.countFindApplicationsByOrginLicenseId(orginLicenseId) / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("applications", Application.findApplicationsByOrginLicenseId(orginLicenseId, sortFieldName, sortOrder).getResultList());
+        }
+        addDateTimeFormatPatterns(uiModel);
+        return "applications/list";
+    }
+    
 }

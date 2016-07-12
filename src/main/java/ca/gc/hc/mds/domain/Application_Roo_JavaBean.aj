@@ -65,4 +65,12 @@ privileged aspect Application_Roo_JavaBean {
         this.licenceStatus = licenceStatus;
     }
     
+    public Long Application.getCompanyId() {
+        return this.companyId;
+    }
+    
+    public void Application.setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
+    
 }

@@ -33,9 +33,10 @@
     <menu-item id="c_company_search" labelCode="menu_category_device_search_label" name="CompanySearch">
 	    <menu-item hidden="true" id="i_application_list" labelCode="menu_item_application_list_label" messageCode="global_menu_list" roles="" url="/applications?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
 	    <menu-item hidden="false" id="fi_application_applicationid" messageCode="menures_application_searchbyapplication" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-	    <menu-item hidden="false" id="fi_application_applicationid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <!-- menu-item hidden="false" id="fi_application_applicationid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/-->
+		<menu-item hidden="false" id="fi_application_orginlicenseid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByOrginLicenseId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
-</menu-item>web
+</menu-item>
 <menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
 	<menu-item hidden="false" id="i_specialaccess_new" labelCode="menu_item_specialaccess_new_label" messageCode="global_menu_new" roles="" url="/SpecialAccess?form"/>
 	<menu-item id="c_specialaccess_search" labelCode="menu_category_device_search_label" name="specialaccess_search">

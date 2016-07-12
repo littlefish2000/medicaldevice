@@ -5,6 +5,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 import ca.gc.hc.mds.reference.LicenceStatusType;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.EnumType;
@@ -25,7 +26,7 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 ////@RooJpaActiveRecord(sequenceName = "APPLICATION_SEQ", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", table = "APPLICATION")
-@RooJpaActiveRecord(versionField = "", table = "APPLICATION", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", finders = { "findApplicationsByApplicationId" })
+@RooJpaActiveRecord(versionField = "", table = "APPLICATION", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", finders = { "findApplicationsByApplicationId","findApplicationsByOrginLicenseId" })
 @SecondaryTables({
     @SecondaryTable(name="LICENCE_STATUS_TRACKING", schema = "MDSDB", pkJoinColumns={
         @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") })
@@ -77,5 +78,8 @@ public class Application {
      */
     @Column(name = "LICENCE_STATUS", table="LICENCE_STATUS_TRACKING",nullable = true, length=1,columnDefinition = "char(1) default 'A'")
     @Enumerated(EnumType.STRING)
-    private LicenceStatusType licenceStatus = null;    
+    private LicenceStatusType licenceStatus = null; 
+    
+    @Column(name = "COMPANY_ID", columnDefinition="NUMBER")
+    private Long companyId;    
 }

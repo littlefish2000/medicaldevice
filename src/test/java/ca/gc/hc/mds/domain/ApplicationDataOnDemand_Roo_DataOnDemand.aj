@@ -29,6 +29,7 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     public Application ApplicationDataOnDemand.getNewTransientApplication(int index) {
         Application obj = new Application();
         setApplicationDesc(obj, index);
+        setCompanyId(obj, index);
         setEntryDate(obj, index);
         setLicenceStatus(obj, index);
         setLicenceStatusDate(obj, index);
@@ -43,6 +44,11 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
             applicationDesc = applicationDesc.substring(0, 150);
         }
         obj.setApplicationDesc(applicationDesc);
+    }
+    
+    public void ApplicationDataOnDemand.setCompanyId(Application obj, int index) {
+        Long companyId = new Integer(index).longValue();
+        obj.setCompanyId(companyId);
     }
     
     public void ApplicationDataOnDemand.setEntryDate(Application obj, int index) {

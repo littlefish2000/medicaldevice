@@ -17,6 +17,13 @@ privileged aspect Application_Roo_Finder {
         return ((Long) q.getSingleResult());
     }
     
+    public static Long Application.countFindApplicationsByOrginLicenseId(long orginLicenseId) {
+        EntityManager em = Application.entityManager();
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Application AS o WHERE o.orginLicenseId = :orginLicenseId", Long.class);
+        q.setParameter("orginLicenseId", orginLicenseId);
+        return ((Long) q.getSingleResult());
+    }
+    
     public static TypedQuery<Application> Application.findApplicationsByApplicationId(Long applicationId) {
         if (applicationId == null) throw new IllegalArgumentException("The applicationId argument is required");
         EntityManager em = Application.entityManager();
@@ -37,6 +44,27 @@ privileged aspect Application_Roo_Finder {
         }
         TypedQuery<Application> q = em.createQuery(queryBuilder.toString(), Application.class);
         q.setParameter("applicationId", applicationId);
+        return q;
+    }
+    
+    public static TypedQuery<Application> Application.findApplicationsByOrginLicenseId(long orginLicenseId) {
+        EntityManager em = Application.entityManager();
+        TypedQuery<Application> q = em.createQuery("SELECT o FROM Application AS o WHERE o.orginLicenseId = :orginLicenseId", Application.class);
+        q.setParameter("orginLicenseId", orginLicenseId);
+        return q;
+    }
+    
+    public static TypedQuery<Application> Application.findApplicationsByOrginLicenseId(long orginLicenseId, String sortFieldName, String sortOrder) {
+        EntityManager em = Application.entityManager();
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Application AS o WHERE o.orginLicenseId = :orginLicenseId");
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            queryBuilder.append(" ORDER BY ").append(sortFieldName);
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                queryBuilder.append(" ").append(sortOrder);
+            }
+        }
+        TypedQuery<Application> q = em.createQuery(queryBuilder.toString(), Application.class);
+        q.setParameter("orginLicenseId", orginLicenseId);
         return q;
     }
     

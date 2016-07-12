@@ -22,4 +22,7 @@
 <definition extends="default" name="applications/findApplicationsByApplicationId">
         <put-attribute name="body" value="/WEB-INF/views/applications/findApplicationsByApplicationId.jspx"/>
     </definition>
+<definition extends="default" name="applications/findApplicationsByOrginLicenseId">
+        <put-attribute name="body" value="/WEB-INF/views/applications/findApplicationsByOrginLicenseId.jspx"/>
+    </definition>
 </tiles-definitions>
