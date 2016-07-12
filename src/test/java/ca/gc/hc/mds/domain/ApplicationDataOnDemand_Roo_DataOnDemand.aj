@@ -5,6 +5,7 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
+import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -29,6 +30,8 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         Application obj = new Application();
         setApplicationDesc(obj, index);
         setEntryDate(obj, index);
+        setLicenceStatus(obj, index);
+        setLicenceStatusDate(obj, index);
         setOrginLicenseId(obj, index);
         setReceiptDate(obj, index);
         return obj;
@@ -45,6 +48,16 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     public void ApplicationDataOnDemand.setEntryDate(Application obj, int index) {
         Date entryDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setEntryDate(entryDate);
+    }
+    
+    public void ApplicationDataOnDemand.setLicenceStatus(Application obj, int index) {
+        LicenceStatusType licenceStatus = LicenceStatusType.class.getEnumConstants()[0];
+        obj.setLicenceStatus(licenceStatus);
+    }
+    
+    public void ApplicationDataOnDemand.setLicenceStatusDate(Application obj, int index) {
+        Date licenceStatusDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
+        obj.setLicenceStatusDate(licenceStatusDate);
     }
     
     public void ApplicationDataOnDemand.setOrginLicenseId(Application obj, int index) {

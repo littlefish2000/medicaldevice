@@ -2,11 +2,19 @@ package ca.gc.hc.mds.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import ca.gc.hc.mds.reference.LicenceStatusType;
+
 import java.util.Date;
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -18,6 +26,10 @@ import javax.validation.constraints.Size;
 @RooToString
 ////@RooJpaActiveRecord(sequenceName = "APPLICATION_SEQ", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", table = "APPLICATION")
 @RooJpaActiveRecord(versionField = "", table = "APPLICATION", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", finders = { "findApplicationsByApplicationId" })
+@SecondaryTables({
+    @SecondaryTable(name="LICENCE_STATUS_TRACKING", schema = "MDSDB", pkJoinColumns={
+        @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") })
+})
 public class Application {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,4 +64,18 @@ public class Application {
     @Column(name = "APPLICATION_DESC")
     @Size(min = 0, max = 150)
     private String applicationDesc;
+    
+    /**
+     */
+    @NotNull
+	@Column(name = "LICENCE_STATUS_DT",table="LICENCE_STATUS_TRACKING",  columnDefinition = "DATE" )
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
+	private Date licenceStatusDate;  
+    
+    /**
+     */
+    @Column(name = "LICENCE_STATUS", table="LICENCE_STATUS_TRACKING",nullable = true, length=1,columnDefinition = "char(1) default 'A'")
+    @Enumerated(EnumType.STRING)
+    private LicenceStatusType licenceStatus = null;    
 }

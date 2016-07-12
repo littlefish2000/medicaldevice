@@ -45,9 +45,9 @@ public class RenLicenceInfo {
     
     /**
      */
-    @Column(name = "LICENCE_STATUS", nullable = false, length=1,columnDefinition = "char(1) default 'A'")
+    @Column(name = "LICENCE_STATUS", nullable = true, length=1,columnDefinition = "char(1) default 'A'")
     @Enumerated(EnumType.STRING)
-    private LicenceStatusType licenceStatus = LicenceStatusType.O;    
+    private LicenceStatusType licenceStatus = null;    
     
     
     public static  List<RenLicenceInfo> findRenLicenceInfosByLicenceNo(BigDecimal originalLicenceNo) {

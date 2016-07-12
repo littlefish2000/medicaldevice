@@ -7,5 +7,7 @@
         <field:datetime dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Application_entryDate" required="true" z="VWdH4RmPoY6jwjThay6ZDGwTYzI="/>
         <field:datetime dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="c_ca_gc_hc_mds_domain_Application_receiptDate" required="true" z="7E07uu1BbJygq7M+BnmF/bxP3MI="/>
         <field:textarea field="applicationDesc" id="c_ca_gc_hc_mds_domain_Application_applicationDesc" required="true" z="sIvVeGXEcRMvt0B2/2bDCN1WExg="/>
+        <field:datetime dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="c_ca_gc_hc_mds_domain_Application_licenceStatusDate" required="true" z="OXOyJrFMeEBVx6tuRHauLryDmtw="/>
+        <field:select field="licenceStatus" id="c_ca_gc_hc_mds_domain_Application_licenceStatus" items="${licencestatustypes}" path="licencestatustypes" z="FTxuS2Xm4fl7yBPXAhiLvg7LQt0="/>
     </form:update>
 </div>

@@ -27,10 +27,32 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
     Converter<LicenceStatusType, String> getLicenceStatusTypeConverter() {
         return new Converter<LicenceStatusType, String>() {
             public String convert(LicenceStatusType properties) {
-            	if (LicenceStatusType.I.equals(properties))
-            		return "Issued";  
-            	else 
-            		return "Not Issued"; // 1
+                switch(properties){
+                case C:
+                    return "Cancelled";
+                case D:
+                    return "Issued/Conditiona";
+                case I:
+                    return "Issued/Active";
+                case M:
+                    return "Merged";
+                case O:
+                    return "Discontinued at Renewal";
+                case P:
+                    return "Pending signature";
+                case R:
+                    return "Cancelled Renewal No Response";
+                case S:
+                    return "Suspended";   
+                case W:
+                    return "Withdrawn";
+                case Q:
+                    return "Suspended/Invalid QS Certificate";
+                case X:
+                    return "Cancelled QS/2003";                      
+                default: throw new AssertionError();
+                }
+
             }
         };
     }	    

@@ -4,8 +4,10 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.reference.LicenceStatusType;
 import ca.gc.hc.mds.web.ApplicationController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
@@ -91,11 +93,13 @@ privileged aspect ApplicationController_Roo_Controller {
     void ApplicationController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("application_entrydate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("application_receiptdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("application_licencestatusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     void ApplicationController.populateEditForm(Model uiModel, Application application) {
         uiModel.addAttribute("application", application);
         addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("licencestatustypes", Arrays.asList(LicenceStatusType.values()));
     }
     
     String ApplicationController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

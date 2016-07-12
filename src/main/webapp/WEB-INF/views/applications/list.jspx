@@ -8,6 +8,8 @@
             <table:column date="true" dateTimePattern="${application_entrydate_date_format}" id="c_ca_gc_hc_mds_domain_Application_entryDate" property="entryDate" z="xdYBzDUGWfNkjnW4VZ5gLk+iKGU="/>
             <table:column date="true" dateTimePattern="${application_receiptdate_date_format}" id="c_ca_gc_hc_mds_domain_Application_receiptDate" property="receiptDate" z="Qh6m7o4+pYvvvgPeYa53ezGJHho="/>
             <table:column id="c_ca_gc_hc_mds_domain_Application_applicationDesc" property="applicationDesc" z="59npAvH+ytRibT8kgy7vik2m46o="/>
+            <table:column date="true" dateTimePattern="${application_licencestatusdate_date_format}" id="c_ca_gc_hc_mds_domain_Application_licenceStatusDate" property="licenceStatusDate" z="N2Ld7KmVZB60gFVcNU24xyBXCyQ="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Application_licenceStatus" property="licenceStatus" z="h9L05mbg3Ri88P1vBEXTeKliIiA="/>
         </table:table>
     </page:list>
 </div>

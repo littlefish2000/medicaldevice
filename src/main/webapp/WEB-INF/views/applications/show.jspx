@@ -8,6 +8,8 @@
         <field:display date="true" dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Application_entryDate" object="${application}" z="Kx8xU+8CUtm88mBlA9P9OO5i8so="/>
         <field:display date="true" dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="s_ca_gc_hc_mds_domain_Application_receiptDate" object="${application}" z="lvTX6Wfjo6+JUz3i9aUXNaXCrBg="/>
         <field:display field="applicationDesc" id="s_ca_gc_hc_mds_domain_Application_applicationDesc" object="${application}" z="cuRUtnIh6vJQ3q8jaFOoi5JeEtM="/>
+        <field:display date="true" dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="s_ca_gc_hc_mds_domain_Application_licenceStatusDate" object="${application}" z="bxikJ3mzRASQGhmoydXfYEEW+2g="/>
+        <field:display field="licenceStatus" id="s_ca_gc_hc_mds_domain_Application_licenceStatus" object="${application}" z="UnUVMjTfq783EfboaBsnpI3WxS0="/>
     </page:show>
     <div class="avisolargo">
         <!-- jsp:include page="applicationshow.jspx"/-->
