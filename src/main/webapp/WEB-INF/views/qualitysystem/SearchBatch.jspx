@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<spring:message code="label_renewal_index" htmlEscape="false"
+		var="title" />
+	<util:panel id="title" title="${title}">
+		<spring:message code="application_name" htmlEscape="false"
+			var="app_name" />
+		<div class="container">
+
+			<legend>Search Batch:</legend>
+
+
+			<div class="row">
+
+				<div class="col-lg-12">
+
+					<div class="col-lg-12s">
+						<label class="col-lg-2 col-md-offset-3">Batch Date: </label> <input
+							class="col-lg-2" type="text" placeholder="   YYYY / MM / DD"></input>
+
+					</div>
+
+				</div>
+			</div>
+			<br></br>
+			<div class="row">
+
+				<div class="col-lg-12">
+					<div class="col-lg-3 text-center col-md-offset-1">
+						<button class="btn btn-success center-block">Show All</button>
+					</div>
+					<div class="col-lg-3 text-center">
+						<button class="center-block btn btn-success">Search</button>
+					</div>
+					<div class="col-lg-3 text-center">
+						<button class="btn btn-success center-block">Cancel</button>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</util:panel>
+</div>

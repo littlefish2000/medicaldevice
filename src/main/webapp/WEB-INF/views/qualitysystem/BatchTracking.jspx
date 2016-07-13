@@ -20,9 +20,9 @@
 					<div class="control-group form-group">
 
 						<label class="col-lg-5">Batch Date: </label> <input
-							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
-							<label class="col-lg-5">Execution Date: </label> <input
-							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
+							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input> <label
+							class="col-lg-5">Execution Date: </label> <input class="col-lg-4"
+							type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
 
 				</div>
@@ -30,8 +30,8 @@
 					<div class="control-group form-group">
 
 						<label class="col-lg-5">Expiry Start Date: </label> <input
-							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
-							<label class="col-lg-5">Execution End Date: </label> <input
+							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input> <label
+							class="col-lg-5">Execution End Date: </label> <input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
 
@@ -43,41 +43,41 @@
 			<div class="row">
 				<legend>Certificate Status Info Info:</legend>
 				<table class="table">
-									<thead class="thead-inverse">
-										<tr>
-											<th>Certificate Id</th>
-											<th>Receipt Date</th>
-											<th>Issuance Date</th>
-											<th>Expiry Date</th>
-											<th>Renewed</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>AutoFill</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>YYYY/MM/DD</td>
-											<td>AutoFill</td>
-										</tr>
-									</tbody>
-								</table>
+					<thead class="thead-inverse">
+						<tr>
+							<th>Certificate Id</th>
+							<th>Receipt Date</th>
+							<th>Issuance Date</th>
+							<th>Expiry Date</th>
+							<th>Renewed</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>AutoFill</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+						</tr>
+						<tr>
+							<td>AutoFill</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+						</tr>
+						<tr>
+							<td>AutoFill</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>YYYY/MM/DD</td>
+							<td>AutoFill</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			
+
 
 		</div>
 	</util:panel>

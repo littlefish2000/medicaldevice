@@ -76,17 +76,17 @@
 				</div>
 
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-3">
 
-						<label class="col-lg-3 col-md-offset-2">Status: </label> <select>
+						<label class="col-lg-3">Status: </label> <select>
 							<option>Moved To Other Cert.</option>
 							<option>two</option>
 
 						</select>
 					</div>
 
-					<div class="col-lg-6">
-						<label class="col-lg-3 col-md-offset-2">Tracking Flag : </label> <select	>
+					<div class="col-lg-3">
+						<label class="col-lg-4">Tracking Flag: </label> <select>
 							<option>Track Response</option>
 							<option>Inactive</option>
 
@@ -101,17 +101,29 @@
 				<div class="row">
 
 					<div class="col-lg-12">
-						<div class="col-lg-4 text-center">
+						<div class="col-lg-3 text-center">
 							<button class="btn btn-success center-block">Add</button>
 						</div>
-						<div class="col-lg-4 text-center">
+						<div class="col-lg-3 text-center">
 							<button class="center-block btn btn-success">Save</button>
 						</div>
-						<div class="col-lg-4 text-center">
-							<button class="btn btn-success center-block">Cancle</button>
+						<div class="col-lg-3 text-center">
+							<button class="btn btn-success center-block">Cancel</button>
+						</div>
+						<div class="col-lg-3 text-center">
+							<button class="btn btn-success center-block">Delete</button>
 						</div>
 
 					</div>
+				</div>
+
+
+			</div>
+			<br></br>
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<button class="btn btn-success center-block">Process
+						Validity Batch</button>
 				</div>
 
 
