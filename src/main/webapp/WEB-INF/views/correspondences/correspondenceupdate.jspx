@@ -21,7 +21,6 @@
 						<label class="col-lg-5">Reg. Section: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Area: </label> <select width="100"
 							style="width: 150px">
@@ -53,27 +52,22 @@
 						<label class="col-lg-5">Application ID: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Certificate ID: </label><input
 							class="col-lg-4" type="text" placeholder="Input #"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Letter Date: </label><input
 							class="col-lg-4" type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Corr. In/Out: </label><input
 							class="col-lg-4" type="text" placeholder="#"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Bf Date: </label><input class="col-lg-4"
 							type="text" placeholder="YYYY/MM/DD"></input>
 					</div>
-					<br></br>
 					<div class="control-group form-group">
 						<label class="col-lg-5">Division Code: </label> <select
 							width="100" style="width: 150px">
@@ -97,6 +91,7 @@
 				</div>
 			</div>
 			<br></br>
+			
 			<div class="row">
 				<div class="panel with-nav-tabs panel-primary">
 					<div class="panel-heading">
@@ -149,7 +144,7 @@
 
 
 								<div class="row">
-									<br></br>
+
 									<div class="col-lg-4">
 
 										<label class="col-lg-4">Status: </label> <select

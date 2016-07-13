@@ -11,7 +11,7 @@
         <put-attribute name="body" value="/WEB-INF/views/applications/create.jspx"/>
     </definition>
 <definition extends="default" name="applications/update">
-        <put-attribute name="body" value="/WEB-INF/views/applications/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/applications/applicationupdate.jspx"/>
     </definition>
 <definition extends="default" name="applications/findApplicationsByApplcationNameLike">
         <put-attribute name="body" value="/WEB-INF/views/applications/findApplicationsByApplcationNameLike.jspx"/>
