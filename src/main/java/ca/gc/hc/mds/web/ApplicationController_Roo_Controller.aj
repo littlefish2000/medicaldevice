@@ -4,6 +4,8 @@
 package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.reference.ApplicationType;
+import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 import ca.gc.hc.mds.web.ApplicationController;
 import java.io.UnsupportedEncodingException;
@@ -99,6 +101,8 @@ privileged aspect ApplicationController_Roo_Controller {
     void ApplicationController.populateEditForm(Model uiModel, Application application) {
         uiModel.addAttribute("application", application);
         addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
+        uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));
         uiModel.addAttribute("licencestatustypes", Arrays.asList(LicenceStatusType.values()));
     }
     

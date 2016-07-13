@@ -9,8 +9,13 @@
         <field:display date="true" dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="s_ca_gc_hc_mds_domain_Application_receiptDate" object="${application}" z="lvTX6Wfjo6+JUz3i9aUXNaXCrBg="/>
         <field:display field="applicationDesc" id="s_ca_gc_hc_mds_domain_Application_applicationDesc" object="${application}" z="cuRUtnIh6vJQ3q8jaFOoi5JeEtM="/>
         <field:display date="true" dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="s_ca_gc_hc_mds_domain_Application_licenceStatusDate" object="${application}" z="bxikJ3mzRASQGhmoydXfYEEW+2g="/>
-        <field:display field="licenceStatus" id="s_ca_gc_hc_mds_domain_Application_licenceStatus" object="${application}" z="UnUVMjTfq783EfboaBsnpI3WxS0="/>
         <field:display field="companyId" id="s_ca_gc_hc_mds_domain_Application_companyId" object="${application}" z="ckAUjVBc4b9e3IjblQeDxUOB+Ls="/>
+        <field:display field="licenceName" id="s_ca_gc_hc_mds_domain_Application_licenceName" object="${application}" z="XyCm9uckqK89K7LX+l36A/v+CsI="/>
+        <field:display field="companyAuthId" id="s_ca_gc_hc_mds_domain_Application_companyAuthId" object="${application}" z="+PHoobhvjCtAqtKndAjdX1oSCxI="/>
+        <field:display field="applicationType" id="s_ca_gc_hc_mds_domain_Application_applicationType" object="${application}" z="5/snvz0V7WGK80Sk0cPSphmGQU8="/>
+        <field:display field="licenceStatus" id="s_ca_gc_hc_mds_domain_Application_licenceStatus" object="${application}" z="UnUVMjTfq783EfboaBsnpI3WxS0="/>
+        <field:display field="appRiskClass" id="s_ca_gc_hc_mds_domain_Application_appRiskClass" object="${application}" z="VAtwsrxkwE/G6EhsJTM8B3Vm2jw="/>
+        <field:display field="devLicenceType" id="s_ca_gc_hc_mds_domain_Application_devLicenceType" object="${application}" z="FhBA/tAo0QXt8imElKZ49AsBs48="/>
     </page:show>
     <div class="avisolargo">
         <!-- jsp:include page="applicationshow.jspx"/-->

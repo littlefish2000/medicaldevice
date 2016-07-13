@@ -3,6 +3,8 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import ca.gc.hc.mds.reference.ApplicationType;
+import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 
 import java.math.BigDecimal;
@@ -29,7 +31,8 @@ import javax.validation.constraints.Size;
 @RooJpaActiveRecord(versionField = "", table = "APPLICATION", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", finders = { "findApplicationsByApplicationId","findApplicationsByOrginLicenseId" })
 @SecondaryTables({
     @SecondaryTable(name="LICENCE_STATUS_TRACKING", schema = "MDSDB", pkJoinColumns={
-        @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") })
+        @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") }),
+
 })
 public class Application {
 	@Id
@@ -68,6 +71,12 @@ public class Application {
     
     /**
      */
+    @Column(name = "LICENCE_NAME", columnDefinition = "char")
+    @Size(min = 0, max = 150)
+    private String licenceName;
+        
+    /**
+     */
     @NotNull
 	@Column(name = "LICENCE_STATUS_DT",table="LICENCE_STATUS_TRACKING",  columnDefinition = "DATE" )
 	@Temporal(TemporalType.DATE)
@@ -76,10 +85,30 @@ public class Application {
     
     /**
      */
+    @Column(name = "APPLICATION_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
+    @Enumerated(EnumType.STRING)
+    private ApplicationType applicationType = null;   
+    
+    /**
+     */
+    @Column(name = "DEV_LICENCE_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
+    @Enumerated(EnumType.STRING)
+    private DevLicenceType devLicenceType = null;    
+    
+    /**
+     */
     @Column(name = "LICENCE_STATUS", table="LICENCE_STATUS_TRACKING",nullable = true, length=1,columnDefinition = "char(1) default 'A'")
     @Enumerated(EnumType.STRING)
     private LicenceStatusType licenceStatus = null; 
     
+    @Column(name = "COMPANY_AUTH_ID", columnDefinition="NUMBER")
+    private Long companyAuthId;    
+    
+    
+    @Column(name = "APPL_RISK_CLASS", columnDefinition="NUMBER")
+    private Long appRiskClass;     
+    
     @Column(name = "COMPANY_ID", columnDefinition="NUMBER")
-    private Long companyId;    
+    private Long companyId;     
+  
 }

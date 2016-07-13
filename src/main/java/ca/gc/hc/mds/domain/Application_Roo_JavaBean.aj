@@ -4,6 +4,8 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.reference.ApplicationType;
+import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.util.Date;
 
@@ -49,6 +51,14 @@ privileged aspect Application_Roo_JavaBean {
         this.applicationDesc = applicationDesc;
     }
     
+    public String Application.getLicenceName() {
+        return this.licenceName;
+    }
+    
+    public void Application.setLicenceName(String licenceName) {
+        this.licenceName = licenceName;
+    }
+    
     public Date Application.getLicenceStatusDate() {
         return this.licenceStatusDate;
     }
@@ -57,12 +67,44 @@ privileged aspect Application_Roo_JavaBean {
         this.licenceStatusDate = licenceStatusDate;
     }
     
+    public ApplicationType Application.getApplicationType() {
+        return this.applicationType;
+    }
+    
+    public void Application.setApplicationType(ApplicationType applicationType) {
+        this.applicationType = applicationType;
+    }
+    
+    public DevLicenceType Application.getDevLicenceType() {
+        return this.devLicenceType;
+    }
+    
+    public void Application.setDevLicenceType(DevLicenceType devLicenceType) {
+        this.devLicenceType = devLicenceType;
+    }
+    
     public LicenceStatusType Application.getLicenceStatus() {
         return this.licenceStatus;
     }
     
     public void Application.setLicenceStatus(LicenceStatusType licenceStatus) {
         this.licenceStatus = licenceStatus;
+    }
+    
+    public Long Application.getCompanyAuthId() {
+        return this.companyAuthId;
+    }
+    
+    public void Application.setCompanyAuthId(Long companyAuthId) {
+        this.companyAuthId = companyAuthId;
+    }
+    
+    public Long Application.getAppRiskClass() {
+        return this.appRiskClass;
+    }
+    
+    public void Application.setAppRiskClass(Long appRiskClass) {
+        this.appRiskClass = appRiskClass;
     }
     
     public Long Application.getCompanyId() {
