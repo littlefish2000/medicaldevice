@@ -5,6 +5,8 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
+import ca.gc.hc.mds.reference.ApplicationType;
+import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -28,14 +30,24 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     
     public Application ApplicationDataOnDemand.getNewTransientApplication(int index) {
         Application obj = new Application();
+        setAppRiskClass(obj, index);
         setApplicationDesc(obj, index);
+        setApplicationType(obj, index);
+        setCompanyAuthId(obj, index);
         setCompanyId(obj, index);
+        setDevLicenceType(obj, index);
         setEntryDate(obj, index);
+        setLicenceName(obj, index);
         setLicenceStatus(obj, index);
         setLicenceStatusDate(obj, index);
         setOrginLicenseId(obj, index);
         setReceiptDate(obj, index);
         return obj;
+    }
+    
+    public void ApplicationDataOnDemand.setAppRiskClass(Application obj, int index) {
+        Long appRiskClass = new Integer(index).longValue();
+        obj.setAppRiskClass(appRiskClass);
     }
     
     public void ApplicationDataOnDemand.setApplicationDesc(Application obj, int index) {
@@ -46,14 +58,37 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setApplicationDesc(applicationDesc);
     }
     
+    public void ApplicationDataOnDemand.setApplicationType(Application obj, int index) {
+        ApplicationType applicationType = ApplicationType.class.getEnumConstants()[0];
+        obj.setApplicationType(applicationType);
+    }
+    
+    public void ApplicationDataOnDemand.setCompanyAuthId(Application obj, int index) {
+        Long companyAuthId = new Integer(index).longValue();
+        obj.setCompanyAuthId(companyAuthId);
+    }
+    
     public void ApplicationDataOnDemand.setCompanyId(Application obj, int index) {
         Long companyId = new Integer(index).longValue();
         obj.setCompanyId(companyId);
     }
     
+    public void ApplicationDataOnDemand.setDevLicenceType(Application obj, int index) {
+        DevLicenceType devLicenceType = DevLicenceType.class.getEnumConstants()[0];
+        obj.setDevLicenceType(devLicenceType);
+    }
+    
     public void ApplicationDataOnDemand.setEntryDate(Application obj, int index) {
         Date entryDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setEntryDate(entryDate);
+    }
+    
+    public void ApplicationDataOnDemand.setLicenceName(Application obj, int index) {
+        String licenceName = "licenceName_" + index;
+        if (licenceName.length() > 150) {
+            licenceName = licenceName.substring(0, 150);
+        }
+        obj.setLicenceName(licenceName);
     }
     
     public void ApplicationDataOnDemand.setLicenceStatus(Application obj, int index) {
