@@ -37,13 +37,17 @@
 		<menu-item hidden="false" id="fi_application_orginlicenseid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByOrginLicenseId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 </menu-item>
-<menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
+ <menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
 	<menu-item hidden="false" id="i_specialaccess_new" labelCode="menu_item_specialaccess_new_label" messageCode="global_menu_new" roles="" url="/SpecialAccess?form"/>
-	<menu-item id="c_specialaccess_search" labelCode="menu_category_device_search_label" name="specialaccess_search">
-    <menu-item hidden="false" id="i_specialaccess_list" labelCode="menu_item_specialaccess_list_label" messageCode="global_menu_list" roles="" url="/SpecialAccess?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-	<menu-item hidden="false" id="fi_specialaccess_specialid" labelCode="menu_item_specialaccess_specialid_label" messageCode="global_menu_find" roles="" url="/SpecialAccess?find=BySpecialId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	<menu-item id="i_specialaccess_copyfrom" labelCode="menu_item_specialaccess_copyfrom_label" name="specialaccess_copyfrom"/>
+	<menu-item id="i_specialaccess_search" labelCode="menu_category_device_search_label" name="specialaccess_search">
+		<menu-item hidden="false" id="i_sa_srch_specialaccess_id" messageCode="menu_item_sa_srch_specialaccess_id_label" roles="" url="/SpecialAccess?find=BySpecialId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_sa_srch_healthcare_prof" messageCode="menu_item_sa_srch_healthcare_prof_label" roles="" url="/SpecialAccess/index"/>
+		<menu-item hidden="false" id="i_sa_srch_facility" messageCode="menu_item_sa_srch_facility_label" roles="" url="/SpecialAccess/index"/>		
 	</menu-item>
-</menu-item>
+    <menu-item hidden="true" id="i_specialaccess_list" labelCode="menu_item_specialaccess_list_label" messageCode="global_menu_list" roles="" url="/SpecialAccess?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	<menu-item hidden="true" id="fi_specialaccess_specialid" labelCode="menu_item_specialaccess_specialid_label" messageCode="global_menu_find" roles="" url="/SpecialAccess?find=BySpecialId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>	
+</menu-item> 
 
 <menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
 	<menu-item hidden="false" id="i_correspondence_new" messageCode="menures_label_new" roles="" url="/correspondences?form"/>
