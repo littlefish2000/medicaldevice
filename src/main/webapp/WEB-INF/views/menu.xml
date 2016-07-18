@@ -84,10 +84,45 @@
 
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 	<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
+	<menu-item hidden="false" id="c_batch_mass_changes"  roles="" url="">
+	<menu-item hidden="false" id="i_batch_mass_changes_new"  roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_mass_changes_search"  roles="" url=""/>
 	</menu-item>
-	<menu-item id="c_masschange" labelCode="menu_category_masschange_label" name="Masschange">
+	<menu-item hidden="false" id="i_batch_device_update"  roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_renewal_changes"  roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_device_obsoletion"  roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_reload_of_trans_table"  roles="" url=""/>
 	</menu-item>	
-	<menu-item hidden="false" id="i_maintenance_logout" labelCode="security_logout" roles="" url="/logout"/>
+	<menu-item id="c_maintainenance_table" labelCode="menu_category_table_maintenance" name="tableMaintainenance">
+	<menu-item hidden="false" id="i_table_maintenance_code_table"  roles="" url=""/>
+	<menu-item hidden="false" id="c_table_maintenance_preferred_name_keyword" roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_search" roles="" url=""/>
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_preferred_name_code" roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_search" roles="" url=""/>
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_region_code" roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_region_code_new" roles="" url=""/>
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_health_care_prof"  roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_search" roles="" url=""/>
+	</menu-item>
+	
+	<menu-item hidden="false" id="c_table_maintenance_facility"  roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_facility_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_facility_search" roles="" url=""/>
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_registrar" roles="" url="">
+		<menu-item hidden="false" id="i_table_maintenance_registrar_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_registrar_search" roles="" url=""/>
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_system_user" roles="" url=""/>	
+	</menu-item>
+	<menu-item hidden="false" id="i_maintenance_logout" labelCode="security_logout" roles="" url="/logout">
+	</menu-item>
 </menu-item>
 
 <menu-item hidden="true" id="c_companycontact" labelCode="menu_category_companycontact_label" name="CompanyContact">
@@ -107,5 +142,5 @@
     <menu-item hidden="false" id="fi_certificate_certificateidlike" labelCode="menu_item_certificate_certificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_certificate_origcertificateidlike" labelCode="menu_item_certificate_origcertificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="i_certificate_new" labelCode="menu_item_certificate_new_label" messageCode="global_menu_new" roles="" url="/qualitysystem/certificates?form"/>
-    </menu-item>
+</menu-item>
 </gvnix-menu>
