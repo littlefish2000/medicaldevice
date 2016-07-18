@@ -103,8 +103,7 @@
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_search" roles="" url=""/>
 	</menu-item>
-	<menu-item hidden="false" id="c_table_maintenance_region_code" roles="" url="">
-		<menu-item hidden="false" id="i_table_maintenance_region_code_new" roles="" url=""/>
+	<menu-item hidden="false" id="i_table_maintenance_region_code" roles="" url="">		
 	</menu-item>
 	<menu-item hidden="false" id="c_table_maintenance_health_care_prof"  roles="" url="">
 		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_new" roles="" url=""/>
