@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <label class="col-lg-2">Appl. ID: </label>
+                <input class="col-lg-9" placeholder="Input #" type="text"/>
+            </div>
+            <div class="col-lg-6">
+                <label class="col-lg-3">License Name: </label>
+                <input class="col-lg-9" placeholder="Input #" type="text"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-6">
+                <label class="col-lg-2">License Number: </label>
+                <input class="col-lg-9" placeholder="Input #" type="text"/>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-6">License Type: </label>
+                <select>
+                    <option>Device Family</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-6">Division Code: </label>
+                <select>
+                    <option>Musculoskeletal</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-3">
+                <label class="col-lg-4">Appl. Type: </label>
+                <select style="width: 150px" width="100">
+                    <option>Amendment</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-4">Risk Class: </label>
+                <input class="col-lg-5" placeholder="Input #" type="text"/>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-6">Device Drug: </label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-6">Point of Care: </label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-3">
+                <label class="col-lg-4">Rec. Date: </label>
+                <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-4">Status Date: </label>
+                <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+            </div>
+            <div class="col-lg-2">
+                <label class="col-lg-6">Home User: </label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <label class="col-lg-8">Disclosure: </label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <label class="col-lg-6">Near Patient: </label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="panel with-nav-tabs panel-primary">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs responsive">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab1">Company
+								Info</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab2">Tracking</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab3">Info</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab4">Device</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab5">License</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab6">Authorize Facility</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tab7">Payment</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <legend>Application Contact </legend>
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-8">Manufacturer ID: </label>
+                                        <input class="col-lg-4" placeholder="####" type="text"/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <input class="col-lg-12" placeholder="Generated Company Name" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Address" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant City, Province" type="text"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button class="btn btn-success center-block">Retrieve</button>
+                                        <br/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Name" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Contact #" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Email" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <legend>Mail Contact </legend>
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-8">Manufacturer ID: </label>
+                                        <input class="col-lg-4" placeholder="####" type="text"/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <input class="col-lg-12" placeholder="Generated Company Name" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Address" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant City, Province" type="text"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button class="btn btn-success center-block">Retrieve</button>
+                                        <br/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Name" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Contact #" type="text"/>
+                                        <input class="col-lg-12" placeholder="Generated Applicant Email" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <legend>Contact Info</legend>
+                                <table class="table">
+                                    <thead class="thead-inverse">
+                                        <tr>
+                                            <th>Assigned</th>
+                                            <th>Name</th>
+                                            <th>ID</th>
+                                            <th>Phone Number.</th>
+                                            <th>Ext.</th>
+                                            <th>FAX</th>
+                                            <th>Email</th>
+                                            <th>Title</th>
+                                            <th>Language</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>#######</td>
+                                            <td>###-###-####</td>
+                                            <td>#</td>
+                                            <td>###-###-####</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>#######</td>
+                                            <td>###-###-####</td>
+                                            <td>#</td>
+                                            <td>###-###-####</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>#######</td>
+                                            <td>###-###-####</td>
+                                            <td>#</td>
+                                            <td>###-###-####</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                            <td>AutoFill</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-offset-1">
+                                        <h3>Contact ID</h3>
+                                        <div class="col-lg-6">
+                                            <select style="width: 250px" width="150">
+                                                <option>AutoFill</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button class="btn btn-success center-block">Set</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-offset-1">
+                                        <h3>Mail ID</h3>
+                                        <div class="col-lg-6 ">
+                                            <select style="width: 250px" width="150">
+                                                <option>AutoFill</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button class="btn btn-success center-block">Set</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-12 text-center">
+                                            <button class="btn btn-success center-block">Set</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <table class="table">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>ID</th>
+                                        <th>Evaluator Name.</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>AutoFill</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>AutoFill</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>AutoFill</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>YYYY/MM/DD</td>
+                                        <td>AutoFill</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="col-lg-5">Status: </label>
+                                    <select style="width: 150px" width="100">
+                                        <option>Application Creation</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="col-lg-5">Status Date: </label>
+                                    <input class="col-lg-4" placeholder="  YYYY/MM/DD" type="text"/>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="col-lg-4">Send Email Notif?: </label>
+                                    <select style="width: 150px" width="100">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="col-lg-5">Evaluator: </label>
+                                    <input class="col-lg-4" placeholder="Auto-Generated" type="text"/>
+                                </div>
+                                <div class="col-lg-8">
+                                    <label class="col-lg-2 ">Comment: </label>
+                                    <textarea class="col-lg-10" rows="3">A comment</textarea>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-4 text-center">
+                                    <button class="btn btn-success center-block">Add</button>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <button class="center-block btn btn-success">Save</button>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <button class="btn btn-success center-block">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse1">Application
+												Description 55</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse1">
+                                        <div class="panel-body">
+                                            <textarea class="col-lg-12" rows="3">Application Description is entered here..</textarea>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse2">Application
+												Comment 57</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse2">
+                                        <div class="panel-body">
+                                            <textarea class="col-lg-12" rows="3">Application Comment is entered here..</textarea>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse3">Amendment
+												Reason 93</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse3">
+                                        <div class="panel-body">
+                                            <div class="col-lg-3">
+                                                <select style="width: 250px" width="100">
+                                                    <option>Change in Manufacturing</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button class="center-block btn btn-success">Save</button>
+                                            </div>
+                                            <div class="col-lg-3 text-center">
+                                                <button class="btn btn-success center-block">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse4">Intended/Indication
+												95</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse4">
+                                        <div class="panel-body">
+                                            <textarea class="col-lg-12" rows="4">Intended Indication is entered here..</textarea>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab4">
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse6">Device
+												Assignment 44</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse6">
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>ID</th>
+                                                        <th>Status</th>
+                                                        <th>Status Date</th>
+                                                        <th>Evaluator</th>
+                                                        <th>Material(s)</th>
+                                                        <th>License Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Device ID: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-3">Status: </label>
+                                                    <select style="width: 200px" width="100">
+                                                        <option>Completed</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Status Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse7">Cross Ref.
+												Private Label Device (PRIV)</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse7">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <label class="col-lg-3">Device ID: </label>
+                                                <select style="width: 700" width="100">
+                                                    <option>221345 Rapid Response Drugs of Abuse
+														Testing Cards (Urine)</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <table class="table">
+                                                    <thead class="thead-inverse">
+                                                        <tr>
+                                                            <th>Orig. MFG License No.</th>
+                                                            <th>Orig. MFG Device ID</th>
+                                                            <th>MFG Trade Name</th>
+                                                            <th>Receipt Date</th>
+                                                            <th>Status</th>
+                                                            <th>As of Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <label class="col-lg-6">Org. MFG License No: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="col-lg-6">Org. MFG Device ID: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="col-lg-4">Receipt Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="col-lg-4">As of Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-2">
+                                                    <button class="center-block btn btn-success">Add</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse8">Device
+												Identifier Assignment CAT</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse8">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <label class="col-lg-3">Device ID: </label>
+                                                <select style="width: 700" width="100">
+                                                    <option>221345 Rapid Response Drugs of Abuse
+														Testing Cards (Urine)</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <table class="table">
+                                                    <thead class="thead-inverse">
+                                                        <tr>
+                                                            <th>Device Ident. ID</th>
+                                                            <th>Type</th>
+                                                            <th>Status</th>
+                                                            <th>Status Date</th>
+                                                            <th>License Date</th>
+                                                            <th>DEHP</th>
+                                                            <th>BPA</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Device Ident. ID: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Status </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Active</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Status Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Type </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Model No.</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">DEHP </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Yes</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">BPA </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Add</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Delete</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse9">Cross Ref.
+												Private Label Identifier (CAT. PRIV)</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse9">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <label class="col-lg-3">Device ID: </label>
+                                                <select style="width: 700" width="100">
+                                                    <option>221345 Rapid Response Drugs of Abuse
+														Testing Cards (Urine)</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <table class="table">
+                                                    <thead class="thead-inverse">
+                                                        <tr>
+                                                            <th>Private Lbl Device ID</th>
+                                                            <th>Original MFG Device Ident.</th>
+                                                            <th>Status</th>
+                                                            <th>As of Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-5">Device Identifier </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>N1008</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-6">Original MFG Device
+														Information </label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>PFNT-M</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">As of Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-2">
+                                                    <button class="center-block btn btn-success">Add</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse10">Defined
+												Material 66</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse10">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <br/>
+                                                <table class="table">
+                                                    <thead class="thead-inverse">
+                                                        <tr>
+                                                            <th>ID</th>
+                                                            <th>Product</th>
+                                                            <th>Country</th>
+                                                            <th>Start Date</th>
+                                                            <th>End Date</th>
+                                                            <th>Status</th>
+                                                            <th>Species</th>
+                                                            <th>Tissue</th>
+                                                            <th>Derivative</th>
+                                                            <th>Comments</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>YYYY/MM/DD</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                            <td>AutoFill</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab5">
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse11">Purpose 56</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse11">
+                                        <div class="panel-body">
+                                            <textarea class="col-lg-12" rows="3">The Purpose of the license is entered in here</textarea>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse12">License
+												Status Tracking 89</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse12">
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th>Status Date</th>
+                                                        <th>Status</th>
+                                                        <th>Appl. Status</th>
+                                                        <th>Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>YYYY/MM/DD</td>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                        <td>YYYY/MM/DD</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-offset-2">
+                                                    <label class="col-lg-5">License Status Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Status</label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Issued/Active</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3 col-md-offset-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse13">QS
+												Information 94</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse13">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Type:</label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Modification</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4 ">
+                                                    <label class="col-lg-5">Certificate No: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-5">Original Certificate No: </label>
+                                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-4">Originator:</label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Manufacturer</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="col-lg-5">Status:</label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>Issued</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4 ">
+                                                    <label class="col-lg-5">Status Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-lg-4 ">
+                                                    <label class="col-lg-4">Receipt Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4 ">
+                                                    <label class="col-lg-5">Issuance Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                                <div class="col-lg-4 ">
+                                                    <label class="col-lg-5">Expiry Date: </label>
+                                                    <input class="col-lg-5" placeholder="YYYY/MM/DD" type="text"/>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <label class="col-lg-4">QS Code:</label>
+                                                    <select style="width: 150px" width="100">
+                                                        <option>I85-03</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <input class="col-lg-5" placeholder="AutoGenerated" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-12">
+                                                    <label class="col-lg-1 ">Scope: </label>
+                                                    <textarea class="col-lg-10" rows="3">AutoGenerated</textarea>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <label class="col-lg-1 ">Remarks: </label>
+                                                    <textarea class="col-lg-10" rows="3">AutoGenerated</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab6">
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse14">Authorized
+												Facility 71</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse14">
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th>Facility ID</th>
+                                                        <th>Facility</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-9">
+                                                    <label class="col-lg-2 col-md-offset-3">Facility
+														ID: </label>
+                                                    <input class="col-lg-3" placeholder="Input #" type="text"/>
+                                                    <input class="col-lg-3 col-md-offset-1" placeholder="AutoGenerated" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Add</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Remove</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapse16">Health Care
+												Professional</a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="collapse16">
+                                        <div class="panel-body">
+                                            <label class="col-lg-3 col-md-offset-2">Facility:</label>
+                                            <select style="width: 350px" width="100">
+                                                <option>67198 Ottawa General Hospital</option>
+                                            </select>
+                                            <br/>
+                                            <table class="table">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th>Health Prof. ID</th>
+                                                        <th>Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AutoFill</td>
+                                                        <td>AutoFill</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-9">
+                                                    <label class="col-lg-2 col-md-offset-3">Health
+														Prof. ID: </label>
+                                                    <input class="col-lg-3" placeholder="Input #" type="text"/>
+                                                    <input class="col-lg-3 col-md-offset-1" placeholder="AutoGenerated" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <br/>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Add</button>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <button class="btn btn-success center-block">Remove</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Save</button>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button class="center-block btn btn-success">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab7">
+                            <div class="row">
+                                <div class="col-lg-4 ">
+                                    <label class="col-lg-5">Payment Amount: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="col-lg-4">Payment Method:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>Cheque</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 ">
+                                    <label class="col-lg-5">Cheque No: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="col-lg-4">Complete:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="col-lg-5">Invoice No.1: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-5">Invoice No.2: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-5">Invoice No.3: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-5">Invoice No.4: </label>
+                                    <input class="col-lg-5" placeholder="Input #" type="text"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="col-lg-4">Type 1:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>75%</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-4">Type 2:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>75%</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-4">Type 3:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>75%</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="col-lg-4">Type 4:</label>
+                                    <select style="width: 150px" width="100">
+                                        <option>75%</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <label class="col-lg-1 ">Comments: </label>
+                                <textarea class="col-lg-10" rows="3">Insert Comments</textarea>
+                            </div>
+                            <br/>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Deferred Payment Information</div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-4">Invoicing Due Date: </label>
+                                            <input class="col-lg-5" placeholder="YYYY/MNM/DD" type="text"/>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-5">1st Fiscal Date: </label>
+                                            <input class="col-lg-5" placeholder="YYYY/MNM/DD" type="text"/>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-4">Deferred Action Completed:</label>
+                                            <select style="width: 150px" width="100">
+                                                <option>Yes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-5">Deferred Completion Date: </label>
+                                            <input class="col-lg-5" placeholder="YYYY/MNM/DD" type="text"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form:create id="fc_ca_gc_hc_mds_domain_Application" modelAttribute="application" path="/applications" render="${empty dependencies}" z="Pr3zSPSewSsTs1F6q7BNYjgL6t4=">
+        <field:input field="orginLicenseId" id="c_ca_gc_hc_mds_domain_Application_orginLicenseId" required="true" z="8+BtDXuvu5Qmbjscqsm9tGF2GZ4="/>
+        <field:datetime dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Application_entryDate" required="true" z="VWdH4RmPoY6jwjThay6ZDGwTYzI="/>
+        <field:datetime dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="c_ca_gc_hc_mds_domain_Application_receiptDate" required="true" z="7E07uu1BbJygq7M+BnmF/bxP3MI="/>
+        <field:textarea field="applicationDesc" id="c_ca_gc_hc_mds_domain_Application_applicationDesc" required="true" z="sIvVeGXEcRMvt0B2/2bDCN1WExg="/>
+        <field:textarea field="licenceName" id="c_ca_gc_hc_mds_domain_Application_licenceName" z="YLu6ynP0UT27nIig9taYTmzW3Y0="/>
+        <field:datetime dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="c_ca_gc_hc_mds_domain_Application_licenceStatusDate" required="true" z="OXOyJrFMeEBVx6tuRHauLryDmtw="/>
+        <field:select field="applicationType" id="c_ca_gc_hc_mds_domain_Application_applicationType" items="${applicationtypes}" path="applicationtypes" z="c3PA3rJp+wtrJjGWJOZnQnFf7ZY="/>
+        <field:select field="devLicenceType" id="c_ca_gc_hc_mds_domain_Application_devLicenceType" items="${devlicencetypes}" path="devlicencetypes" z="0cmV+iukiK+3hVqlDbuWeL4Q7kU="/>
+        <field:select field="licenceStatus" id="c_ca_gc_hc_mds_domain_Application_licenceStatus" items="${licencestatustypes}" path="licencestatustypes" z="FTxuS2Xm4fl7yBPXAhiLvg7LQt0="/>
+        <field:input field="companyAuthId" id="c_ca_gc_hc_mds_domain_Application_companyAuthId" validationMessageCode="field_invalid_integer" z="DKccwNaXbxtwuvtvpsi+83Jk/4g="/>
+        <field:input field="appRiskClass" id="c_ca_gc_hc_mds_domain_Application_appRiskClass" validationMessageCode="field_invalid_integer" z="y3ElZ3zxCz/r7jKd0sVHrB8f/bM="/>
+        <field:input field="companyId" id="c_ca_gc_hc_mds_domain_Application_companyId" validationMessageCode="field_invalid_integer" z="b09iCXR6I/c9s/rwgzaYkm9qOsI="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Application" render="${not empty dependencies}" z="tv5yZcorkpT8xTAX5JcorS07lQU="/>
+</div>
