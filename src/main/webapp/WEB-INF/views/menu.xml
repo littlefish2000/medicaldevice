@@ -84,17 +84,17 @@
 
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 	<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
-	<menu-item hidden="false" id="c_batch_mass_changes"  roles="" url="">
-	<menu-item hidden="false" id="i_batch_mass_changes_new"  roles="" url=""/>
-	<menu-item hidden="false" id="i_batch_mass_changes_search"  roles="" url=""/>
+	<menu-item hidden="false" id="c_batch_mass_changes" roles="" url="">
+	<menu-item hidden="false" id="i_batch_mass_changes_new" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_mass_changes_search" roles="" url=""/>
 	</menu-item>
-	<menu-item hidden="false" id="i_batch_device_update"  roles="" url=""/>
-	<menu-item hidden="false" id="i_batch_renewal_changes"  roles="" url=""/>
-	<menu-item hidden="false" id="i_batch_device_obsoletion"  roles="" url=""/>
-	<menu-item hidden="false" id="i_batch_reload_of_trans_table"  roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_device_update" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_renewal_changes" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_device_obsoletion" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_reload_of_trans_table" roles="" url=""/>
 	</menu-item>	
 	<menu-item id="c_maintainenance_table" labelCode="menu_category_table_maintenance" name="tableMaintainenance">
-	<menu-item hidden="false" id="i_table_maintenance_code_table"  roles="" url="/maintenancece/tablemaintenance/?codetable"/>
+	<menu-item hidden="false" id="i_table_maintenance_code_table" roles="" url="/maintenancece/tablemaintenance/?codetable"/>
 	<menu-item hidden="false" id="c_table_maintenance_preferred_name_keyword" roles="" url="">
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_search" roles="" url=""/>
@@ -105,12 +105,12 @@
 	</menu-item>
 	<menu-item hidden="false" id="i_table_maintenance_region_code" roles="" url="">		
 	</menu-item>
-	<menu-item hidden="false" id="c_table_maintenance_health_care_prof"  roles="" url="">
+	<menu-item hidden="false" id="c_table_maintenance_health_care_prof" roles="" url="">
 		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_search" roles="" url=""/>
 	</menu-item>
 	
-	<menu-item hidden="false" id="c_table_maintenance_facility"  roles="" url="">
+	<menu-item hidden="false" id="c_table_maintenance_facility" roles="" url="">
 		<menu-item hidden="false" id="i_table_maintenance_facility_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_facility_search" roles="" url=""/>
 	</menu-item>
