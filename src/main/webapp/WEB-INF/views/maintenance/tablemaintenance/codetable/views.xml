@@ -4,7 +4,7 @@
     <definition extends="default" name="maintenance/tablemaintenance/codetablesearch">
         <put-attribute name="body" value="/WEB-INF/views/maintenance/tablemaintenance/codetable/codetablesearch.jspx"/>
     </definition>  
-    <definition extends="default" name="maintenance/tablemaintenance/codetableeng1">
+    <definition extends="default" name="maintenance/tablemaintenance/codetableeng">
         <put-attribute name="body" value="/WEB-INF/views/maintenance/tablemaintenance/codetable/codetable.jspx"/>
     </definition>          
 </tiles-definitions>
