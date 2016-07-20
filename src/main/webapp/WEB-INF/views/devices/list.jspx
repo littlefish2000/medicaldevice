@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ca_gc_hc_mds_domain_Device" items="${devices}" z="/Xf7BRLniSLW2uQwVjSNWHcqa0c=">
-        <table:table create="false" data="${devices}" delete="false" id="l_ca_gc_hc_mds_domain_Device" path="/devices" show="false" typeIdFieldName="deviceId" z="user-managed">
+        <table:table create="true" data="${devices}" delete="true" id="l_ca_gc_hc_mds_domain_Device" path="/devices" show="true" typeIdFieldName="deviceId" z="user-managed">
             <table:column id="c_ca_gc_hc_mds_domain_Device_deviceId" property="deviceId" z="e9uDKqV1bqgv359ZU9V1smGAuWE="/>
             <table:column id="c_ca_gc_hc_mds_domain_Device_tradeName" property="tradeName" z="e9uDKqV1bqgv359ZU9V1smGAuWE="/>
             <table:column id="c_ca_gc_hc_mds_domain_Device_perfnameCode" property="perfnameCode" z="WfH1+LhH5bLNXFNpHQVcQVpoFkc="/>

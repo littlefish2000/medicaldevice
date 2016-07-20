@@ -1,4 +1,5 @@
 package ca.gc.hc.mds.web;
+import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.RenAuthCompany;
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfo;
@@ -38,9 +39,14 @@ public class CodeTableController {
 	
    
 	@RequestMapping(value = "/maintenancece/tablemaintenance", params = { "codetable" }, method = RequestMethod.GET)
-    public String findLicenceRenewsByLicenceIdForm(Model uiModel) {
+    public String codeTableSelectCreate(Model uiModel) {
 		uiModel.addAttribute("licenceId","");
-        return "maintenance/tablemaintenance/codetable";
+        return "maintenance/tablemaintenance/codetablesearch";
     }
+	
+	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
+    public String codeTableSelectForm( Model uiModel) {
+		return "maintenance/tablemaintenance/codetableeng";
+    }	
 	
 }
