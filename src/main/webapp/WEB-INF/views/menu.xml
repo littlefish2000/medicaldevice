@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gvnix-menu id="_menu" rooMenuBasePath="/">
+<menu-item id="c_device" labelCode="menu_category_device_label" name="Device">
+    <menu-item hidden="false" id="i_device_new" labelCode="menu_item_device_new_label" messageCode="global_menu_new" roles="" url="/devices?form"/>
+    <menu-item id="c_device" labelCode="menu_category_device_search_label" name="Device">
+	    <menu-item hidden="false" id="i_device_list" labelCode="menu_item_device_list_label" messageCode="global_menu_list" roles="" url="/devices?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_device_deviceid" labelCode="menu_item_device_deviceid_label" messageCode="global_menu_device_searchid" roles="" url="/devices?find=ByDeviceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="true" id="fi_device_perfnamecode" labelCode="menu_item_device_perfnamecode_label" messageCode="global_menu_device_searchperfnamecode" roles="" url="/devices?find=ByPerfnameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="fi_device_perfnamecodelike" labelCode="menu_item_device_perfnamecode_label" messageCode="global_menu_device_searchperfnamecode" roles="" url="/devices?find=ByPerfnameCodeLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+    </menu-item>
+<menu-item id="c_Renewal" labelCode="menu_category_Renewal_label" name="Renewal">
+	<menu-item id="c_device" messageCode="menures_renew_licence_renew" name="RenewSearch">
+		 <menu-item hidden="false" id="fi_renew_searchcompany" messageCode="menures_renew_search_regulatory" roles="" url="/renewal/licence?find=ByRegulatoryId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+         <menu-item hidden="false" id="fi_renew_searchlicence" messageCode="menures_renew_search_licence" roles="" url="/renewal/licence?find=ByLicenceId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	</menu-item> 
+	<menu-item hidden="false" id="i_controller__renewalindex_id" messageCode="menures_renew_batchcontrol" roles="" url="/renewal/index">
+		<menu-item hidden="false" id="i_renew_batch_new" messageCode="menures_renew_new" roles="" url="/renewal/batchcontrol?find=New&amp;form"/>
+		<menu-item hidden="false" id="i_renew_batch_fiscalyear" messageCode="menures_renew_search_fiscal_year" roles="" url="/renewal/batchcontrol?find=ByFiscalYear&amp;form"/>
+	</menu-item>
+</menu-item>
+<menu-item id="c_company" labelCode="menu_category_company_label" name="Company">
+    <menu-item hidden="false" id="i_company_new" labelCode="menu_item_company_new_label" messageCode="global_menu_new" roles="" url="/companys?form"/>
+    <menu-item id="c_company_search" labelCode="menu_category_device_search_label" name="CompanySearch">
+	    <menu-item hidden="true" id="i_company_list" labelCode="menu_item_company_list_label" messageCode="global_menu_list" roles="" url="/companys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_company_companyid" labelCode="menu_item_company_companyid_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="true" id="fi_company_companynamelike" labelCode="menu_item_company_companynamelike_label" messageCode="global_menu_find" roles="" url="/companys?find=ByCompanyNameLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+</menu-item>
+
+<menu-item id="c_application" labelCode="menu_category_application_label" name="Application">
+    <menu-item hidden="false" id="i_application_new" labelCode="menu_item_application_new_label" messageCode="global_menu_new" roles="" url="/applications?form"/>
+    <menu-item id="c_company_search" labelCode="menu_category_device_search_label" name="CompanySearch">
+	    <menu-item hidden="true" id="i_application_list" labelCode="menu_item_application_list_label" messageCode="global_menu_list" roles="" url="/applications?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_application_applicationid" messageCode="menures_application_searchbyapplication" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <!-- menu-item hidden="false" id="fi_application_applicationid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/-->
+		<menu-item hidden="false" id="fi_application_orginlicenseid" messageCode="menures_application_searchbylicence" roles="" url="/applications?find=ByOrginLicenseId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+</menu-item>
+ <menu-item id="c_specialaccess" labelCode="menu_category_specialaccess_label" name="Specialaccess">
+	<menu-item hidden="false" id="i_specialaccess_new" labelCode="menu_item_specialaccess_new_label" messageCode="global_menu_new" roles="" url="/SpecialAccess?form"/>
+	<menu-item id="i_specialaccess_copyfrom" labelCode="menu_item_specialaccess_copyfrom_label" name="specialaccess_copyfrom"/>
+	<menu-item id="i_specialaccess_search" labelCode="menu_category_device_search_label" name="specialaccess_search">
+		<menu-item hidden="false" id="i_sa_srch_specialaccess_id" messageCode="menu_item_sa_srch_specialaccess_id_label" roles="" url="/SpecialAccess?find=BySpecialId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_sa_srch_healthcare_prof" messageCode="menu_item_sa_srch_healthcare_prof_label" roles="" url="/SpecialAccess/index"/>
+		<menu-item hidden="false" id="i_sa_srch_facility" messageCode="menu_item_sa_srch_facility_label" roles="" url="/SpecialAccess/index"/>		
+	</menu-item>
+    <menu-item hidden="true" id="i_specialaccess_list" labelCode="menu_item_specialaccess_list_label" messageCode="global_menu_list" roles="" url="/SpecialAccess?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	<menu-item hidden="true" id="fi_specialaccess_specialid" labelCode="menu_item_specialaccess_specialid_label" messageCode="global_menu_find" roles="" url="/SpecialAccess?find=BySpecialId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>	
+</menu-item> 
+
+<menu-item id="c_correspondence" messageCode="global_menu_correspondence" name="Correspondenc">
+	<menu-item hidden="false" id="i_correspondence_new" messageCode="menures_label_new" roles="" url="/correspondences?form"/>
+	<menu-item id="c_correspondence_search" messageCode="menures_label_search" name="correspondence_search">
+	    <menu-item hidden="true" id="i_correspondence_list" labelCode="menu_item_correspondence_list_label" messageCode="global_menu_list" roles="" url="/correspondences?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_seqcorrid" messageCode="menures_corespondence_correspondenceid" roles="" url="/correspondences?find=BySeqcorrId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_applicationid" messageCode="menures_corespondence_applicationid" roles="" url="/correspondences?find=ByApplicationId&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_orginallicenceidequals" messageCode="menures_corespondence_licenceno" roles="" url="/correspondences?find=ByOrginallicenceIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_certificateidequals" messageCode="menures_corespondence_certificateid" roles="" url="/correspondences?find=ByCertificateIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	    <menu-item hidden="false" id="fi_correspondence_companyidequals" messageCode="menures_corespondence_companyid" roles="" url="/correspondences?find=ByCompanyIdEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+    </menu-item>
+<menu-item id="c_qualitysystem" labelCode="menu_category_qualitysystem_label" name="Qualitysystem">
+        <menu-item hidden="true" id="i_controller__qualitysystemindex_id" labelCode="menu_item_controller__qualitysystemindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/index"/>
+	<menu-item hidden="true" id="i_controller__correspondenceindex_id" labelCode="menu_item_controller__correspondenceindex_id_label" messageCode="global_generic" roles="" url="/qualitysystem/cert/create"/>
+	<menu-item id="c_correspondence_certw" messageCode="menures_renew_corespondence_certificate" name="corespondence_cert">
+		<menu-item hidden="false" id="i_correspondence_cert_new" messageCode="menures_renew_corespondence_new" roles="" url="/qualitysystem/certificates?form"/>
+		<menu-item hidden="false" id="i_correspondence_cert_certificate" messageCode="menures_renew_corespondence_search_certificate" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_correspondence_cert_orig" messageCode="menures_renew_corespondence_search_orig" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_correspondence_cert_company" messageCode="menures_renew_corespondence_search_company" roles="" url="/qualitysystem/certificatecompanys?find=ByCompanyIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+		<menu-item hidden="false" id="i_correspondence_cert_licence_no" messageCode="menures_renew_corespondence_search_licence_no" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	</menu-item>
+	<menu-item hidden="true" id="i_correspondence_table_maintain" messageCode="menures_renew_corespondence_table_maintain" roles="" url="/correspondence/index"/>
+	<menu-item hidden="false" id="i_correspondence_validity" messageCode="menures_renew_corespondence_validity" roles="" url="/correspondence/index">
+		<menu-item hidden="false" id="i_certificate_validity_searchbatchcontrol" messageCode="menures_certificate_validity_searchbatchcontrol" roles="" url="/qualitysystem/validity/batchcontrols?form"/>
+		<menu-item hidden="false" id="i_certificate_validity_newbatchcontrol" messageCode="menures_certificate_validity_newbatchcontrol" roles="" url="/qualitysystem/validity/batchcontrols?form"/>
+		<menu-item hidden="false" id="i_certificate_validity_batchtracking" messageCode="menures_certificate_validity_batchtracking" roles="" url="/qualitysystem/validity?batchtracking&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+	</menu-item>
+</menu-item>
+
+<menu-item id="c_batch" labelCode="menu_category_batch_label" name="Batch">
+
+	<menu-item hidden="false" id="c_batch_mass_changes" roles="" url="">
+	<menu-item hidden="false" id="i_batch_mass_changes_new" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_mass_changes_search" roles="" url=""/>
+	</menu-item>
+	<menu-item id="c_finance" messageCode="menures_finance" name="Finance">
+
+	</menu-item> 
+	<menu-item hidden="false" id="i_batch_device_update" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_renewal_changes" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_device_obsoletion" roles="" url=""/>
+	<menu-item hidden="false" id="i_batch_reload_of_trans_table" roles="" url=""/>
+</menu-item>	
+<menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
+	<menu-item hidden="false" id="i_table_maintenance_code_table" roles="" url="/maintenancece/tablemaintenance?codetable"/>	
+	<menu-item hidden="false" id="i_device_list" labelCode="menu_item_preferredNameKeyword_list_label" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}">
+<!-- 	url="/maintenance/preferredNameKeyword?page=1&amp;size=${empty param.size ? 10 : param.size}"/> -->
+
+	<!-- 	<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword" messageCode="global_menu_find" roles="" url=""/>		 -->
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_preferred_name_code" roles="" url="">
+		<!-- <menu-item hidden="false" id="i_table_maintenance_preferred_name_code_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_search" roles="" url=""/> -->
+	</menu-item>
+	<menu-item hidden="false" id="i_table_maintenance_region_code" roles="" url="">		
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_health_care_prof" roles="" url="">
+		<!-- <menu-item hidden="false" id="i_table_maintenance_health_care_prof_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_search" roles="" url=""/> -->
+	</menu-item>
+	
+	<menu-item hidden="false" id="c_table_maintenance_facility" roles="" url="">
+		<!-- <menu-item hidden="false" id="i_table_maintenance_facility_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_facility_search" roles="" url=""/> -->
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_registrar" roles="" url="">
+		<!-- <menu-item hidden="false" id="i_table_maintenance_registrar_new" roles="" url=""/>
+		<menu-item hidden="false" id="i_table_maintenance_registrar_search" roles="" url=""/> -->
+	</menu-item>
+	<menu-item hidden="false" id="c_table_maintenance_system_user" roles="" url=""/>	
+	</menu-item>
+	<menu-item hidden="false" id="i_maintenance_logout" labelCode="security_logout" roles="" url="/logout">	
+</menu-item>
+
+<menu-item hidden="true" id="c_companycontact" labelCode="menu_category_companycontact_label" name="CompanyContact">
+        <menu-item hidden="false" id="i_companycontact_new" labelCode="menu_item_companycontact_new_label" messageCode="global_menu_new" roles="" url="/companycontacts?form"/>
+    <menu-item hidden="false" id="i_companycontact_list" labelCode="menu_item_companycontact_list_label" messageCode="global_menu_list" roles="" url="/companycontacts?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_companycontact_company" labelCode="menu_item_companycontact_company_label" messageCode="global_menu_find" roles="" url="/companycontacts?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+</menu-item>
+
+<menu-item hidden="true" id="c_companyhistory" labelCode="menu_category_companyhistory_label" name="CompanyHistory">
+        <menu-item hidden="false" id="i_companyhistory_new" labelCode="menu_item_companyhistory_new_label" messageCode="global_menu_new" roles="" url="/companyhistorys?form"/>
+    <menu-item hidden="false" id="i_companyhistory_list" labelCode="menu_item_companyhistory_list_label" messageCode="global_menu_list" roles="" url="/companyhistorys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_companyhistory_company" labelCode="menu_item_companyhistory_company_label" messageCode="global_menu_find" roles="" url="/companyhistorys?find=ByCompany&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+</menu-item>
+<menu-item hidden="true" id="c_certificate" labelCode="menu_category_certificate_label" name="Certificate">
+        
+    <menu-item hidden="false" id="i_certificate_list" labelCode="menu_item_certificate_list_label" messageCode="global_menu_list" roles="" url="/qualitysystem/certificates?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_certificateidlike" labelCode="menu_item_certificate_certificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByCertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_certificate_origcertificateidlike" labelCode="menu_item_certificate_origcertificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="i_certificate_new" labelCode="menu_item_certificate_new_label" messageCode="global_menu_new" roles="" url="/qualitysystem/certificates?form"/>
+</menu-item>
+<menu-item hidden="true" id="c_preferrednamekeyword" labelCode="menu_category_preferrednamekeyword_label" name="PreferredNameKeyword">
+        <menu-item hidden="false" id="i_preferrednamekeyword_new" labelCode="menu_item_preferrednamekeyword_new_label" messageCode="global_menu_new" roles="" url="/preferredNameKeywords?form"/>
+    <menu-item hidden="false" id="i_preferrednamekeyword_list" labelCode="menu_item_preferrednamekeyword_list_label" messageCode="global_menu_list" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_preferrednamekeyword_prefnameword" labelCode="menu_item_preferrednamekeyword_prefnameword_label" messageCode="global_menu_find" roles="" url="/preferredNameKeywords?find=ByPrefNameWord&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+</gvnix-menu>
