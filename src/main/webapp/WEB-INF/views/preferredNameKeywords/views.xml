@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="preferredNameKeywords/list">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/list.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameKeywords/show">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/show.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameKeywords/create">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/create.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameKeywords/update">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/update.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameKeywords/findPreferredNameKeywordsByPrefNameWord">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/findPreferredNameKeywordsByPrefNameWord.jspx"/>
+    </definition>
+</tiles-definitions>

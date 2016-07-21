@@ -10,6 +10,7 @@ import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.PreferredNameKeyword;
 import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -180,6 +181,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<PreferredNameKeyword, String> ApplicationConversionServiceFactoryBean.getPreferredNameKeywordToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.PreferredNameKeyword, java.lang.String>() {
+            public String convert(PreferredNameKeyword preferredNameKeyword) {
+                return "(no displayable fields)";
+            }
+        };
+    }
+    
+    public Converter<String, PreferredNameKeyword> ApplicationConversionServiceFactoryBean.getIdToPreferredNameKeywordConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.PreferredNameKeyword>() {
+            public ca.gc.hc.mds.domain.PreferredNameKeyword convert(java.lang.String id) {
+                return PreferredNameKeyword.findPreferredNameKeyword(id);
+            }
+        };
+    }
+    
     public Converter<SpecialAccess, String> ApplicationConversionServiceFactoryBean.getSpecialAccessToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.SpecialAccess, java.lang.String>() {
             public String convert(SpecialAccess specialAccess) {
@@ -225,6 +242,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getPreferredNameKeywordToStringConverter());
+        registry.addConverter(getIdToPreferredNameKeywordConverter());
         registry.addConverter(getSpecialAccessToStringConverter());
         registry.addConverter(getIdToSpecialAccessConverter());
         registry.addConverter(getStringToSpecialAccessConverter());
