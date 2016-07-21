@@ -95,7 +95,7 @@
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 	
 	
-	<menu-item hidden="false" id="i_table_maintenance_code_table" roles="" url="maintenance/codeTables"/>
+	<menu-item hidden="false" id="i_table_maintenance_code_table" roles="" url="/maintenancece/tablemaintenance?codetable"/>
 	<menu-item hidden="false" id="c_table_maintenance_preferred_name_keyword" roles="" url="">
 	<!-- 	<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword" messageCode="global_menu_find" roles="" url=""/>		 -->
