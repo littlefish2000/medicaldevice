@@ -15,12 +15,12 @@ privileged aspect DrugStandard_Roo_JavaBean {
         this.drugstandardCd = drugstandardCd;
     }
     
-    public String DrugStandard.getDrugstandarddESC() {
-        return this.drugstandarddESC;
+    public String DrugStandard.getDrugstandardDesc() {
+        return this.drugstandardDesc;
     }
     
-    public void DrugStandard.setDrugstandarddESC(String drugstandarddESC) {
-        this.drugstandarddESC = drugstandarddESC;
+    public void DrugStandard.setDrugstandardDesc(String drugstandardDesc) {
+        this.drugstandardDesc = drugstandardDesc;
     }
     
 }

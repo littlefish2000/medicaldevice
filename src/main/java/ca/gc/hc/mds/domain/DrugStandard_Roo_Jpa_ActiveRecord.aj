@@ -14,7 +14,7 @@ privileged aspect DrugStandard_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager DrugStandard.entityManager;
     
-    public static final List<String> DrugStandard.fieldNames4OrderClauseFilter = java.util.Arrays.asList("drugstandardCd", "drugstandarddESC");
+    public static final List<String> DrugStandard.fieldNames4OrderClauseFilter = java.util.Arrays.asList("drugstandardCd", "drugstandardDesc");
     
     public static final EntityManager DrugStandard.entityManager() {
         EntityManager em = new DrugStandard().entityManager;
@@ -39,11 +39,6 @@ privileged aspect DrugStandard_Roo_Jpa_ActiveRecord {
             }
         }
         return entityManager().createQuery(jpaQuery, DrugStandard.class).getResultList();
-    }
-    
-    public static DrugStandard DrugStandard.findDrugStandard(String drugstandardCd) {
-        if (drugstandardCd == null || drugstandardCd.length() == 0) return null;
-        return entityManager().find(DrugStandard.class, drugstandardCd);
     }
     
     public static List<DrugStandard> DrugStandard.findDrugStandardEntries(int firstResult, int maxResults) {
