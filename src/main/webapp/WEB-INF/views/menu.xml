@@ -94,7 +94,7 @@
 </menu-item>	
 <menu-item id="c_maintenance" labelCode="menu_category_maintenance_label" name="Maintenance">
 	<menu-item hidden="false" id="i_table_maintenance_code_table" roles="" url="/maintenancece/tablemaintenance?codetable"/>	
-	<menu-item hidden="false" id="i_device_list" labelCode="menu_item_preferredNameKeyword_list_label" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}">
+	<menu-item hidden="false" id="i_device_list" labelCode="menu_item_preferredNameKeyword_list_label" roles="" url="/preferredNameKeywords?page=1&amp;sortFieldName=prefNameWord&amp;size=${empty param.size ? 10 : param.size}">
 <!-- 	url="/maintenance/preferredNameKeyword?page=1&amp;size=${empty param.size ? 10 : param.size}"/> -->
 
 	<!-- 	<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
@@ -145,6 +145,6 @@
 <menu-item hidden="true" id="c_preferrednamekeyword" labelCode="menu_category_preferrednamekeyword_label" name="PreferredNameKeyword">
         <menu-item hidden="false" id="i_preferrednamekeyword_new" labelCode="menu_item_preferrednamekeyword_new_label" messageCode="global_menu_new" roles="" url="/preferredNameKeywords?form"/>
     <menu-item hidden="false" id="i_preferrednamekeyword_list" labelCode="menu_item_preferrednamekeyword_list_label" messageCode="global_menu_list" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_preferrednamekeyword_prefnameword" labelCode="menu_item_preferrednamekeyword_prefnameword_label" messageCode="global_menu_find" roles="" url="/preferredNameKeywords?find=ByPrefNameWord&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_preferrednamekeyword_prefnameword" labelCode="menu_item_preferrednamekeyword_prefnameword_label" messageCode="global_menu_find" roles="" url="/preferredNameKeywords?find=ByPrefNameWord&amp;form&amp;page=1&amp;sortFieldName=prefNameWord&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 </gvnix-menu>

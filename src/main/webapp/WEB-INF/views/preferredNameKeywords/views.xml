@@ -5,13 +5,13 @@
         <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/list.jspx"/>
     </definition>
 <definition extends="default" name="preferredNameKeywords/show">
-        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/show.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/showprefkeyword.jspx"/>
     </definition>
 <definition extends="default" name="preferredNameKeywords/create">
-        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/create.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/createprefkeyword.jspx"/>
     </definition>
 <definition extends="default" name="preferredNameKeywords/update">
-        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/update.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/updateprefkeyword.jspx"/>
     </definition>
 <definition extends="default" name="preferredNameKeywords/findPreferredNameKeywordsByPrefNameWord">
         <put-attribute name="body" value="/WEB-INF/views/preferredNameKeywords/findPreferredNameKeywordsByPrefNameWord.jspx"/>
