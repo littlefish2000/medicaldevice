@@ -29,8 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class PreferredNameKeyword {
 
 	@Id    
-    @Column(name = "PREF_NAME_WORD", columnDefinition = "char")
-	@Size(min = 0, max = 28)
+    @Column(name = "PREF_NAME_WORD", columnDefinition = "char(28)",nullable=false)
 	private String prefNameWord;
 
 	public String toString() {
@@ -75,15 +74,15 @@ public class PreferredNameKeyword {
         if (prefNameWord == null || prefNameWord.length() == 0) return null;
         
 //        return entityManager().createQuery("SELECT o FROM PreferredNameKeyword o where prefNameWord = :prefNameWord ", PreferredNameKeyword.class).setParameter("prefNameWord", prefNameWord).getFirstResult();
-        Query q=  entityManager().createQuery("SELECT o FROM PreferredNameKeyword o where o.prefNameWord='"+ prefNameWord +"'",PreferredNameKeyword.class);
+        /*Query q=  entityManager().createQuery("SELECT o FROM PreferredNameKeyword o where o.prefNameWord='"+ prefNameWord +"'",PreferredNameKeyword.class);
         List<PreferredNameKeyword> pList = q.getResultList();
         
         PreferredNameKeyword p = null;
         if (q.getResultList().size() == 1){
          p= pList.get(0);
-        }
+        }*/
         	
-        return p;
+        return (entityManager().createQuery("SELECT o FROM PreferredNameKeyword o where o.prefNameWord='"+ prefNameWord +"'",PreferredNameKeyword.class).getSingleResult());
        
     }
 	public static List<PreferredNameKeyword> findPreferredNameKeywordEntries(int firstResult, int maxResults) {

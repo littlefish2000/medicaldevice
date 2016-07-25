@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="preferredNameCodes/list">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/list.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameCodes/show">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/show.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameCodes/create">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/create.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameCodes/update">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/update.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameCodes/findPreferredNameCodesByPrefNameCodeEquals">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/findPreferredNameCodesByPrefNameCodeEquals.jspx"/>
+    </definition>
+<definition extends="default" name="preferredNameCodes/findPreferredNameCodesByPrefNameCode">
+        <put-attribute name="body" value="/WEB-INF/views/preferredNameCodes/findPreferredNameCodesByPrefNameCode.jspx"/>
+    </definition>
+</tiles-definitions>

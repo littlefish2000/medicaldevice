@@ -100,7 +100,7 @@
 	<!-- 	<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_keyword" messageCode="global_menu_find" roles="" url=""/>		 -->
 	</menu-item>
-	<menu-item hidden="false" id="c_table_maintenance_preferred_name_code" roles="" url="">
+	<menu-item hidden="false" id="c_table_maintenance_preferred_name_code" roles="" url="/preferredNameCodes?page=1&amp;size=${empty param.size ? 10 : param.size}">
 		<!-- <menu-item hidden="false" id="i_table_maintenance_preferred_name_code_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_preferred_name_code_search" roles="" url=""/> -->
 	</menu-item>
@@ -146,5 +146,11 @@
         <menu-item hidden="false" id="i_preferrednamekeyword_new" labelCode="menu_item_preferrednamekeyword_new_label" messageCode="global_menu_new" roles="" url="/preferredNameKeywords?form"/>
     <menu-item hidden="false" id="i_preferrednamekeyword_list" labelCode="menu_item_preferrednamekeyword_list_label" messageCode="global_menu_list" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_preferrednamekeyword_prefnameword" labelCode="menu_item_preferrednamekeyword_prefnameword_label" messageCode="global_menu_find" roles="" url="/preferredNameKeywords?find=ByPrefNameWord&amp;form&amp;page=1&amp;sortFieldName=prefNameWord&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item hidden="true" id="c_preferrednamecode" labelCode="menu_category_preferrednamecode_label" name="PreferredNameCode">
+        <menu-item hidden="false" id="i_preferrednamecode_new" labelCode="menu_item_preferrednamecode_new_label" messageCode="global_menu_new" roles="" url="/preferredNameCodes?form"/>
+    <menu-item hidden="false" id="i_preferrednamecode_list" labelCode="menu_item_preferrednamecode_list_label" messageCode="global_menu_list" roles="" url="/preferredNameCodes?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_preferrednamecode_prefnamecodeequals" labelCode="menu_item_preferrednamecode_prefnamecodeequals_label" messageCode="global_menu_find" roles="" url="/preferredNameCodes?find=ByPrefNameCodeEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    <menu-item hidden="false" id="fi_preferrednamecode_prefnamecode" labelCode="menu_item_preferrednamecode_prefnamecode_label" messageCode="global_menu_find" roles="" url="/preferredNameCodes?find=ByPrefNameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 </gvnix-menu>

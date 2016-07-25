@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ca_gc_hc_mds_domain_PreferredNameCode" idField="prefNameCode" modelAttribute="preferredNameCode" path="/preferredNameCodes" versionField="none" z="4saOrpxhcdVPIXzf/CXkV4c7yTE=">
+        <field:input field="prefDescEng1" id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng1" required="true" z="MBBcqcYQLajIg4P5amm/Nz7J8Xg="/>
+        <field:input field="prefDescEng2" id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng2" required="true" z="eDtxieIsFBBmJmBwhpcnp3Lz5eE="/>
+        <field:input field="prefDescFr1" id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr1" required="true" z="3iRUQlP5d6iPuu5IMxyZQWjRA9w="/>
+        <field:textarea field="prefDescFr2" id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr2" z="gQnh1/LTTHynx7rcMboU8K12tQ4="/>
+        <field:input field="riskClassification" id="c_ca_gc_hc_mds_domain_PreferredNameCode_riskClassification" validationMessageCode="field_invalid_integer" z="iWicbvlrEl5zHnN1LKK3WH1R9DU="/>
+        <field:input field="regulatedBy" id="c_ca_gc_hc_mds_domain_PreferredNameCode_regulatedBy" max="2" min="0" required="true" z="SG2mem5CXazxIYBixxiZgp7yrAA="/>
+    </form:update>
+</div>

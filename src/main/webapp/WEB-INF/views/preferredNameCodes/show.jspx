@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_PreferredNameCode" object="${preferrednamecode}" path="/preferredNameCodes" z="zote+KR1eTeCaeYqNKzPf18LF/c=">
+        <field:display field="prefDescEng1" id="s_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng1" object="${preferrednamecode}" z="XATqjpUSv1B5cEO6w6k9JTDcCdI="/>
+        <field:display field="prefDescEng2" id="s_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng2" object="${preferrednamecode}" z="MpW4PAxG+9Roo9iirT30dz3qwVs="/>
+        <field:display field="prefDescFr1" id="s_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr1" object="${preferrednamecode}" z="+sBafFid4g0xvwLMsZZ20UIGEQg="/>
+        <field:display field="prefDescFr2" id="s_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr2" object="${preferrednamecode}" z="wd8zQQHxe9zoPkTNsos5P+gOOlM="/>
+        <field:display field="riskClassification" id="s_ca_gc_hc_mds_domain_PreferredNameCode_riskClassification" object="${preferrednamecode}" z="I5Ka20wtkXyBdd8mDId/JfjHX+M="/>
+        <field:display field="regulatedBy" id="s_ca_gc_hc_mds_domain_PreferredNameCode_regulatedBy" object="${preferrednamecode}" z="3Kty5nqrjVA0uWVacmRIrH+ZjEo="/>
+    </page:show>
+</div>

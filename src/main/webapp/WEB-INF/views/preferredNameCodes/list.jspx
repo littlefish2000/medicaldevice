@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_PreferredNameCode" items="${preferrednamecodes}" z="yEnhunPAJRLS1K1pz4/2az4lW40=">
+        <table:table data="${preferrednamecodes}" id="l_ca_gc_hc_mds_domain_PreferredNameCode" path="/preferredNameCodes" typeIdFieldName="prefNameCode" z="m+ZY0siRhDo5ueLfEEI5+B5XiOk=">
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng1" property="prefDescEng1" z="tze4qXqu8f2Z7+hS4Ijn8PB89Pc="/>
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescEng2" property="prefDescEng2" z="CdZFgbuLjkscjMgI/x9EKg2knqs="/>
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr1" property="prefDescFr1" z="W43hY2KBmMUJCQFLXFBIefG0hp8="/>
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_prefDescFr2" property="prefDescFr2" z="PzVniQZjbRXrG6s7ILjp7Gy5y0M="/>
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_riskClassification" property="riskClassification" z="uGyi+7FIkmC9IcWNICCAXgoDmdc="/>
+            <table:column id="c_ca_gc_hc_mds_domain_PreferredNameCode_regulatedBy" property="regulatedBy" z="+V60VNB+Uus7foqVMztyOhGO5no="/>
+        </table:table>
+    </page:list>
+</div>
