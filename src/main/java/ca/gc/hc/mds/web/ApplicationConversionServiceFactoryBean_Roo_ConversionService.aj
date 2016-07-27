@@ -10,6 +10,7 @@ import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.PreferredNameCode;
 import ca.gc.hc.mds.domain.PreferredNameKeyword;
 import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
@@ -181,6 +182,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<PreferredNameCode, String> ApplicationConversionServiceFactoryBean.getPreferredNameCodeToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.PreferredNameCode, java.lang.String>() {
+            public String convert(PreferredNameCode preferredNameCode) {
+                return new StringBuilder().append(preferredNameCode.getPrefDescEng1()).append(' ').append(preferredNameCode.getPrefDescEng2()).append(' ').append(preferredNameCode.getPrefDescFr1()).append(' ').append(preferredNameCode.getPrefDescFr2()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, PreferredNameCode> ApplicationConversionServiceFactoryBean.getIdToPreferredNameCodeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.PreferredNameCode>() {
+            public ca.gc.hc.mds.domain.PreferredNameCode convert(java.lang.String id) {
+                return PreferredNameCode.findPreferredNameCode(id);
+            }
+        };
+    }
+    
     public Converter<PreferredNameKeyword, String> ApplicationConversionServiceFactoryBean.getPreferredNameKeywordToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.PreferredNameKeyword, java.lang.String>() {
             public String convert(PreferredNameKeyword preferredNameKeyword) {
@@ -242,6 +259,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getPreferredNameCodeToStringConverter());
+        registry.addConverter(getIdToPreferredNameCodeConverter());
         registry.addConverter(getPreferredNameKeywordToStringConverter());
         registry.addConverter(getIdToPreferredNameKeywordConverter());
         registry.addConverter(getSpecialAccessToStringConverter());

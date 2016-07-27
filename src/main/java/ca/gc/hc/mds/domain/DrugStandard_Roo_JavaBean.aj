@@ -7,16 +7,8 @@ import ca.gc.hc.mds.domain.DrugStandard;
 
 privileged aspect DrugStandard_Roo_JavaBean {
     
-    public String DrugStandard.getDrugstandardCd() {
-        return this.drugstandardCd;
-    }
-    
     public void DrugStandard.setDrugstandardCd(String drugstandardCd) {
         this.drugstandardCd = drugstandardCd;
-    }
-    
-    public String DrugStandard.getDrugstandardDesc() {
-        return this.drugstandardDesc;
     }
     
     public void DrugStandard.setDrugstandardDesc(String drugstandardDesc) {

@@ -10,21 +10,35 @@ import javax.persistence.TypedQuery;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.type.CharacterType;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "",  schema = "MDSDB", identifierColumn = "DRUG_STANDARD_CD", 
-identifierField = "drugstandardCd", identifierType = String.class, table = "DRUG_STANDARD",finders =
+identifierField = "drugstandardCd",  table = "DRUG_STANDARD",finders =
 { "findDrugStandardsByDrugstandardDescEquals",
 		})
+@TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 public class DrugStandard {
 	
     @Id
+    @Type(type = "fixedLengthCharType")
     @Column(name = "DRUG_STANDARD_CD", columnDefinition = "char",nullable=false, length=8)
-    private String drugstandardCd;
+    private  String drugstandardCd;
+    
+    public String getDrugstandardCd() {
+        return drugstandardCd;
+    }    
     
     @Column(name = "DRUG_STANDARD_DESC", columnDefinition = "char",nullable=false, length=35)
+    @Type(type = "fixedLengthCharType")
     private String drugstandardDesc;
+    public String getDrugstandardDesc() {
+        return drugstandardDesc;
+    }    
+    
     
 	public static DrugStandard findDrugStandard(String drugstandardCd) {
         if (drugstandardCd == null || drugstandardCd.length() == 0) throw new IllegalArgumentException("The drugstandardCd argument is required");
