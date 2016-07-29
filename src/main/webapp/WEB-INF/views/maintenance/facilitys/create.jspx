@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_ca_gc_hc_mds_domain_Facility" modelAttribute="facility" path="/maintenance/facilitys" render="${empty dependencies}" z="wZ1v5VErouVerutu4jFLdmUGBdw=">
+        <field:textarea field="facilityName" id="c_ca_gc_hc_mds_domain_Facility_facilityName" z="sN56LdDeFxtI9cC0i9eBBWuFH9E="/>
+        <field:input field="facilityCity" id="c_ca_gc_hc_mds_domain_Facility_facilityCity" max="20" min="6" required="true" z="M7Czt0Q/PWnBFH0H+niix6yk0S0="/>
+        <field:input field="facilityProvince" id="c_ca_gc_hc_mds_domain_Facility_facilityProvince" max="2" min="0" required="true" z="7MHRgPey4+GlD2YhaJZKycWfqBY="/>
+        <field:input field="facilityPostalCode" id="c_ca_gc_hc_mds_domain_Facility_facilityPostalCode" max="6" min="0" required="true" z="KnwqKDvCdwmiI/vsG26YNXtoETU="/>
+        <field:textarea field="facilityAddress" id="c_ca_gc_hc_mds_domain_Facility_facilityAddress" z="f8DpbA7RF0KN+zdV+MEZhaczvmo="/>
+        <field:textarea field="facilityAddress2" id="c_ca_gc_hc_mds_domain_Facility_facilityAddress2" z="oko21Q9/frME+U1xPmlJ6FJ/7IQ="/>
+        <field:input field="facilityfax" id="c_ca_gc_hc_mds_domain_Facility_facilityfax" validationMessageCode="field_invalid_integer" z="1kfgqsr3CO8ZW3smasQOnPT29LY="/>
+        <field:input field="facilityPhone" id="c_ca_gc_hc_mds_domain_Facility_facilityPhone" validationMessageCode="field_invalid_integer" z="u8Kzc2KHtu50PsSOrZywg3F/gL8="/>
+        <field:textarea field="facilityEmail" id="c_ca_gc_hc_mds_domain_Facility_facilityEmail" z="oQcLYHMqHUwtkLU5JMEWKDNWor4="/>
+        <field:input field="facilityId" id="c_ca_gc_hc_mds_domain_Facility_facilityId" required="true" validationMessageCode="field_invalid_integer" z="6eiAuPx78AfYZGu1tUlTXGAXlBE="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Facility" render="${not empty dependencies}" z="qDtKdLLcXVvDuYKODoqG1yhHeis="/>
+</div>

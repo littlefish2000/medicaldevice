@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Registrar" object="${registrar}" path="/maintenance/Registrar" z="RXmPpe9AXII6Rpi2XKsLdUyPTdk=">
+        <field:display field="registrarName" id="s_ca_gc_hc_mds_domain_Registrar_registrarName" object="${registrar}" z="SNFn+XJLBv11lMZE1XMQ3bwWe1o="/>
+        <field:display field="addrLine1" id="s_ca_gc_hc_mds_domain_Registrar_addrLine1" object="${registrar}" z="DZCOECDTv0i9x2Fe7bH2nor7qiA="/>
+        <field:display field="addrLine2" id="s_ca_gc_hc_mds_domain_Registrar_addrLine2" object="${registrar}" z="Y43xPUmruv8NSOKl8U0/x3eW7UY="/>
+        <field:display field="addrline3" id="s_ca_gc_hc_mds_domain_Registrar_addrline3" object="${registrar}" z="hqJaGAQ5DXqljlnpYbsmkzWoQBA="/>
+        <field:display field="postalCode" id="s_ca_gc_hc_mds_domain_Registrar_postalCode" object="${registrar}" z="Ei+7k72KJ8oG311XsLsxegQsKkU="/>
+        <field:display field="city" id="s_ca_gc_hc_mds_domain_Registrar_city" object="${registrar}" z="GEcF31LXZwdU3hdqEy1Wdg1NalI="/>
+        <field:display field="countryCd" id="s_ca_gc_hc_mds_domain_Registrar_countryCd" object="${registrar}" z="/cDIiwVc1H2drJ5V+K2GYyL4wvk="/>
+        <field:display field="regionCd" id="s_ca_gc_hc_mds_domain_Registrar_regionCd" object="${registrar}" z="3LSZG0Fov5XtGwTAGaQTeFQF5g4="/>
+        <field:display field="status" id="s_ca_gc_hc_mds_domain_Registrar_status" object="${registrar}" z="WMaHokYURHMP5ZY39YoXKDekBms="/>
+        <field:display date="true" dateTimePattern="${registrar_statusdt_date_format}" field="statusDt" id="s_ca_gc_hc_mds_domain_Registrar_statusDt" object="${registrar}" z="lBMLKYF/XelN4DYqjdHcHGC8Rx8="/>
+        <field:display field="registrarWeb" id="s_ca_gc_hc_mds_domain_Registrar_registrarWeb" object="${registrar}" z="Xztv+P/Z7a0qK176wcywX4DEK/4="/>
+        <field:display field="validationFax" id="s_ca_gc_hc_mds_domain_Registrar_validationFax" object="${registrar}" z="qfwEPtQbLsNGy/ZkGJUbb2JSLyQ="/>
+        <field:display field="validationPhone" id="s_ca_gc_hc_mds_domain_Registrar_validationPhone" object="${registrar}" z="v0q2tGU8+BSusolyC/uWae872ug="/>
+        <field:display field="validationEmail" id="s_ca_gc_hc_mds_domain_Registrar_validationEmail" object="${registrar}" z="Jd0o8uIOrGfugnqTwrKNC0LxAuk="/>
+        <field:display field="validationContact" id="s_ca_gc_hc_mds_domain_Registrar_validationContact" object="${registrar}" z="wA+YevTqLvClSs8EUFzzEDkFQo4="/>
+        <field:display field="validationPosition" id="s_ca_gc_hc_mds_domain_Registrar_validationPosition" object="${registrar}" z="9ZOpzjZW+I7aX5PXvD1g17ZbDTw="/>
+        <field:display field="cmdcasFax" id="s_ca_gc_hc_mds_domain_Registrar_cmdcasFax" object="${registrar}" z="aORvD0eAqUbtuCrkDUgLwLcw1Ys="/>
+        <field:display field="cmdcasPhone" id="s_ca_gc_hc_mds_domain_Registrar_cmdcasPhone" object="${registrar}" z="EXdAfvPzvljsq5iScKu6hwtTCXI="/>
+        <field:display field="cmdcasEmail" id="s_ca_gc_hc_mds_domain_Registrar_cmdcasEmail" object="${registrar}" z="GSJZBJxShkYaGqxT94LJIp9CjnE="/>
+        <field:display field="cmdcasContact" id="s_ca_gc_hc_mds_domain_Registrar_cmdcasContact" object="${registrar}" z="4C27khMEAyfWaPXG7KbblMUBgKw="/>
+        <field:display field="cmdcasPosition" id="s_ca_gc_hc_mds_domain_Registrar_cmdcasPosition" object="${registrar}" z="tt3DqCrVgoy/yKUaiFyZnzNbxq0="/>
+    </page:show>
+</div>

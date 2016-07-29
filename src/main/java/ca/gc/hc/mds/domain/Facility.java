@@ -6,19 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
-@Configurable
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierColumn = "FACILITY_ID", identifierField = "facilityId", table = "FACILITY", finders = { "findFacilitysByFacilityId" })
 public class Facility {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "FACILITY_ID")
+	@Id 
+    @Column(name = "FACILITY_ID", columnDefinition = "NUMBER")
     private Long facilityId;
 
     /**
@@ -57,3 +57,4 @@ public class Facility {
     @Size(min = 0, max = 40)
     private String facilityEmail;
 }
+

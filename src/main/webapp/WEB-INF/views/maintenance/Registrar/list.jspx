@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_Registrar" items="${registrars}" z="m4+QU02TtWZWJtqhuJJk7BPYxDg=">
+        <table:table data="${registrars}" id="l_ca_gc_hc_mds_domain_Registrar" path="/maintenance/Registrar" typeIdFieldName="registrarCd" z="Gst/rOY0zCyH1u9esT7K4Fe3BP8=">
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_registrarName" property="registrarName" z="zGmLDaqYqMUa7N2wigoirU1s5sU="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_addrLine1" property="addrLine1" z="DjREs9G26reCG8kg85K23jTkxEc="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_addrLine2" property="addrLine2" z="Wtm/l1Dt5txxUjHNeEWZ4i1SljE="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_addrline3" property="addrline3" z="IGXiXpTtS4Yncm3QRtQEfrH2jHY="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_postalCode" property="postalCode" z="xe8z7N8vVNjGAxaLGiar1J1Tw18="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Registrar_city" property="city" z="q5tWDn1/HZLPzVSNwOt4fyBgxRw="/>
+        </table:table>
+    </page:list>
+</div>

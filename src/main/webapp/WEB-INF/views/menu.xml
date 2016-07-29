@@ -106,16 +106,12 @@
 	</menu-item>
 	<menu-item hidden="false" id="i_table_maintenance_region_code" roles="" url="">		
 	</menu-item>
-	<menu-item hidden="false" id="c_table_maintenance_health_care_prof" roles="" url="">
-		<!-- <menu-item hidden="false" id="i_table_maintenance_health_care_prof_new" roles="" url=""/>
-		<menu-item hidden="false" id="i_table_maintenance_health_care_prof_search" roles="" url=""/> -->
+	<menu-item hidden="false" id="c_table_maintenance_health_care_prof" roles="" url="/maintenance/physicians?page=1&amp;size=${empty param.size ? 10 : param.size}">		
 	</menu-item>
 	
-	<menu-item hidden="false" id="c_table_maintenance_facility" roles="" url="">
-		<!-- <menu-item hidden="false" id="i_table_maintenance_facility_new" roles="" url=""/>
-		<menu-item hidden="false" id="i_table_maintenance_facility_search" roles="" url=""/> -->
+	<menu-item hidden="false" id="c_table_maintenance_facility" roles="" url="/maintenance/facilitys?page=1&amp;size=${empty param.size ? 10 : param.size}">		
 	</menu-item>
-	<menu-item hidden="false" id="c_table_maintenance_registrar" roles="" url="">
+	<menu-item hidden="false" id="c_table_maintenance_registrar" roles="" url="/maintenance/Registrar?page=1&amp;size=${empty param.size ? 10 : param.size}">
 		<!-- <menu-item hidden="false" id="i_table_maintenance_registrar_new" roles="" url=""/>
 		<menu-item hidden="false" id="i_table_maintenance_registrar_search" roles="" url=""/> -->
 	</menu-item>
@@ -142,15 +138,23 @@
     <menu-item hidden="false" id="fi_certificate_origcertificateidlike" labelCode="menu_item_certificate_origcertificateidlike_label" messageCode="global_menu_find" roles="" url="/qualitysystem/certificates?find=ByOrigcertificateIdLike&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="i_certificate_new" labelCode="menu_item_certificate_new_label" messageCode="global_menu_new" roles="" url="/qualitysystem/certificates?form"/>
 </menu-item>
-<menu-item hidden="true" id="c_preferrednamekeyword" labelCode="menu_category_preferrednamekeyword_label" name="PreferredNameKeyword">
-        <menu-item hidden="false" id="i_preferrednamekeyword_new" labelCode="menu_item_preferrednamekeyword_new_label" messageCode="global_menu_new" roles="" url="/preferredNameKeywords?form"/>
-    <menu-item hidden="false" id="i_preferrednamekeyword_list" labelCode="menu_item_preferrednamekeyword_list_label" messageCode="global_menu_list" roles="" url="/preferredNameKeywords?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
-    <menu-item hidden="false" id="fi_preferrednamekeyword_prefnameword" labelCode="menu_item_preferrednamekeyword_prefnameword_label" messageCode="global_menu_find" roles="" url="/preferredNameKeywords?find=ByPrefNameWord&amp;form&amp;page=1&amp;sortFieldName=prefNameWord&amp;size=${empty param.size ? 10 : param.size}"/>
-    </menu-item>
+
 <menu-item hidden="true" id="c_preferrednamecode" labelCode="menu_category_preferrednamecode_label" name="PreferredNameCode">
         <menu-item hidden="false" id="i_preferrednamecode_new" labelCode="menu_item_preferrednamecode_new_label" messageCode="global_menu_new" roles="" url="/preferredNameCodes?form"/>
     <menu-item hidden="false" id="i_preferrednamecode_list" labelCode="menu_item_preferrednamecode_list_label" messageCode="global_menu_list" roles="" url="/preferredNameCodes?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_preferrednamecode_prefnamecodeequals" labelCode="menu_item_preferrednamecode_prefnamecodeequals_label" messageCode="global_menu_find" roles="" url="/preferredNameCodes?find=ByPrefNameCodeEquals&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     <menu-item hidden="false" id="fi_preferrednamecode_prefnamecode" labelCode="menu_item_preferrednamecode_prefnamecode_label" messageCode="global_menu_find" roles="" url="/preferredNameCodes?find=ByPrefNameCode&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item hidden="true" id="c_registrar" labelCode="menu_category_registrar_label" name="Registrar">
+        <menu-item hidden="false" id="i_registrar_new" labelCode="menu_item_registrar_new_label" messageCode="global_menu_new" roles="" url="/maintenance/Registrar?form"/>
+    <menu-item hidden="false" id="i_registrar_list" labelCode="menu_item_registrar_list_label" messageCode="global_menu_list" roles="" url="/maintenance/Registrar?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item hidden="true" id="c_facility" labelCode="menu_category_facility_label" name="Facility">
+        <menu-item hidden="false" id="i_facility_new" labelCode="menu_item_facility_new_label" messageCode="global_menu_new" roles="" url="/maintenance/facilitys?form"/>
+    <menu-item hidden="false" id="i_facility_list" labelCode="menu_item_facility_list_label" messageCode="global_menu_list" roles="" url="/maintenance/facilitys?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
+<menu-item hidden="true" id="c_physician" labelCode="menu_category_physician_label" name="Physician">
+        <menu-item hidden="false" id="i_physician_new" labelCode="menu_item_physician_new_label" messageCode="global_menu_new" roles="" url="/maintenance/physicians?form"/>
+    <menu-item hidden="false" id="i_physician_list" labelCode="menu_item_physician_list_label" messageCode="global_menu_list" roles="" url="/maintenance/physicians?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
 </gvnix-menu>

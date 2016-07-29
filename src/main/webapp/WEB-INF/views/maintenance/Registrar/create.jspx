@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_ca_gc_hc_mds_domain_Registrar" modelAttribute="registrar" path="/maintenance/Registrar" render="${empty dependencies}" z="9hi73fYPTJrOAqzkABcom/aAQnQ=">
+        <field:input field="registrarName" id="c_ca_gc_hc_mds_domain_Registrar_registrarName" z="sEwhA/oB2NK6S/mCOq48tMI19nY="/>
+        <field:input field="addrLine1" id="c_ca_gc_hc_mds_domain_Registrar_addrLine1" z="lLDmG7yMN5j8mOu/cNy3Donf7/A="/>
+        <field:input field="addrLine2" id="c_ca_gc_hc_mds_domain_Registrar_addrLine2" z="mqj4NQHlREQePjJnASjo3Cu9Fms="/>
+        <field:input field="addrline3" id="c_ca_gc_hc_mds_domain_Registrar_addrline3" z="LAjeJ8ZIFkd57DCUCsLRyjlpj+s="/>
+        <field:input field="postalCode" id="c_ca_gc_hc_mds_domain_Registrar_postalCode" z="BuQIT69UX9lslxBXpWybgRgFmQ4="/>
+        <field:input field="city" id="c_ca_gc_hc_mds_domain_Registrar_city" z="vLZ6n3KEdcGVOonApCU/n8GUw+M="/>
+        <field:input field="countryCd" id="c_ca_gc_hc_mds_domain_Registrar_countryCd" z="WNzMNE9oPWKKPv+ba8F9jJKn+hg="/>
+        <field:input field="regionCd" id="c_ca_gc_hc_mds_domain_Registrar_regionCd" z="RPMVkrBY23DxfF/DiXb5zIAfjSg="/>
+        <field:input field="status" id="c_ca_gc_hc_mds_domain_Registrar_status" z="z6VWGodXHGuAcqPRL7WMnmnE6IA="/>
+        <field:datetime dateTimePattern="${registrar_statusdt_date_format}" field="statusDt" id="c_ca_gc_hc_mds_domain_Registrar_statusDt" z="jpMXR5DgW5ZoKb0xTdEtstKkCC0="/>
+        <field:input field="registrarWeb" id="c_ca_gc_hc_mds_domain_Registrar_registrarWeb" z="nVw/YVpQ5g3kuwYhwnKENXKHZLQ="/>
+        <field:input field="validationFax" id="c_ca_gc_hc_mds_domain_Registrar_validationFax" z="KwOz4Qwc8flxL2mAevuNtCGwcSs="/>
+        <field:input field="validationPhone" id="c_ca_gc_hc_mds_domain_Registrar_validationPhone" z="W+R0lSbSYZLTMv6SyEIX4avoemU="/>
+        <field:input field="validationEmail" id="c_ca_gc_hc_mds_domain_Registrar_validationEmail" z="i8oqkzg97adkDvd4JXTfb+Y+8N0="/>
+        <field:input field="validationContact" id="c_ca_gc_hc_mds_domain_Registrar_validationContact" z="FLDLsFzY9LvWk9r/CYye/xZDcpQ="/>
+        <field:input field="validationPosition" id="c_ca_gc_hc_mds_domain_Registrar_validationPosition" z="PAJVffdm2JpcCuHDvr4qQbq0O3U="/>
+        <field:input field="cmdcasFax" id="c_ca_gc_hc_mds_domain_Registrar_cmdcasFax" z="cjevIs/gpKdDGEgInO3v0ejhAkw="/>
+        <field:input field="cmdcasPhone" id="c_ca_gc_hc_mds_domain_Registrar_cmdcasPhone" z="kyL7XM+OTL4dcg8zL6TzQhsBS1s="/>
+        <field:input field="cmdcasEmail" id="c_ca_gc_hc_mds_domain_Registrar_cmdcasEmail" z="gTBpsafemNNQDzp0xm34ymDtsUM="/>
+        <field:input field="cmdcasContact" id="c_ca_gc_hc_mds_domain_Registrar_cmdcasContact" z="dTmWAxBqPfFZ2gVJdoym9RFru7E="/>
+        <field:input field="cmdcasPosition" id="c_ca_gc_hc_mds_domain_Registrar_cmdcasPosition" z="QwgvKSMSGKNG/F7iL45tc+TA2fc="/>
+        <field:input field="registrarCd" id="c_ca_gc_hc_mds_domain_Registrar_registrarCd" required="true" z="izTrIqPvaJon/rytgRvn8Kh2hTw="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Registrar" render="${not empty dependencies}" z="MPwgawI7iWtyppp1GZBbu536jnI="/>
+</div>

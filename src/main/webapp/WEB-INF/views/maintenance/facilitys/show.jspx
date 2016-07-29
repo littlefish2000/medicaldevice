@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Facility" object="${facility}" path="/maintenance/facilitys" z="Ow7n3pdKMuSvm1bKiQH+P+kcMU0=">
+        <field:display field="facilityName" id="s_ca_gc_hc_mds_domain_Facility_facilityName" object="${facility}" z="V9TKAs8FakukmK1A6g7+Ey03y28="/>
+        <field:display field="facilityCity" id="s_ca_gc_hc_mds_domain_Facility_facilityCity" object="${facility}" z="R3eieQAF1IxnJk6D4uJP9xFREvc="/>
+        <field:display field="facilityProvince" id="s_ca_gc_hc_mds_domain_Facility_facilityProvince" object="${facility}" z="xHX9DgJtK+fJc8DsYSh4KHIeTCY="/>
+        <field:display field="facilityPostalCode" id="s_ca_gc_hc_mds_domain_Facility_facilityPostalCode" object="${facility}" z="JKwHEiEJkbL5qBILRjVC3rsH0z0="/>
+        <field:display field="facilityAddress" id="s_ca_gc_hc_mds_domain_Facility_facilityAddress" object="${facility}" z="ty8Dr7IU+ZtgJ1H5lGdhoApkP3g="/>
+        <field:display field="facilityAddress2" id="s_ca_gc_hc_mds_domain_Facility_facilityAddress2" object="${facility}" z="FUe8nL7G0r5fpF64r/oKwJ0MB94="/>
+        <field:display field="facilityfax" id="s_ca_gc_hc_mds_domain_Facility_facilityfax" object="${facility}" z="32VGT/zSHwHm7t56Ey4w4k/iiUY="/>
+        <field:display field="facilityPhone" id="s_ca_gc_hc_mds_domain_Facility_facilityPhone" object="${facility}" z="fjcor8Z3QgiXn/z2y7tPNbboddA="/>
+        <field:display field="facilityEmail" id="s_ca_gc_hc_mds_domain_Facility_facilityEmail" object="${facility}" z="GJO1EeEoClpq1lD8d0TUnI8CDGU="/>
+    </page:show>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ca_gc_hc_mds_domain_Physician" object="${physician}" path="/maintenance/physicians" z="9R1SvHIgv/XkAxIrX+5C2G3NdDs=">
+        <field:display field="physicianFirstName" id="s_ca_gc_hc_mds_domain_Physician_physicianFirstName" object="${physician}" z="DOMxTQlDgLdJ4owSIYsmdTnWdkg="/>
+        <field:display field="physicianLastName" id="s_ca_gc_hc_mds_domain_Physician_physicianLastName" object="${physician}" z="NEGkJvc1vDkikR4Fs9Dyo/jsme8="/>
+        <field:display field="physicianCity" id="s_ca_gc_hc_mds_domain_Physician_physicianCity" object="${physician}" z="ymu9SQKM8KSo++O/KDjmapFMyKo="/>
+        <field:display field="physicianProvince" id="s_ca_gc_hc_mds_domain_Physician_physicianProvince" object="${physician}" z="RiTdivcVWMymmsqKVGOxixQB9nI="/>
+        <field:display field="physicianPostal" id="s_ca_gc_hc_mds_domain_Physician_physicianPostal" object="${physician}" z="8//giHtyRAQ7MmsqBb9nppzX+pA="/>
+        <field:display field="physicianAddress" id="s_ca_gc_hc_mds_domain_Physician_physicianAddress" object="${physician}" z="nBJPFjPTgXts84lkXDZRe+QmJVI="/>
+        <field:display field="physicianAddress2" id="s_ca_gc_hc_mds_domain_Physician_physicianAddress2" object="${physician}" z="4e7bCRncatoXJGyaykcQPlvuIRA="/>
+        <field:display field="physicianFax" id="s_ca_gc_hc_mds_domain_Physician_physicianFax" object="${physician}" z="ltqJzgJ9kYaDkSZVkR7X0umc5wY="/>
+        <field:display field="physicianPhone" id="s_ca_gc_hc_mds_domain_Physician_physicianPhone" object="${physician}" z="8XUUVHiGANQlHvwjB+E5iR3UnAI="/>
+        <field:display field="physicianEmail" id="s_ca_gc_hc_mds_domain_Physician_physicianEmail" object="${physician}" z="Ac7rpfBz1/LnPmvpvJYtqKmzJgA="/>
+        <field:display field="physicianCredential" id="s_ca_gc_hc_mds_domain_Physician_physicianCredential" object="${physician}" z="dikuIbC89h4NPc0XKo7f8L/MJiQ="/>
+    </page:show>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_Facility" items="${facilitys}" z="G7mwsIDjxTCDCj2vD7x3IcqRzZw=">
+        <table:table data="${facilitys}" id="l_ca_gc_hc_mds_domain_Facility" path="/maintenance/facilitys" typeIdFieldName="facilityId" z="G9Bdh7VQvbUryFz/Uv7DNegHtR0=">
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityName" property="facilityName" z="oNzlPlMBahN8YKFP9vUCd1iy6s8="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityCity" property="facilityCity" z="JSsVByfn5i2OJ7b1P946TqS9gco="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityProvince" property="facilityProvince" z="E3AEuUCj4ItIcBqA0BEh38Aeeok="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityPostalCode" property="facilityPostalCode" z="tuDgcMJ7ulGs8F9VKSwUeJ3YcHQ="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityAddress" property="facilityAddress" z="Wn2wWInhbgxl4XQjWl0alzr9hug="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Facility_facilityAddress2" property="facilityAddress2" z="pmXnlL6C6XAwEAQuE+1lbmqZ3Ic="/>
+        </table:table>
+    </page:list>
+</div>

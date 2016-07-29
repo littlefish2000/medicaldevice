@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_Physician" items="${physicians}" z="FYm0xuhR0Z6twkEs40o/pZ7LSas=">
+        <table:table data="${physicians}" id="l_ca_gc_hc_mds_domain_Physician" path="/maintenance/physicians" typeIdFieldName="physicianId" z="vH3VozMshen8OpIJhDRlD8nyObE=">
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianFirstName" property="physicianFirstName" z="m89Fiar4fXtutyGNpd3YhrfU0Ho="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianLastName" property="physicianLastName" z="eOQohRl5SA2AvxkbQPeK7OEVdiY="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianCity" property="physicianCity" z="U59q7Xc6s6nzqdmjG7bdqxss41g="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianProvince" property="physicianProvince" z="HR7peChnFvub+sHOemi/VqxMPSk="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianPostal" property="physicianPostal" z="34W2dMcjR7bv12zRzGKj5Tvw/OY="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Physician_physicianAddress" property="physicianAddress" z="MyeJxAGby0wHVT6iIJppkOPKY9A="/>
+        </table:table>
+    </page:list>
+</div>
