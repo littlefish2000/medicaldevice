@@ -10,8 +10,11 @@ import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.Facility;
+import ca.gc.hc.mds.domain.Physician;
 import ca.gc.hc.mds.domain.PreferredNameCode;
 import ca.gc.hc.mds.domain.PreferredNameKeyword;
+import ca.gc.hc.mds.domain.Registrar;
 import ca.gc.hc.mds.domain.SpecialAccess;
 import ca.gc.hc.mds.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -182,6 +185,54 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Facility, String> ApplicationConversionServiceFactoryBean.getFacilityToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Facility, java.lang.String>() {
+            public String convert(Facility facility) {
+                return new StringBuilder().append(facility.getFacilityName()).append(' ').append(facility.getFacilityCity()).append(' ').append(facility.getFacilityProvince()).append(' ').append(facility.getFacilityPostalCode()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Facility> ApplicationConversionServiceFactoryBean.getIdToFacilityConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.Facility>() {
+            public ca.gc.hc.mds.domain.Facility convert(java.lang.Long id) {
+                return Facility.findFacility(id);
+            }
+        };
+    }
+    
+    public Converter<String, Facility> ApplicationConversionServiceFactoryBean.getStringToFacilityConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Facility>() {
+            public ca.gc.hc.mds.domain.Facility convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Facility.class);
+            }
+        };
+    }
+    
+    public Converter<Physician, String> ApplicationConversionServiceFactoryBean.getPhysicianToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Physician, java.lang.String>() {
+            public String convert(Physician physician) {
+                return new StringBuilder().append(physician.getPhysicianFirstName()).append(' ').append(physician.getPhysicianLastName()).append(' ').append(physician.getPhysicianCity()).append(' ').append(physician.getPhysicianProvince()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Physician> ApplicationConversionServiceFactoryBean.getIdToPhysicianConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, ca.gc.hc.mds.domain.Physician>() {
+            public ca.gc.hc.mds.domain.Physician convert(java.lang.Long id) {
+                return Physician.findPhysician(id);
+            }
+        };
+    }
+    
+    public Converter<String, Physician> ApplicationConversionServiceFactoryBean.getStringToPhysicianConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Physician>() {
+            public ca.gc.hc.mds.domain.Physician convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Physician.class);
+            }
+        };
+    }
+    
     public Converter<PreferredNameCode, String> ApplicationConversionServiceFactoryBean.getPreferredNameCodeToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.PreferredNameCode, java.lang.String>() {
             public String convert(PreferredNameCode preferredNameCode) {
@@ -210,6 +261,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.PreferredNameKeyword>() {
             public ca.gc.hc.mds.domain.PreferredNameKeyword convert(java.lang.String id) {
                 return PreferredNameKeyword.findPreferredNameKeyword(id);
+            }
+        };
+    }
+    
+    public Converter<Registrar, String> ApplicationConversionServiceFactoryBean.getRegistrarToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Registrar, java.lang.String>() {
+            public String convert(Registrar registrar) {
+                return new StringBuilder().append(registrar.getRegistrarName()).append(' ').append(registrar.getAddrLine1()).append(' ').append(registrar.getAddrLine2()).append(' ').append(registrar.getAddrline3()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, Registrar> ApplicationConversionServiceFactoryBean.getIdToRegistrarConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Registrar>() {
+            public ca.gc.hc.mds.domain.Registrar convert(java.lang.String id) {
+                return Registrar.findRegistrar(id);
             }
         };
     }
@@ -259,10 +326,18 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getFacilityToStringConverter());
+        registry.addConverter(getIdToFacilityConverter());
+        registry.addConverter(getStringToFacilityConverter());
+        registry.addConverter(getPhysicianToStringConverter());
+        registry.addConverter(getIdToPhysicianConverter());
+        registry.addConverter(getStringToPhysicianConverter());
         registry.addConverter(getPreferredNameCodeToStringConverter());
         registry.addConverter(getIdToPreferredNameCodeConverter());
         registry.addConverter(getPreferredNameKeywordToStringConverter());
         registry.addConverter(getIdToPreferredNameKeywordConverter());
+        registry.addConverter(getRegistrarToStringConverter());
+        registry.addConverter(getIdToRegistrarConverter());
         registry.addConverter(getSpecialAccessToStringConverter());
         registry.addConverter(getIdToSpecialAccessConverter());
         registry.addConverter(getStringToSpecialAccessConverter());

@@ -19,11 +19,12 @@
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-lg-8 ">
-						<label class="col-lg-3 col-md-offset-4">Choose Table: </label> <select width="100"
-							style="width: 250px">
-							<option>Drug Standard</option>
-							<option>Country</option>
-							<option>License Status</option>
+						<label class="col-lg-3 col-md-offset-4">Choose Table: </label> 
+						<select width="100"
+							style="width: 250px" name="tablename">
+							<option value="DRUG_STANDARD">Drug Standard</option>
+							<option value="COUNTRY_CD">Country</option>
+							<option valie="LICENCE_STATUS">License Status</option>
 							<option>Application Division</option>
 							<option>Identifier Content Code</option>
 							<option>Amendment Reason</option>

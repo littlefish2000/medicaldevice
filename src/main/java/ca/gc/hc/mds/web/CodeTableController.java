@@ -45,8 +45,16 @@ public class CodeTableController {
     }
 	
 	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
-    public String codeTableSelectForm( Model uiModel) {
-		return "maintenance/tablemaintenance/codetableeng";
+    public String codeTableSelectForm(@RequestParam(value = "tablename") String tableName, Model uiModel) {
+		System.out.println("table name is " + tableName);
+		String reView="maintenance/tablemaintenance/codetableeng";
+		if (tableName.equals("DRUG_STANDARD"))
+			reView="maintenance/tablemaintenance/codetableeng";
+			
+		if (tableName.equals("COUNTRY_CD"))
+			reView="maintenance/tablemaintenance/codetableeng";		
+		
+		return reView;
     }	
 	
 }
