@@ -1,5 +1,6 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.RenAuthCompany;
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfo;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
@@ -46,15 +48,16 @@ public class CodeTableController {
 	
 	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
     public String codeTableSelectForm(@RequestParam(value = "tablename") String tableName, Model uiModel) {
-		System.out.println("table name is " + tableName);
-		String reView="maintenance/tablemaintenance/codetableeng";
-		if (tableName.equals("DRUG_STANDARD"))
-			reView="maintenance/tablemaintenance/codetableeng";
-			
-		if (tableName.equals("COUNTRY_CD"))
-			reView="maintenance/tablemaintenance/codetableeng";		
+		Integer page=1;
+		Integer size=10;
+		String sortFieldName = null;
+		String sortOrder = null;
 		
-		return reView;
+        uiModel.asMap().clear();
+        uiModel.addAttribute("drugstandards", DrugStandard.findAllDrugStandards(sortFieldName, sortOrder));
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/maintenance/codetable/drugstandard";
     }	
 	
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_ca_gc_hc_mds_domain_DrugStandard" modelAttribute="drugStandard" path="/maintenance/codetable/drugstandard" render="${empty dependencies}" z="W4Oyj+Y/vR9GpcBsdEJoUamXEXU=">
+        <field:input field="drugstandardDesc" id="c_ca_gc_hc_mds_domain_DrugStandard_drugstandardDesc" required="true" z="NN5AEX4YHT8K1kSGYie7Hj464Qo="/>
+        <field:input field="drugstandardCd" id="c_ca_gc_hc_mds_domain_DrugStandard_drugstandardCd" required="true" z="ZzhPp8gknRG+h7u+imbxMc3+oXo="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_DrugStandard" render="${not empty dependencies}" z="MZEONXu2OOEYtx3T5F983sZi5j8="/>
+</div>

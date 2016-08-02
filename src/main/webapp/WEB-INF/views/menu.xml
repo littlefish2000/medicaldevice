@@ -157,4 +157,8 @@
         <menu-item hidden="false" id="i_physician_new" labelCode="menu_item_physician_new_label" messageCode="global_menu_new" roles="" url="/maintenance/physicians?form"/>
     <menu-item hidden="false" id="i_physician_list" labelCode="menu_item_physician_list_label" messageCode="global_menu_list" roles="" url="/maintenance/physicians?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
+<menu-item hidden="true" id="c_drugstandard" labelCode="menu_category_drugstandard_label" name="DrugStandard">
+        <menu-item hidden="false" id="i_drugstandard_new" labelCode="menu_item_drugstandard_new_label" messageCode="global_menu_new" roles="" url="/maintenance/codetable/drugstandard?form"/>
+    <menu-item hidden="false" id="i_drugstandard_list" labelCode="menu_item_drugstandard_list_label" messageCode="global_menu_list" roles="" url="/maintenance/codetable/drugstandard?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 </gvnix-menu>

@@ -193,3 +193,17 @@ web mvc jquery all
 finder list --class ~.domain.DrugStandard
 finder list --class ~.domain.DrugStandard
 web mvc jquery all
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-02 07:14:57
+web mvc scaffold --class ~.web.DrugStandardController --backingType ~.domain.DrugStandard --path maintenance/codetable/drugstandard
+web mvc jquery all
+jpa batch add --entity ~.web.DrugStandardController 
+jpa batch add --entity ~.domain.DrugStandard
+web mvc batch add --controller ~.web.DrugStandardController
+web mvc datatables add --type ~.web.DrugStandardController
+// script --file test.roo
+quit
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-08-02 07:15:19
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-02 07:16:04
+menu entry visibility --hidden true --id c_drugstandard
+menu entry visibility --hidden false --id c_drugstandard
+menu entry visibility --hidden true --id c_drugstandard

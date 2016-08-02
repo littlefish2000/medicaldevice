@@ -10,6 +10,7 @@ import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.Facility;
 import ca.gc.hc.mds.domain.Physician;
 import ca.gc.hc.mds.domain.PreferredNameCode;
@@ -185,6 +186,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<DrugStandard, String> ApplicationConversionServiceFactoryBean.getDrugStandardToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.DrugStandard, java.lang.String>() {
+            public String convert(DrugStandard drugStandard) {
+                return new StringBuilder().append(drugStandard.getDrugstandardDesc()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, DrugStandard> ApplicationConversionServiceFactoryBean.getIdToDrugStandardConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.DrugStandard>() {
+            public ca.gc.hc.mds.domain.DrugStandard convert(java.lang.String id) {
+                return DrugStandard.findDrugStandard(id);
+            }
+        };
+    }
+    
     public Converter<Facility, String> ApplicationConversionServiceFactoryBean.getFacilityToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Facility, java.lang.String>() {
             public String convert(Facility facility) {
@@ -326,6 +343,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getDrugStandardToStringConverter());
+        registry.addConverter(getIdToDrugStandardConverter());
         registry.addConverter(getFacilityToStringConverter());
         registry.addConverter(getIdToFacilityConverter());
         registry.addConverter(getStringToFacilityConverter());
