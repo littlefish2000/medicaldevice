@@ -35,7 +35,7 @@ public class OracleLengthCharType implements UserType {
 			throws HibernateException, SQLException {
 
 		String val = StringType.INSTANCE.nullSafeGet(inResultSet, names[0], sessionIm);
-		System.out.println("From nullSafeGet method valu is " + val);
+		//System.out.println("From nullSafeGet method valu is " + val);
 		return val == null ? null : StringUtils.trim(val);
 	}
 

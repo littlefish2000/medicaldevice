@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_CountryTab" items="${countrytabs}" z="KSIvPRw8XVAPj2RqxWC9B/6N4U8=">
+        <table:table data="${countrytabs}" id="l_ca_gc_hc_mds_domain_CountryTab" path="/maintenance/codetable/countrytab" typeIdFieldName="countryCd" z="Fey0mAnP9MhhYgs7S5S+BWXuha8=">
+            <table:column id="c_ca_gc_hc_mds_domain_CountryTab_countryCd" property="countryCd" z="ObTYmS7JYQ7mynUFCb3zcdjxJ+M="/>        
+            <table:column id="c_ca_gc_hc_mds_domain_CountryTab_countryDesc" property="countryDesc" z="ObTYmS7JYQ7mynUFCb3zcdjxJ+M="/>
+        </table:table>
+    </page:list>
+</div>

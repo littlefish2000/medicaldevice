@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="maintenance/codetable/countrytab/list">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/countrytab/list.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/countrytab/show">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/countrytab/show.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/countrytab/create">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/countrytab/create.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/countrytab/update">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/countrytab/update.jspx"/>
+    </definition>
+</tiles-definitions>

@@ -23,7 +23,7 @@
 						<select width="100"
 							style="width: 250px" name="tablename">
 							<option value="DRUG_STANDARD">Drug Standard</option>
-							<option value="COUNTRY_CD">Country</option>
+							<option value="COUNTRY_TAB">Country</option>
 							<option valie="LICENCE_STATUS">License Status</option>
 							<option>Application Division</option>
 							<option>Identifier Content Code</option>

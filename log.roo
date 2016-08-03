@@ -207,3 +207,15 @@ quit
 menu entry visibility --hidden true --id c_drugstandard
 menu entry visibility --hidden false --id c_drugstandard
 menu entry visibility --hidden true --id c_drugstandard
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-03 13:33:27
+web mvc scaffold --class ~.web.CountryTabController --backingType ~.domain.CountryTab --path maintenance/codetable/countrytab
+web mvc jquery all
+jpa batch add --entity ~.web.CountryTabController 
+jpa batch add --entity ~.domain.CountryTab
+web mvc batch add --controller ~.web.CountryTabController
+web mvc datatables add --type ~.web.CountryTabController
+// script --file test1.roo
+quit
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-08-03 13:34:08
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-03 13:36:05
+menu entry visibility --hidden true --id c_countrytab

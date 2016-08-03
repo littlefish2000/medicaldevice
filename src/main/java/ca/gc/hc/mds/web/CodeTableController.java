@@ -1,5 +1,6 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.RenAuthCompany;
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
@@ -48,8 +49,26 @@ public class CodeTableController {
 	
 	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
     public String codeTableSelectForm(@RequestParam(value = "tablename") String tableName, Model uiModel) {
-		return drugstandardlist(uiModel);
+		if (tableName.equalsIgnoreCase("DRUG_STANDARD"))
+			return drugstandardlist(uiModel);
+		else if (tableName.equalsIgnoreCase("COUNTRY_TAB"))
+			return countrytablist(uiModel);
+		else
+			return "maintenance/tablemaintenance/codetablesearch";
     }	
+	
+	public String countrytablist(Model uiModel) {
+		Integer page=1;
+		Integer size=10;
+		String sortFieldName = null;
+		String sortOrder = null;
+		
+        uiModel.asMap().clear();
+        uiModel.addAttribute("countrytabs", CountryTab.findAllCountryTabs(sortFieldName, sortOrder));
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/maintenance/codetable/countrytab";
+	}	
 	
 	public String drugstandardlist(Model uiModel) {
 		Integer page=1;

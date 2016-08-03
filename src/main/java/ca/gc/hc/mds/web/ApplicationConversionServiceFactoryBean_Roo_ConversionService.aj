@@ -9,6 +9,7 @@ import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
+import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.Device;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.Facility;
@@ -158,6 +159,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Correspondence>() {
             public ca.gc.hc.mds.domain.Correspondence convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Correspondence.class);
+            }
+        };
+    }
+    
+    public Converter<CountryTab, String> ApplicationConversionServiceFactoryBean.getCountryTabToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.CountryTab, java.lang.String>() {
+            public String convert(CountryTab countryTab) {
+                return new StringBuilder().append(countryTab.getcountryDesc()).append(' ').append(countryTab.getCountryDesc()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, CountryTab> ApplicationConversionServiceFactoryBean.getIdToCountryTabConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.CountryTab>() {
+            public ca.gc.hc.mds.domain.CountryTab convert(java.lang.String id) {
+                return CountryTab.findCountryTab(id);
             }
         };
     }
@@ -340,6 +357,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCorrespondenceToStringConverter());
         registry.addConverter(getIdToCorrespondenceConverter());
         registry.addConverter(getStringToCorrespondenceConverter());
+        registry.addConverter(getCountryTabToStringConverter());
+        registry.addConverter(getIdToCountryTabConverter());
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
