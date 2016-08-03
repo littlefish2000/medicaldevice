@@ -48,6 +48,10 @@ public class CodeTableController {
 	
 	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
     public String codeTableSelectForm(@RequestParam(value = "tablename") String tableName, Model uiModel) {
+		return drugstandardlist(uiModel);
+    }	
+	
+	public String drugstandardlist(Model uiModel) {
 		Integer page=1;
 		Integer size=10;
 		String sortFieldName = null;
@@ -58,6 +62,6 @@ public class CodeTableController {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/maintenance/codetable/drugstandard";
-    }	
+	}
 	
 }
