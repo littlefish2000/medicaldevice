@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_LicenseStatus" items="${licensestatuses}" z="gSCHo84HgtR0WD66tKSnloISuzY=">
+        <table:table data="${licensestatuses}" id="l_ca_gc_hc_mds_domain_LicenseStatus" path="/maintenance/codetable/licenseStatus" typeIdFieldName="licencestatusCd" z="+KGnvg62oUPvcgNYjK5ab5kPQvg=">
+            <table:column id="c_ca_gc_hc_mds_domain_LicenseStatus_licencestatusCd" property="licencestatusCd" z=""/>
+            <table:column id="c_ca_gc_hc_mds_domain_LicenseStatus_descr" property="descr" z="VdenwyS0VD16NQptVYR7oeHuQnA="/>
+        </table:table>
+    </page:list>
+</div>

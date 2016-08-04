@@ -13,6 +13,7 @@ import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.Device;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.Facility;
+import ca.gc.hc.mds.domain.LicenseStatus;
 import ca.gc.hc.mds.domain.Physician;
 import ca.gc.hc.mds.domain.PreferredNameCode;
 import ca.gc.hc.mds.domain.PreferredNameKeyword;
@@ -243,6 +244,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<LicenseStatus, String> ApplicationConversionServiceFactoryBean.getLicenseStatusToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.LicenseStatus, java.lang.String>() {
+            public String convert(LicenseStatus licenseStatus) {
+                return new StringBuilder().append(licenseStatus.getDescr()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, LicenseStatus> ApplicationConversionServiceFactoryBean.getIdToLicenseStatusConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.LicenseStatus>() {
+            public ca.gc.hc.mds.domain.LicenseStatus convert(java.lang.String id) {
+                return LicenseStatus.findLicenseStatus(id);
+            }
+        };
+    }
+    
     public Converter<Physician, String> ApplicationConversionServiceFactoryBean.getPhysicianToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Physician, java.lang.String>() {
             public String convert(Physician physician) {
@@ -367,6 +384,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getFacilityToStringConverter());
         registry.addConverter(getIdToFacilityConverter());
         registry.addConverter(getStringToFacilityConverter());
+        registry.addConverter(getLicenseStatusToStringConverter());
+        registry.addConverter(getIdToLicenseStatusConverter());
         registry.addConverter(getPhysicianToStringConverter());
         registry.addConverter(getIdToPhysicianConverter());
         registry.addConverter(getStringToPhysicianConverter());

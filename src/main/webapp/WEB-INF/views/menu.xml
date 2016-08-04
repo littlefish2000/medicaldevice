@@ -165,4 +165,8 @@
         <menu-item hidden="false" id="i_countrytab_new" labelCode="menu_item_countrytab_new_label" messageCode="global_menu_new" roles="" url="/maintenance/codetable/countrytab?form"/>
     <menu-item hidden="false" id="i_countrytab_list" labelCode="menu_item_countrytab_list_label" messageCode="global_menu_list" roles="" url="/maintenance/codetable/countrytab?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
+<menu-item hidden="true" id="c_licensestatus" labelCode="menu_category_licensestatus_label" name="LicenseStatus">
+        <menu-item hidden="false" id="i_licensestatus_new" labelCode="menu_item_licensestatus_new_label" messageCode="global_menu_new" roles="" url="/maintenance/codetable/licenseStatus?form"/>
+    <menu-item hidden="false" id="i_licensestatus_list" labelCode="menu_item_licensestatus_list_label" messageCode="global_menu_list" roles="" url="/maintenance/codetable/licenseStatus?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 </gvnix-menu>

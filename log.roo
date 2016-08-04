@@ -219,3 +219,15 @@ quit
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-08-03 13:34:08
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-03 13:36:05
 menu entry visibility --hidden true --id c_countrytab
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-04 08:23:13
+entity jpa --class ~.domain.LicenseStatus --table LICENCE_STATUS
+// [failed] script --file test1.roo
+web mvc scaffold --class ~.web.LicenseStatusController --backingType ~.domain.LicenseStatus --path maintenance/codetable/licenseStatus
+web mvc jquery all
+jpa batch add --entity ~.web.LicenseStatusController 
+jpa batch add --entity ~.domain.LicenseStatus
+web mvc batch add --controller ~.web.LicenseStatusController
+web mvc datatables add --type ~.web.LicenseStatusController
+// script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
+menu entry visibility --hidden true --id c_licensestatus
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-08-04 11:08:58

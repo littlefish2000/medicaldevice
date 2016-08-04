@@ -2,6 +2,7 @@ package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.DrugStandard;
+import ca.gc.hc.mds.domain.LicenseStatus;
 import ca.gc.hc.mds.domain.RenAuthCompany;
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfo;
@@ -50,14 +51,29 @@ public class CodeTableController {
 	@RequestMapping(value = "/maintenancece/tablemaintenance",params = "act=codetable", method = RequestMethod.GET)
     public String codeTableSelectForm(@RequestParam(value = "tablename") String tableName, Model uiModel) {
 		if (tableName.equalsIgnoreCase("DRUG_STANDARD"))
-			return drugstandardlist(uiModel);
+			return DrugStandardList(uiModel);
 		else if (tableName.equalsIgnoreCase("COUNTRY_TAB"))
-			return countrytablist(uiModel);
+			return CountryTabList(uiModel);
+		else if (tableName.equalsIgnoreCase("LICENCE_STATUS"))
+			return LicenceStatusList(uiModel);
 		else
 			return "maintenance/tablemaintenance/codetablesearch";
     }	
 	
-	public String countrytablist(Model uiModel) {
+	public String LicenceStatusList(Model uiModel) {
+		Integer page=1;
+		Integer size=10;
+		String sortFieldName = null;
+		String sortOrder = null;
+		
+        uiModel.asMap().clear();
+        uiModel.addAttribute("licensestatuses", LicenseStatus.findAllLicenseStatuses(sortFieldName, sortOrder));
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/maintenance/codetable/licenseStatus";
+	}	
+	
+	public String CountryTabList(Model uiModel) {
 		Integer page=1;
 		Integer size=10;
 		String sortFieldName = null;
@@ -70,7 +86,7 @@ public class CodeTableController {
         return "redirect:/maintenance/codetable/countrytab";
 	}	
 	
-	public String drugstandardlist(Model uiModel) {
+	public String DrugStandardList(Model uiModel) {
 		Integer page=1;
 		Integer size=10;
 		String sortFieldName = null;
