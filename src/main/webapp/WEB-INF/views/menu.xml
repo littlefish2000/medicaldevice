@@ -169,4 +169,8 @@
         <menu-item hidden="false" id="i_licensestatus_new" labelCode="menu_item_licensestatus_new_label" messageCode="global_menu_new" roles="" url="/maintenance/codetable/licenseStatus?form"/>
     <menu-item hidden="false" id="i_licensestatus_list" labelCode="menu_item_licensestatus_list_label" messageCode="global_menu_list" roles="" url="/maintenance/codetable/licenseStatus?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
     </menu-item>
+<menu-item hidden="true" id="c_division" labelCode="menu_category_division_label" name="Division">
+        <menu-item hidden="false" id="i_division_new" labelCode="menu_item_division_new_label" messageCode="global_menu_new" roles="" url="/maintenance/codetable/division?form"/>
+    <menu-item hidden="false" id="i_division_list" labelCode="menu_item_division_list_label" messageCode="global_menu_list" roles="" url="/maintenance/codetable/division?page=1&amp;size=${empty param.size ? 10 : param.size}"/>
+    </menu-item>
 </gvnix-menu>

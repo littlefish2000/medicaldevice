@@ -1,6 +1,7 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.CountryTab;
+import ca.gc.hc.mds.domain.Division;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.LicenseStatus;
 import ca.gc.hc.mds.domain.RenAuthCompany;
@@ -56,9 +57,24 @@ public class CodeTableController {
 			return CountryTabList(uiModel);
 		else if (tableName.equalsIgnoreCase("LICENCE_STATUS"))
 			return LicenceStatusList(uiModel);
+		else if (tableName.equalsIgnoreCase("DIVISION"))
+			return DivisionList(uiModel);		
 		else
 			return "maintenance/tablemaintenance/codetablesearch";
-    }	
+    }
+	
+	public String DivisionList(Model uiModel) {
+		Integer page=1;
+		Integer size=10;
+		String sortFieldName = null;
+		String sortOrder = null;
+		
+        uiModel.asMap().clear();
+        uiModel.addAttribute("divisions",Division.findAllDivisions(sortFieldName, sortOrder));
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/maintenance/codetable//division";
+	}		
 	
 	public String LicenceStatusList(Model uiModel) {
 		Integer page=1;

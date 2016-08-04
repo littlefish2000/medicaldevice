@@ -11,6 +11,7 @@ import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.Division;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.Facility;
 import ca.gc.hc.mds.domain.LicenseStatus;
@@ -204,6 +205,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Division, String> ApplicationConversionServiceFactoryBean.getDivisionToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.Division, java.lang.String>() {
+            public String convert(Division division) {
+                return new StringBuilder().append(division.getDivisionDesc()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, Division> ApplicationConversionServiceFactoryBean.getIdToDivisionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Division>() {
+            public ca.gc.hc.mds.domain.Division convert(java.lang.String id) {
+                return Division.findDivision(id);
+            }
+        };
+    }
+    
     public Converter<DrugStandard, String> ApplicationConversionServiceFactoryBean.getDrugStandardToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.DrugStandard, java.lang.String>() {
             public String convert(DrugStandard drugStandard) {
@@ -379,6 +396,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getDivisionToStringConverter());
+        registry.addConverter(getIdToDivisionConverter());
         registry.addConverter(getDrugStandardToStringConverter());
         registry.addConverter(getIdToDrugStandardConverter());
         registry.addConverter(getFacilityToStringConverter());

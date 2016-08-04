@@ -231,3 +231,13 @@ web mvc datatables add --type ~.web.LicenseStatusController
 // script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
 menu entry visibility --hidden true --id c_licensestatus
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-08-04 11:08:58
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-04 11:24:51
+entity jpa --class ~.domain.Division --table DIVISION
+web mvc scaffold --class ~.web.DivisionController --backingType ~.domain.Division --path maintenance/codetable/division
+web mvc jquery all
+jpa batch add --entity ~.web.DivisionController 
+jpa batch add --entity ~.domain.Division
+web mvc batch add --controller ~.web.DivisionController
+web mvc datatables add --type ~.web.DivisionController
+// script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
+menu entry visibility --hidden true --id c_division
