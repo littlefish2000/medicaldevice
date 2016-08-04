@@ -1,9 +1,0 @@
-web mvc scaffold --class ~.web.DivisionController --backingType ~.domain.Division --path maintenance/codetable/division
-web mvc jquery all
-#web mvc batch setup
-
-jpa batch add --entity ~.web.DivisionController 
-jpa batch add --entity ~.domain.Division
-
-web mvc batch add --controller ~.web.DivisionController
-web mvc datatables add --type ~.web.DivisionController

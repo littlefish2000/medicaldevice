@@ -11,6 +11,7 @@ import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.domain.Correspondence;
 import ca.gc.hc.mds.domain.CountryTab;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.DeviceIndentContent;
 import ca.gc.hc.mds.domain.Division;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.Facility;
@@ -201,6 +202,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.Device>() {
             public ca.gc.hc.mds.domain.Device convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Device.class);
+            }
+        };
+    }
+    
+    public Converter<DeviceIndentContent, String> ApplicationConversionServiceFactoryBean.getDeviceIndentContentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.DeviceIndentContent, java.lang.String>() {
+            public String convert(DeviceIndentContent deviceIndentContent) {
+                return new StringBuilder().append(deviceIndentContent.getDescr()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, DeviceIndentContent> ApplicationConversionServiceFactoryBean.getIdToDeviceIndentContentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, ca.gc.hc.mds.domain.DeviceIndentContent>() {
+            public ca.gc.hc.mds.domain.DeviceIndentContent convert(java.lang.String id) {
+                return DeviceIndentContent.findDeviceIndentContent(id);
             }
         };
     }
@@ -396,6 +413,8 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDeviceToStringConverter());
         registry.addConverter(getIdToDeviceConverter());
         registry.addConverter(getStringToDeviceConverter());
+        registry.addConverter(getDeviceIndentContentToStringConverter());
+        registry.addConverter(getIdToDeviceIndentContentConverter());
         registry.addConverter(getDivisionToStringConverter());
         registry.addConverter(getIdToDivisionConverter());
         registry.addConverter(getDrugStandardToStringConverter());

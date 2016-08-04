@@ -26,7 +26,7 @@
 							<option value="COUNTRY_TAB">Country</option>
 							<option value="LICENCE_STATUS">License Status</option>
 							<option value="DIVISION">Application Division</option>
-							<option>Identifier Content Code</option>
+							<option value="DEVICE_IDENT_CONTENT">Identifier Content Code</option>
 							<option>Amendment Reason</option>
 							<option>Certification Status</option>
 							<option>Quality Standard</option>

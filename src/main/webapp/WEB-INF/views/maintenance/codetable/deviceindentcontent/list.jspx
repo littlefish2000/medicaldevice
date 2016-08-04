@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ca_gc_hc_mds_domain_DeviceIndentContent" items="${deviceindentcontents}" z="S8YZffE6eli1AHm4eF84Qjrt4wo=">
+        <table:table data="${deviceindentcontents}" id="l_ca_gc_hc_mds_domain_DeviceIndentContent" path="/maintenance/codetable/deviceindentcontent" typeIdFieldName="deviceidentcontentCd" z="nEmr5tw5VFTz5ddSqPkMOEMzdIM=">
+            <table:column id="c_ca_gc_hc_mds_domain_DeviceIndentContent_deviceidentcontentCd" property="deviceidentcontentCd" z=""/>
+            <table:column id="c_ca_gc_hc_mds_domain_DeviceIndentContent_descr" property="descr" z="RXunPOsyvf33B2SylFSN1BdVhj8="/>
+        </table:table>
+    </page:list>
+</div>

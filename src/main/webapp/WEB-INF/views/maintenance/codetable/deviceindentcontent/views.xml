@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="maintenance/codetable/deviceindentcontent/list">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/deviceindentcontent/list.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/deviceindentcontent/show">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/deviceindentcontent/show.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/deviceindentcontent/create">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/deviceindentcontent/create.jspx"/>
+    </definition>
+<definition extends="default" name="maintenance/codetable/deviceindentcontent/update">
+        <put-attribute name="body" value="/WEB-INF/views/maintenance/codetable/deviceindentcontent/update.jspx"/>
+    </definition>
+</tiles-definitions>

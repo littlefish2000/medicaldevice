@@ -1,6 +1,7 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.CountryTab;
+import ca.gc.hc.mds.domain.DeviceIndentContent;
 import ca.gc.hc.mds.domain.Division;
 import ca.gc.hc.mds.domain.DrugStandard;
 import ca.gc.hc.mds.domain.LicenseStatus;
@@ -58,10 +59,31 @@ public class CodeTableController {
 		else if (tableName.equalsIgnoreCase("LICENCE_STATUS"))
 			return LicenceStatusList(uiModel);
 		else if (tableName.equalsIgnoreCase("DIVISION"))
-			return DivisionList(uiModel);		
+			return DivisionList(uiModel);	
+		else if (tableName.equalsIgnoreCase("DEVICE_IDENT_CONTENT"))
+			return DiviceIndentCodeList(uiModel);			
 		else
 			return "maintenance/tablemaintenance/codetablesearch";
     }
+
+	public String DiviceIndentCodeList(Model uiModel) {
+		Integer page=1;
+		Integer size=10;
+		String sortFieldName = null;
+		String sortOrder = null;
+		
+        uiModel.asMap().clear();
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("deviceindentcontents", DeviceIndentContent.findDeviceIndentContentEntries(firstResult, sizeNo, sortFieldName, sortOrder));
+            float nrOfPages = (float) DeviceIndentContent.countDeviceIndentContents() / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("deviceindentcontents", DeviceIndentContent.findAllDeviceIndentContents(sortFieldName, sortOrder));
+        }
+        return "redirect:/maintenance/codetable//deviceindentcontent";
+	}	
 	
 	public String DivisionList(Model uiModel) {
 		Integer page=1;

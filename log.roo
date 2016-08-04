@@ -241,3 +241,12 @@ web mvc batch add --controller ~.web.DivisionController
 web mvc datatables add --type ~.web.DivisionController
 // script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
 menu entry visibility --hidden true --id c_division
+entity jpa --class ~.domain.DeviceIndentContent --table DEVICE_IDENT_CONTENT
+web mvc scaffold --class ~.web.DeviceIndentContentController --backingType ~.domain.DeviceIndentContent --path maintenance/codetable/deviceindentcontent
+web mvc jquery all
+jpa batch add --entity ~.web.DeviceIndentContentController 
+jpa batch add --entity ~.domain.DeviceIndentContent
+web mvc batch add --controller ~.web.DeviceIndentContentController
+web mvc datatables add --type ~.web.DeviceIndentContentController
+// script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
+menu entry visibility --hidden true --id c_deviceindentcontent
