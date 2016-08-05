@@ -747,14 +747,7 @@
                 , 'rowclick' : {persistState: true}
             </c:if>
             <c:if test="${create || update || (not empty dtt_row_on_top_ids)}">
-                <c:choose>
-                  <c:when test="${not empty dtt_row_on_top_ids}">
-                , 'rowsOnTop': { 'asRowOnTopIds' : ${dtt_row_on_top_ids}, 'asTableIdHash' : '${dtt_table_id_hash}', 'asParentTableIdHash' : '${dtt_parent_table_id_hash}' }
-                  </c:when>
-                  <c:otherwise>
-                , 'rowsOnTop': true
-                  </c:otherwise>
-                </c:choose>
+            , 'rowsOnTop': true
             </c:if>
 	    	});
 
