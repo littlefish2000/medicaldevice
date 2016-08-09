@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
 	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
-	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
 	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
@@ -356,46 +356,15 @@
 
 
 							<div class="tab-pane" id="tab3">
-<legend>Device Summary 13</legend>
-								<table class="table">
-									<thead class="thead-inverse">
-										<tr>
-											<th class="col-md-3">License Number</th>
-											<th class="col-md-3">Device Status</th>
-											<th class="col-md-3">License Date</th>
-											<th class="col-md-3">Current Status</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-										</tr>
-
-									</tbody>
-								</table>
+								<legend>Device Summary 13</legend>
+							    <page:list id="pl_ca_gc_hc_mds_domain_TranDeviceSummaryStatus" items="${trandevicesummarystatus}" z="">
+							        <table:table data="${trandevicesummarystatus}" update="false" delete="false" create="false" show="false" typeIdFieldName="id" id="l_ca_gc_hc_mds_domain_TranDeviceSummaryStatus" path="/maintenance/device/deviDeviceSummaryStatusVw" z="Vu0kakOBFxZ43oh8XuGQO7Wx19k=">
+							            <table:column maxLength="20" id="c_ca_gc_hc_mds_domain_TranDeviceSummaryStatus_originalicenceNo" label="License Number" property="originalicenceNo" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranDeviceSummaryStatus_appldevStatus" label="Device Status    " property="appldevStatus" z=""/>
+							            <table:column date="true" dateTimePattern="${deviceSummaryStatusVw_licencestatusdate_date_format}" label="License Date   " id="c_ca_gc_hc_mds_domain_TranDeviceSummaryStatus_licencestatusDate" property="licencestatusDate" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranDeviceSummaryStatus_descr" label="Current Status   " property="descr" z=""/>
+							       </table:table>
+							    </page:list>
 
 								<br></br>
 								<legend>Company Application Summary 15</legend>
