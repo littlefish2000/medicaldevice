@@ -1,5 +1,7 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.DeviceSummaryStatusVw;
+
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -140,6 +142,9 @@ public class DeviceController {
 
 	void populateEditForm(Model uiModel, Device device) {
         uiModel.addAttribute("device", device);
+        //Add Device Summary Status
+        long devId = device.getDeviceId();
+        uiModel.addAttribute("trandevicesummarystatus", DeviceSummaryStatusVw.findDeviceSummaryStatusesByDeviceId(devId));
         addDateTimeFormatPatterns(uiModel);
     }
 
