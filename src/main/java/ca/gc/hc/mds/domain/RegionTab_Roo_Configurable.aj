@@ -3,11 +3,11 @@
 
 package ca.gc.hc.mds.domain;
 
-import ca.gc.hc.mds.domain.DeviceCompanyVw;
+import ca.gc.hc.mds.domain.RegionTab;
 import org.springframework.beans.factory.annotation.Configurable;
 
-privileged aspect DeviceCompanyVw_Roo_Configurable {
+privileged aspect RegionTab_Roo_Configurable {
     
-    declare @type: DeviceCompanyVw: @Configurable;
+    declare @type: RegionTab: @Configurable;
     
 }

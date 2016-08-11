@@ -1,6 +1,7 @@
 package ca.gc.hc.mds.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -15,7 +16,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 public class RegionTab {
-
+	@Id
 	@Type(type = "fixedLengthCharType")
 	@Column(name = "REGION_CODE", columnDefinition = "char", nullable = false, length = 2)
 	private String regionCode;

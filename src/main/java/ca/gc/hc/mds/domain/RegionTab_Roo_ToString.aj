@@ -3,13 +3,13 @@
 
 package ca.gc.hc.mds.domain;
 
-import ca.gc.hc.mds.domain.DeviceCompanyVw;
+import ca.gc.hc.mds.domain.RegionTab;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-privileged aspect DeviceCompanyVw_Roo_ToString {
+privileged aspect RegionTab_Roo_ToString {
     
-    public String DeviceCompanyVw.toString() {
+    public String RegionTab.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     
