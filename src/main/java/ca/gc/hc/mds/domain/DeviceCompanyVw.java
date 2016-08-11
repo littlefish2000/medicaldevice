@@ -7,9 +7,9 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
-//@RooJavaBean
-//@RooToString
-//@RooJpaActiveRecord(versionField = "", schema = "MDSDB",table = "DEVICE_COMPANY_VW")
+@RooJavaBean
+@RooToString
+@RooJpaActiveRecord(versionField = "", schema = "MDSDB",table = "DEVICE_COMPANY_VW")
 public class DeviceCompanyVw {
 	@Id
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
