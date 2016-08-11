@@ -11,8 +11,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(schema = "MDSDB", table = "REGION_TAB", versionField = "", finders = { "findRegionTabByRegionCode",
-		"findRegionTabByRegionName" })
+@RooJpaActiveRecord(schema = "MDSDB", table = "REGION_TAB", versionField = "", finders = { "findRegionTabsByRegionCode",
+		"findRegionTabsByRegionName" })
 
 @TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 public class RegionTab {
