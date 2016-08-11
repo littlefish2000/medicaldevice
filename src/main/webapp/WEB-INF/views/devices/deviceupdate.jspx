@@ -368,54 +368,17 @@
 
 								<br></br>
 								<legend>Company Application Summary 15</legend>
+							    <page:list id="pl_ca_gc_hc_mds_domain_TranCompanyApplicationSummary" items="${trancompanyapplicationtatus}" z="">
+							        <table:table data="${trancompanyapplicationtatus}" update="false" delete="false" create="false" show="false" typeIdFieldName="id" id="l_ca_gc_hc_mds_domain_TranCompanyApplicationSummary" path="/maintenance/device/deviDeviceSummaryStatusVw" z="Vu0kakOBFxZ43oh8XuGQO7Wx19k=">
+							            <table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_originalicenceNo" label="License Number" property="originalicenceNo" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_mfgCompanyId" label="Mfg Id   " property="mfgCompanyId" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_c1CompanyName" label="Manufacture Name" property="c1CompanyName" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_authCompanyId" label="Reg Id" property="authCompanyId" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_c2CompanyName" label="Reg Name" property="c2CompanyName" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranCompanyApplicationSummary_licenceStatus" label="Status" property="licenceStatus" z=""/>
+							       </table:table>
+							    </page:list>
 
-								<table class="table">
-									<thead class="thead-inverse">
-										<tr>
-											<th class="col-md-2">License Number</th>
-											<th class="col-md-2">Mfg ID</th>
-											<th class="col-md-2">Manufacturer Name</th>
-											<th class="col-md-2">Reg Id</th>
-											<th class="col-md-2">Reg Name</th>
-											<th class="col-md-2">Status</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-
-
-										</tr>
-
-									</tbody>
-								</table>
 								<br></br>
 								<legend>Application License Summary 20</legend>
 

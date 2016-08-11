@@ -1,5 +1,6 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.DeviceCompanyVw;
 import ca.gc.hc.mds.domain.DeviceSummaryStatusVw;
 
 import java.io.UnsupportedEncodingException;
@@ -145,6 +146,7 @@ public class DeviceController {
         //Add Device Summary Status
         long devId = device.getDeviceId();
         uiModel.addAttribute("trandevicesummarystatus", DeviceSummaryStatusVw.findDeviceSummaryStatusesByDeviceId(devId));
+        uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
         addDateTimeFormatPatterns(uiModel);
     }
 
