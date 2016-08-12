@@ -381,41 +381,17 @@
 
 								<br></br>
 								<legend>Application License Summary 20</legend>
+								
+							    <page:list id="pl_ca_gc_hc_mds_domain_TranApplicationLicenceSummary" items="${tranapplicationlicencesummary}" z="">
+							        <table:table data="${tranapplicationlicencesummary}" update="false" delete="false" create="false" show="false" typeIdFieldName="id" id="l_ca_gc_hc_mds_domain_TranCompanyApplicationSummary" path="/maintenance/device/deviDeviceSummaryStatusVw" z="Vu0kakOBFxZ43oh8XuGQO7Wx19k=">
+							            <table:column id="c_ca_gc_hc_mds_domain_TranApplicationLicenceSummary_applicationId" label="Application Id" property="applicationId" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranApplicationLicenceSummary_applicationType" label="Type" property="applicationType" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranApplicationLicenceSummary_appldeviceStatus" label="Device Status" property="appldeviceStatus" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranApplicationLicenceSummary_statusDate" label="Status Date" property="statusDate" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranApplicationLicenceSummary_licenceName" label="Licence Name" property="licenceName" z=""/>
+							       </table:table>
+							    </page:list>
 
-								<table class="table">
-									<thead class="thead-inverse">
-										<tr>
-											<th class="col-md-2">Application Id</th>
-											<th class="col-md-2">Type</th>
-											<th class="col-md-2">Device Status</th>
-											<th class="col-md-2">Status Date</th>
-											<th class="col-md-3">Description</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-									</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-										</tr>
-										<tr>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-											<td>AutoFill</td>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 
 							<div class="tab-pane" id="tab4">
