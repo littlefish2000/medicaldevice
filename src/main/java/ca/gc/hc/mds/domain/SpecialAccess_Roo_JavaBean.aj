@@ -48,6 +48,14 @@ privileged aspect SpecialAccess_Roo_JavaBean {
         this.actionDate = actionDate;
     }
     
+    public String SpecialAccess.getActionTaken() {
+        return this.actionTaken;
+    }
+    
+    public void SpecialAccess.setActionTaken(String actionTaken) {
+        this.actionTaken = actionTaken;
+    }
+    
     public Date SpecialAccess.getAiReceiptDate() {
         return this.aiReceiptDate;
     }

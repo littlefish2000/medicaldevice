@@ -10,6 +10,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -17,6 +19,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
+@TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 @RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierColumn = "SPECIAL_ACCESS_ID", identifierField = "specialId", table = "SPECIAL_ACCESS", finders = { "findSpecialAccessesBySpecialId" })
 public class SpecialAccess {
 	@Id
@@ -46,6 +49,14 @@ public class SpecialAccess {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date actionDate;	
+    
+    /**
+     *  
+     */
+    @NotNull
+    @Type(type = "fixedLengthCharType")
+	@Column(name = "ACTION_TAKEN", columnDefinition = "char", nullable=false, length=2)
+	private String actionTaken;
 
     /**
      */
