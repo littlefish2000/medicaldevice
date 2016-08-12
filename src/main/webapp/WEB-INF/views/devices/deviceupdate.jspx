@@ -511,6 +511,7 @@
 								<br></br>
 								<utilold:panel id="s_ca_gc_hc_mds_domain_device_sepcialacesssummarylist_id" openPane="false" title="Special Access Summary 23">
 								<legend>Special Access Summary 23 :</legend>
+								<!--  
 								<table class="table">
 									<thead class="thead-inverse">
 										<tr>
@@ -541,6 +542,18 @@
 										</tr>
 									</tbody>
 								</table>
+								-->
+								<page:list id="pl_ca_gc_hc_mds_domain_TranSpecialAccessSummary" items="${tranSpecialAccessSummary}" z="">
+							        <table:table data="${tranSpecialAccessSummary}" update="false" delete="false" create="false" show="false" typeIdFieldName="id" id="l_ca_gc_hc_mds_domain_TranSpecialAccessSummary" path="/maintenance/device/SpecialAccessDevice" z="">
+							            <table:column id="c_ca_gc_hc_mds_domain_TranSpecialAccessSummary_specialAccessID" maxLength="20"  label="Special Access Id" property="specialAccessID" z=""/>							            
+							            <table:column id="c_ca_gc_hc_mds_domain_TranSpecialAccessSummary_requestDate" date="true" dateTimePattern="${device_specialAccesssSummary_date_format}" label="Requested Date   "  property="requestDate" z=""/>
+										<table:column id="c_ca_gc_hc_mds_domain_TranSpecialAccessSummary_actionDate" date="true" dateTimePattern="${device_specialAccesssSummary_date_format}" label="Action Date   "  property="actionDate" z=""/>																           
+							            <table:column id="c_ca_gc_hc_mds_domain_TranSpecialAccessSummary_actionTaken" label="Action Taken   " property="actionTaken" z=""/>
+							            <table:column id="c_ca_gc_hc_mds_domain_TranSpecialAccessSummary_deviceIdentifier" label="Device Identifier   " property="deviceIdentifier" z=""/>        
+							            
+							       </table:table>
+							   </page:list>
+							   
 								</utilold:panel>
 							</div>
 						</div>

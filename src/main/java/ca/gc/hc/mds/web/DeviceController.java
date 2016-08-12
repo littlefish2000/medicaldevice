@@ -3,6 +3,7 @@ import ca.gc.hc.mds.domain.ApplicationDevice;
 import ca.gc.hc.mds.domain.Device;
 import ca.gc.hc.mds.domain.DeviceCompanyVw;
 import ca.gc.hc.mds.domain.DeviceSummaryStatusVw;
+import ca.gc.hc.mds.domain.SpecialAccessDevice;
 
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -140,6 +141,7 @@ public class DeviceController {
 	void addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("device_entrydate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("device_lastchangedate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("device_specialAccesssSummary_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
 
 	void populateEditForm(Model uiModel, Device device) {
@@ -149,6 +151,7 @@ public class DeviceController {
         uiModel.addAttribute("trandevicesummarystatus", DeviceSummaryStatusVw.findDeviceSummaryStatusesByDeviceId(devId));
         uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
         uiModel.addAttribute("tranapplicationlicencesummary", ApplicationDevice.findApplicationLicenceSummaryByDeviceId(devId));
+        uiModel.addAttribute("tranSpecialAccessSummary", SpecialAccessDevice.findSpecialAccessSummaryByDeviceId(devId));
         addDateTimeFormatPatterns(uiModel);
     }
 

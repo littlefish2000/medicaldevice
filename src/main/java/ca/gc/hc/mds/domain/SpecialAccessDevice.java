@@ -47,7 +47,7 @@ public class SpecialAccessDevice {
 		String queryStr = "SELECT  NEW ca.gc.hc.mds.transparent.TranSpecialAccessSummary" 
 								+ " (d.id.specialAccessID, s.requestDate,  s.actionDate,  s.actionTaken, d.id.deviceIdentifier)  "
 						+ "FROM  SpecialAccessDevice AS d, SpecialAccess AS s   "
-						+ " WHERE d.id.deviceID = :deviceId AND s.specialId = d.id.specialAccessID ORDER BY s.requestDate DESC; ";
+						+ " WHERE d.id.deviceID = :deviceId AND s.specialId = d.id.specialAccessID ORDER BY s.requestDate DESC ";
 		
 			
 		TypedQuery<TranSpecialAccessSummary> query = entityManager.createQuery(queryStr, TranSpecialAccessSummary.class);
