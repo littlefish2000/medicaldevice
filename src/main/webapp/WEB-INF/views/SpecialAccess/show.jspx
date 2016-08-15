@@ -9,5 +9,6 @@
         <field:display date="true" dateTimePattern="${specialAccess_actiondate_date_format}" field="actionDate" id="s_ca_gc_hc_mds_domain_SpecialAccess_actionDate" object="${specialaccess}" z="hvhBjG6fPOnMj31j/P4r7EifFPA="/>
         <field:display date="true" dateTimePattern="${specialAccess_aireceiptdate_date_format}" field="aiReceiptDate" id="s_ca_gc_hc_mds_domain_SpecialAccess_aiReceiptDate" object="${specialaccess}" z="82VBWgLBkOSP8VsCLymfrqgUXus="/>
         <field:display field="reference" id="s_ca_gc_hc_mds_domain_SpecialAccess_reference" object="${specialaccess}" z="LQqVW/KToawN1lO+HstsYTA6cak="/>
+        <field:display field="actionTaken" id="s_ca_gc_hc_mds_domain_SpecialAccess_actionTaken" object="${specialaccess}" z="DF/jF9t2nTd3ybAqpxWuJPZyBZU="/>
     </page:show>
 </div>

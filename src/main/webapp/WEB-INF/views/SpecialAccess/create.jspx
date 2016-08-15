@@ -9,6 +9,7 @@
         <field:datetime dateTimePattern="${specialAccess_actiondate_date_format}" field="actionDate" id="c_ca_gc_hc_mds_domain_SpecialAccess_actionDate" required="true" z="HlJ7PXbrds4nOZPpdq1zQP710m4="/>
         <field:datetime dateTimePattern="${specialAccess_aireceiptdate_date_format}" field="aiReceiptDate" id="c_ca_gc_hc_mds_domain_SpecialAccess_aiReceiptDate" required="true" z="6/Q8XdjpLBgjhJWknLF3OurooGE="/>
         <field:textarea field="reference" id="c_ca_gc_hc_mds_domain_SpecialAccess_reference" z="pBmfmyOWHhBai64VFXme4+Rf+S8="/>
+        <field:input field="actionTaken" id="c_ca_gc_hc_mds_domain_SpecialAccess_actionTaken" required="true" z="gshMc19LeLWUHRJ+2/ytVX1ZCag="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_SpecialAccess" render="${not empty dependencies}" z="X47VNtZ7Te4tuZ0z7gybm0ecG5U="/>
 </div>

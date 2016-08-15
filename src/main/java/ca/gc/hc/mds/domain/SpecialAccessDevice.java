@@ -55,7 +55,7 @@ public class SpecialAccessDevice {
 		
 		results = query.getResultList();
 		TranSpecialAccessSummary.resetId(results);
-		
+		TranSpecialAccessSummary.updateActionTaken(results);		
 						
 		return results;
 	}

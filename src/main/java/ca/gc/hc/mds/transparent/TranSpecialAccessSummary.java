@@ -1,6 +1,7 @@
 package ca.gc.hc.mds.transparent;
 
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.List;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -36,10 +37,28 @@ public class TranSpecialAccessSummary {
 	    	summary.setId(++count);    		
 		 }
 	    	
-	    }
-	
-	
-	
-	
+	}
+	 
+	public static void updateActionTaken(List<TranSpecialAccessSummary> summaryList) {
+		
+		Hashtable<String, String> actions = new Hashtable<String, String>();		
+		actions.put("Y", "Yes");
+		actions.put("N", "No");
+		actions.put("P", "Pending");
+		actions.put("W", "Withdrawl");
+		actions.put("NULL", "Unknown");	
+		
+		
+		 for (TranSpecialAccessSummary summary:summaryList) {
+			 
+			 if (summary.actionTaken == null || summary.actionTaken.trim().equals("")){
+				 summary.actionTaken = "NULL";
+			 }
+	    		
+	    	summary.actionTaken = actions.get(summary.actionTaken.trim().toUpperCase()) ;	
+		 }
+	    	
+	}
+		
 
 }

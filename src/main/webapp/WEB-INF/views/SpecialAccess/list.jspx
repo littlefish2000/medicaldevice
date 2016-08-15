@@ -10,7 +10,7 @@
             <table:column date="true" dateTimePattern="${specialAccess_requestdate_date_format}" id="c_ca_gc_hc_mds_domain_SpecialAccess_requestDate" property="requestDate" z="DxA2TWUrLg4yYGl6DcjMJXkfUbw="/>
             <table:column date="true" dateTimePattern="${specialAccess_actiondate_date_format}" id="c_ca_gc_hc_mds_domain_SpecialAccess_actionDate" property="actionDate" z="VPGMmXMPRd3S6b8EM/xQl0kY/hU="/>
             <table:column date="true" dateTimePattern="${specialAccess_aireceiptdate_date_format}" id="c_ca_gc_hc_mds_domain_SpecialAccess_aiReceiptDate" property="aiReceiptDate" z="XSdwR8Jlv38a4nCMqQRgnMQwUEc="/>
-            <table:column id="c_ca_gc_hc_mds_domain_SpecialAccess_reference" property="reference" z="SBslaLsIMFlwey6xmT43uU85x9w="/>
+            <table:column id="c_ca_gc_hc_mds_domain_SpecialAccess_actionTaken" property="actionTaken" z="C1rFbm3U/PIVYbbfCUYTgWrLgko="/>
         </table:table>
     </page:list>
 </div>
