@@ -10,6 +10,8 @@ import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -20,12 +22,14 @@ import ca.gc.hc.mds.transparent.TranDeviceSummaryStatus;
 
 @RooJavaBean
 @RooToString
+@TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 @RooJpaActiveRecord(versionField = "", schema = "MDSDB",identifierType = ApplicationDevicePK.class,table = "APPLICATION_DEVICE")
 public class ApplicationDevice {
 	
 	/**
 	 */
-	@Column(name = "APPL_DEVICE_STATUS", columnDefinition = "char", nullable = true, length = 2)
+	@Type(type = "fixedLengthCharType")
+	@Column(name = "APPL_DEVICE_STATUS", columnDefinition = "char", nullable = false, length = 2)
 	@Size(min = 0, max = 2)
 	private String appldeviceStatus;
 	
@@ -40,12 +44,12 @@ public class ApplicationDevice {
     
     /**
      */
-    @Column(name = "EVALUATION_REQUIRED", nullable = true, length=1,columnDefinition = "char(1)")
+    @Type(type = "fixedLengthCharType")
+    @Column(name = "EVALUATION_REQUIRED", nullable = false, length=1,columnDefinition = "char(1)")
     private String evaluationRequired = null;
     
     /**
-     */
-    @NotNull
+     */   
     @Column(name = "LICENCE_DT", columnDefinition = "DATE")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
