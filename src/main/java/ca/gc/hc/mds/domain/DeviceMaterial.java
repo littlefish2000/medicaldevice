@@ -61,12 +61,12 @@ public class DeviceMaterial {
 			
 		}
 		
-		EntityManager entityManager = DeviceMaterial.entityManager();
+		EntityManager entityManager = DeviceMaterial.entityManager();		
+	
 		
-		
-		String queryStr = "SELECT DISTINCT  NEW ca.gc.hc.mds.transparent.TranDeviceMaterial " 
+		String queryStr = "SELECT  DISTINCT NEW ca.gc.hc.mds.transparent.TranDeviceMaterial " 
 				+ "(dm.id.deviceID, d.tradeName , ct.countryDesc, dm.id.startDate, dm.endDate, " 
-				+ "DECODE( dm.statusCode, 'A', 'Active', 'I', 'Inactive', 'M','Monitor', 'Unknown'), ds.descEng, dt.descEng, dd.descEng , dm.comments)  "
+				+ " dm.statusCode, ds.descEng, dt.descEng, dd.descEng , dm.comments)  "       // TODO:: can we support here DECODE( dm.statusCode, 'A', 'Active', 'I', 'Inactive', 'M','Monitor', 'Unknown')??
 		+ "FROM " 
 				+ "ApplicationDevice AS ad, DeviceMaterial AS dm, Application AS a, Device AS d, CountryTab AS ct, DeviceSpecies AS ds, DeviceTissues AS dt, DeviceDerivatives AS dd "
 		+ "WHERE " 
@@ -80,6 +80,7 @@ public class DeviceMaterial {
 				+ "ad.id.applicationId  =  :applicationID  AND a.applicationType IN ('F','C','T','P','Z','L') AND "
 				+ "a.orginLicenseId = 0 AND a.applicationId = ad.id.applicationId ) "  
 		+ "ORDER BY dm.id.deviceID  ";
+			
       
 		
 		TypedQuery<TranDeviceMaterial> query = entityManager.createQuery(queryStr, TranDeviceMaterial.class);		

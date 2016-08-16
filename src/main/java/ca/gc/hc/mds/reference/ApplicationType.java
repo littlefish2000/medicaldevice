@@ -5,6 +5,7 @@ public enum ApplicationType {
     A,
     B,
     F,
+    M,
     R,
     Z
 }

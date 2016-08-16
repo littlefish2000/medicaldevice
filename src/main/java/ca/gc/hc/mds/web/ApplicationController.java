@@ -1,5 +1,6 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.DeviceMaterial;
 import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
@@ -100,10 +101,12 @@ public class ApplicationController {
         uiModel.addAttribute("application_entrydate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("application_receiptdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("application_licencestatusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("application_devicematerial_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
 
 	void populateEditForm(Model uiModel, Application application) {
         uiModel.addAttribute("application", application);
+        uiModel.addAttribute("tranDeviceMaterial", DeviceMaterial.findDeviceMaterialForApplication(application.getApplicationId(), application.getOrginLicenseId()));
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
         uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));
