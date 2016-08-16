@@ -2,7 +2,9 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields"
 	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form"
-	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" 
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
@@ -937,6 +939,24 @@
 
 											<div class="row">
 												<br></br>
+												
+												<page:list id="pl_ca_gc_hc_mds_domain_TranDeviceMaterial" items="${tranDeviceMaterial}" >
+													<table:table data="${tranDeviceMaterial}" update="false" delete="false" create="false" show="false" typeIdFieldName="id" id="l_ca_gc_hc_mds_domain_TranDeviceMaterial" path="/maintenance/application/DeviceMaterial" >
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_deviceID" maxLength="20"  label="ID" property="deviceID" />	
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_deviceTradeName" label="Product   " property="deviceTradeName" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_countryDesc" label="Country   " property="countryDesc" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_startDate" date="true" dateTimePattern="${application_devicematerial_date_format}" label="Start Date   "  property="startDate" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_endDate" date="true" dateTimePattern="${application_devicematerial_date_format}" label="End Date   "  property="endDate" />		
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_statusDescEng" label="Status   " property="statusDescEng" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_deviceSpeciesDescEng" label="Species   " property="deviceSpeciesDescEng" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_deviceTissueDescEng" label="Tissue   " property="deviceTissueDescEng" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_deviceDerivativeDescEng" label="Derivative   " property="deviceDerivativeDescEng" />
+														<table:column id="c_ca_gc_hc_mds_domain_TranDeviceMaterial_comments" label="Comments   " property="comments" />		
+												   </table:table>
+												</page:list>
+												
+												<!-- 											
+												
 												<table class="table">
 													<thead class="thead-inverse">
 														<tr>
@@ -999,6 +1019,10 @@
 														</tr>
 													</tbody>
 												</table>
+												 -->	
+												
+												
+												
 											</div>
 										</div>
 									</div>
