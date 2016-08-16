@@ -113,6 +113,38 @@ privileged aspect CompanyHistory_Roo_JavaBean {
         this.region = region;
     }
     
+    public String CompanyHistory.getCompanyStatus() {
+        return this.companyStatus;
+    }
+    
+    public void CompanyHistory.setCompanyStatus(String companyStatus) {
+        this.companyStatus = companyStatus;
+    }
+    
+    public String CompanyHistory.getFeeReduction() {
+        return this.feeReduction;
+    }
+    
+    public void CompanyHistory.setFeeReduction(String feeReduction) {
+        this.feeReduction = feeReduction;
+    }
+    
+    public Double CompanyHistory.getGrossRevenue() {
+        return this.grossRevenue;
+    }
+    
+    public void CompanyHistory.setGrossRevenue(Double grossRevenue) {
+        this.grossRevenue = grossRevenue;
+    }
+    
+    public Long CompanyHistory.getMdbBillTo() {
+        return this.mdbBillTo;
+    }
+    
+    public void CompanyHistory.setMdbBillTo(Long mdbBillTo) {
+        this.mdbBillTo = mdbBillTo;
+    }
+    
     public Company CompanyHistory.getCompany() {
         return this.company;
     }

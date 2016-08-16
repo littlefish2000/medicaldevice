@@ -14,7 +14,7 @@ privileged aspect CompanyHistory_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager CompanyHistory.entityManager;
     
-    public static final List<String> CompanyHistory.fieldNames4OrderClauseFilter = java.util.Arrays.asList("companyHistoryId", "changeDate", "companyName", "addressLine1", "addressLine2", "addressLine3", "addressLine4", "addressLine5", "postCode", "regionCode", "city", "country", "region", "company");
+    public static final List<String> CompanyHistory.fieldNames4OrderClauseFilter = java.util.Arrays.asList("companyHistoryId", "changeDate", "companyName", "addressLine1", "addressLine2", "addressLine3", "addressLine4", "addressLine5", "postCode", "regionCode", "city", "country", "region", "companyStatus", "feeReduction", "grossRevenue", "mdbBillTo", "company");
     
     public static final EntityManager CompanyHistory.entityManager() {
         EntityManager em = new CompanyHistory().entityManager;

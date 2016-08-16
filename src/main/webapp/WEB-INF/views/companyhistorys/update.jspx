@@ -4,17 +4,21 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_CompanyHistory" idField="companyHistoryId" modelAttribute="companyHistory" path="/companyhistorys" versionField="none" z="tuLDegsXXZ3dqSXiAmdiN6BmKvI=">
         <field:datetime dateTimePattern="${companyHistory_changedate_date_format}" field="changeDate" id="c_ca_gc_hc_mds_domain_CompanyHistory_changeDate" required="true" z="6e8/f/oO0PBDG/cqh9B+w4DhzGY="/>
-        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_CompanyHistory_companyName" z="fFk/LyDJ1jpDdObZXqq1pLcB1zw="/>
-        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" z="xWlueUmHUyK3XXZ4JjxM9weHRWQ="/>
-        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" z="zwkfA25PuN7ILTU7N7Nr6lLBh3I="/>
-        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" z="tBw8vpmVj1hMzfkK2mjldwoQGJI="/>
-        <field:textarea field="addressLine4" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" z="MaMhjj/F1sn0PtCBhD24IUboQdM="/>
-        <field:textarea field="addressLine5" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine5" z="eH/wMCLE1EtZEWM0kNgT26zOBrU="/>
-        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_CompanyHistory_postCode" max="12" min="0" required="true" z="WUmlKZ1xGGL6xH/AX3PDn6p3UnU="/>
-        <field:input field="regionCode" id="c_ca_gc_hc_mds_domain_CompanyHistory_regionCode" max="12" min="0" required="true" z="dUokJIKHByJmk3ZRXkSOjrgiBp8="/>
-        <field:textarea field="city" id="c_ca_gc_hc_mds_domain_CompanyHistory_city" z="GW8Sp4ZHIn47GolDhpt1wsMZvbY="/>
-        <field:input field="country" id="c_ca_gc_hc_mds_domain_CompanyHistory_country" max="2" min="0" required="true" z="OMqHql/xYNzS2m6Z+xxdsDWrcqo="/>
-        <field:input field="region" id="c_ca_gc_hc_mds_domain_CompanyHistory_region" max="3" min="0" required="true" z="BTa5j8a18Zu2uXnDPNkfQKqXex8="/>
+        <field:input field="companyName" id="c_ca_gc_hc_mds_domain_CompanyHistory_companyName" required="true" z="SSm91Zydu+2rcuoBEBgQD1AglkI="/>
+        <field:input field="addressLine1" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" required="true" z="UMmhyp0xdfgldEVlZUWaM/7YTd4="/>
+        <field:input field="addressLine2" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" required="true" z="dCjBq5BKp9Dz18iFLDmk4egiNOs="/>
+        <field:input field="addressLine3" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" required="true" z="Q7mpeB5uM+Ni/Dl3P2Ej/qDM+eo="/>
+        <field:input field="addressLine4" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" required="true" z="tMiqINNCs4NSbnfrOydlD8QPoCU="/>
+        <field:input field="addressLine5" id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine5" required="true" z="QBXUIxR7Rn13wKTdw0rp15jH+Rw="/>
+        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_CompanyHistory_postCode" required="true" z="VCXx672ek9ehhnAfKuw4fQvHaYw="/>
+        <field:input field="regionCode" id="c_ca_gc_hc_mds_domain_CompanyHistory_regionCode" required="true" z="H9EDsQhjtFcZfW99iM5Q8sp23Hg="/>
+        <field:input field="city" id="c_ca_gc_hc_mds_domain_CompanyHistory_city" required="true" z="aVitXt08DsFmmEp1oyWXe1qXfBo="/>
+        <field:input field="country" id="c_ca_gc_hc_mds_domain_CompanyHistory_country" required="true" z="FqVFrGCnZ3qmqNPw/bViw9ZEInQ="/>
+        <field:input field="region" id="c_ca_gc_hc_mds_domain_CompanyHistory_region" required="true" z="CBX982D353arx9kHhHJM2HWWNuA="/>
         <field:select field="company" id="c_ca_gc_hc_mds_domain_CompanyHistory_company" itemValue="companyId" items="${companys}" path="/companys" z="IwcyQL9kd6h9DUPzX6ue7jx9qcU="/>
+        <field:input field="companyStatus" id="c_ca_gc_hc_mds_domain_CompanyHistory_companyStatus" required="true" z="VhUyCxAo4a60qCIKOEpka0UgCxc="/>
+        <field:input field="feeReduction" id="c_ca_gc_hc_mds_domain_CompanyHistory_feeReduction" required="true" z="Qqwm+mqT47n7tV9Sq/OZpkWD0xU="/>
+        <field:input field="grossRevenue" id="c_ca_gc_hc_mds_domain_CompanyHistory_grossRevenue" required="true" validationMessageCode="field_invalid_number" z="3b49NeJCFMXJvAGFFcfySTyb+TE="/>
+        <field:input field="mdbBillTo" id="c_ca_gc_hc_mds_domain_CompanyHistory_mdbBillTo" required="true" validationMessageCode="field_invalid_integer" z="uhwOtRbhuJtsNTp2tx6IBRDuvX8="/>
     </form:update>
 </div>

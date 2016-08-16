@@ -1,235 +1,345 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"  
-	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform" 
-	xmlns:jsp="http://java.sun.com/JSP/Page" 
-	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util" 
-	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util" xmlns:c="http://java.sun.com/jsp/jstl/core" 
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util"
+	xmlns:utilold="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ca_gc_hc_mds_domain_Company" idField="companyId" modelAttribute="company" path="/companys" versionField="none" z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                	<div class="row">
-                	<spring:eval expression="company.getCompanyId()" var="compidvar"/>
-                	<label for="s_ca_gc_hc_mds_domain_Company_companyId" class="control-label col-lg-6">Company ID:</label>
-                	<div class="col-lg-5">
-                	<input id="s_ca_gc_hc_mds_domain_Company_companyId" type="text" class="form-control" 
-                	placeholder="${compidvar}" readonly="readonly"/>
-                	</div>
-                	</div>
-                 </div>
-                <div class="col-lg-4">
-               		<field:input field="companyName"  label="Name" id="c_ca_gc_hc_mds_domain_Company_companyName" z="3A1ZAuuyMJflMC2QoDzB50KLU40="/>
-                </div>
-                <div class="col-lg-4">
-               		 <field:select field="companyStatus" label="Status" id="c_ca_gc_hc_mds_domain_Company_companyStatus" items="${statustypes}" path="statustypes" required="true" z=""/>
-                </div>                
-            </div>
-            <div class="row">
-                <div class="col-lg-9">
-                	<fieldset  class="scheduler-border">
-                		<legend class="scheduler-border">Licence Flags</legend>
-                		<div class="row">
-                			<div class="col-lg-2">
-                               <label  class="col-sm-2 control-label" for="disabledSelect">MDL</label>
-                               <div class="col-xs-8">
-	 								<select id="disabledSelect" class="form-control input-sm">
-	                                   <option>No</option>
-	                                   <option>Yes</option>
-	                               </select>
-                               </div>                               
-                        	</div>
-                			<div class="col-lg-2">
-                               <label  class="col-sm-2 control-label" for="disabledSelect">Reg</label>
-                               <div class="col-xs-8">
-	 								<select id="disabledSelect" class="form-control input-sm">
-	                                   <option>No</option>
-	                                   <option>Yes</option>
-	                               </select>
-                               </div>                               
-                        	</div>
-                        	<div class="col-lg-3">
-                               <label  class="col-sm-2 control-label" for="disabledSelect">MDEL</label>
-                               <div class="col-xs-7">
-	 								<select id="disabledSelect" class="form-control input-sm">
-	                                   <option>No</option>
-	                                   <option>Yes</option>
-	                               </select>
-                               </div>                               
-                        	</div>
-                			<div class="col-lg-2">
-                               <label  class="col-sm-2 control-label" for="disabledSelect">Mfg</label>
-                               <div class="col-xs-8">
-	 								<select id="disabledSelect" class="form-control input-sm">
-	                                   <option>No</option>
-	                                   <option>Yes</option>
-	                               </select>
-                               </div>                               
-                        	</div> 
-                			<div class="col-lg-3">
-                               <label  class="col-sm-2 control-label" for="disabledSelect">Site</label>
-                               <div class="col-xs-7">
-	 								<select id="disabledSelect" class="form-control input-sm">
-	                                   <option>No</option>
-	                                   <option>Yes</option>
-	                               </select>
-                               </div>                               
-                        	</div>                          	                       	
-                		</div>
-                	</fieldset>
-                 </div>
-
-                <div class="col-lg-3">
-               		 <field:datetime dateTimePattern="${company_statusdate_date_format}" labelclass="col-lg-4"  fieldclass="col-lg-8" label="Status Date" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z=""/>
-                </div>                
-            </div>
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:update id="fu_ca_gc_hc_mds_domain_Company" idField="companyId"
+		modelAttribute="company" path="/companys" versionField="none"
+		z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
+		<div class="container">
 			<div class="row">
-			    <div class="panel with-nav-tabs panel-primary">
-			    	 <div class="panel-heading">	
-			       <ul class="nav nav-tabs responsive">
-			           <li class="active" ><a href="#tab1" data-toggle="tab">Address</a></li>
-			           <li><a href="#tab2" data-toggle="tab">Contact</a></li>
-			           <li><a href="#tab3" data-toggle="tab">History</a></li>
-			           <li><a href="#tab4" data-toggle="tab">Finance</a></li>
-			       </ul>
-			       </div>
-			       <div class="panel-body">
-			       <div class="tab-content">
-			           <div class="tab-pane active" id="tab1">
-			           		<div class="row">
-			           			<div class="col-lg-6 text-center">
-						        <field:input field="addressLine1" label="address1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
-						        <field:input field="addressLine2" label="address2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
-						        <field:input field="addressLine3" label="address3" id="c_ca_gc_hc_mds_domain_Company_addressLine3" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
-						        <field:input field="addressLine4" label="address4" id="c_ca_gc_hc_mds_domain_Company_addressLine4" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
-						        <field:input field="city" id="c_ca_gc_hc_mds_domain_Company_city" z="wg0iJehPUq4OeYYJMIji+dkXNoE="/>
-						        <field:input field="country" id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" required="true" z="rpyvQr672yLX1c7alU34ZC96cqc="/>
-						        <field:input field="region" id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0" required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4="/>
-						        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA="/>
-						        </div>
-					        </div>
-			           	</div>
-			           <div class="tab-pane" id="tab2">
-						    <page:list id="pl_ca_gc_hc_mds_domain_CompanyContact" items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
-						        <table:table data="${companycontacts}" id="l_ca_gc_hc_mds_domain_CompanyContact" path="/companycontacts" typeIdFieldName="companyContactId" z="g4lowgLIJ0EKaBJqQarSL7RvgcA=">
-						            <table:column date="true" dateTimePattern="${companyContact_statusdate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyContact_statusDate" property="statusDate" z="Hgh4cGSYSg02Fn6ma1XzkURt5zg="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactName" property="contactName" z="faoXyR25Usg1ZfFqjnh6oHE831o="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle" property="contactTitle" z="M3e3FaDi8bDd59yxfOHpWCidGzo="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" property="e_MAIL" z="6QdwuSu8tgtS1eXchLlswgcqEEs="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_company" property="company" z="hwjAQAmMVYU5J8tmoq+Q8K1OzRU="/>
-						        </table:table>
-						    </page:list>
-		                	<br></br>
-		                	<div class="row">
-			                	<div class="col-lg-3">
-			                            <label class="col-lg-3">Name: </label><input class="col-lg-9"  type="text"></input>
-			                	</div>
-			                	<div class="col-lg-3">
-			                		<label class="col-lg-4" >Status: </label>
-			                    	<select id="disabledSelect">
-		                                    <option>Active</option>
-		                                    <option>InActive</option>
-		                            </select>
-			                	</div>		                	
-			                	<div class="col-lg-3">
-			                		<label class="col-lg-3">Type: </label>
-			                    	<select id="disabledSelect">
-		                                    <option>Finance</option>
-		                                    <option>Sales</option>
-		                            </select>
-			                	</div>
-			                	<div class="col-lg-3">
-			                            <label class="col-lg-3">ID: </label><input type="text"></input>
-			                	</div>
-			                </div>
-			                <br></br>
-			                <div class="row">
-				                	<div class="col-lg-3">
-				                            <label class="col-lg-3">Phone: </label><input class="col-lg-9" type="text"></input>
-				                	</div>		
-				                	<div class="col-lg-3">
-				                            <label class="col-lg-3">Ext: </label><input class="col-lg-9" type="text"></input>
-				                	</div>
-				                	<div class="col-lg-6">
-				                            <label class="col-lg-3">Language: </label>
-				                    	<select  id="disabledSelect">
-			                                    <option>English</option>
-			                                    <option>French</option>
-			                            </select>		                            
-				                	</div>
-			                	</div>
-			                	<br></br>
-			                	<div class="row">
-				                	<div class="col-lg-3">
-				                            <label class="col-lg-3">Fax: </label><input type="text"></input>
-				                	</div>
-				                	<div class="col-lg-9">
-				                            <label class="col-lg-1">Title: </label><input class="col-lg-6" type="text"></input>
-			                		</div>
-			                	</div>	
-			                	<br></br>
-			                	<div class="row">
-				                	<div class="col-lg-9">
-				                		<label class="col-lg-1">Email: </label>
-										<input class="col-lg-6" type="text"></input>
-			                		</div>
-			                	</div>	
-			                	<br></br>
+				<div class="col-lg-4">
+					<div class="row">
+						<spring:eval expression="company.getCompanyId()" var="compidvar" />
+						<label for="s_ca_gc_hc_mds_domain_Company_companyId"
+							class="control-label col-lg-6">Company ID:</label>
+						<div class="col-lg-5">
+							<input id="s_ca_gc_hc_mds_domain_Company_companyId" type="text"
+								class="form-control" placeholder="${compidvar}"
+								readonly="readonly" />
 						</div>
-			           <div class="tab-pane" id="tab3">
-						    <page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory" items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
-						        <table:table data="${companyhistorys}" id="l_ca_gc_hc_mds_domain_CompanyHistory" path="/companyhistorys" typeIdFieldName="companyHistoryId" z="xiGXRcf3ViCuoZbP1Vac4oRwcSM=">
-						            <table:column date="true" dateTimePattern="${companyHistory_changedate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyHistory_changeDate" property="changeDate" z="pz2lpAR+iirvO2EugFwRR3JKGeA="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_companyName" property="companyName" z="OB859vKciXSAiB01u7/zhqLMeZQ="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1" property="addressLine1" z="OTFjYexMZszJcWfKpNcJTz1R9t4="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine2" property="addressLine2" z="JwB0X3+SLRJxknwezjzGI7q14mU="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine3" property="addressLine3" z="gHA5uu8+LehOTIQizAywALHn6js="/>
-						            <table:column id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine4" property="addressLine4" z="fkkxsUwBpRrWhJt+19wL6McBNb4="/>
-						        </table:table>
-						    </page:list>		           		
-			           </div>
-			           <div class="tab-pane form-horizontal" id="tab4">
-			           		<div class="row">
-			           			<div class="col-lg-4">
-			           				<field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Bill-to ID" id="c_ca_gc_hc_mds_domain_Company_bill_id" z=""/>
-		           				</div>
-		           				<div class="col-lg-4">
-		           					<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname" type="text" class="form-control" 
-						                	placeholder="Brand Canada Inc." readonly="readonly"/>
-		           				</div>
-			           			<div class="col-lg-4">
-			           				<field:input field="taxNumber1" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Tax Number 1" id="c_ca_gc_hc_mds_domain_Company_tax_number1" z=""/>
-			           			</div>
-			           		</div>
-			           		<div class="row">
-			           			<div class="col-lg-4">
-			           				<field:datetime dateTimePattern="${company_lastchangedate_date_format}" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-6" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-5" label="Last Change Date" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" required="true" z=""/>
-			           			</div>
-			           			<div class="col-lg-4">
-			           				<field:input field="industry" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Industry" id="c_ca_gc_hc_mds_domain_Company_industry" z=""/>
-								</div>
-			           			<div class="col-lg-4">
-			           				<field:input field="taxNumber4" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Tax Number 4" id="c_ca_gc_hc_mds_domain_Company_tax_number4" z=""/>
-			           			</div>			           			
-			           		</div>
-			           		<div class="row">
-			           			<div class="col-lg-4">			           		
-                      			<field:input labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6" field="contactId" label="Contact ID" id="c_ca_gc_hc_mds_domain_Company_contactId" z=""/>
-                      			</div>
-                      			<div class="col-lg-4">
-						            <input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname" type="text" class="form-control" placeholder="Brand Canada Inc." readonly="readonly"/>
-					            </div> 
-			           			<div class="col-lg-4">
-			           				<field:input field="commonMethod" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5" fieldclass ="red col-xs-7 col-sm-5 col-md-9 col-lg-6"  label="Comm Mthd" id="c_ca_gc_hc_mds_domain_Company_commonMethod" z=""/>
-			           			</div>			           			
-			           		</div>
-			           </div>
-			        </div>
-			    </div>
-			    </div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<field:input field="companyName" label="Name"
+						id="c_ca_gc_hc_mds_domain_Company_companyName"
+						z="3A1ZAuuyMJflMC2QoDzB50KLU40=" />
+				</div>
+				<div class="col-lg-4">
+					<field:select field="companyStatus" label="Status"
+						id="c_ca_gc_hc_mds_domain_Company_companyStatus"
+						items="${statustypes}" path="statustypes" required="true" z="" />
+				</div>
 			</div>
-    </div>
-    </form:update>
+			<div class="row">
+				<div class="col-lg-9">
+					<fieldset class="scheduler-border">
+						<legend class="scheduler-border">License Flags</legend>
+						<div class="row">
+							<div class="col-lg-2">
+								<label class="col-sm-2 control-label" for="disabledSelect">MDL</label>
+								<div class="col-xs-8">
+									<select id="disabledSelect" class="form-control input-sm">
+										<option>No</option>
+										<option>Yes</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-2">
+								<label class="col-sm-2 control-label" for="disabledSelect">Reg</label>
+								<div class="col-xs-8">
+									<select id="disabledSelect" class="form-control input-sm">
+										<option>No</option>
+										<option>Yes</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<label class="col-sm-2 control-label" for="disabledSelect">MDEL</label>
+								<div class="col-xs-7">
+									<select id="disabledSelect" class="form-control input-sm">
+										<option>No</option>
+										<option>Yes</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-2">
+								<label class="col-sm-2 control-label" for="disabledSelect">Mfg</label>
+								<div class="col-xs-8">
+									<select id="disabledSelect" class="form-control input-sm">
+										<option>No</option>
+										<option>Yes</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<label class="col-sm-2 control-label" for="disabledSelect">Site</label>
+								<div class="col-xs-7">
+									<select id="disabledSelect" class="form-control input-sm">
+										<option>No</option>
+										<option>Yes</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="col-lg-3">
+					<field:datetime dateTimePattern="${company_statusdate_date_format}"
+						labelclass="col-lg-4" fieldclass="col-lg-8" label="Status Date"
+						field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate"
+						required="true" z="" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="panel with-nav-tabs panel-primary">
+					<div class="panel-heading">
+						<ul class="nav nav-tabs responsive">
+							<li class="active"><a href="#tab1" data-toggle="tab">Address</a></li>
+							<li><a href="#tab2" data-toggle="tab">Contact</a></li>
+							<li><a href="#tab3" data-toggle="tab">History</a></li>
+							<li><a href="#tab4" data-toggle="tab">Finance</a></li>
+						</ul>
+					</div>
+					<div class="panel-body">
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<div class="row">
+									<div class="col-lg-6 text-center">
+										<field:input field="addressLine1" label="address1"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine1"
+											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
+										<field:input field="addressLine2" label="address2"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine2"
+											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />
+										<field:input field="addressLine3" label="address3"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine3"
+											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
+										<field:input field="addressLine4" label="address4"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine4"
+											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />
+										<field:input field="city"
+											id="c_ca_gc_hc_mds_domain_Company_city"
+											z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />
+										<field:input field="country"
+											id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0"
+											required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />
+										<field:input field="region"
+											id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
+											required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />
+										<field:input field="postCode"
+											id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0"
+											required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab2">
+								<page:list id="pl_ca_gc_hc_mds_domain_CompanyContact"
+									items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
+									<table:table data="${companycontacts}"
+										id="l_ca_gc_hc_mds_domain_CompanyContact"
+										path="/companycontacts" typeIdFieldName="companyContactId"
+										z="g4lowgLIJ0EKaBJqQarSL7RvgcA=">
+										<table:column date="true"
+											dateTimePattern="${companyContact_statusdate_date_format}"
+											id="c_ca_gc_hc_mds_domain_CompanyContact_statusDate"
+											property="statusDate" z="Hgh4cGSYSg02Fn6ma1XzkURt5zg=" />
+										<table:column
+											id="c_ca_gc_hc_mds_domain_CompanyContact_contactName"
+											property="contactName" z="faoXyR25Usg1ZfFqjnh6oHE831o=" />
+										<table:column
+											id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle"
+											property="contactTitle" z="M3e3FaDi8bDd59yxfOHpWCidGzo=" />
+										<table:column id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL"
+											property="e_MAIL" z="6QdwuSu8tgtS1eXchLlswgcqEEs=" />
+										<table:column
+											id="c_ca_gc_hc_mds_domain_CompanyContact_company"
+											property="company" z="hwjAQAmMVYU5J8tmoq+Q8K1OzRU=" />
+									</table:table>
+								</page:list>
+								<br></br>
+								<div class="row">
+									<div class="col-lg-3">
+										<label class="col-lg-3">Name: </label><input class="col-lg-9"
+											type="text"></input>
+									</div>
+									<div class="col-lg-3">
+										<label class="col-lg-4">Status: </label> <select
+											id="disabledSelect">
+											<option>Active</option>
+											<option>InActive</option>
+										</select>
+									</div>
+									<div class="col-lg-3">
+										<label class="col-lg-3">Type: </label> <select
+											id="disabledSelect">
+											<option>Finance</option>
+											<option>Sales</option>
+										</select>
+									</div>
+									<div class="col-lg-3">
+										<label class="col-lg-3">ID: </label><input type="text"></input>
+									</div>
+								</div>
+								<br></br>
+								<div class="row">
+									<div class="col-lg-3">
+										<label class="col-lg-3">Phone: </label><input class="col-lg-9"
+											type="text"></input>
+									</div>
+									<div class="col-lg-3">
+										<label class="col-lg-3">Ext: </label><input class="col-lg-9"
+											type="text"></input>
+									</div>
+									<div class="col-lg-6">
+										<label class="col-lg-3">Language: </label> <select
+											id="disabledSelect">
+											<option>English</option>
+											<option>French</option>
+										</select>
+									</div>
+								</div>
+								<br></br>
+								<div class="row">
+									<div class="col-lg-3">
+										<label class="col-lg-3">Fax: </label><input type="text"></input>
+									</div>
+									<div class="col-lg-9">
+										<label class="col-lg-1">Title: </label><input class="col-lg-6"
+											type="text"></input>
+									</div>
+								</div>
+								<br></br>
+								<div class="row">
+									<div class="col-lg-9">
+										<label class="col-lg-1">Email: </label> <input
+											class="col-lg-6" type="text"></input>
+									</div>
+								</div>
+								<br></br>
+							</div>
+							<div class="tab-pane" id="tab3">
+								<page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory"
+									items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
+									<table:table data="${companyhistorys}"
+										id="l_ca_gc_hc_mds_domain_CompanyHistory"
+										path="/companyhistorys" typeIdFieldName="companyHistoryId"
+										z="xiGXRcf3ViCuoZbP1Vac4oRwcSM=">
+										<table:column date="true"
+											dateTimePattern="${companyHistory_changedate_date_format}"
+											id="c_ca_gc_hc_mds_domain_CompanyHistory_changeDate"
+											property="changeDate" z="pz2lpAR+iirvO2EugFwRR3JKGeA=" />
+										<table:column
+											id="c_ca_gc_hc_mds_domain_CompanyHistory_addressLine1"
+											property="addressLine1" z="OTFjYexMZszJcWfKpNcJTz1R9t4=" />
+										<table:column id="s_ca_gc_hc_mds_domain_CompanyHistory_region"
+											property="region" z="tpAjIy/3U87wXL971S8EkEB2WJc=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_postCode"
+											property="postCode" z="Qs8vVLCp8qVaKXmmUkbI1oaqXyQ=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_country"
+											property="country" z="mQK21RErFuZwkSFKmMO5qsB5X1k=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_companyStatus"
+											property="companyStatus" z="3UB6us/DaKsL2J9eBeK4sjyHXsY=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_feeReduction"
+											property="feeReduction" z="RnyoBmWoP0RDRe+w+Ms6ZnOcJiU=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_grossRevenue"
+											property="grossRevenue" z="sLl2rLULM4/iKwG3io8T83Fjt1k=" />
+										<table:column
+											id="s_ca_gc_hc_mds_domain_CompanyHistory_mdbBillTo"
+											property="mdbBillTo" z="CJSqjnu2z4J0n+7WJ/BP0D0xa98=" />
+
+
+
+									</table:table>
+								</page:list>
+							</div>
+							<div class="tab-pane form-horizontal" id="tab4">
+								<div class="row">
+									<div class="col-lg-4">
+										<field:input field="billToId"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Bill-to ID" id="c_ca_gc_hc_mds_domain_Company_bill_id"
+											z="" />
+									</div>
+									<div class="col-lg-4">
+										<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname"
+											type="text" class="form-control"
+											placeholder="Brand Canada Inc." readonly="readonly" />
+									</div>
+									<div class="col-lg-4">
+										<field:input field="taxNumber1"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Tax Number 1"
+											id="c_ca_gc_hc_mds_domain_Company_tax_number1" z="" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<field:datetime
+											dateTimePattern="${company_lastchangedate_date_format}"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-6"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-5"
+											label="Last Change Date" field="lastChangeDate"
+											id="c_ca_gc_hc_mds_domain_Company_lastChangeDate"
+											required="true" z="" />
+									</div>
+									<div class="col-lg-4">
+										<field:input field="industry"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Industry" id="c_ca_gc_hc_mds_domain_Company_industry"
+											z="" />
+									</div>
+									<div class="col-lg-4">
+										<field:input field="taxNumber4"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Tax Number 4"
+											id="c_ca_gc_hc_mds_domain_Company_tax_number4" z="" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<field:input
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											field="contactId" label="Contact ID"
+											id="c_ca_gc_hc_mds_domain_Company_contactId" z="" />
+									</div>
+									<div class="col-lg-4">
+										<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname"
+											type="text" class="form-control"
+											placeholder="Brand Canada Inc." readonly="readonly" />
+									</div>
+									<div class="col-lg-4">
+										<field:input field="commonMethod"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Comm Mthd"
+											id="c_ca_gc_hc_mds_domain_Company_commonMethod" z="" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form:update>
 </div>

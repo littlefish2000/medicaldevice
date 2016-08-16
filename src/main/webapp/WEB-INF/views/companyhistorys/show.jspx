@@ -15,6 +15,10 @@
         <field:display field="city" id="s_ca_gc_hc_mds_domain_CompanyHistory_city" object="${companyhistory}" z="8d4oWhSGwzsEhiNA0wtPJoYFw6U="/>
         <field:display field="country" id="s_ca_gc_hc_mds_domain_CompanyHistory_country" object="${companyhistory}" z="mQK21RErFuZwkSFKmMO5qsB5X1k="/>
         <field:display field="region" id="s_ca_gc_hc_mds_domain_CompanyHistory_region" object="${companyhistory}" z="tpAjIy/3U87wXL971S8EkEB2WJc="/>
+        <field:display field="companyStatus" id="s_ca_gc_hc_mds_domain_CompanyHistory_companyStatus" object="${companyhistory}" z="3UB6us/DaKsL2J9eBeK4sjyHXsY="/>
+        <field:display field="feeReduction" id="s_ca_gc_hc_mds_domain_CompanyHistory_feeReduction" object="${companyhistory}" z="RnyoBmWoP0RDRe+w+Ms6ZnOcJiU="/>
+        <field:display field="grossRevenue" id="s_ca_gc_hc_mds_domain_CompanyHistory_grossRevenue" object="${companyhistory}" z="sLl2rLULM4/iKwG3io8T83Fjt1k="/>
+        <field:display field="mdbBillTo" id="s_ca_gc_hc_mds_domain_CompanyHistory_mdbBillTo" object="${companyhistory}" z="CJSqjnu2z4J0n+7WJ/BP0D0xa98="/>
         <field:display field="company" id="s_ca_gc_hc_mds_domain_CompanyHistory_company" object="${companyhistory}" z="Qn52jz1u4J3h3Dsg2boysHoRr9w="/>
     </page:show>
 </div>
