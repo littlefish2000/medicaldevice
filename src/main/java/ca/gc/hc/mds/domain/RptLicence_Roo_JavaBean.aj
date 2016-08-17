@@ -4,6 +4,7 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.RptLicence;
+import java.util.Date;
 
 privileged aspect RptLicence_Roo_JavaBean {
     
@@ -45,6 +46,38 @@ privileged aspect RptLicence_Roo_JavaBean {
     
     public void RptLicence.setCompanyAuthId(Long companyAuthId) {
         this.companyAuthId = companyAuthId;
+    }
+    
+    public Date RptLicence.getDateIssued() {
+        return this.dateIssued;
+    }
+    
+    public void RptLicence.setDateIssued(Date dateIssued) {
+        this.dateIssued = dateIssued;
+    }
+    
+    public Long RptLicence.getApplRiskClass() {
+        return this.applRiskClass;
+    }
+    
+    public void RptLicence.setApplRiskClass(Long applRiskClass) {
+        this.applRiskClass = applRiskClass;
+    }
+    
+    public String RptLicence.getLicenceName() {
+        return this.licenceName;
+    }
+    
+    public void RptLicence.setLicenceName(String licenceName) {
+        this.licenceName = licenceName;
+    }
+    
+    public Long RptLicence.getRegContactId() {
+        return this.regContactId;
+    }
+    
+    public void RptLicence.setRegContactId(Long regContactId) {
+        this.regContactId = regContactId;
     }
     
 }

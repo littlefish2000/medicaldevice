@@ -1,10 +1,13 @@
 package ca.gc.hc.mds.domain;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -51,6 +54,19 @@ public class RptLicence {
     
     @Column(name = "COMPANY_AUTH_ID", columnDefinition="NUMBER")
     private Long companyAuthId;  
+    
+    @Column(name = "DATE_ISSUED", nullable = false)
+    private Date dateIssued;  
+    
+	@Column(name = "APPL_RISK_CLASS", columnDefinition = "NUMBER")
+	private Long applRiskClass;	
+	
+    @Column(name = "LICENCE_NAME", columnDefinition = "char")
+    @Size(min = 0, max = 150)
+    private String licenceName;
+    
+    @Column(name = "REG_CONTACT_ID")
+    private Long regContactId;    
 	    
 }
 
