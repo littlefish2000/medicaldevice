@@ -1,6 +1,7 @@
 package ca.gc.hc.mds.transparent;
 
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.List;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -45,6 +46,32 @@ public class TranDeviceMaterial {
 	    	    		
 		 }
 	    	
-	}		
+	}	
+	
+	
+	public static void updateDeviceMaterialStatus(List<TranDeviceMaterial> deviceMaterialList){
+		
+		Hashtable<String, String> statusTable = new Hashtable<String, String>();	// DECODE( dm.statusCode, 'A', 'Active', 'I', 'Inactive', 'M','Monitor', 'Unknown')
+		statusTable.put("A", "Active");
+		statusTable.put("I", "Inactive");
+		statusTable.put("M", "Monitor");
+		
+		
+		for (TranDeviceMaterial deviceMaterial: deviceMaterialList){
+			
+			if (deviceMaterial.statusDescEng == null || deviceMaterial.statusDescEng.trim().equals("")
+					||statusTable.get(deviceMaterial.statusDescEng.toUpperCase()) == null 
+					||statusTable.get(deviceMaterial.statusDescEng.toUpperCase()).equals("")){
+				
+				deviceMaterial.statusDescEng = "unknown";
+			}else{
+				deviceMaterial.statusDescEng = statusTable.get(deviceMaterial.statusDescEng.toUpperCase()) ;
+			}
+			
+		}	
+		
+		
+	}
+	
 
 }

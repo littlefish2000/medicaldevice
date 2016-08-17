@@ -89,6 +89,7 @@ public class DeviceMaterial {
 		
 		results = query.getResultList();
 		TranDeviceMaterial.resetId(results);
+		TranDeviceMaterial.updateDeviceMaterialStatus(results);
 		
 		return results;		
 	}
