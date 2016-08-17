@@ -53,6 +53,7 @@ public class CompanyController {
         uiModel.addAttribute("companycontacts",contactList);
         uiModel.addAttribute("companyhistorys", historyList);
         uiModel.addAttribute("mdlstat", CompanyService.getMDLStatus(company));
-        uiModel.addAttribute("reglstat", CompanyService.getRegStatus(company));
+        uiModel.addAttribute("regstat", CompanyService.getRegStatus(company));
+        uiModel.addAttribute("mdelstat", CompanyService.getMdelStatus(company));
     }	
 }

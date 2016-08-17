@@ -51,4 +51,17 @@ public class CompanyService {
     	else 
     		return "No";
     }       
+    
+    
+    public static String getMdelStatus(Company company) {
+    	Long iReg = entityManager().createQuery("SELECT COUNT(*) FROM Establishment as o where o.licenceStatus IN ('I','P') and o.companyId = :companyid or o.companyMailId = :companyid  or o.comapnyAddId = :companyid", Long.class)
+    			.setParameter("companyid", company.getCompanyId()).getSingleResult();
+    	
+    	System.out.println("medl="+iReg);
+    	
+    	if (iReg >0) 
+    		return "Yes";
+    	else 
+    		return "No";
+    }     
 }

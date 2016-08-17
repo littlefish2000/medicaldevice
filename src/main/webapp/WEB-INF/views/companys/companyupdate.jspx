@@ -55,17 +55,16 @@
 								<label class="col-sm-2 control-label" for="disabledSelect">Reg</label>
 								<div class="col-xs-8">
 									<input id="s_ca_gc_hc_mds_domain_Company_regstatusId" type="text"
-										class="form-control" placeholder="${reglstat}" readonly="readonly" />									
+										class="form-control" placeholder="${regstat}" readonly="readonly" />									
 
 								</div>
 							</div>
 							<div class="col-lg-3">
 								<label class="col-sm-2 control-label" for="disabledSelect">MDEL</label>
 								<div class="col-xs-7">
-									<select id="disabledSelect" class="form-control input-sm">
-										<option>No</option>
-										<option>Yes</option>
-									</select>
+									<input id="s_ca_gc_hc_mds_domain_Company_mdelstatusId" type="text"
+										class="form-control" placeholder="${mdelstat}" readonly="readonly" />									
+
 								</div>
 							</div>
 							<div class="col-lg-2">
