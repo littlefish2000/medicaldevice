@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.reference.StatusType;
+import ca.gc.hc.mds.service.CompanyService;
 
 @RequestMapping("/companys")
 @Controller
@@ -45,6 +46,8 @@ public class CompanyController {
         uiModel.addAttribute("statustypes", Arrays.asList(StatusType.values()));
         uiModel.addAttribute("companycontacts",contactList);
         uiModel.addAttribute("companyhistorys", historyList);
+        uiModel.addAttribute("mdlstat", CompanyService.getMDLStatus(company));
+
         
     }	
 }

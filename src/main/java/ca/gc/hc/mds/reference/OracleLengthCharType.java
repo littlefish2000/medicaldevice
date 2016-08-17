@@ -15,7 +15,6 @@ import org.hibernate.usertype.UserType;
 public class OracleLengthCharType implements UserType {
 
 	public OracleLengthCharType() {
-		System.out.println("OracleFixedLengthCharType constructor");
 	}
 
 	public int[] sqlTypes() {
