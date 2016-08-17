@@ -45,21 +45,18 @@
 						<legend class="scheduler-border">License Flags</legend>
 						<div class="row">
 							<div class="col-lg-2">
-								<label class="col-sm-2 control-label" for="disabledSelect">MDL</label>
+								<label class="col-xs-8 control-label" for="disabledSelect">MDL </label>
 								<div class="col-xs-8">
-									<select id="disabledSelect" class="form-control input-sm">
-										<option>No</option>
-										<option>Yes</option>
-									</select>
+									<input id="s_ca_gc_hc_mds_domain_Company_mfgstatusId" type="text"
+										class="form-control" placeholder="${mdlstat}" readonly="readonly" />									
 								</div>
 							</div>
 							<div class="col-lg-2">
 								<label class="col-sm-2 control-label" for="disabledSelect">Reg</label>
 								<div class="col-xs-8">
-									<select id="disabledSelect" class="form-control input-sm">
-										<option>No</option>
-										<option>Yes</option>
-									</select>
+									<input id="s_ca_gc_hc_mds_domain_Company_regstatusId" type="text"
+										class="form-control" placeholder="${reglstat}" readonly="readonly" />									
+
 								</div>
 							</div>
 							<div class="col-lg-3">

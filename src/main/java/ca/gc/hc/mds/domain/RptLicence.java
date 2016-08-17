@@ -48,6 +48,9 @@ public class RptLicence {
 	
     @Column(name = "COMPANY_ID")
     private Long companyId;	
+    
+    @Column(name = "COMPANY_AUTH_ID", columnDefinition="NUMBER")
+    private Long companyAuthId;  
 	    
 }
 

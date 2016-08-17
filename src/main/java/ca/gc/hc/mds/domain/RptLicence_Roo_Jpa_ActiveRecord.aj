@@ -14,7 +14,7 @@ privileged aspect RptLicence_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager RptLicence.entityManager;
     
-    public static final List<String> RptLicence.fieldNames4OrderClauseFilter = java.util.Arrays.asList("originalLicenceNo", "licenceStatus", "applicationType", "applicationId", "companyId");
+    public static final List<String> RptLicence.fieldNames4OrderClauseFilter = java.util.Arrays.asList("originalLicenceNo", "licenceStatus", "applicationType", "applicationId", "companyId", "companyAuthId");
     
     public static final EntityManager RptLicence.entityManager() {
         EntityManager em = new RptLicence().entityManager;

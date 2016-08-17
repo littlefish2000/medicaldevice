@@ -3,6 +3,8 @@ import ca.gc.hc.mds.domain.Company;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
@@ -12,6 +14,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
+
 import org.springframework.ui.Model;
 import org.springframework.ui.Model;
 import ca.gc.hc.mds.domain.CompanyContact;
@@ -25,6 +29,8 @@ import ca.gc.hc.mds.service.CompanyService;
 @RooWebFinder
 @GvNIXWebJQuery
 public class CompanyController {
+    @Autowired
+    public MessageSource messageSource_dtt;	
 
     void addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("company_statusdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
@@ -47,7 +53,6 @@ public class CompanyController {
         uiModel.addAttribute("companycontacts",contactList);
         uiModel.addAttribute("companyhistorys", historyList);
         uiModel.addAttribute("mdlstat", CompanyService.getMDLStatus(company));
-
-        
+        uiModel.addAttribute("reglstat", CompanyService.getRegStatus(company));
     }	
 }

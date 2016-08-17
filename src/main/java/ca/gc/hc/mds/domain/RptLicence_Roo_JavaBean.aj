@@ -39,4 +39,12 @@ privileged aspect RptLicence_Roo_JavaBean {
         this.companyId = companyId;
     }
     
+    public Long RptLicence.getCompanyAuthId() {
+        return this.companyAuthId;
+    }
+    
+    public void RptLicence.setCompanyAuthId(Long companyAuthId) {
+        this.companyAuthId = companyAuthId;
+    }
+    
 }
