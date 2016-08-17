@@ -2,10 +2,14 @@ package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.ApplicationDevice;
 import ca.gc.hc.mds.domain.Device;
 import ca.gc.hc.mds.domain.DeviceCompanyVw;
+import ca.gc.hc.mds.domain.DeviceSAP;
 import ca.gc.hc.mds.domain.DeviceSummaryStatusVw;
 import ca.gc.hc.mds.domain.SpecialAccessDevice;
 
 import java.io.UnsupportedEncodingException;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
@@ -152,6 +156,20 @@ public class DeviceController {
         uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
         uiModel.addAttribute("tranapplicationlicencesummary", ApplicationDevice.findApplicationLicenceSummaryByDeviceId(devId));
         uiModel.addAttribute("tranSpecialAccessSummary", SpecialAccessDevice.findSpecialAccessSummaryByDeviceId(devId));
+        
+        
+        /*
+         * Device SAP info
+         */        
+        Map<String,String> deviceSAPStatusMap = new LinkedHashMap<String,String>();
+        deviceSAPStatusMap.put("A", "Active");
+        deviceSAPStatusMap.put("I", "Inactive");
+        uiModel.addAttribute("deviceSAPStatusMap", deviceSAPStatusMap);
+        
+        uiModel.addAttribute("deviceSAP", DeviceSAP.findDeviceSAP(devId));      
+        //---Ended for Device SAP
+        
+        
         addDateTimeFormatPatterns(uiModel);
     }
 

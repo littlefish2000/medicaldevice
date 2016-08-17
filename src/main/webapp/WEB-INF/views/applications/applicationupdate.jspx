@@ -6,7 +6,9 @@
 	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
 	xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields" 
 	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:springform="http://www.springframework.org/tags/form"
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
 
@@ -384,9 +386,14 @@
 												Description 55</a>
 										</h4>
 									</div>
+							<springform:form method="post" commandName="application"> 	
+									
 									<div id="collapse1" class="panel-collapse collapse">
 										<div class="panel-body">
+									 		<!--
 											<textarea class="col-lg-12" rows="3">Application Description is entered here..</textarea>
+										  -->
+											<springform:textarea id="c_ca_gc_hc_mds_domain_Application_applicationDesc" path="applicationDesc" rows="3" cols="145" />
 											<div class="row">
 												<br></br>
 
@@ -399,6 +406,9 @@
 											</div>
 										</div>
 									</div>
+									
+								</springform:form>	
+									
 								</div>
 							</div>
 							<div class="panel-group">
