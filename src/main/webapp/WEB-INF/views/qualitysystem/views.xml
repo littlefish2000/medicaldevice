@@ -5,7 +5,7 @@
         <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certcreate.jspx"/>
     </definition>
     <definition extends="default" name="qualitysystem/cert/update">
-        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certcreate.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/qualitysystem/certupdate.jspx"/>
     </definition>    
     <definition extends="default" name="qualitysystem/validity/batchtracking">
         <put-attribute name="body" value="/WEB-INF/views/qualitysystem/BatchTracking.jspx"/>
