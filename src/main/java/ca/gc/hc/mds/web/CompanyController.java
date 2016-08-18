@@ -56,5 +56,6 @@ public class CompanyController {
         uiModel.addAttribute("regstat", CompanyService.getRegStatus(company));
         uiModel.addAttribute("mdelstat", CompanyService.getMdelStatus(company));
         uiModel.addAttribute("mfgstat", CompanyService.getMfgStatus(company));
+        uiModel.addAttribute("sitestat", CompanyService.getSiteStatus(company));
     }	
 }

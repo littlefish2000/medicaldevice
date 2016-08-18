@@ -68,8 +68,7 @@ public class CompanyService {
     public static String getMfgStatus(Company company) {
     	Long iReg = entityManager().createQuery("SELECT COUNT(*) FROM Manufacturers as m, Establishment as e where e.establishmentId = m.id.establishmentId and e.licenceStatus IN ('I','P') and m.status = 'A' and m.id.mfgId = :companyid", Long.class)
     			.setParameter("companyid", company.getCompanyId()).getSingleResult();
-    	
-    	System.out.println("mfg="+iReg);
+
     	
     	if (iReg >0) 
     		return "Yes";
@@ -77,4 +76,15 @@ public class CompanyService {
     		return "No";
     }  
     
+    public static String getSiteStatus(Company company) {
+    	Long iReg = entityManager().createQuery("SELECT COUNT(*) FROM Sites as s, Establishment as e where e.establishmentId = s.id.establishmentId and s.status = 'A' and s.id.siteId = :companyid", Long.class)
+    			.setParameter("companyid", company.getCompanyId()).getSingleResult();
+    	
+    	System.out.println("Sites="+iReg);
+    	
+    	if (iReg >0) 
+    		return "Yes";
+    	else 
+    		return "No";
+    }  
 }
