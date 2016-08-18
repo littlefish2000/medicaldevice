@@ -3,6 +3,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -17,7 +18,11 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class Establishment {
 	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)	
+    @TableGenerator( name = "establish_generator", table = "CONTROL_FILE",// pkColumnName = "ESTABLISHMENT_ID",
+    pkColumnValue = "ESTABLISHMENT_PK", valueColumnName = "ESTABLISHMENT_ID", initialValue = 1, allocationSize = 1 )
+    @GeneratedValue( strategy = GenerationType.TABLE, generator = "establish_generator" )
+    
+    
     @Column(name = "ESTABLISHMENT_ID", columnDefinition = "NUMBER")
 	private Long establishmentId;	    
 	

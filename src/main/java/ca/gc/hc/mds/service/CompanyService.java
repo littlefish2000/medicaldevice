@@ -64,4 +64,17 @@ public class CompanyService {
     	else 
     		return "No";
     }     
+    
+    public static String getMfgStatus(Company company) {
+    	Long iReg = entityManager().createQuery("SELECT COUNT(*) FROM Manufacturers as m, Establishment as e where e.establishmentId = m.id.establishmentId and e.licenceStatus IN ('I','P') and m.status = 'A' and m.id.mfgId = :companyid", Long.class)
+    			.setParameter("companyid", company.getCompanyId()).getSingleResult();
+    	
+    	System.out.println("mfg="+iReg);
+    	
+    	if (iReg >0) 
+    		return "Yes";
+    	else 
+    		return "No";
+    }  
+    
 }
