@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.EnumType;
 import javax.validation.constraints.Size;
+
 import ca.gc.hc.mds.reference.StatusType;
+import ca.gc.hc.mds.reference.YesAndNoType;
+
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -193,6 +196,19 @@ public class Company {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date lastChangeDate;
+    
+    /**
+     */
+    @Column(name = "NEW_REGS_98", nullable = false, length=1,columnDefinition = "char(1) default 'Y'")
+    @Enumerated(EnumType.STRING)
+    private YesAndNoType newreg89 = YesAndNoType.Y;   
+    
+    
+    /**
+     */
+    @Column(name = "FEE_REDUCTION", nullable = false, length=1,columnDefinition = "char(1) default 'N'")
+    @Enumerated(EnumType.STRING)
+    private YesAndNoType feeReduction = YesAndNoType.N;    
     
     /**
      */

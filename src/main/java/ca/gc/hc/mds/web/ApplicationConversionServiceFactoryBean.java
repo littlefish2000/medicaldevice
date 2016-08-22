@@ -9,6 +9,8 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfoPK;
 import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.reference.StatusType;
+import ca.gc.hc.mds.reference.YesAndNoType;
 
 /**
  * A central place to register application converters and formatters. 
@@ -57,6 +59,41 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
         };
     }	    
     
+    Converter<YesAndNoType, String> geYesAndNoTypeConverter() {
+        return new Converter<YesAndNoType, String>() {
+            public String convert(YesAndNoType properties) {
+                switch(properties){
+                case Y:
+                    return "Yes";
+                case N:
+                    return "No";
+                default: throw new AssertionError();
+                }
+
+            }
+        };
+    }	    
+    
+    
+    Converter<StatusType, String> getStatusTypeConverter() {
+        return new Converter<StatusType, String>() {
+            public String convert(StatusType properties) {
+                switch(properties){
+                case A:
+                    return "Active";
+                case I:
+                    return "InActive";
+                case D:
+                    return "Duplicate";
+                case X:
+                    return "Internet Addr.";
+                default: throw new AssertionError();
+                }
+
+            }
+        };
+    }	    
+    
     Converter<RenLicenceInfoPK, String> getRenLicenceInfoPKConverter() {
         return new Converter<RenLicenceInfoPK, String>() {
             public String convert(RenLicenceInfoPK properties) {
@@ -74,5 +111,7 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		registry.addConverter(getRenAuthCompanyPKConverter());
 		registry.addConverter(getRenLicenceInfoPKConverter());
 		registry.addConverter(getLicenceStatusTypeConverter());
+		registry.addConverter(geYesAndNoTypeConverter());
+		registry.addConverter(getStatusTypeConverter());
 	}
 }

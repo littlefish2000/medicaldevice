@@ -7,6 +7,7 @@ import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.reference.StatusType;
+import ca.gc.hc.mds.reference.YesAndNoType;
 import java.util.Date;
 import java.util.Set;
 
@@ -150,6 +151,22 @@ privileged aspect Company_Roo_JavaBean {
     
     public void Company.setLastChangeDate(Date lastChangeDate) {
         this.lastChangeDate = lastChangeDate;
+    }
+    
+    public YesAndNoType Company.getNewreg89() {
+        return this.newreg89;
+    }
+    
+    public void Company.setNewreg89(YesAndNoType newreg89) {
+        this.newreg89 = newreg89;
+    }
+    
+    public YesAndNoType Company.getFeeReduction() {
+        return this.feeReduction;
+    }
+    
+    public void Company.setFeeReduction(YesAndNoType feeReduction) {
+        this.feeReduction = feeReduction;
     }
     
     public Set<CompanyContact> Company.getContacts() {
