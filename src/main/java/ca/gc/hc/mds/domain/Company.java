@@ -18,6 +18,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,67 +28,99 @@ import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import javax.persistence.TableGenerator;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "", table = "COMPANY", schema = "MDSDB", identifierColumn = "COMPANY_ID", identifierField = "companyId", finders = { "findCompanysByCompanyId","findCompanysByCompanyNameLike"})
+@TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 public class Company {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TableGenerator( name = "company_generator", table = "CONTROL_FILE",// pkColumnName = "ESTABLISHMENT_ID",
+    pkColumnValue = "COMPANY_PK", valueColumnName = "COMPANY_ID", initialValue = 1, allocationSize = 1 )
+    @GeneratedValue( strategy = GenerationType.TABLE, generator = "company_generator" )
     @Column(name = "COMPANY_ID")
     private Long companyId;
     /**
      */
+    @Type(type = "fixedLengthCharType")
     @Column(name = "COMPANY_NAME", columnDefinition = "char")
     @Size(min = 0, max = 90)
     private String companyName;
+	public String getCompanyName() {
+		return companyName;
+	}    
 
     /**
      */
-    @Column(name = "ADDR_LINE_1", columnDefinition = "char")
+    @Type(type = "fixedLengthCharType")
+    @Column(name = "ADDR_LINE_1", columnDefinition = "char", nullable = true,length = 45)
     @Size(min = 0, max = 45)
     private String addressLine1;
+	public String getAddressLine1() {
+		return addressLine1;
+	}
 
     /**
      */
-    @Column(name = "ADDR_LINE_2", columnDefinition = "char")
+	@Type(type = "fixedLengthCharType")
+    @Column(name = "ADDR_LINE_2", columnDefinition = "char",nullable = true, length = 45)
     @Size(min = 0, max = 45)
     private String addressLine2;
-
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+	
     /**
      */
-    @Column(name = "ADDR_LINE_3", columnDefinition = "char")
+	@Type(type = "fixedLengthCharType")
+    @Column(name = "ADDR_LINE_3", columnDefinition = "char",nullable = true, length = 45)
     @Size(min = 0, max = 45)
     private String addressLine3;
-
+	public String getAddressLine3() {
+		return addressLine3;
+	}
     /**
      */
-    @Column(name = "ADDR_LINE_4", columnDefinition = "char")
+	@Type(type = "fixedLengthCharType")
+    @Column(name = "ADDR_LINE_4", columnDefinition = "char",nullable = true, length = 45)
     @Size(min = 0, max = 45)
     private String addressLine4;
-
+	public String getAddressLine4() {
+		return addressLine1;
+	}
+	
     /**
      */
-    @Column(name = "ADDR_LINE_5", columnDefinition = "char")
+	@Type(type = "fixedLengthCharType")
+    @Column(name = "ADDR_LINE_5", columnDefinition = "char",nullable = true, length = 45)
     @Size(min = 0, max = 45)
     private String addressLine5;
+	public String getAddressLine5() {
+		return addressLine5;
+	}    
 
     /**
      */
-    @Column(name = "POSTAL_CODE", columnDefinition = "char")
-    @Size(min = 0, max = 12)
-    private String postCode;
-
+	@Type(type = "fixedLengthCharType")
+    @Column(name = "POSTAL_CODE", nullable = true, columnDefinition = "char",length = 12)
+    @Size(max = 12)
+    private String postCode;;
+	public String getPostCode() {
+		return postCode;
+	}    
+	
     /**
      */
-    @Column(name = "REGION_CODE", columnDefinition = "char")
-    @Size(min = 0, max = 12)
+    @Column(name = "REGION_CODE",nullable = true, columnDefinition = "char")
+    @Size(max = 12)
     private String regionCode;
 
     /**
      */
-    @Column(name = "CITY", columnDefinition = "char")
-    @Size(min = 0, max = 35)
+    @Column(name = "CITY",nullable = true, columnDefinition = "char")
+    @Size(max = 35)
     private String city;
 
     /**
@@ -116,47 +151,45 @@ public class Company {
 
     /**
      */
-    @Column(name = "TAX_NUMBER1", columnDefinition = "char")
-    @Size(min = 0, max = 16)
+    @Column(name = "TAX_NUMBER1", nullable = true,columnDefinition = "char",length = 16)
+    @Size(max = 16)
     private String taxNumber1;
 
     /**
      */
-    @Column(name = "TAX_NUMBER4", columnDefinition = "char")
-    @Size(min = 0, max = 16)
+    @Column(name = "TAX_NUMBER4",nullable = true, columnDefinition = "char",length = 16)
+    @Size(max = 16)
     private String taxNumber4;
     
     
     /**
      */
     @Column(name = "MDB_BILL_TO", columnDefinition="NUMBER")
-    @Size(min = 0, max = 16)
     private Long billToId;    
     
     /**
      */
     @Column(name = "MDB_FIN_CONTACT_ID", columnDefinition="NUMBER")
-    @Size(min = 0, max = 16)
     private Long contactId;     
     
     /**
      */
-    @Column(name = "INDUSTRY", columnDefinition="char")
-    @Size(min = 0, max = 4)
+    @Column(name = "INDUSTRY",nullable = true, columnDefinition="char")
+    @Size(max = 4)
     private String industry;     
 
     
     /**
      */
-    @Column(name = "STD_COMM_METHOD", columnDefinition="char")
-    @Size(min = 0, max = 3)
+    @Column(name = "STD_COMM_METHOD", nullable = true,columnDefinition="char",length = 3)
+    @Size(max = 3)
     private String commonMethod;    
     
     
     /**
      */
     @NotNull
-    @Column(name = "FEE_REDUCTION_DT", columnDefinition = "DATE")
+    @Column(name = "FEE_REDUCTION_DT", nullable = true,columnDefinition = "DATE")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date lastChangeDate;

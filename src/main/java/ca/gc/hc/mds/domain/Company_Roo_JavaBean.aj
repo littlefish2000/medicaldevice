@@ -20,56 +20,28 @@ privileged aspect Company_Roo_JavaBean {
         this.companyId = companyId;
     }
     
-    public String Company.getCompanyName() {
-        return this.companyName;
-    }
-    
     public void Company.setCompanyName(String companyName) {
         this.companyName = companyName;
-    }
-    
-    public String Company.getAddressLine1() {
-        return this.addressLine1;
     }
     
     public void Company.setAddressLine1(String addressLine1) {
         this.addressLine1 = addressLine1;
     }
     
-    public String Company.getAddressLine2() {
-        return this.addressLine2;
-    }
-    
     public void Company.setAddressLine2(String addressLine2) {
         this.addressLine2 = addressLine2;
-    }
-    
-    public String Company.getAddressLine3() {
-        return this.addressLine3;
     }
     
     public void Company.setAddressLine3(String addressLine3) {
         this.addressLine3 = addressLine3;
     }
     
-    public String Company.getAddressLine4() {
-        return this.addressLine4;
-    }
-    
     public void Company.setAddressLine4(String addressLine4) {
         this.addressLine4 = addressLine4;
     }
     
-    public String Company.getAddressLine5() {
-        return this.addressLine5;
-    }
-    
     public void Company.setAddressLine5(String addressLine5) {
         this.addressLine5 = addressLine5;
-    }
-    
-    public String Company.getPostCode() {
-        return this.postCode;
     }
     
     public void Company.setPostCode(String postCode) {

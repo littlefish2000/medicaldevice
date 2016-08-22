@@ -6,24 +6,24 @@
         <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" z="3A1ZAuuyMJflMC2QoDzB50KLU40="/>
         <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
         <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
-        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA="/>
+        <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" z="/DTl7sa7QRg8ErwtSahtDLOKw9g="/>
         <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Company_city" z="wg0iJehPUq4OeYYJMIji+dkXNoE="/>
         <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Company_addressLine3" z="VIdmE9DsQPHw9CVz5cV6+PKGpVE="/>
         <field:textarea field="addressLine4" id="c_ca_gc_hc_mds_domain_Company_addressLine4" z="MqyYmhEp9cNXQDPsNoapbm0HLsQ="/>
         <field:textarea field="addressLine5" id="c_ca_gc_hc_mds_domain_Company_addressLine5" z="u7tWVeT1kxeg8I6DBN0lr82A6GI="/>
-        <field:input field="regionCode" id="c_ca_gc_hc_mds_domain_Company_regionCode" max="12" min="0" required="true" z="X/HZwzQE0SD9wdPqh+IphGX86fo="/>
+        <field:input field="regionCode" id="c_ca_gc_hc_mds_domain_Company_regionCode" max="12" z="5e9N43dIyxuCqT/vYhnwN7ZNCX0="/>
         <field:input field="country" id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" required="true" z="rpyvQr672yLX1c7alU34ZC96cqc="/>
         <field:input field="region" id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0" required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4="/>
         <field:datetime dateTimePattern="${company_statusdate_date_format}" field="statusDate" id="c_ca_gc_hc_mds_domain_Company_statusDate" required="true" z="4T0Qs7ELjSidOo751XexPq4kFWw="/>
         <field:select field="companyStatus" id="c_ca_gc_hc_mds_domain_Company_companyStatus" items="${statustypes}" path="statustypes" required="true" z="KDsQR4tvOWOGmipi2VEjCAvXBSo="/>
         <field:simple field="historys" id="c_ca_gc_hc_mds_domain_Company_historys" messageCode="entity_reference_not_managed" messageCodeAttribute="Company History" z="X4nzwI1uZrgEifQMG8pIl61rsfk="/>
         <field:simple field="contacts" id="c_ca_gc_hc_mds_domain_Company_contacts" messageCode="entity_reference_not_managed" messageCodeAttribute="Company Contact" z="JyTJ/6AxDx0vrucpXBiPK0DEZaA="/>
-        <field:input field="taxNumber1" id="c_ca_gc_hc_mds_domain_Company_taxNumber1" max="16" min="0" required="true" z="USSqWVqep1Y5X5WfmoISvA6nMU8="/>
-        <field:input field="taxNumber4" id="c_ca_gc_hc_mds_domain_Company_taxNumber4" max="16" min="0" required="true" z="92XCD8AfX83HsltXkSZuisvWqP0="/>
-        <field:input field="industry" id="c_ca_gc_hc_mds_domain_Company_industry" max="4" min="0" required="true" z="Kez/AeB9+hctPU0y6iSJVd6apjU="/>
-        <field:input field="billToId" id="c_ca_gc_hc_mds_domain_Company_billToId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="WBxO9zOiWK3UqG40r2gJdq6MIas="/>
-        <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" min="0" required="true" z="zaim1/iuei0Y5XbE2aSjQRzzK/M="/>
-        <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" max="16" min="0" required="true" validationMessageCode="field_invalid_integer" z="R8YVvdA2S299EfDZo0HsNsKj4H8="/>
+        <field:input field="taxNumber1" id="c_ca_gc_hc_mds_domain_Company_taxNumber1" max="16" z="BWFIR4VL2KobSsOPo14sDKf9KOk="/>
+        <field:input field="taxNumber4" id="c_ca_gc_hc_mds_domain_Company_taxNumber4" max="16" z="b2ENg88Bt6LCmVjJwMC/q5NOZBs="/>
+        <field:input field="industry" id="c_ca_gc_hc_mds_domain_Company_industry" max="4" z="t1sRGSEH9Q+XYnXebZsY93CIBMA="/>
+        <field:input field="billToId" id="c_ca_gc_hc_mds_domain_Company_billToId" validationMessageCode="field_invalid_integer" z="tKXWqRjTohhzA8vwe+sEYy5jtrg="/>
+        <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" z="VukUG/iyatGmXp1a8L9EbqglaHw="/>
+        <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" validationMessageCode="field_invalid_integer" z="ZlRTmm1jnQuVer1lDIpqdTBgBs4="/>
         <field:datetime dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" required="true" z="EMGJJqERwORsk1Dcp7q0cEigTRw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Company" render="${not empty dependencies}" z="oznRL3Gd6gbUGXU/bszfRrIh8kk="/>
