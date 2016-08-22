@@ -4,6 +4,9 @@ import ca.gc.hc.mds.domain.DeviceMaterial;
 import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.reference.LicenceType;
+import ca.gc.hc.mds.reference.StatusType;
+import ca.gc.hc.mds.reference.YesNoType;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
@@ -105,10 +108,12 @@ public class ApplicationController {
     }
 
 	void populateEditForm(Model uiModel, Application application) {
+		uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
+		uiModel.addAttribute("licencetypes", Arrays.asList(LicenceType.values()));
+		uiModel.addAttribute("yesnotypes", Arrays.asList(YesNoType.values()));
         uiModel.addAttribute("application", application);
         uiModel.addAttribute("tranDeviceMaterial", DeviceMaterial.findDeviceMaterialForApplication(application.getApplicationId(), application.getOrginLicenseId()));
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
         uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));
         uiModel.addAttribute("licencestatustypes", Arrays.asList(LicenceStatusType.values()));
     }
@@ -138,7 +143,7 @@ public class ApplicationController {
             float nrOfPages = (float) Application.countFindApplicationsByApplicationId(applicationId) / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("applications", Application.findApplicationsByApplicationId(applicationId, sortFieldName, sortOrder).getResultList());
+        	uiModel.addAttribute("applications", Application.findApplicationsByApplicationId(applicationId, sortFieldName, sortOrder).getResultList());
         }
         addDateTimeFormatPatterns(uiModel);
         return "applications/list";

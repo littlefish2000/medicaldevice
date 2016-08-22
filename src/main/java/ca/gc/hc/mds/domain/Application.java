@@ -66,8 +66,14 @@ public class Application {
      */
     @NotNull
     @Column(name = "APPLICATION_DESC")
-    @Size(min = 0, max = 150)
+    @Size(min = 0, max = 350)
     private String applicationDesc;
+    
+    
+    @NotNull
+    @Column(name = "APPLICATION_COMMENTS")
+    @Size(min = 0, max = 350)
+    private String applicationComments;
     
     /**
      */
@@ -86,8 +92,8 @@ public class Application {
     /**
      */
     @Column(name = "APPLICATION_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
-    @Enumerated(EnumType.STRING)
-    private ApplicationType applicationType = null;   
+    //@Enumerated(EnumType.STRING)
+    private String applicationType = null;   
     
     /**
      */
@@ -111,4 +117,22 @@ public class Application {
     @Column(name = "COMPANY_ID", columnDefinition="NUMBER")
     private Long companyId;     
   
+    @Column(name = "DIVISION_CD", columnDefinition = "char")
+    @Size(min = 0, max = 3)
+    private String divisionCd;  
+    
+    @Column(name = "DEVICE_DRUG", columnDefinition = "char", length=1)   
+    private String deviceDrug; 
+    
+    @Column(name = "POINT_OF_CARE", columnDefinition = "char", length=1)   
+    private String pointOfCare; 
+    
+    @Column(name = "HOME_USE_CODE", columnDefinition = "char", length=1)   
+    private String homeUseCode; 
+    
+    @Column(name = "DISCLOSURE_FLAG", columnDefinition = "char", length=1)   
+    private String disclosureFlag; 
+    
+    @Column(name = "NEAR_PATIENT", columnDefinition = "char", length=1)   
+    private String nearPatient; 
 }

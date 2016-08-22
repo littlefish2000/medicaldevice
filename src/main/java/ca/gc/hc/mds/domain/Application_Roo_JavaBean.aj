@@ -4,7 +4,6 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
-import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.util.Date;
@@ -51,6 +50,14 @@ privileged aspect Application_Roo_JavaBean {
         this.applicationDesc = applicationDesc;
     }
     
+    public String Application.getApplicationComments() {
+        return this.applicationComments;
+    }
+    
+    public void Application.setApplicationComments(String applicationComments) {
+        this.applicationComments = applicationComments;
+    }
+    
     public String Application.getLicenceName() {
         return this.licenceName;
     }
@@ -67,11 +74,11 @@ privileged aspect Application_Roo_JavaBean {
         this.licenceStatusDate = licenceStatusDate;
     }
     
-    public ApplicationType Application.getApplicationType() {
+    public String Application.getApplicationType() {
         return this.applicationType;
     }
     
-    public void Application.setApplicationType(ApplicationType applicationType) {
+    public void Application.setApplicationType(String applicationType) {
         this.applicationType = applicationType;
     }
     
@@ -113,6 +120,54 @@ privileged aspect Application_Roo_JavaBean {
     
     public void Application.setCompanyId(Long companyId) {
         this.companyId = companyId;
+    }
+    
+    public String Application.getDivisionCd() {
+        return this.divisionCd;
+    }
+    
+    public void Application.setDivisionCd(String divisionCd) {
+        this.divisionCd = divisionCd;
+    }
+    
+    public String Application.getDeviceDrug() {
+        return this.deviceDrug;
+    }
+    
+    public void Application.setDeviceDrug(String deviceDrug) {
+        this.deviceDrug = deviceDrug;
+    }
+    
+    public String Application.getPointOfCare() {
+        return this.pointOfCare;
+    }
+    
+    public void Application.setPointOfCare(String pointOfCare) {
+        this.pointOfCare = pointOfCare;
+    }
+    
+    public String Application.getHomeUseCode() {
+        return this.homeUseCode;
+    }
+    
+    public void Application.setHomeUseCode(String homeUseCode) {
+        this.homeUseCode = homeUseCode;
+    }
+    
+    public String Application.getDisclosureFlag() {
+        return this.disclosureFlag;
+    }
+    
+    public void Application.setDisclosureFlag(String disclosureFlag) {
+        this.disclosureFlag = disclosureFlag;
+    }
+    
+    public String Application.getNearPatient() {
+        return this.nearPatient;
+    }
+    
+    public void Application.setNearPatient(String nearPatient) {
+        this.nearPatient = nearPatient;
     }
     
 }

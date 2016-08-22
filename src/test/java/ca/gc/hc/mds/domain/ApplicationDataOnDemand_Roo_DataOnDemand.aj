@@ -5,7 +5,6 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
-import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.security.SecureRandom;
@@ -31,16 +30,23 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     public Application ApplicationDataOnDemand.getNewTransientApplication(int index) {
         Application obj = new Application();
         setAppRiskClass(obj, index);
+        setApplicationComments(obj, index);
         setApplicationDesc(obj, index);
         setApplicationType(obj, index);
         setCompanyAuthId(obj, index);
         setCompanyId(obj, index);
         setDevLicenceType(obj, index);
+        setDeviceDrug(obj, index);
+        setDisclosureFlag(obj, index);
+        setDivisionCd(obj, index);
         setEntryDate(obj, index);
+        setHomeUseCode(obj, index);
         setLicenceName(obj, index);
         setLicenceStatus(obj, index);
         setLicenceStatusDate(obj, index);
+        setNearPatient(obj, index);
         setOrginLicenseId(obj, index);
+        setPointOfCare(obj, index);
         setReceiptDate(obj, index);
         return obj;
     }
@@ -50,16 +56,27 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setAppRiskClass(appRiskClass);
     }
     
+    public void ApplicationDataOnDemand.setApplicationComments(Application obj, int index) {
+        String applicationComments = "applicationComments_" + index;
+        if (applicationComments.length() > 350) {
+            applicationComments = applicationComments.substring(0, 350);
+        }
+        obj.setApplicationComments(applicationComments);
+    }
+    
     public void ApplicationDataOnDemand.setApplicationDesc(Application obj, int index) {
         String applicationDesc = "applicationDesc_" + index;
-        if (applicationDesc.length() > 150) {
-            applicationDesc = applicationDesc.substring(0, 150);
+        if (applicationDesc.length() > 350) {
+            applicationDesc = applicationDesc.substring(0, 350);
         }
         obj.setApplicationDesc(applicationDesc);
     }
     
     public void ApplicationDataOnDemand.setApplicationType(Application obj, int index) {
-        ApplicationType applicationType = ApplicationType.class.getEnumConstants()[0];
+        String applicationType = String.valueOf(index);
+        if (applicationType.length() > 1) {
+            applicationType = applicationType.substring(0, 1);
+        }
         obj.setApplicationType(applicationType);
     }
     
@@ -78,9 +95,41 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setDevLicenceType(devLicenceType);
     }
     
+    public void ApplicationDataOnDemand.setDeviceDrug(Application obj, int index) {
+        String deviceDrug = String.valueOf(index);
+        if (deviceDrug.length() > 1) {
+            deviceDrug = deviceDrug.substring(0, 1);
+        }
+        obj.setDeviceDrug(deviceDrug);
+    }
+    
+    public void ApplicationDataOnDemand.setDisclosureFlag(Application obj, int index) {
+        String disclosureFlag = String.valueOf(index);
+        if (disclosureFlag.length() > 1) {
+            disclosureFlag = disclosureFlag.substring(0, 1);
+        }
+        obj.setDisclosureFlag(disclosureFlag);
+    }
+    
+    public void ApplicationDataOnDemand.setDivisionCd(Application obj, int index) {
+        String divisionCd = "d_" + index;
+        if (divisionCd.length() > 3) {
+            divisionCd = divisionCd.substring(0, 3);
+        }
+        obj.setDivisionCd(divisionCd);
+    }
+    
     public void ApplicationDataOnDemand.setEntryDate(Application obj, int index) {
         Date entryDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setEntryDate(entryDate);
+    }
+    
+    public void ApplicationDataOnDemand.setHomeUseCode(Application obj, int index) {
+        String homeUseCode = String.valueOf(index);
+        if (homeUseCode.length() > 1) {
+            homeUseCode = homeUseCode.substring(0, 1);
+        }
+        obj.setHomeUseCode(homeUseCode);
     }
     
     public void ApplicationDataOnDemand.setLicenceName(Application obj, int index) {
@@ -101,9 +150,25 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setLicenceStatusDate(licenceStatusDate);
     }
     
+    public void ApplicationDataOnDemand.setNearPatient(Application obj, int index) {
+        String nearPatient = String.valueOf(index);
+        if (nearPatient.length() > 1) {
+            nearPatient = nearPatient.substring(0, 1);
+        }
+        obj.setNearPatient(nearPatient);
+    }
+    
     public void ApplicationDataOnDemand.setOrginLicenseId(Application obj, int index) {
         Long orginLicenseId = new Integer(index).longValue();
         obj.setOrginLicenseId(orginLicenseId);
+    }
+    
+    public void ApplicationDataOnDemand.setPointOfCare(Application obj, int index) {
+        String pointOfCare = String.valueOf(index);
+        if (pointOfCare.length() > 1) {
+            pointOfCare = pointOfCare.substring(0, 1);
+        }
+        obj.setPointOfCare(pointOfCare);
     }
     
     public void ApplicationDataOnDemand.setReceiptDate(Application obj, int index) {
