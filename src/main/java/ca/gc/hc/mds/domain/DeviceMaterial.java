@@ -57,7 +57,10 @@ public class DeviceMaterial {
 		List<TranDeviceMaterial> results = null;
 		
 		if ( applicationID == null || originalLicenceNum == null){
-			throw new IllegalArgumentException("Missing argument: applicationID and/or originalLicenceNum is required.");
+			/**
+			 * Disabling this validation for now as does not work with create new application page, where application id is not available.
+			 */
+			//throw new IllegalArgumentException("Missing argument: applicationID and/or originalLicenceNum is required.");
 			
 		}
 		
