@@ -92,8 +92,8 @@ public class Application {
     /**
      */
     @Column(name = "APPLICATION_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
-    //@Enumerated(EnumType.STRING)
-    private String applicationType = null;   
+    @Enumerated(EnumType.STRING)
+    private ApplicationType applicationType = null;   
     
     /**
      */
