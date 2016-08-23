@@ -70,7 +70,7 @@ public class Application {
     private String applicationDesc;
     
     
-    @NotNull
+   
     @Column(name = "APPLICATION_COMMENTS")
     @Size(min = 0, max = 350)
     private String applicationComments;
