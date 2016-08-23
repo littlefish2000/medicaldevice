@@ -19,9 +19,66 @@
 /* Default settings
 ================================================== */
 
+
+/*
+ * START::: Custom Ajax function
+ */
+
+//==================Start: Application=================================
+
+function performAppDescUpdate(appId, desc) {
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {		
+  		
+   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {   			
+   			document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value = xhttp.responseText;     			
+    	}
+	};
+		
+	var url = "/MedicalDevice/ajax/applications/perform_app_desc_update" ;	
+	var params = "app_id=" + appId + "&updated_app_desc=" + desc;	
+	
+	xhttp.open("POST", url, true);	
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xhttp.send(params);
+	
+}
+
+
+function cancelAppDescUpdate(appId) {	
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {		
+  		
+   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {    			
+   			var responseTxt = xhttp.responseText;     			
+   			document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value =  responseTxt;   				
+   			
+   		}
+	};
+		
+	var url = "/MedicalDevice/ajax/applications/cancel_app_desc_update" ;	
+	var params = "app_id=" + appId;	
+
+	xhttp.open("POST", url, true);	
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xhttp.send(params);	
+	
+}
+
+//==================END: Ajax functions for Application
+
+
+////END ::: Custom Ajax funxtion
+
+
 var options = {
     debug : false
 };
+
+
+
 
 /* Creating Callbacks
  ================================================= */

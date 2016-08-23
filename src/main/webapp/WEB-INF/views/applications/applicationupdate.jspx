@@ -510,7 +510,7 @@
 												Description 55</a>
 										</h4>
 									</div>
-							<springform:form method="post" commandName="application"> 	
+							<springform:form id="form_ca_gc_hc_mds_domain_Application_applicationDesc" method="post" commandName="application"> 	
 									
 									<div id="collapse1" class="panel-collapse collapse">
 										<div class="panel-body">
@@ -522,10 +522,16 @@
 												<br></br>
 
 												<div class="col-lg-3 col-md-offset-3">
-													<button class="center-block btn btn-success">Save</button>
+													<!--  <button class="center-block btn btn-success">Save</button> -->
+													<button class="center-block btn btn-success" type="button" 
+													onclick="performAppDescUpdate(${applicationId}, document.getElementById('c_ca_gc_hc_mds_domain_Application_applicationDesc').value)">
+													Save</button>	
 												</div>
 												<div class="col-lg-3 text-center">
-													<button class="btn btn-success center-block">Cancel</button>
+													<!--   <button class="btn btn-success center-block">Cancel</button> -->
+													<button  class="btn btn-success center-block" type="button" 
+													onclick="cancelAppDescUpdate(${applicationId})">
+													Cancel</button>
 												</div>
 											</div>
 										</div>
