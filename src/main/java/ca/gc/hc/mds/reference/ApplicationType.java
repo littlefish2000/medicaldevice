@@ -1,7 +1,25 @@
 package ca.gc.hc.mds.reference;
 
 public enum ApplicationType {
-
+	
+	 	A,
+	    B,
+	    C,
+	    F,
+	    I,
+	    K,
+	    M,
+	    P,
+	    R,
+	    S,
+	    T,
+	    U,
+	    V,
+	    X,
+	    Z
+	   
+	    
+	    /*
     Amendment("A"),
     Faxback("B"),
     Clinical_Trial("C"),
@@ -24,5 +42,7 @@ public enum ApplicationType {
 	}
 	public String getValue(){
 	return value;
-}
+	}
+
+ 	*/
 }
