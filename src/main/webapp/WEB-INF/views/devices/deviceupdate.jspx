@@ -396,6 +396,7 @@
 							</div>
 
 							<div class="tab-pane" id="tab4">
+			<utilold:panel id="s_ca_gc_hc_mds_domain_device_specialaccessinfo_panel_id" openPane="false" title="Special Access Info">			
 						<springform:form method="post" commandName="deviceSAP"> 
 							
 								<div class="row">
@@ -452,7 +453,33 @@
 									<br></br>
 								</div>
 								</div>
+								
+							<div class="row">
+								<div class="col-lg-2">
+									<p></p>
+								</div>
+								<div class="col-lg-8">
+									<div class="row">
+										
+										<div class="col-lg-4 text-center">
+											<button class="center-block btn btn-success">Save</button>
+										</div>
+										<div class="col-lg-4 text-center">
+											<button class="center-block btn btn-success">Cancel</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2">
+									<p></p>
+								</div>
+							</div>
 						</springform:form>
+						
+
+						</utilold:panel>
+						
+						<br/>
+						<br/>
 								
 								
 								<utilold:panel id="s_ca_gc_hc_mds_domain_device_licenscealternativelist_id" openPane="false" title="License Alternatives">
