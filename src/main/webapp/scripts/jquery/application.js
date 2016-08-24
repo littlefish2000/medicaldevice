@@ -67,10 +67,80 @@ function cancelAppDescUpdate(appId) {
 	
 }
 
-//==================END: Ajax functions for Application
+//==================END for Application===============
 
+//==================START AJAX functions for Device ===============================
+function performDeviceSAPUpdate(deviceId) {
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {		
+  		
+   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {   	
+   			/**
+   			 * Need to decode the response for 5 fields.....
+   			 */
+   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value = xhttp.responseText;     			
+    	}
+	};
+		
+	var url = "/MedicalDevice/ajax/device/perform_device_sap_update" ;	
+		/**
+		 * Need to send 5 fields.....
+		 */
+	var params = "device_id=" + deviceId + "&updated_app_desc=" + desc;	
+	
+	xhttp.open("POST", url, true);	
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xhttp.send(params);
+	
+}
+
+
+/**	
+	onclick="performDeviceSAPUpdate(${deviceId}, 
+	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_status').value,
+	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_indicationUse').value,
+	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_initialSapDiag').value,
+	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_consideration').value,
+	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_sapNotes').value) ">
+	
+*/
+
+
+function canceDeviceSAPUpdate(deviceId) {	
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {		
+  		
+   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {    			
+   			var responseTxt = xhttp.responseText;     			
+   			
+   			/**
+   			 * Need to decode the response for 5 fields.....
+   			 */
+   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value =  responseTxt;   				
+   			
+   		}
+	};
+		
+	var url = "/MedicalDevice/ajax/device/cancel_device_sap_update" ;	
+	var params = "device_id=" + deviceId;	
+
+	xhttp.open("POST", url, true);	
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xhttp.send(params);	
+	
+}
+
+//==================END: AJAX functions for Device===============
 
 ////END ::: Custom Ajax funxtion
+
+
+
+////// NOTE :::: DO NOT MODIFY BELOW THIS LINE ---GENERATED CODE
+
+
 
 
 var options = {
