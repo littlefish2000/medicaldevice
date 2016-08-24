@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
 	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
-	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/custform/fields"
 	xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/custform"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
@@ -137,7 +137,7 @@
 							<div class="tab-pane" id="tab2">
 								<page:list id="pl_ca_gc_hc_mds_domain_CompanyContact"
 									items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
-									<table:table data="${companycontacts}"
+									<table:table data="${companycontacts}"  delete="false" show="false" create="false" update="false"
 										id="l_ca_gc_hc_mds_domain_CompanyContact"
 										path="/companycontacts" typeIdFieldName="companyContactId"
 										z="g4lowgLIJ0EKaBJqQarSL7RvgcA=">
@@ -222,7 +222,7 @@
 							<div class="tab-pane" id="tab3">
 								<page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory"
 									items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
-									<table:table data="${companyhistorys}"
+									<table:table data="${companyhistorys}" delete="false" show="false" create="false" update="false"
 										id="l_ca_gc_hc_mds_domain_CompanyHistory"
 										path="/companyhistorys" typeIdFieldName="companyHistoryId"
 										z="xiGXRcf3ViCuoZbP1Vac4oRwcSM=">
@@ -282,13 +282,13 @@
 								</div>
 								<div class="row">
 									<div class="col-lg-4">
-										<field:datetime
+										<!-- field:datetime
 											dateTimePattern="${company_lastchangedate_date_format}"
 											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-6"
 											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-5"
 											label="Last Change Date" field="lastChangeDate"
 											id="c_ca_gc_hc_mds_domain_Company_lastChangeDate"
-											required="true" z="" />
+											 z="" /-->
 									</div>
 									<div class="col-lg-4">
 										<field:input field="industry"
