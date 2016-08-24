@@ -262,11 +262,10 @@
 							<div class="tab-pane form-horizontal" id="tab4">
 								<div class="row">
 									<div class="col-lg-4">
-										<field:input field="billToId"
-											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
-											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
-											label="Bill-to ID" id="c_ca_gc_hc_mds_domain_Company_bill_id"
-											z="" />
+										<field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Bill-To-ID"
+											id="c_ca_gc_hc_mds_domain_Company_billToId"
+											z="" />									
 									</div>
 									<div class="col-lg-4">
 										<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname"
