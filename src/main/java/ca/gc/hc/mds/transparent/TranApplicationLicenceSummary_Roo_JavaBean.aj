@@ -3,7 +3,6 @@
 
 package ca.gc.hc.mds.transparent;
 
-import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.transparent.TranApplicationLicenceSummary;
 import java.util.Date;
 

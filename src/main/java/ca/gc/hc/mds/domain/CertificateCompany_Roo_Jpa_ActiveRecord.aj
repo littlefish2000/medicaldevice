@@ -7,15 +7,11 @@ import ca.gc.hc.mds.domain.CertificateCompany;
 import ca.gc.hc.mds.domain.CertificateCompanyPK;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect CertificateCompany_Roo_Jpa_ActiveRecord {
     
-    @PersistenceContext
-    transient EntityManager CertificateCompany.entityManager;
-    
-    public static final List<String> CertificateCompany.fieldNames4OrderClauseFilter = java.util.Arrays.asList("statusDate", "receiptDate", "entryDate", "nameRational");
+    public static final List<String> CertificateCompany.fieldNames4OrderClauseFilter = java.util.Arrays.asList("statusDate", "receiptDate", "entryDate", "nameRational", "entityManager");
     
     public static final EntityManager CertificateCompany.entityManager() {
         EntityManager em = new CertificateCompany().entityManager;

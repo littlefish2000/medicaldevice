@@ -8,8 +8,9 @@
             <table:column id="c_ca_gc_hc_mds_domain_Certificate_origcertificateId" property="origcertificateId" z=""/>
             <table:column date="true" dateTimePattern="${certificate_statusdate_date_format}" id="c_ca_gc_hc_mds_domain_Certificate_statusDate" property="statusDate" z="axxO2YnU1xQpqMkzBMgymAqujak="/>
             <table:column date="true" dateTimePattern="${certificate_receiptdate_date_format}" id="c_ca_gc_hc_mds_domain_Certificate_receiptDate" property="receiptDate" z="oJeLEnnpo4+r6smm4gFN330A4xE="/>
-           <table:column id="c_ca_gc_hc_mds_domain_Certificate_licenceStatus" property="licenceStatus" z="vvRniDsM5uITOEVyK/CuhZw/vg4="/>
-
+            <table:column id="c_ca_gc_hc_mds_domain_Certificate_licenceStatus" property="licenceStatus" z="vvRniDsM5uITOEVyK/CuhZw/vg4="/>
+            <table:column date="true" dateTimePattern="${certificate_entrydate_date_format}" id="c_ca_gc_hc_mds_domain_Certificate_entryDate" property="entryDate" z="q90sqT+pcIh2nMNMNbWNIVBa9hc="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Certificate_systemuserId" property="systemuserId" z="HOr4IsJbXbnD2g3QAdjBckfzGLM="/>
         </table:table>
     </page:list>
 </div>
