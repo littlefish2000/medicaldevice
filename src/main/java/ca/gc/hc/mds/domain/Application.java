@@ -5,7 +5,6 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.reference.DevLicenceType;
-import ca.gc.hc.mds.reference.LicenceStatusType;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -22,6 +21,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Size;
 
@@ -29,11 +31,12 @@ import javax.validation.constraints.Size;
 @RooToString
 ////@RooJpaActiveRecord(sequenceName = "APPLICATION_SEQ", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", table = "APPLICATION")
 @RooJpaActiveRecord(versionField = "", table = "APPLICATION", schema = "MDSDB",identifierColumn = "APPLICATION_ID", identifierField = "applicationId", finders = { "findApplicationsByApplicationId","findApplicationsByOrginLicenseId" })
-@SecondaryTables({
-    @SecondaryTable(name="LICENCE_STATUS_TRACKING", schema = "MDSDB", pkJoinColumns={
-        @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") }),
+//@SecondaryTables({
+//    @SecondaryTable(name="LICENCE_STATUS_TRACKING", schema = "MDSDB", pkJoinColumns={
+//        @PrimaryKeyJoinColumn(name="APPLICATION_ID", referencedColumnName="APPLICATION_ID") }),
 
-})
+//})
+@TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
 public class Application {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,7 +73,7 @@ public class Application {
     private String applicationDesc;
     
     
-   
+    @NotNull
     @Column(name = "APPLICATION_COMMENTS")
     @Size(min = 0, max = 350)
     private String applicationComments;
@@ -83,17 +86,17 @@ public class Application {
         
     /**
      */
-    @NotNull
+   /* @NotNull
 	@Column(name = "LICENCE_STATUS_DT",table="LICENCE_STATUS_TRACKING",  columnDefinition = "DATE" )
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(style = "M-")
-	private Date licenceStatusDate;  
+	private Date licenceStatusDate;  */
     
     /**
      */
     @Column(name = "APPLICATION_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
-    @Enumerated(EnumType.STRING)
-    private ApplicationType applicationType = null;   
+    //@Enumerated(EnumType.STRING)
+    private String applicationType = null;   
     
     /**
      */
@@ -103,9 +106,9 @@ public class Application {
     
     /**
      */
-    @Column(name = "LICENCE_STATUS", table="LICENCE_STATUS_TRACKING",nullable = true, length=1,columnDefinition = "char(1) default 'A'")
+   /* @Column(name = "LICENCE_STATUS", table="LICENCE_STATUS_TRACKING",nullable = true, length=1,columnDefinition = "char(1) default 'A'")
     @Enumerated(EnumType.STRING)
-    private LicenceStatusType licenceStatus = null; 
+    private LicenceStatusType licenceStatus = null; */
     
     @Column(name = "COMPANY_AUTH_ID", columnDefinition="NUMBER")
     private Long companyAuthId;    
@@ -118,6 +121,7 @@ public class Application {
     private Long companyId;     
   
     @Column(name = "DIVISION_CD", columnDefinition = "char")
+    @Type(type = "fixedLengthCharType")
     @Size(min = 0, max = 3)
     private String divisionCd;  
     

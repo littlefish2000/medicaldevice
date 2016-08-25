@@ -17,11 +17,11 @@ privileged aspect TranApplicationLicenceSummary_Roo_JavaBean {
         this.applicationId = applicationId;
     }
     
-    public ApplicationType TranApplicationLicenceSummary.getApplicationType() {
+    public String TranApplicationLicenceSummary.getApplicationType() {
         return this.applicationType;
     }
     
-    public void TranApplicationLicenceSummary.setApplicationType(ApplicationType applicationType) {
+    public void TranApplicationLicenceSummary.setApplicationType(String applicationType) {
         this.applicationType = applicationType;
     }
     

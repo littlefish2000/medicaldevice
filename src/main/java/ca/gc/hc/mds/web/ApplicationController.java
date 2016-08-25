@@ -9,7 +9,6 @@ import ca.gc.hc.mds.domain.LicenceStatusTracking;
 import ca.gc.hc.mds.domain.LicenceType;
 import ca.gc.hc.mds.domain.LicenseStatus;
 import ca.gc.hc.mds.reference.DevLicenceType;
-import ca.gc.hc.mds.reference.LicenceStatusType;
 import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.reference.YesNoType;
 import java.io.UnsupportedEncodingException;
@@ -151,8 +150,7 @@ public class ApplicationController {
         uiModel.addAttribute("application", application);
         uiModel.addAttribute("tranDeviceMaterial", DeviceMaterial.findDeviceMaterialForApplication(application.getApplicationId(), application.getOrginLicenseId()));
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));
-        uiModel.addAttribute("licencestatustypes", Arrays.asList(LicenceStatusType.values()));
+        uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));        
     }
 
 	String encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

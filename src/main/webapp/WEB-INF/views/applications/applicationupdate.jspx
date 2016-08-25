@@ -17,10 +17,51 @@
 	<springform:form  method = "post" modelAttribute="application" > 	
 		<div class="row">
 			<div class="col-lg-6">
-				<label class="col-lg-2">Appl. ID: </label>
-				<springform:input path="applicationId" class="col-lg-5" type="text" >	</springform:input>
-		
+				<label class="col-lg-3">Appl. ID: </label>
+				<springform:input path="applicationId" class="col-lg-5" type="text" >	</springform:input>		
 			</div>
+			<div class="col-lg-6">
+				<label class="col-lg-3">Appl. Status: </label>				
+				<input placeholder="${appStatusDesc}" class="col-lg-3" type="text" readonly="true" disabled="true"> </input>		
+			</div>	
+		</div>
+		<br></br>
+		<div class="row">
+			<div class="col-lg-6">
+				<label class="col-lg-3">Appl. Type: </label> 				
+				
+					<springform:select path="applicationType">				
+						<c:set var="curcode" value="${application.getApplicationType()}"	    /> 			
+	                    <c:forEach var="apptype" items="${apptypelist}">
+	                    <c:set var="apptypecode" value="${apptype.getApptypeCd()}"	    />
+	                    <c:set var="desc" value="${apptype.getApptypeDesc()}"	    />
+	                    <c:choose>	 	                   
+	                    <c:when test="${apptypecode eq curcode}">	                      	                    	                 	     
+	                        <springform:option selected="selected" value="${apptypecode}">${desc} </springform:option>
+	                    </c:when> 
+	                    <c:otherwise>
+	                    <springform:option value="${apptypecode}">${desc} </springform:option>
+	                    </c:otherwise>
+	                    </c:choose>
+	                    </c:forEach>
+                	</springform:select>
+			</div>	
+			<div class="col-lg-6">
+				
+<!-- 				<input class="col-lg-5"	type="text" placeholder="YYYY/MM/DD"></input> -->
+					<spring:eval expression="application.getReceiptDate()" var="receiptDate" />
+						<div>
+						<label class="col-lg-3">Rec. Date: </label>
+							<input type="text"	class="col-lg-4" placeholder="${receiptDate}" />
+						</div>		
+			</div>						
+		</div>
+		<br></br>
+		<div class="row">
+			<div class="col-lg-6">
+				<label class="col-lg-3">License Number: </label>
+				<springform:input path="orginLicenseId" class="col-lg-3" type="text" >	</springform:input>
+			</div>			
 			<div class="col-lg-6">
 				<label class="col-lg-3">License Name: </label>
 <!-- 				<input	class="col-lg-9" type="text" placeholder="Input #"></input> -->
@@ -29,10 +70,20 @@
 		</div>
 		<br></br>
 		<div class="row">
-			<div class="col-lg-3">
-				<label class="col-lg-4">License Number: </label>
-				<springform:input path="orginLicenseId" class="col-lg-3" type="text" >	</springform:input>
+			<div class="col-lg-6">
+				<label class="col-lg-3">License Status: </label>
+				<input placeholder="${licencestatusdesc}" class="col-lg-3" type="text" readonly="true" disabled="true"> </input>		
+			</div>			
+			<div class="col-lg-6">		
+	        <c:set value="${applicationlicencestatus.getId().getLicenceStatusDt()}" var="statusDate" />
+			<div>
+				<label class="col-lg-3">Status Date: </label>
+					<input class="col-lg-6"	type="txt" placeholder="${statusDate}" readonly="true" disabled="true"> </input>   
+				</div>	
 			</div>
+		</div>
+		<br></br>
+		<div class="row">
 			<div class="col-lg-6">
 				<label class="col-lg-3">License Type: </label> 
 				<!-- <select>
@@ -40,23 +91,26 @@
 					<option>two</option>
 					<option>three</option>					
 				</select> -->
-<!-- 				<springform:input path="devLicenceType" class="col-lg-9" type="text" >	</springform:input> -->
-				<springform:select class="col-lg-6" path="devLicenceType">
-					<option value=""> </option> 
-                    <c:forEach var="type" items="${licencetypes}">      
-                     <spring:eval expression="type.getValue()" var="typeValue" />
-                    <c:choose>
-                    <c:when test="typeValue == application.getDevLicenceType()">             
-                        <springform:option selected="true" value="${typeValue}">${type} </springform:option>
-                    </c:when> 
-                    <c:otherwise>
-                    <springform:option value="${typeValue}">${type} </springform:option>
-                    </c:otherwise>
-                    </c:choose>
-                    </c:forEach>
-                </springform:select>
+
+				
+
+				<springform:select path="devLicenceType">				
+						<c:set var="curcode" value="${application.getDevLicenceType()}"	    /> 			
+	                    <c:forEach var="lictype" items="${lictypelist}">
+	                    <c:set var="lictypecode" value="${lictype.getLictypeCd()}"	    />
+	                    <c:set var="desc" value="${lictype.getLictypeDesc()}"	    />
+	                    <c:choose>	 	                   
+	                    <c:when test="${lictypecode eq curcode}">	                      	                    	                 	     
+	                        <springform:option selected="selected" value="${lictypecode}">${desc} </springform:option>
+	                    </c:when> 
+	                    <c:otherwise>
+	                    <springform:option value="${lictypecode}">${desc} </springform:option>
+	                    </c:otherwise>
+	                    </c:choose>
+	                    </c:forEach>
+                	</springform:select>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-6">
 				<label class="col-lg-3">Risk Class: </label>
 <!-- 				<input class="col-lg-5"	type="text" placeholder="Input #"></input> -->
 					<springform:input path="appRiskClass" class="col-lg-4" type="text" >	</springform:input>
@@ -65,30 +119,6 @@
 		<br></br>
 		
 		<div class="row">
-			<div class="col-lg-3">
-				<label class="col-lg-3">Appl. Type: </label> 
-				<!--  <select width="100"
-					style="width: 150px">
-					<option>Amendment</option>
-					<option>two</option>
-					<option>three</option>
-				</select>  -->	
-				<springform:select path="applicationType"  class="col-lg-8">    
-				    <option value=""> </option>   
-                    <c:forEach var="type" items="${applicationtypes}">      
-                     <spring:eval expression="type.getValue()" var="typeValue" />
-                    <c:choose>
-                    <c:when test="typeValue == application.getApplicationType()">             
-                        <springform:option selected="true" value="${typeValue}">${type} </springform:option>
-                    </c:when> 
-                    <c:otherwise>
-                    <springform:option value="${typeValue}">${type} </springform:option>
-                    </c:otherwise>
-                    </c:choose>
-                    </c:forEach> 
-                </springform:select>		
-			</div>			
-
 			<div class="col-lg-3">
 				<label class="col-lg-4">Device Drug: </label> 
 				<!-- <select>
@@ -131,41 +161,31 @@
                     </c:forEach>
                 </springform:select>
 			</div>
-			<div class="col-lg-3">
-				<label class="col-lg-4">Division Code: </label> 
-<!-- 				<select> -->
-<!-- 					<option>Musculoskeletal</option> -->
-<!-- 					<option>two</option> -->
-<!-- 					<option>three</option> -->
-<!-- 				</select> -->
-					<springform:input path="divisionCd" class="col-lg-3" type="text" >	</springform:input>
+			<div class="col-lg-6">
+				<label class="col-lg-3">Division Code: </label>
+					<c:set var="curcode" value="${application.getDivisionCd()}"	    />
+					<springform:select path="divisionCd">				
+						<c:set var="curcode" value="${application.getDivisionCd()}"	    /> 			
+	                    <c:forEach var="division" items="${divisionlist}">
+	                    <c:set var="divcode" value="${division.getDivisionCd()}"	    />
+	                    <c:set var="desc" value="${division.getDivisionDesc()}"	    />
+	                    <c:choose>	 	                   
+	                    <c:when test="${divcode eq curcode}">	                      	                    	                 	     
+	                        <springform:option selected="selected" value="${divcode}">${desc} </springform:option>
+	                    </c:when> 
+	                    <c:otherwise>
+	                    <springform:option value="${divcode}">${desc} </springform:option>
+	                    </c:otherwise>
+	                    </c:choose>
+	                    </c:forEach>
+                	</springform:select>
 			</div>
 		</div>
 
 		<br></br>
 		<div class="row">
 			<div class="col-lg-3">
-				
-<!-- 				<input class="col-lg-5"	type="text" placeholder="YYYY/MM/DD"></input> -->
-					<spring:eval expression="application.getReceiptDate()" var="receiptDate" />
-						<div>
-						<label class="col-lg-4">Rec. Date: </label>
-							<input type="text"	class="col-lg-4" placeholder="${receiptDate}" />
-						</div>		
-			</div>
-			<div class="col-lg-3">
-				
-<!-- 				-->
-<!-- 				<springform:input path="licenceStatusDate" class="col-lg-5" type="date" >	</springform:input>					 -->
-					<spring:eval expression="application.getLicenceStatusDate()" var="statusDate" />
-						<div>
-						<label class="col-lg-4">Status Date: </label>
-							<input class="col-lg-4"	type="text" placeholder="${statusDate}"> </input> 
-						</div>	
-			</div>
-
-			<div class="col-lg-2">
-				<label class="col-lg-6">Home User: </label> 
+				<label class="col-lg-4">Home User: </label> 
 				<!-- <select>
 					<option>Yes</option>
 					<option>No</option>
@@ -185,8 +205,8 @@
                     </c:forEach>
                 </springform:select>
 			</div>
-			<div class="col-lg-2">
-				<label class="col-lg-8">Disclosure: </label> 
+			<div class="col-lg-3">
+				<label class="col-lg-6">Disclosure: </label> 
 				<!-- <select>
 					<option>Yes</option>
 					<option>No</option>
@@ -206,13 +226,13 @@
                     </c:forEach>
                 </springform:select>				
 			</div>
-			<div class="col-lg-2">
-				<label class="col-lg-6">Near Patient: </label>
+			<div class="col-lg-6">
+				<label class="col-lg-3">Near Patient: </label>
 				<!-- <select>
 					<option>Yes</option>
 					<option>No</option>
 				</select> -->	
-				<div class="col-lg-6">
+				<div class="col-lg-2">
 				<springform:select path="nearPatient"> 
                     <c:forEach var="type" items="${yesnotypes}">   
                     <spring:eval expression="type.getValue()" var="typeValue" /> 
@@ -510,7 +530,7 @@
 												Description 55</a>
 										</h4>
 									</div>
-							<springform:form id="form_ca_gc_hc_mds_domain_Application_applicationDesc" method="post" commandName="application"> 	
+							<springform:form method="post" commandName="application"> 	
 									
 									<div id="collapse1" class="panel-collapse collapse">
 										<div class="panel-body">
@@ -522,16 +542,10 @@
 												<br></br>
 
 												<div class="col-lg-3 col-md-offset-3">
-													<!--  <button class="center-block btn btn-success">Save</button> -->
-													<button class="center-block btn btn-success" type="button" 
-													onclick="performAppDescUpdate(${applicationId}, document.getElementById('c_ca_gc_hc_mds_domain_Application_applicationDesc').value)">
-													Save</button>	
+													<button class="center-block btn btn-success">Save</button>
 												</div>
 												<div class="col-lg-3 text-center">
-													<!--   <button class="btn btn-success center-block">Cancel</button> -->
-													<button  class="btn btn-success center-block" type="button" 
-													onclick="cancelAppDescUpdate(${applicationId})">
-													Cancel</button>
+													<button class="btn btn-success center-block">Cancel</button>
 												</div>
 											</div>
 										</div>
