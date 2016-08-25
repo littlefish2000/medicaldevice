@@ -1,14 +1,21 @@
 package ca.gc.hc.mds.web;
 import ca.gc.hc.mds.domain.Application;
+import ca.gc.hc.mds.domain.ApplicationHistory;
+import ca.gc.hc.mds.domain.ApplicationStatus;
+import ca.gc.hc.mds.domain.ApplicationType;
 import ca.gc.hc.mds.domain.DeviceMaterial;
-import ca.gc.hc.mds.reference.ApplicationType;
+import ca.gc.hc.mds.domain.Division;
+import ca.gc.hc.mds.domain.LicenceStatusTracking;
+import ca.gc.hc.mds.domain.LicenceType;
+import ca.gc.hc.mds.domain.LicenseStatus;
 import ca.gc.hc.mds.reference.DevLicenceType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
-import ca.gc.hc.mds.reference.LicenceType;
 import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.reference.YesNoType;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
@@ -108,8 +115,38 @@ public class ApplicationController {
     }
 
 	void populateEditForm(Model uiModel, Application application) {
-		uiModel.addAttribute("applicationtypes", Arrays.asList(ApplicationType.values()));
-		uiModel.addAttribute("licencetypes", Arrays.asList(LicenceType.values()));
+		
+		List<Division> divisionlist = Division.findAllDivisions();
+		uiModel.addAttribute("divisionlist",divisionlist);
+		List<ApplicationType> apptypelist = ApplicationType.findAllApplicationTypes();
+		uiModel.addAttribute("apptypelist",apptypelist);		
+		List<LicenceType> lictypelist = LicenceType.findAllLicenceTypes();
+		uiModel.addAttribute("lictypelist",lictypelist);
+		for(LicenceType lt : lictypelist){
+			System.out.println(lt.getLictypeCd() +',' + lt.getLictypeDesc());			
+		}
+		if (application.getApplicationId() != null){
+			LicenceStatusTracking licenceStatusRec = LicenceStatusTracking.findCurrentLicenceStatusForApplication(application.getApplicationId());
+			String licenceStatusDesc = "";
+			if (licenceStatusRec != null){
+				 licenceStatusDesc =  LicenseStatus.findLicenseStatus(licenceStatusRec.getId().getLicenceStatus()).getDescr();
+			}
+			uiModel.addAttribute("applicationlicencestatus",licenceStatusRec);	
+			uiModel.addAttribute("licencestatusdesc",licenceStatusDesc);	
+		}
+		
+	//	System.out.print(licenceStatusRec.getId().getLicenceStatus());
+		
+		if (application.getApplicationId() != null){
+			ApplicationHistory appHistory = ApplicationHistory.findCurrentApplicationStatusForApplication(application.getApplicationId());
+			String appStatusDesc = "";
+			if (appHistory != null){
+				appStatusDesc = ApplicationStatus.findApplicationStatus(appHistory.getApplicationStatus()).getMedDescEng();
+			}
+			uiModel.addAttribute("appStatusDesc", appStatusDesc);
+		}
+		
+	//	System.out.print(appHistory.getApplicationStatus());
 		uiModel.addAttribute("yesnotypes", Arrays.asList(YesNoType.values()));
         uiModel.addAttribute("application", application);
         uiModel.addAttribute("tranDeviceMaterial", DeviceMaterial.findDeviceMaterialForApplication(application.getApplicationId(), application.getOrginLicenseId()));

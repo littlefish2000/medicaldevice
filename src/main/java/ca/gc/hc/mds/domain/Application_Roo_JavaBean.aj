@@ -5,7 +5,6 @@ package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.reference.DevLicenceType;
-import ca.gc.hc.mds.reference.LicenceStatusType;
 import java.util.Date;
 
 privileged aspect Application_Roo_JavaBean {
@@ -66,14 +65,6 @@ privileged aspect Application_Roo_JavaBean {
         this.licenceName = licenceName;
     }
     
-    public Date Application.getLicenceStatusDate() {
-        return this.licenceStatusDate;
-    }
-    
-    public void Application.setLicenceStatusDate(Date licenceStatusDate) {
-        this.licenceStatusDate = licenceStatusDate;
-    }
-    
     public String Application.getApplicationType() {
         return this.applicationType;
     }
@@ -88,14 +79,6 @@ privileged aspect Application_Roo_JavaBean {
     
     public void Application.setDevLicenceType(DevLicenceType devLicenceType) {
         this.devLicenceType = devLicenceType;
-    }
-    
-    public LicenceStatusType Application.getLicenceStatus() {
-        return this.licenceStatus;
-    }
-    
-    public void Application.setLicenceStatus(LicenceStatusType licenceStatus) {
-        this.licenceStatus = licenceStatus;
     }
     
     public Long Application.getCompanyAuthId() {

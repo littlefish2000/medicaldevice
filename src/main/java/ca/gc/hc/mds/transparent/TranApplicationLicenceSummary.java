@@ -21,7 +21,7 @@ public class TranApplicationLicenceSummary {
     }   	
 	
     
-    public TranApplicationLicenceSummary(Long applicationId, ApplicationType applicationType,String appldeviceStatus
+    public TranApplicationLicenceSummary(Long applicationId, String applicationType,String appldeviceStatus
     		, Date statusDate,String licenceName,String evaluationRequired,Date licenceDate ) {
     	
     	this.applicationId = applicationId;
@@ -35,7 +35,7 @@ public class TranApplicationLicenceSummary {
     }  
     
     public Long applicationId;
-    public ApplicationType applicationType;
+    public String applicationType;
     public String appldeviceStatus;
     public Date statusDate;
     public String licenceName;

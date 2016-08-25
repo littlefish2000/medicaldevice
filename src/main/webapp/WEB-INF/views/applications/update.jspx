@@ -7,12 +7,10 @@
         <field:datetime dateTimePattern="${application_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Application_entryDate" required="true" z="VWdH4RmPoY6jwjThay6ZDGwTYzI="/>
         <field:datetime dateTimePattern="${application_receiptdate_date_format}" field="receiptDate" id="c_ca_gc_hc_mds_domain_Application_receiptDate" required="true" z="7E07uu1BbJygq7M+BnmF/bxP3MI="/>
         <field:textarea field="applicationDesc" id="c_ca_gc_hc_mds_domain_Application_applicationDesc" required="true" z="sIvVeGXEcRMvt0B2/2bDCN1WExg="/>
-        <field:datetime dateTimePattern="${application_licencestatusdate_date_format}" field="licenceStatusDate" id="c_ca_gc_hc_mds_domain_Application_licenceStatusDate" required="true" z="OXOyJrFMeEBVx6tuRHauLryDmtw="/>
         <field:input field="companyId" id="c_ca_gc_hc_mds_domain_Application_companyId" validationMessageCode="field_invalid_integer" z="b09iCXR6I/c9s/rwgzaYkm9qOsI="/>
         <field:textarea field="licenceName" id="c_ca_gc_hc_mds_domain_Application_licenceName" z="YLu6ynP0UT27nIig9taYTmzW3Y0="/>
         <field:input field="companyAuthId" id="c_ca_gc_hc_mds_domain_Application_companyAuthId" validationMessageCode="field_invalid_integer" z="DKccwNaXbxtwuvtvpsi+83Jk/4g="/>
         <field:input field="applicationType" id="c_ca_gc_hc_mds_domain_Application_applicationType" z="uyFINcCLWpZopDtLC3iawd64YCk="/>
-        <field:select field="licenceStatus" id="c_ca_gc_hc_mds_domain_Application_licenceStatus" items="${licencestatustypes}" path="licencestatustypes" z="FTxuS2Xm4fl7yBPXAhiLvg7LQt0="/>
         <field:input field="appRiskClass" id="c_ca_gc_hc_mds_domain_Application_appRiskClass" validationMessageCode="field_invalid_integer" z="y3ElZ3zxCz/r7jKd0sVHrB8f/bM="/>
         <field:select field="devLicenceType" id="c_ca_gc_hc_mds_domain_Application_devLicenceType" items="${devlicencetypes}" path="devlicencetypes" z="0cmV+iukiK+3hVqlDbuWeL4Q7kU="/>
         <field:textarea field="applicationComments" id="c_ca_gc_hc_mds_domain_Application_applicationComments" required="true" z="sbqiMO3GPAdauuTHGvBf4RtWoYU="/>
