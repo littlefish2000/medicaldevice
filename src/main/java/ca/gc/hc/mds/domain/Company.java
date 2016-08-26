@@ -22,6 +22,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,12 +33,16 @@ import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.TableGenerator;
+import org.apache.commons.lang.StringUtils;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "", table = "COMPANY", schema = "MDSDB", identifierColumn = "COMPANY_ID", identifierField = "companyId", finders = { "findCompanysByCompanyId","findCompanysByCompanyNameLike"})
 @TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
+@DynamicInsert
+@DynamicUpdate
 public class Company {
 
     @Id
@@ -47,6 +53,7 @@ public class Company {
     private Long companyId;
     /**
      */
+    @NotNull
     @Type(type = "fixedLengthCharType")
     @Column(name = "COMPANY_NAME", columnDefinition = "char")
     @Size(min = 0, max = 90)
@@ -64,7 +71,7 @@ public class Company {
 	public String getAddressLine1() {
 		return addressLine1;
 	}
-
+	
     /**
      */
 	@Type(type = "fixedLengthCharType")
@@ -91,7 +98,7 @@ public class Company {
     @Size(min = 0, max = 45)
     private String addressLine4;
 	public String getAddressLine4() {
-		return addressLine1;
+		return addressLine4;
 	}
 	
     /**
@@ -116,24 +123,28 @@ public class Company {
 	
     /**
      */
+	@Type(type = "fixedLengthCharType")
     @Column(name = "REGION_CODE",nullable = true, columnDefinition = "char")
     @Size(max = 12)
     private String regionCode;
 
     /**
      */
+	@Type(type = "fixedLengthCharType")
     @Column(name = "CITY",nullable = true, columnDefinition = "char")
     @Size(max = 35)
     private String city;
 
     /**
      */
+	@Type(type = "fixedLengthCharType")
     @Column(name = "COUNTRY_CD", columnDefinition = "char")
     @Size(min = 0, max = 2)
     private String country;
 
     /**
      */
+	@Type(type = "fixedLengthCharType")
     @Column(name = "REGION_CD", columnDefinition = "char")
     @Size(min = 0, max = 3)
     private String region;
@@ -223,5 +234,22 @@ public class Company {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
     private Set<CompanyHistory> historys = new HashSet<CompanyHistory>();
+    
+    @PrePersist
+    protected void updateValuesWithWhiteSpace() {
+    	
+    	StringUtils.rightPad(companyName,90);
+    	StringUtils.rightPad(addressLine1, 45);
+    	StringUtils.rightPad(addressLine2, 45);
+    	StringUtils.rightPad(addressLine3, 45);
+    	StringUtils.rightPad(addressLine4, 45);
+    	StringUtils.rightPad(addressLine5, 45);
+    	StringUtils.rightPad(postCode, 12);
+    	StringUtils.rightPad(regionCode, 2);
+    	StringUtils.rightPad(city, 35);
+    	StringUtils.rightPad(country, 2);
+    	StringUtils.rightPad(region, 3);
+    	
+    }      
     
 }
