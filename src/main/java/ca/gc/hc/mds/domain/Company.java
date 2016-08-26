@@ -34,6 +34,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.TableGenerator;
 import org.apache.commons.lang.StringUtils;
 
@@ -41,8 +42,7 @@ import org.apache.commons.lang.StringUtils;
 @RooToString
 @RooJpaActiveRecord(versionField = "", table = "COMPANY", schema = "MDSDB", identifierColumn = "COMPANY_ID", identifierField = "companyId", finders = { "findCompanysByCompanyId","findCompanysByCompanyNameLike"})
 @TypeDef(name = "fixedLengthCharType", typeClass = ca.gc.hc.mds.reference.OracleLengthCharType.class)
-@DynamicInsert
-@DynamicUpdate
+@DynamicUpdate(value=true)
 public class Company {
 
     @Id
@@ -202,10 +202,9 @@ public class Company {
     
     /**
      */
-    @NotNull
     @Column(name = "FEE_REDUCTION_DT", nullable = true,columnDefinition = "DATE")
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern = "dd/MM/yy")
     private Date lastChangeDate;
     
     /**
@@ -235,9 +234,9 @@ public class Company {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
     private Set<CompanyHistory> historys = new HashSet<CompanyHistory>();
     
-    @PrePersist
-    protected void updateValuesWithWhiteSpace() {
-    	
+
+    @PreUpdate
+    protected void preUpdateValuesWithWhiteSpace() {
     	StringUtils.rightPad(companyName,90);
     	StringUtils.rightPad(addressLine1, 45);
     	StringUtils.rightPad(addressLine2, 45);
@@ -249,7 +248,7 @@ public class Company {
     	StringUtils.rightPad(city, 35);
     	StringUtils.rightPad(country, 2);
     	StringUtils.rightPad(region, 3);
-    	
     }      
+    
     
 }

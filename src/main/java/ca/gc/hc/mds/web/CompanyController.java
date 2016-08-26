@@ -3,6 +3,9 @@ import ca.gc.hc.mds.domain.Company;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.util.UriUtils;
+import org.springframework.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -16,13 +19,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.ui.Model;
 import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.domain.CompanyHistory;
 import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.reference.YesAndNoType;
 import ca.gc.hc.mds.service.CompanyService;
+import ca.gc.hc.mds.service.ServiceUtil;
 
 @RequestMapping("/companys")
 @Controller
@@ -38,6 +46,21 @@ public class CompanyController {
         uiModel.addAttribute("company_lastchangedate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     	
+    
+    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
+    public String update(@Valid Company company, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            populateEditForm(uiModel, company);
+            return "companys/update";
+        }
+        
+        Company existing = Company.findCompany(company.getCompanyId());
+        ServiceUtil.copyNonNullProperties(company, existing);
+        
+        uiModel.asMap().clear();
+        existing.merge();
+        return "redirect:/companys/" + encodeUrlPathSegment(company.getCompanyId().toString(), httpServletRequest) +"?form";
+    }    
 	
     void populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
@@ -59,5 +82,16 @@ public class CompanyController {
         uiModel.addAttribute("mdelstat", CompanyService.getMdelStatus(company));
         uiModel.addAttribute("mfgstat", CompanyService.getMfgStatus(company));
         uiModel.addAttribute("sitestat", CompanyService.getSiteStatus(company));
-    }	
+    }
+    
+    String encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+        String enc = httpServletRequest.getCharacterEncoding();
+        if (enc == null) {
+            enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
+        }
+        try {
+            pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
+        } catch (UnsupportedEncodingException uee) {}
+        return pathSegment;
+    }    
 }

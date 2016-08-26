@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_Company" idField="companyId" modelAttribute="company" path="/companys" versionField="none" z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
-        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" z="3A1ZAuuyMJflMC2QoDzB50KLU40="/>
+        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" required="true" z="bWPtVpEH87jooQuNvHssFUPmygE="/>
         <field:textarea field="companyId" id="c_ca_gc_hc_mds_domain_Company_companyId" z=""/>
         <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
         <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>

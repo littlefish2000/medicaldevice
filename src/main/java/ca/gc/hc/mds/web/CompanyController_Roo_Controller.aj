@@ -5,7 +5,6 @@ package ca.gc.hc.mds.web;
 
 import ca.gc.hc.mds.domain.Company;
 import ca.gc.hc.mds.web.CompanyController;
-import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.util.UriUtils;
-import org.springframework.web.util.WebUtils;
 
 privileged aspect CompanyController_Roo_Controller {
     
@@ -59,17 +56,6 @@ privileged aspect CompanyController_Roo_Controller {
         return "companys/list";
     }
     
-    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String CompanyController.update(@Valid Company company, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, company);
-            return "companys/update";
-        }
-        uiModel.asMap().clear();
-        company.merge();
-        return "redirect:/companys/" + encodeUrlPathSegment(company.getCompanyId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{companyId}", params = "form", produces = "text/html")
     public String CompanyController.updateForm(@PathVariable("companyId") Long companyId, Model uiModel) {
         populateEditForm(uiModel, Company.findCompany(companyId));
@@ -84,17 +70,6 @@ privileged aspect CompanyController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/companys";
-    }
-    
-    String CompanyController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
-        String enc = httpServletRequest.getCharacterEncoding();
-        if (enc == null) {
-            enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
-        }
-        try {
-            pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        } catch (UnsupportedEncodingException uee) {}
-        return pathSegment;
     }
     
 }
