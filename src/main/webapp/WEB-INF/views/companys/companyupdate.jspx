@@ -32,16 +32,17 @@
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<field:input field="companyName" label="Name"
+					<field:input field="companyName" label="Name" disablecfgroup="true"
 						id="c_ca_gc_hc_mds_domain_Company_companyName"
 						z="3A1ZAuuyMJflMC2QoDzB50KLU40=" />
 				</div>
 				<div class="col-lg-4">
-					<field:select field="companyStatus" label="Status"
+					<field:select field="companyStatus" label="Status" disablecfgroup="true"
 						id="c_ca_gc_hc_mds_domain_Company_companyStatus"
 						items="${statustypes}" path="statustypes" required="true" z="" />
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-lg-9">
 					<fieldset class="scheduler-border">
@@ -97,62 +98,69 @@
 				
 			</div>
 			
-			
+			<div class="row">
+				<div class="col-lg-6 text-center">
+					<field:input field="addressLine1" label="address1" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_addressLine1"
+						z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
+						<BR />
+					<field:input field="addressLine3" label="address3" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_addressLine3"
+						z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
+						<BR />
+					<field:input field="city" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_city"
+						z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />
+						<BR />
+					<field:input field="region" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
+						required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />
+						<BR />
+				</div>
+				<div class="col-lg-6 text-center">
+					<field:input field="addressLine2" label="address2" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_addressLine2"
+						z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />	
+						<BR />							
+					<field:input field="addressLine4" label="address4" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_addressLine4"
+						z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />	
+						<BR />
+					<field:input field="country"
+						id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" disablecfgroup="true"
+						required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />	
+						<BR />
+					<field:input field="postCode"
+						id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" disablecfgroup="true"
+						required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />	
+						<BR />																														
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-offset-3">
+					<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
+				</div>
+				<spring:url value="/companys/{variableName}?form" var="cancel_url">
+				   <spring:param name="variableName" value="${compidvar}" />
+				</spring:url>									
+				<div class="col-lg-3 text-center">
+					<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+				</div>									
+			</div>	
+			<BR />						
 			<div class="row">
 				<div class="panel with-nav-tabs panel-primary">
 					<div class="panel-heading">
 						<ul class="nav nav-tabs responsive">
-							<li class="active"><a href="#tab1" data-toggle="tab">Address</a></li>
-							<li><a href="#tab2" data-toggle="tab">Contact</a></li>
+							<li class="active"><a href="#tab2" data-toggle="tab">Contact</a></li>
 							<li><a href="#tab3" data-toggle="tab">History</a></li>
 							<li><a href="#tab4" data-toggle="tab">Finance</a></li>
 						</ul>
 					</div>
 					<div class="panel-body">
 						<div class="tab-content">
-							<div class="tab-pane active" id="tab1">
-								<div class="row">
-									<div class="col-lg-6 text-center">
-										<field:input field="addressLine1" label="address1"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine1"
-											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
-										<field:input field="addressLine3" label="address3"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine3"
-											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
-										<field:input field="city"
-											id="c_ca_gc_hc_mds_domain_Company_city"
-											z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />
-										<field:input field="region"
-											id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
-											required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />
-									</div>
-									<div class="col-lg-6 text-center">
-										<field:input field="addressLine2" label="address2"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine2"
-											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />								
-										<field:input field="addressLine4" label="address4"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine4"
-											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />	
-										<field:input field="country"
-											id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0"
-											required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />	
-										<field:input field="postCode"
-											id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0"
-											required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />																															
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3 col-md-offset-3">
-										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
-									</div>
-									<spring:url value="/companys/{variableName}?form" var="cancel_url">
-									   <spring:param name="variableName" value="${compidvar}" />
-									</spring:url>									
-									<div class="col-lg-3 text-center">
-										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
-									</div>									
-								</div>							</div>
-							<div class="tab-pane" id="tab2">
+
+							<div class="tab-pane active" id="tab2">
 								<page:list id="pl_ca_gc_hc_mds_domain_CompanyContact"
 									items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
 									<table:table data="${companycontacts}"  delete="false" show="false" create="false" update="false"
@@ -296,7 +304,8 @@
 									<div class="col-lg-3 text-center">
 										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
 									</div>									
-								</div>							</div>
+								</div>							
+							</div>
 							<div class="tab-pane form-horizontal" id="tab4">
 								<div class="row">
 									<div class="col-lg-4">

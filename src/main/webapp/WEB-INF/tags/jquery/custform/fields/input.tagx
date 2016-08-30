@@ -15,6 +15,7 @@
   <jsp:directive.attribute name="decimalMin" type="java.lang.String" required="false" rtexprvalue="true" description="Specify the minimum size of the input contents" />
   <jsp:directive.attribute name="decimalMax" type="java.lang.String" required="false" rtexprvalue="true" description="Specify the maximum size of the input contents" />
   <jsp:directive.attribute name="disableFormBinding" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Set to true to disable Spring form binding" />
+  <jsp:directive.attribute name="disablecfgroup" type="java.lang.Boolean" required="false" rtexprvalue="false" description="Set to true to disable Spring form binding" />
   <jsp:directive.attribute name="type" type="java.lang.String" required="false" rtexprvalue="true" description="Set field type (default 'text', or 'password')" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="renderLabel" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of the label should be rendered (default 'true')" />
@@ -94,8 +95,16 @@
         </c:otherwise>
     </c:choose>
 
-
-    <div id="_${fn:escapeXml(id)}_id" class="control-group form-group">
+	<c:choose>
+		<c:when test="${disablecfgroup}">
+			<c:set value="" var="cfgroup"/>
+	    </c:when>
+	    <c:otherwise>
+	    	<c:set value="control-group form-group" var="cfgroup"/>
+	    </c:otherwise>
+	</c:choose>
+	
+    <div id="_${fn:escapeXml(id)}_id" class="${cfgroup}">
       <label for="_${sec_field}_id" class="${labelcontrolclass}">
        <c:choose>
           <c:when test="${empty renderLabel or renderLabel}">
