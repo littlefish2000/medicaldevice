@@ -283,15 +283,19 @@
 							<div class="tab-pane form-horizontal" id="tab4">
 								<div class="row">
 									<div class="col-lg-4">
-										<field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+										<!-- field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
 											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Bill-To-ID"
 											id="c_ca_gc_hc_mds_domain_Company_billToId"
-											z="" />									
+											z="" /-->		
+											
+										<field:input field="billToId" labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6" label="Bill-To ID" 
+											id="c_ca_gc_hc_mds_domain_Company_companyName" z="" />
 									</div>
 									<div class="col-lg-4">
 										<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname"
 											type="text" class="form-control"
-											placeholder="Brand Canada Inc." readonly="readonly" />
+											placeholder="${finance.getCompanyName()}" readonly="readonly" />
 									</div>
 									<div class="col-lg-4">
 										<field:input field="taxNumber1"
@@ -310,6 +314,11 @@
 											label="Last Change Date" field="lastChangeDate"
 											id="c_ca_gc_hc_mds_domain_Company_lastChangeDate"
 											 z="" /-->
+										<field:input field="commonMethod"
+											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
+											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
+											label="Comm Mthd"
+											id="c_ca_gc_hc_mds_domain_Company_commonMethod" z="" />											 
 									</div>
 									<div class="col-lg-4">
 										<field:input field="industry"
@@ -335,16 +344,16 @@
 											id="c_ca_gc_hc_mds_domain_Company_contactId" z="" />
 									</div>
 									<div class="col-lg-4">
-										<input id="s_ca_gc_hc_mds_domain_Company_BiiltoIdname"
+										<input id="s_ca_gc_hc_mds_domain_Company_billcontactName"
 											type="text" class="form-control"
-											placeholder="Brand Canada Inc." readonly="readonly" />
+											placeholder="${finance.getContactName()}" readonly="readonly" />
 									</div>
 									<div class="col-lg-4">
-										<field:input field="commonMethod"
-											labelclass="control-label col-xs-5 col-sm-6 col-md-3 col-lg-5"
-											fieldclass="red col-xs-7 col-sm-5 col-md-9 col-lg-6"
-											label="Comm Mthd"
-											id="c_ca_gc_hc_mds_domain_Company_commonMethod" z="" />
+										<label for="s_ca_gc_hc_mds_domain_Company_billcontactEmail"
+										class="control-label col-lg-6">Email:</label>
+										<input id="s_ca_gc_hc_mds_domain_Company_billcontactEmail"
+											type="text" class="form-control"
+											placeholder="${finance.getE_MAIL()}" readonly="readonly" />
 									</div>
 								</div>
 								<div class="row">

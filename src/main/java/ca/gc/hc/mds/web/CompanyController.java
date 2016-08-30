@@ -50,6 +50,7 @@ public class CompanyController {
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
     public String update(@Valid Company company, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
+        	System.out.println("Validate Errors");
             populateEditForm(uiModel, company);
             return "companys/update";
         }
@@ -82,6 +83,7 @@ public class CompanyController {
         uiModel.addAttribute("mdelstat", CompanyService.getMdelStatus(company));
         uiModel.addAttribute("mfgstat", CompanyService.getMfgStatus(company));
         uiModel.addAttribute("sitestat", CompanyService.getSiteStatus(company));
+        uiModel.addAttribute("finance", CompanyService.getFianaceInfo(company));
     }
     
     String encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
