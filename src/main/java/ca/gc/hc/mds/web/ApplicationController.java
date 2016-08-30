@@ -1,4 +1,5 @@
 package ca.gc.hc.mds.web;
+import ca.gc.hc.mds.domain.AmendmentReason;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationHistory;
 import ca.gc.hc.mds.domain.ApplicationStatus;
@@ -121,9 +122,9 @@ public class ApplicationController {
 		uiModel.addAttribute("apptypelist",apptypelist);		
 		List<LicenceType> lictypelist = LicenceType.findAllLicenceTypes();
 		uiModel.addAttribute("lictypelist",lictypelist);
-		for(LicenceType lt : lictypelist){
+		/*for(LicenceType lt : lictypelist){
 			System.out.println(lt.getLictypeCd() +',' + lt.getLictypeDesc());			
-		}
+		}*/
 		if (application.getApplicationId() != null){
 			LicenceStatusTracking licenceStatusRec = LicenceStatusTracking.findCurrentLicenceStatusForApplication(application.getApplicationId());
 			String licenceStatusDesc = "";
@@ -134,7 +135,7 @@ public class ApplicationController {
 			uiModel.addAttribute("licencestatusdesc",licenceStatusDesc);	
 		}
 		
-	//	System.out.print(licenceStatusRec.getId().getLicenceStatus());
+
 		
 		if (application.getApplicationId() != null){
 			ApplicationHistory appHistory = ApplicationHistory.findCurrentApplicationStatusForApplication(application.getApplicationId());
@@ -146,11 +147,21 @@ public class ApplicationController {
 		}
 		
 	//	System.out.print(appHistory.getApplicationStatus());
+		
+		//amendment_reason
+		List<AmendmentReason> amendReasonList = AmendmentReason.findAllAmendmentReasons();
+		uiModel.addAttribute("amendReasonList", amendReasonList);
+		
+		System.out.println(application.getIntendedIndication());
+		if(application.getAmendmentReason() !=null){
+	//	System.out.println(application.getAmendmentReason().getId().getReasonCd());
+		}
+		
 		uiModel.addAttribute("yesnotypes", Arrays.asList(YesNoType.values()));
         uiModel.addAttribute("application", application);
         uiModel.addAttribute("tranDeviceMaterial", DeviceMaterial.findDeviceMaterialForApplication(application.getApplicationId(), application.getOrginLicenseId()));
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));        
+        //uiModel.addAttribute("devlicencetypes", Arrays.asList(DevLicenceType.values()));        
     }
 
 	String encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

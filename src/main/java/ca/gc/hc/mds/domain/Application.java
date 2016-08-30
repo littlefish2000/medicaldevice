@@ -8,12 +8,18 @@ import ca.gc.hc.mds.reference.DevLicenceType;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SecondaryTable;
 import javax.persistence.SecondaryTables;
@@ -101,8 +107,8 @@ public class Application {
     /**
      */
     @Column(name = "DEV_LICENCE_TYPE", nullable = true, length=1,columnDefinition = "char(1) default null")
-    @Enumerated(EnumType.STRING)
-    private DevLicenceType devLicenceType = null;    
+    //@Enumerated(EnumType.STRING)
+    private String devLicenceType = null;    
     
     /**
      */
@@ -139,4 +145,13 @@ public class Application {
     
     @Column(name = "NEAR_PATIENT", columnDefinition = "char", length=1)   
     private String nearPatient; 
+    
+    
+    @OneToOne(optional=false,cascade=CascadeType.ALL, orphanRemoval=true,
+	   mappedBy="application",targetEntity=LicIntendedIndicationUse.class)
+	   private LicIntendedIndicationUse intendedIndication; 
+    
+    @OneToOne(cascade=CascadeType.ALL, orphanRemoval=true)
+    @JoinColumn(name="APPLICATION_ID")
+    private ApplAmendmentReason amendmentReason;
 }
