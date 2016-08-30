@@ -116,35 +116,42 @@
 										<field:input field="addressLine1" label="address1"
 											id="c_ca_gc_hc_mds_domain_Company_addressLine1"
 											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
-										<field:input field="addressLine2" label="address2"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine2"
-											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />
 										<field:input field="addressLine3" label="address3"
 											id="c_ca_gc_hc_mds_domain_Company_addressLine3"
 											z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
-										<field:input field="addressLine4" label="address4"
-											id="c_ca_gc_hc_mds_domain_Company_addressLine4"
-											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />
 										<field:input field="city"
 											id="c_ca_gc_hc_mds_domain_Company_city"
 											z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />
-										<field:input field="country"
-											id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0"
-											required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />
 										<field:input field="region"
 											id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
 											required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />
+									</div>
+									<div class="col-lg-6 text-center">
+										<field:input field="addressLine2" label="address2"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine2"
+											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />								
+										<field:input field="addressLine4" label="address4"
+											id="c_ca_gc_hc_mds_domain_Company_addressLine4"
+											z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />	
+										<field:input field="country"
+											id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0"
+											required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />	
 										<field:input field="postCode"
 											id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0"
-											required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />
+											required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />																															
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-12 text-center">
+									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
-								</div>
-							</div>
+									<spring:url value="/companys/{variableName}?form" var="cancel_url">
+									   <spring:param name="variableName" value="${compidvar}" />
+									</spring:url>									
+									<div class="col-lg-3 text-center">
+										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+									</div>									
+								</div>							</div>
 							<div class="tab-pane" id="tab2">
 								<page:list id="pl_ca_gc_hc_mds_domain_CompanyContact"
 									items="${companycontacts}" z="waLI6NJ60ScW5a+gOKVz8+WRQpM=">
@@ -230,11 +237,16 @@
 								</div>
 								<br></br>
 								<div class="row">
-									<div class="col-lg-12 text-center">
+									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
-								</div>								
-							</div>
+									<spring:url value="/companys/{variableName}?form" var="cancel_url">
+									   <spring:param name="variableName" value="${compidvar}" />
+									</spring:url>									
+									<div class="col-lg-3 text-center">
+										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+									</div>									
+								</div>							</div>
 							<div class="tab-pane" id="tab3">
 								<page:list id="pl_ca_gc_hc_mds_domain_CompanyHistory"
 									items="${companyhistorys}" z="Kgg+N1ymi6xw/akFyq5nKeBOLmg=">
@@ -275,11 +287,16 @@
 									</table:table>
 								</page:list>
 								<div class="row">
-									<div class="col-lg-12 text-center">
+									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
-								</div>								
-							</div>
+									<spring:url value="/companys/{variableName}?form" var="cancel_url">
+									   <spring:param name="variableName" value="${compidvar}" />
+									</spring:url>									
+									<div class="col-lg-3 text-center">
+										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+									</div>									
+								</div>							</div>
 							<div class="tab-pane form-horizontal" id="tab4">
 								<div class="row">
 									<div class="col-lg-4">
@@ -349,17 +366,23 @@
 											placeholder="${finance.getContactName()}" readonly="readonly" />
 									</div>
 									<div class="col-lg-4">
-										<label for="s_ca_gc_hc_mds_domain_Company_billcontactEmail"
-										class="control-label col-lg-6">Email:</label>
+										<!-- label for="s_ca_gc_hc_mds_domain_Company_billcontactEmail"
+										class="control-label col-lg-6">Email:</label-->
 										<input id="s_ca_gc_hc_mds_domain_Company_billcontactEmail"
 											type="text" class="form-control"
 											placeholder="${finance.getE_MAIL()}" readonly="readonly" />
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-12 text-center">
+									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
+									<spring:url value="/companys/{variableName}?form" var="cancel_url">
+									   <spring:param name="variableName" value="${compidvar}" />
+									</spring:url>									
+									<div class="col-lg-3 text-center">
+										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+									</div>									
 								</div>								
 							</div>
 						</div>
