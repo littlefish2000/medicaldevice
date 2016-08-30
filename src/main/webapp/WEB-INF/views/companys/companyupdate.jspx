@@ -17,6 +17,9 @@
 		modelAttribute="company" path="/companys" versionField="none"
 		z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
 		<spring:message code="button_save" var="save_button" htmlEscape="false" />
+		<spring:url value="/companys/{variableName}?form" var="cancel_url">
+		   <spring:param name="variableName" value="${compidvar}" />
+		</spring:url>			
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
@@ -108,14 +111,18 @@
 						id="c_ca_gc_hc_mds_domain_Company_addressLine3"
 						z="liFlf3sAHIDTCtYrHB2dbd9aQuE=" />
 						<BR />
-					<field:input field="city" disablecfgroup="true"
-						id="c_ca_gc_hc_mds_domain_Company_city"
-						z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />
+					<field:input field="addressLine5" label="address5" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_addressLine5"
+						z="" />							
 						<BR />
-					<field:input field="region" disablecfgroup="true"
-						id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
-						required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />
+					<field:input field="country"
+						id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" disablecfgroup="true"
+						required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />							
 						<BR />
+					<field:input field="postCode"
+						id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" disablecfgroup="true"
+						required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />	
+						<BR />												
 				</div>
 				<div class="col-lg-6 text-center">
 					<field:input field="addressLine2" label="address2" disablecfgroup="true"
@@ -126,27 +133,26 @@
 						id="c_ca_gc_hc_mds_domain_Company_addressLine4"
 						z="UXRm9whmw9HD81/C7msiWGvyq4Y=" />	
 						<BR />
-					<field:input field="country"
-						id="c_ca_gc_hc_mds_domain_Company_country" max="2" min="0" disablecfgroup="true"
-						required="true" z="rpyvQr672yLX1c7alU34ZC96cqc=" />	
+					<field:input field="city" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_city"
+						z="wg0iJehPUq4OeYYJMIji+dkXNoE=" />						
 						<BR />
-					<field:input field="postCode"
-						id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" min="0" disablecfgroup="true"
-						required="true" z="hW0TXo8zTUEU1cAWpDhPuywqBXA=" />	
-						<BR />																														
+					<field:input field="region" disablecfgroup="true"
+						id="c_ca_gc_hc_mds_domain_Company_region" max="3" min="0"
+						required="true" z="jRXc3C2sMpzan00wLF4M9wCoAn4=" />						
+						<BR />
+					<div class="row">	
+						<div class="col-lg-3 col-md-offset-3">
+							<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
+						</div>
+										
+						<div class="col-lg-3 text-center">
+							<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
+						</div>
+					</div>
+							
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-3 col-md-offset-3">
-					<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
-				</div>
-				<spring:url value="/companys/{variableName}?form" var="cancel_url">
-				   <spring:param name="variableName" value="${compidvar}" />
-				</spring:url>									
-				<div class="col-lg-3 text-center">
-					<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
-				</div>									
-			</div>	
 			<BR />						
 			<div class="row">
 				<div class="panel with-nav-tabs panel-primary">
@@ -248,9 +254,6 @@
 									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
-									<spring:url value="/companys/{variableName}?form" var="cancel_url">
-									   <spring:param name="variableName" value="${compidvar}" />
-									</spring:url>									
 									<div class="col-lg-3 text-center">
 										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
 									</div>									
@@ -289,22 +292,8 @@
 										<table:column
 											id="s_ca_gc_hc_mds_domain_CompanyHistory_mdbBillTo"
 											property="mdbBillTo" z="CJSqjnu2z4J0n+7WJ/BP0D0xa98=" />
-
-
-
-									</table:table>
+										</table:table>
 								</page:list>
-								<div class="row">
-									<div class="col-lg-3 col-md-offset-3">
-										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
-									</div>
-									<spring:url value="/companys/{variableName}?form" var="cancel_url">
-									   <spring:param name="variableName" value="${compidvar}" />
-									</spring:url>									
-									<div class="col-lg-3 text-center">
-										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
-									</div>									
-								</div>							
 							</div>
 							<div class="tab-pane form-horizontal" id="tab4">
 								<div class="row">
@@ -386,9 +375,6 @@
 									<div class="col-lg-3 col-md-offset-3">
 										<input id="proceed" type="submit"  class="center-block btn btn-success" value="${fn:escapeXml(save_button)}"/>
 									</div>
-									<spring:url value="/companys/{variableName}?form" var="cancel_url">
-									   <spring:param name="variableName" value="${compidvar}" />
-									</spring:url>									
 									<div class="col-lg-3 text-center">
 										<input type="button"  class="center-block btn btn-success" value="Cancel" onclick="window.location='${cancel_url}'"/>										
 									</div>									
