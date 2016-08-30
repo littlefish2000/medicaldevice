@@ -3,8 +3,9 @@
 
 package ca.gc.hc.mds.domain;
 
+import ca.gc.hc.mds.domain.ApplAmendmentReason;
 import ca.gc.hc.mds.domain.Application;
-import ca.gc.hc.mds.reference.DevLicenceType;
+import ca.gc.hc.mds.domain.LicIntendedIndicationUse;
 import java.util.Date;
 
 privileged aspect Application_Roo_JavaBean {
@@ -73,11 +74,11 @@ privileged aspect Application_Roo_JavaBean {
         this.applicationType = applicationType;
     }
     
-    public DevLicenceType Application.getDevLicenceType() {
+    public String Application.getDevLicenceType() {
         return this.devLicenceType;
     }
     
-    public void Application.setDevLicenceType(DevLicenceType devLicenceType) {
+    public void Application.setDevLicenceType(String devLicenceType) {
         this.devLicenceType = devLicenceType;
     }
     
@@ -151,6 +152,22 @@ privileged aspect Application_Roo_JavaBean {
     
     public void Application.setNearPatient(String nearPatient) {
         this.nearPatient = nearPatient;
+    }
+    
+    public LicIntendedIndicationUse Application.getIntendedIndication() {
+        return this.intendedIndication;
+    }
+    
+    public void Application.setIntendedIndication(LicIntendedIndicationUse intendedIndication) {
+        this.intendedIndication = intendedIndication;
+    }
+    
+    public ApplAmendmentReason Application.getAmendmentReason() {
+        return this.amendmentReason;
+    }
+    
+    public void Application.setAmendmentReason(ApplAmendmentReason amendmentReason) {
+        this.amendmentReason = amendmentReason;
     }
     
 }
