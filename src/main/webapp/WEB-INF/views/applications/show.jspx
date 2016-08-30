@@ -13,7 +13,6 @@
         <field:display field="companyAuthId" id="s_ca_gc_hc_mds_domain_Application_companyAuthId" object="${application}" z="+PHoobhvjCtAqtKndAjdX1oSCxI="/>
         <field:display field="applicationType" id="s_ca_gc_hc_mds_domain_Application_applicationType" object="${application}" z="5/snvz0V7WGK80Sk0cPSphmGQU8="/>
         <field:display field="appRiskClass" id="s_ca_gc_hc_mds_domain_Application_appRiskClass" object="${application}" z="VAtwsrxkwE/G6EhsJTM8B3Vm2jw="/>
-        <field:display field="devLicenceType" id="s_ca_gc_hc_mds_domain_Application_devLicenceType" object="${application}" z="FhBA/tAo0QXt8imElKZ49AsBs48="/>
         <field:display field="applicationComments" id="s_ca_gc_hc_mds_domain_Application_applicationComments" object="${application}" z="iZaXYxKFm2TQxd6R4W4qGgm6SrE="/>
         <field:display field="divisionCd" id="s_ca_gc_hc_mds_domain_Application_divisionCd" object="${application}" z="pWkagPQTYhHhwFuNn4ObKbA77s8="/>
         <field:display field="deviceDrug" id="s_ca_gc_hc_mds_domain_Application_deviceDrug" object="${application}" z="0QCvSBjUggdKLQjWh/AbfkK+aY4="/>
@@ -21,6 +20,7 @@
         <field:display field="homeUseCode" id="s_ca_gc_hc_mds_domain_Application_homeUseCode" object="${application}" z="+YheMNtizpcqMtvEGA1phoighxY="/>
         <field:display field="disclosureFlag" id="s_ca_gc_hc_mds_domain_Application_disclosureFlag" object="${application}" z="V5QpkMRIPeCgZY+aAORJF4qLE+Q="/>
         <field:display field="nearPatient" id="s_ca_gc_hc_mds_domain_Application_nearPatient" object="${application}" z="1VlG88ny+vEixPszvJ7+eix5xyM="/>
+        <field:display field="devLicenceType" id="s_ca_gc_hc_mds_domain_Application_devLicenceType" object="${application}" z="FhBA/tAo0QXt8imElKZ49AsBs48="/>
         <field:display field="intendedIndication" id="s_ca_gc_hc_mds_domain_Application_intendedIndication" object="${application}" z="8X0aunIT4h2mg/XLTf6d7VJrtWE="/>
         <field:display field="amendmentReason" id="s_ca_gc_hc_mds_domain_Application_amendmentReason" object="${application}" z="kc135uKo4y5xdGcI0Xf0Ssl16v4="/>
     </page:show>

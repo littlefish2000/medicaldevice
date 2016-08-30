@@ -251,3 +251,5 @@ web mvc datatables add --type ~.web.DeviceIndentContentController
 // script --file /home/tyu/Documents/Develop/github/medicaldevice/test1.roo
 menu entry visibility --hidden true --id c_deviceindentcontent
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-15 11:21:44
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-29 14:00:50
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-08-29 14:07:42
