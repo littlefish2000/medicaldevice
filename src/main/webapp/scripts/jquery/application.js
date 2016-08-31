@@ -73,38 +73,44 @@ function cancelAppDescUpdate(appId) {
 function performDeviceSAPUpdate(deviceId) {
 	
 	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {		
-  		
-   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {   	
-   			/**
-   			 * Need to decode the response for 5 fields.....
-   			 */
-   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value = xhttp.responseText;     			
+	xhttp.onreadystatechange = function() {	
+		
+	if (xhttp.readyState == 4 &&  xhttp.status == 200) {   			
+ 			var responseTxt = xhttp.responseText;   		
+   			var obj = JSON.parse(responseTxt); 
+   			
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_indicationUse').value=obj.indicationUse;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_initialSapDiag').value=obj.initialSapDiag;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_consideration').value=obj.consideration;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_sapNotes').value=obj.sapNotes ; 
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_status').value=obj.status;  
     	}
 	};
 		
+	var indicationUse = document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_indicationUse').value;	
+	var initialSapDiag = document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_initialSapDiag').value;
+	var futureConsideration = document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_consideration').value;
+	var sapNotes = document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_sapNotes').value ;
+	var alternativeStatus = document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_status').value;
+		
+	var deviceSAP = {
+			deviceID: deviceId,
+			indicationUse: indicationUse,
+			initialSapDiag: initialSapDiag,
+			consideration: futureConsideration,
+			sapNotes: sapNotes,
+			status: alternativeStatus
+	}
+			
+	var data = JSON.stringify(deviceSAP);	
 	var url = "/MedicalDevice/ajax/device/perform_device_sap_update" ;	
-		/**
-		 * Need to send 5 fields.....
-		 */
-	var params = "device_id=" + deviceId + "&updated_app_desc=" + desc;	
 	
-	xhttp.open("POST", url, true);	
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
-	xhttp.send(params);
+	xhttp.open("POST", url, false);	
+	xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");	
+	xhttp.send(data);		
 	
 }
 
-
-/**	
-	onclick="performDeviceSAPUpdate(${deviceId}, 
-	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_status').value,
-	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_indicationUse').value,
-	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_initialSapDiag').value,
-	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_consideration').value,
-	document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_sapNotes').value) ">
-	
-*/
 
 
 function canceDeviceSAPUpdate(deviceId) {	
@@ -112,14 +118,16 @@ function canceDeviceSAPUpdate(deviceId) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {		
   		
-   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {    			
-   			var responseTxt = xhttp.responseText;     			
+   		if (xhttp.readyState == 4 &&  xhttp.status == 200) {
    			
-   			/**
-   			 * Need to decode the response for 5 fields.....
-   			 */
-   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value =  responseTxt;   				
+   			var responseTxt = xhttp.responseText;   		
+   			var obj = JSON.parse(responseTxt);
    			
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_indicationUse').value=obj.indicationUse;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_initialSapDiag').value=obj.initialSapDiag;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_consideration').value=obj.consideration;
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_sapNotes').value=obj.sapNotes ; 
+   			document.getElementById('c_ca_gc_hc_mds_domain_DeviceSAP_status').value=obj.status;   			
    		}
 	};
 		

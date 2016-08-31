@@ -151,11 +151,16 @@ public class DeviceController {
 	void populateEditForm(Model uiModel, Device device) {
         uiModel.addAttribute("device", device);
         //Add Device Summary Status
-        long devId = device.getDeviceId();
-        uiModel.addAttribute("trandevicesummarystatus", DeviceSummaryStatusVw.findDeviceSummaryStatusesByDeviceId(devId));
-        uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
-        uiModel.addAttribute("tranapplicationlicencesummary", ApplicationDevice.findApplicationLicenceSummaryByDeviceId(devId));
-        uiModel.addAttribute("tranSpecialAccessSummary", SpecialAccessDevice.findSpecialAccessSummaryByDeviceId(devId));
+        Long devId = device.getDeviceId();
+        
+        if (devId != null){        	
+            
+            uiModel.addAttribute("trandevicesummarystatus", DeviceSummaryStatusVw.findDeviceSummaryStatusesByDeviceId(devId));
+            uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
+            uiModel.addAttribute("tranapplicationlicencesummary", ApplicationDevice.findApplicationLicenceSummaryByDeviceId(devId));
+            uiModel.addAttribute("tranSpecialAccessSummary", SpecialAccessDevice.findSpecialAccessSummaryByDeviceId(devId));
+        	
+        }
         
         
         /*

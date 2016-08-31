@@ -13,13 +13,20 @@
 
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
+
+
+<!--  
 	<form:update id="fu_ca_gc_hc_mds_domain_Device" idField="deviceId"
 		modelAttribute="device" path="/devices" versionField="none"
-		z="C7Iqni1AoAUuaWvjRhflznKkOKg=">
+		z="C7Iqni1AoAUuaWvjRhflznKkOKg=">  -->
 
 		<div class="container">
 			<br></br>
-
+		<form:updateWithCancel id="fu_ca_gc_hc_mds_domain_Device" idField="deviceId"
+		modelAttribute="device" path="/devices" versionField="none"
+		z="C7Iqni1AoAUuaWvjRhflznKkOKg="> 
+		
+		<div class="container">
 			<div class="row">
 
 				<div class="col-lg-3">
@@ -93,6 +100,8 @@
 					</select>
 				</div>
 			</div>
+		</div>
+	 </form:updateWithCancel> 		
 			<br></br>
 
 			<div class="row">
@@ -109,7 +118,7 @@
 									Info 24</a></li>
 						</ul>
 					</div>
-					<div class="panel-body">
+				<div class="panel-body">   
 						<div class="tab-content">
 							<div class="tab-pane active" id="tab1">
 								<table class="table">
@@ -615,10 +624,11 @@
 								</utilold:panel>
 							</div>
 						</div>
-					</div>
+				 	</div>   
 					<br></br>
 				</div>
 			</div>
-		</div>
-	</form:update>
+	
+ <!-- </form:update>  --> 
+ 	</div>	
 </div>
