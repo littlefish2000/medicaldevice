@@ -159,6 +159,7 @@ public class DeviceController {
             uiModel.addAttribute("trancompanyapplicationtatus", DeviceCompanyVw.findCompanyApplictionSummaryByDeviceId(devId));
             uiModel.addAttribute("tranapplicationlicencesummary", ApplicationDevice.findApplicationLicenceSummaryByDeviceId(devId));
             uiModel.addAttribute("tranSpecialAccessSummary", SpecialAccessDevice.findSpecialAccessSummaryByDeviceId(devId));
+             
         	
         }
         
@@ -170,8 +171,14 @@ public class DeviceController {
         deviceSAPStatusMap.put("A", "Active");
         deviceSAPStatusMap.put("I", "Inactive");
         uiModel.addAttribute("deviceSAPStatusMap", deviceSAPStatusMap);
+        DeviceSAP deviceSAP = DeviceSAP.findDeviceSAP(devId);
+        if (deviceSAP == null){
+        	deviceSAP = new DeviceSAP();
+        	deviceSAP.setDeviceID(devId);
+        }
+        uiModel.addAttribute("deviceSAP", deviceSAP);    
         
-        uiModel.addAttribute("deviceSAP", DeviceSAP.findDeviceSAP(devId));      
+         
         //---Ended for Device SAP
         
         
