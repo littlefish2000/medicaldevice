@@ -3,9 +3,9 @@
 
 package ca.gc.hc.mds.domain;
 
+import ca.gc.hc.mds.domain.ApplAmendmentReason;
 import ca.gc.hc.mds.domain.Application;
-import ca.gc.hc.mds.reference.DevLicenceType;
-import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.domain.LicIntendedIndicationUse;
 import java.util.Date;
 
 privileged aspect Application_Roo_JavaBean {
@@ -66,14 +66,6 @@ privileged aspect Application_Roo_JavaBean {
         this.licenceName = licenceName;
     }
     
-    public Date Application.getLicenceStatusDate() {
-        return this.licenceStatusDate;
-    }
-    
-    public void Application.setLicenceStatusDate(Date licenceStatusDate) {
-        this.licenceStatusDate = licenceStatusDate;
-    }
-    
     public String Application.getApplicationType() {
         return this.applicationType;
     }
@@ -82,20 +74,12 @@ privileged aspect Application_Roo_JavaBean {
         this.applicationType = applicationType;
     }
     
-    public DevLicenceType Application.getDevLicenceType() {
+    public String Application.getDevLicenceType() {
         return this.devLicenceType;
     }
     
-    public void Application.setDevLicenceType(DevLicenceType devLicenceType) {
+    public void Application.setDevLicenceType(String devLicenceType) {
         this.devLicenceType = devLicenceType;
-    }
-    
-    public LicenceStatusType Application.getLicenceStatus() {
-        return this.licenceStatus;
-    }
-    
-    public void Application.setLicenceStatus(LicenceStatusType licenceStatus) {
-        this.licenceStatus = licenceStatus;
     }
     
     public Long Application.getCompanyAuthId() {
@@ -168,6 +152,22 @@ privileged aspect Application_Roo_JavaBean {
     
     public void Application.setNearPatient(String nearPatient) {
         this.nearPatient = nearPatient;
+    }
+    
+    public LicIntendedIndicationUse Application.getIntendedIndication() {
+        return this.intendedIndication;
+    }
+    
+    public void Application.setIntendedIndication(LicIntendedIndicationUse intendedIndication) {
+        this.intendedIndication = intendedIndication;
+    }
+    
+    public ApplAmendmentReason Application.getAmendmentReason() {
+        return this.amendmentReason;
+    }
+    
+    public void Application.setAmendmentReason(ApplAmendmentReason amendmentReason) {
+        this.amendmentReason = amendmentReason;
     }
     
 }

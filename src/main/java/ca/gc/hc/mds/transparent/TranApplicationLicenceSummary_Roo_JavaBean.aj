@@ -3,7 +3,6 @@
 
 package ca.gc.hc.mds.transparent;
 
-import ca.gc.hc.mds.reference.ApplicationType;
 import ca.gc.hc.mds.transparent.TranApplicationLicenceSummary;
 import java.util.Date;
 
@@ -17,11 +16,11 @@ privileged aspect TranApplicationLicenceSummary_Roo_JavaBean {
         this.applicationId = applicationId;
     }
     
-    public ApplicationType TranApplicationLicenceSummary.getApplicationType() {
+    public String TranApplicationLicenceSummary.getApplicationType() {
         return this.applicationType;
     }
     
-    public void TranApplicationLicenceSummary.setApplicationType(ApplicationType applicationType) {
+    public void TranApplicationLicenceSummary.setApplicationType(String applicationType) {
         this.applicationType = applicationType;
     }
     

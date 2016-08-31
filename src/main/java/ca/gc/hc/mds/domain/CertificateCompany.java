@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
@@ -17,7 +18,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(versionField = "",  schema = "MDSDB",identifierType = CertificateCompanyPK.class,
-table = "CERTIFICATE_COMPANY",finders = { "findCertificateCompanysByEntryDateEquals" })
+table = "CERTIFICATE_COMPANY",finders = { "findCertificateCompanysByCompanyIdLike" })
 public class CertificateCompany {
 	
     /**
@@ -46,11 +47,16 @@ public class CertificateCompany {
 	@Column(name="NAME_RATIONAL", columnDefinition = "char", nullable=false, length=280)	
 	private String nameRational;  
 	
+	@PersistenceContext
+    transient EntityManager entityManager;
+	
+	
     public static TypedQuery<CertificateCompany> findCertificateCompanysByCompanyAuthIdEquals(BigDecimal companyAuthId) {
         if (companyAuthId == null) throw new IllegalArgumentException("The entryDate argument is required");
         EntityManager em = CertificateCompany.entityManager();
         TypedQuery<CertificateCompany> q = em.createQuery("SELECT o FROM CertificateCompany AS o WHERE o.id.companyAuthId = :companyAuthId", CertificateCompany.class);
         q.setParameter("companyAuthId", companyAuthId);
         return q;
-    }	
+    }
+    
 }

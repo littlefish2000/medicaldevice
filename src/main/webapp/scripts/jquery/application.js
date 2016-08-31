@@ -26,18 +26,20 @@
 
 //==================Start: Application=================================
 
-function performAppDescUpdate(appId, desc) {
+function performAppDescUpdate(appId, desc, curElementId, fieldName) {
 	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {		
   		
    		if (xhttp.readyState == 4 &&  xhttp.status == 200) {   			
-   			document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value = xhttp.responseText;     			
+   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value = xhttp.responseText;
+   			
+   			document.getElementById(curElementId).value = xhttp.responseText;
     	}
 	};
 		
 	var url = "/MedicalDevice/ajax/applications/perform_app_desc_update" ;	
-	var params = "app_id=" + appId + "&updated_app_desc=" + desc;	
+	var params = "app_id=" + appId + "&updated_value=" + desc + "&fieldname=" + fieldName;	
 	
 	xhttp.open("POST", url, true);	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
@@ -46,20 +48,20 @@ function performAppDescUpdate(appId, desc) {
 }
 
 
-function cancelAppDescUpdate(appId) {	
+function cancelAppDescUpdate(appId,curElementId, fieldName) {	
 	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {		
   		
    		if (xhttp.readyState == 4 &&  xhttp.status == 200) {    			
    			var responseTxt = xhttp.responseText;     			
-   			document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value =  responseTxt;   				
-   			
+   			//document.getElementById("c_ca_gc_hc_mds_domain_Application_applicationDesc").value =  responseTxt;   				
+   			document.getElementById(curElementId).value =  responseTxt;
    		}
 	};
 		
 	var url = "/MedicalDevice/ajax/applications/cancel_app_desc_update" ;	
-	var params = "app_id=" + appId;	
+	var params = "app_id=" + appId + "&fieldname=" + fieldName;	
 
 	xhttp.open("POST", url, true);	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	

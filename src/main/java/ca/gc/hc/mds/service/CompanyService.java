@@ -2,12 +2,14 @@ package ca.gc.hc.mds.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.MessageSource;
 
 import ca.gc.hc.mds.domain.Company;
+import ca.gc.hc.mds.transparent.TranCompanyFinance;
 
 @Configurable
 public class CompanyService {
@@ -87,4 +89,18 @@ public class CompanyService {
     	else 
     		return "No";
     }  
+    
+    
+    public static TranCompanyFinance getFianaceInfo(Company company) {
+    	if (company.getCompanyId() == null)
+			throw new IllegalArgumentException("The company id is required");
+		
+		String queryStr = "SELECT NEW ca.gc.hc.mds.transparent.TranCompanyFinance(c1.companyId,c1.billToId,c2.companyName,cc.contactName,cc.e_MAIL) "
+				+ "FROM Company as c1, Company as c2 ,CompanyContact as cc  WHERE c1.companyId = :companyId and c2.companyId = c1.billToId and cc.companyContactId = c1.contactId";
+
+		TranCompanyFinance result = entityManager().createQuery(queryStr, TranCompanyFinance.class)
+				.setParameter("companyId", company.getCompanyId()).getSingleResult();
+
+		return result;
+    }
 }

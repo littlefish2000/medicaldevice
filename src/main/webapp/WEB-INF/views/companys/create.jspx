@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ca_gc_hc_mds_domain_Company" modelAttribute="company" path="/companys" render="${empty dependencies}" z="y0TDk7ATFrerk2km+Up/LJNkadk=">
-        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" z="3A1ZAuuyMJflMC2QoDzB50KLU40="/>
+        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Company_companyName" required="true" z="bWPtVpEH87jooQuNvHssFUPmygE="/>
         <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Company_addressLine1" z="liFlf3sAHIDTCtYrHB2dbd9aQuE="/>
         <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Company_addressLine2" z="UXRm9whmw9HD81/C7msiWGvyq4Y="/>
         <field:input field="postCode" id="c_ca_gc_hc_mds_domain_Company_postCode" max="12" z="/DTl7sa7QRg8ErwtSahtDLOKw9g="/>
@@ -24,7 +24,7 @@
         <field:input field="billToId" id="c_ca_gc_hc_mds_domain_Company_billToId" validationMessageCode="field_invalid_integer" z="tKXWqRjTohhzA8vwe+sEYy5jtrg="/>
         <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" z="VukUG/iyatGmXp1a8L9EbqglaHw="/>
         <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" validationMessageCode="field_invalid_integer" z="ZlRTmm1jnQuVer1lDIpqdTBgBs4="/>
-        <field:datetime dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" required="true" z="EMGJJqERwORsk1Dcp7q0cEigTRw="/>
+        <field:datetime dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" z="7Df4JBEqLby75Mf9CeSccay5Xto="/>
         <field:select field="newreg89" id="c_ca_gc_hc_mds_domain_Company_newreg89" items="${yesandnotypes}" path="yesandnotypes" required="true" z="+KSR2EVmVASgP90l5qhr2wvkRMA="/>
         <field:select field="feeReduction" id="c_ca_gc_hc_mds_domain_Company_feeReduction" items="${yesandnotypes}" path="yesandnotypes" required="true" z="7FdqUrLi6sw8ElCzLbhwWpxW9Ak="/>
     </form:create>

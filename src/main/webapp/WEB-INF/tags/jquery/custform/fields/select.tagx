@@ -12,6 +12,7 @@
   <jsp:directive.attribute name="disabled" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Specify if this field should be enabled" />
   <jsp:directive.attribute name="multiple" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Specify if the select box should allow multiple selections" />
   <jsp:directive.attribute name="disableFormBinding" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Set to true to disable Spring form binding" />
+  <jsp:directive.attribute name="disablecfgroup" type="java.lang.Boolean" required="false" rtexprvalue="false" description="Set to true to disable Spring form binding" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="renderLabel" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of the label should be rendered (default 'true')" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
@@ -52,7 +53,16 @@
       <spring:escapeBody htmlEscape="true" >${itemLabel}</spring:escapeBody>
     </c:set>
 
-    <div id="_${fn:escapeXml(id)}_id" class="control-group form-group">
+	<c:choose>
+		<c:when test="${disablecfgroup}">
+			<c:set value="" var="cfgroup"/>
+	    </c:when>
+	    <c:otherwise>
+	    	<c:set value="control-group form-group" var="cfgroup"/>
+	    </c:otherwise>
+	</c:choose>
+	
+    <div id="_${fn:escapeXml(id)}_id" class="${cfgroup}">
       <c:choose>
         <c:when test="${not empty items}">
           <label for="_${sec_field}_id" class="control-label ${labelclass}">

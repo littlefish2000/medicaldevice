@@ -11,5 +11,6 @@ public enum LicenceStatusType {
 	S, //Suspended 
 	W, //Withdrawn 
 	Q, //Suspended/Invalid QS Certificate
-	X; //Cancelled QS/2003 
+	X; //Cancelled QS/2003	
+	
 }

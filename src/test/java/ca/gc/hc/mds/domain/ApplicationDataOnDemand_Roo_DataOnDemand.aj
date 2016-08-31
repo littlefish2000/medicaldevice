@@ -3,10 +3,10 @@
 
 package ca.gc.hc.mds.domain;
 
+import ca.gc.hc.mds.domain.ApplAmendmentReason;
 import ca.gc.hc.mds.domain.Application;
 import ca.gc.hc.mds.domain.ApplicationDataOnDemand;
-import ca.gc.hc.mds.reference.DevLicenceType;
-import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.domain.LicIntendedIndicationUse;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -29,6 +29,7 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     
     public Application ApplicationDataOnDemand.getNewTransientApplication(int index) {
         Application obj = new Application();
+        setAmendmentReason(obj, index);
         setAppRiskClass(obj, index);
         setApplicationComments(obj, index);
         setApplicationDesc(obj, index);
@@ -41,14 +42,18 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         setDivisionCd(obj, index);
         setEntryDate(obj, index);
         setHomeUseCode(obj, index);
+        setIntendedIndication(obj, index);
         setLicenceName(obj, index);
-        setLicenceStatus(obj, index);
-        setLicenceStatusDate(obj, index);
         setNearPatient(obj, index);
         setOrginLicenseId(obj, index);
         setPointOfCare(obj, index);
         setReceiptDate(obj, index);
         return obj;
+    }
+    
+    public void ApplicationDataOnDemand.setAmendmentReason(Application obj, int index) {
+        ApplAmendmentReason amendmentReason = null;
+        obj.setAmendmentReason(amendmentReason);
     }
     
     public void ApplicationDataOnDemand.setAppRiskClass(Application obj, int index) {
@@ -91,7 +96,10 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
     }
     
     public void ApplicationDataOnDemand.setDevLicenceType(Application obj, int index) {
-        DevLicenceType devLicenceType = DevLicenceType.class.getEnumConstants()[0];
+        String devLicenceType = String.valueOf(index);
+        if (devLicenceType.length() > 1) {
+            devLicenceType = devLicenceType.substring(0, 1);
+        }
         obj.setDevLicenceType(devLicenceType);
     }
     
@@ -132,22 +140,17 @@ privileged aspect ApplicationDataOnDemand_Roo_DataOnDemand {
         obj.setHomeUseCode(homeUseCode);
     }
     
+    public void ApplicationDataOnDemand.setIntendedIndication(Application obj, int index) {
+        LicIntendedIndicationUse intendedIndication = null;
+        obj.setIntendedIndication(intendedIndication);
+    }
+    
     public void ApplicationDataOnDemand.setLicenceName(Application obj, int index) {
         String licenceName = "licenceName_" + index;
         if (licenceName.length() > 150) {
             licenceName = licenceName.substring(0, 150);
         }
         obj.setLicenceName(licenceName);
-    }
-    
-    public void ApplicationDataOnDemand.setLicenceStatus(Application obj, int index) {
-        LicenceStatusType licenceStatus = LicenceStatusType.class.getEnumConstants()[0];
-        obj.setLicenceStatus(licenceStatus);
-    }
-    
-    public void ApplicationDataOnDemand.setLicenceStatusDate(Application obj, int index) {
-        Date licenceStatusDate = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
-        obj.setLicenceStatusDate(licenceStatusDate);
     }
     
     public void ApplicationDataOnDemand.setNearPatient(Application obj, int index) {
