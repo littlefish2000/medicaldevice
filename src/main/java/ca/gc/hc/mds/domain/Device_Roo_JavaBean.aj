@@ -48,4 +48,36 @@ privileged aspect Device_Roo_JavaBean {
         this.lastChangeDate = lastChangeDate;
     }
     
+    public Long Device.getRiskClassification() {
+        return this.riskClassification;
+    }
+    
+    public void Device.setRiskClassification(Long riskClassification) {
+        this.riskClassification = riskClassification;
+    }
+    
+    public String Device.getUsageCode() {
+        return this.usageCode;
+    }
+    
+    public void Device.setUsageCode(String usageCode) {
+        this.usageCode = usageCode;
+    }
+    
+    public String Device.getObsoleteFlag() {
+        return this.obsoleteFlag;
+    }
+    
+    public void Device.setObsoleteFlag(String obsoleteFlag) {
+        this.obsoleteFlag = obsoleteFlag;
+    }
+    
+    public String Device.getNewRegs98() {
+        return this.newRegs98;
+    }
+    
+    public void Device.setNewRegs98(String newRegs98) {
+        this.newRegs98 = newRegs98;
+    }
+    
 }

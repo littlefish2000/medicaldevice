@@ -43,21 +43,27 @@
 						
                 	<div class="row">
 	                	<spring:eval expression="device.getTradeName()" var="tradnamevar"/>
-	                	<label for="s_ca_gc_hc_mds_domain_Company_tradnameId" class="control-label col-lg-6">Trade Name:</label>
+	                	<label for="s_ca_gc_hc_mds_domain_Company_tradnameId" class="control-label col-lg-4">Trade Name:</label>
 	                	<div class="col-lg-5">
-	                	<input id="s_ca_gc_hc_mds_domain_Company_tradnameId" type="text" class="form-control" 
-	                	placeholder="${tradnamevar}" readonly="readonly"/>
+	                	
+	                	
+	                	<springform:input id="s_ca_gc_hc_mds_domain_device_tradnameId" path="tradeName" 
+	                	type="text" class="col-lg-20"  placeholder="TradeName"/> 
 	                	</div>
                 	</div>							
 				</div>
 
 				<div class="col-lg-4">
-					<label class="col-lg-4">Device Risk Class: </label> <select
-						id="disabledSelect">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-					</select>
+					<label class="col-lg-4">Device Risk Class: </label> 					
+
+				<springform:select path="deviceId">	
+					<springform:option value="1" label="1"/>	
+					<springform:option value="2" label="2"/>
+					<springform:option value="3" label="3"/>
+					<springform:option value="4" label="4"/>							
+				</springform:select>
+
+		
 				</div>
 			</div>
 

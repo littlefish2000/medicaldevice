@@ -4,8 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ca_gc_hc_mds_domain_Device" idField="deviceId" modelAttribute="device" path="/devices" versionField="none" z="C7Iqni1AoAUuaWvjRhflznKkOKg=">
         <field:textarea field="tradeName" id="c_ca_gc_hc_mds_domain_Device_tradeName" z="kMxI9b3S/zm+ny7eSjzlIEJLvLY="/>
-        <field:input field="perfnameCode" id="c_ca_gc_hc_mds_domain_Device_perfnameCode" max="6" min="6" required="true" z="jFx91MKl6T7kGyeKlZjUiy5YBi0="/>
-        <field:datetime dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Device_entryDate" required="true" z="MZGzzt4vbaRnJXRA+kFgVt8D7Xg="/>
-        <field:datetime dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Device_lastChangeDate" required="true" z="gOJs4zIV9uJbK06EWRxLcwAfNNQ="/>
+        <field:input field="perfnameCode" id="c_ca_gc_hc_mds_domain_Device_perfnameCode" max="6" min="1" required="true" z="O+XhKE9V8tRMXshsUlu7pVY4nek="/>
+        <field:datetime dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="c_ca_gc_hc_mds_domain_Device_entryDate" z="oONjb6nlfQL1ug5FLVZDymp5o8E="/>
+        <field:datetime dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Device_lastChangeDate" z="NiQUehZ7Plm18RAqSRqzsOXAsZw="/>
+        <field:input field="riskClassification" id="c_ca_gc_hc_mds_domain_Device_riskClassification" required="true" validationMessageCode="field_invalid_integer" z="ErKwu0gvW30WNvANzC/lRldSIPc="/>
+        <field:input field="usageCode" id="c_ca_gc_hc_mds_domain_Device_usageCode" max="2" min="0" required="true" z="JzPGheSPzoeBSOqqCzgyG/cd8tA="/>
+        <field:input field="obsoleteFlag" id="c_ca_gc_hc_mds_domain_Device_obsoleteFlag" max="1" min="0" required="true" z="2KPIBoxhrmzf1vjGUVyGu00km8g="/>
+        <field:input field="newRegs98" id="c_ca_gc_hc_mds_domain_Device_newRegs98" max="1" min="0" required="true" z="38NPTHbyYy1nBGNM8/Ok9Y987hM="/>
     </form:update>
 </div>

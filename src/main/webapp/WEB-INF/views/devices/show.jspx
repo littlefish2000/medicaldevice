@@ -7,5 +7,9 @@
         <field:display field="perfnameCode" id="s_ca_gc_hc_mds_domain_Device_perfnameCode" object="${device}" z="V92Ky8uBO71SpgIC8zaCnM9EbOo="/>
         <field:display date="true" dateTimePattern="${device_entrydate_date_format}" field="entryDate" id="s_ca_gc_hc_mds_domain_Device_entryDate" object="${device}" z="swxasIP4LD8rhcSKLCCeqf4yHuQ="/>
         <field:display date="true" dateTimePattern="${device_lastchangedate_date_format}" field="lastChangeDate" id="s_ca_gc_hc_mds_domain_Device_lastChangeDate" object="${device}" z="70stHEWWppocB0cAiH5iccIzyDs="/>
+        <field:display field="riskClassification" id="s_ca_gc_hc_mds_domain_Device_riskClassification" object="${device}" z="+0dwCXp2gjBf6hkZ7FfTCLgX/v0="/>
+        <field:display field="usageCode" id="s_ca_gc_hc_mds_domain_Device_usageCode" object="${device}" z="w1wUeT6b6OTe9ekPqmQ8rBFRNB0="/>
+        <field:display field="obsoleteFlag" id="s_ca_gc_hc_mds_domain_Device_obsoleteFlag" object="${device}" z="lk1CfodJAH59DYvzpreC9fGDrIA="/>
+        <field:display field="newRegs98" id="s_ca_gc_hc_mds_domain_Device_newRegs98" object="${device}" z="aR7EF4mr+6Hbq7EXsfSiqDR1Zbg="/>
     </page:show>
 </div>

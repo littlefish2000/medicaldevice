@@ -3,97 +3,97 @@
 
 package ca.gc.hc.mds.domain;
 
-import ca.gc.hc.mds.domain.Device;
+import ca.gc.hc.mds.domain.DrugTab;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Device_Roo_Jpa_ActiveRecord {
+privileged aspect DrugTab_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Device.entityManager;
+    transient EntityManager DrugTab.entityManager;
     
-    public static final List<String> Device.fieldNames4OrderClauseFilter = java.util.Arrays.asList("deviceId", "tradeName", "perfnameCode", "entryDate", "lastChangeDate", "riskClassification", "usageCode", "obsoleteFlag", "newRegs98");
+    public static final List<String> DrugTab.fieldNames4OrderClauseFilter = java.util.Arrays.asList("drugID", "descENG", "descFR");
     
-    public static final EntityManager Device.entityManager() {
-        EntityManager em = new Device().entityManager;
+    public static final EntityManager DrugTab.entityManager() {
+        EntityManager em = new DrugTab().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Device.countDevices() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Device o", Long.class).getSingleResult();
+    public static long DrugTab.countDrugTabs() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM DrugTab o", Long.class).getSingleResult();
     }
     
-    public static List<Device> Device.findAllDevices() {
-        return entityManager().createQuery("SELECT o FROM Device o", Device.class).getResultList();
+    public static List<DrugTab> DrugTab.findAllDrugTabs() {
+        return entityManager().createQuery("SELECT o FROM DrugTab o", DrugTab.class).getResultList();
     }
     
-    public static List<Device> Device.findAllDevices(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Device o";
+    public static List<DrugTab> DrugTab.findAllDrugTabs(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM DrugTab o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Device.class).getResultList();
+        return entityManager().createQuery(jpaQuery, DrugTab.class).getResultList();
     }
     
-    public static Device Device.findDevice(Long deviceId) {
-        if (deviceId == null) return null;
-        return entityManager().find(Device.class, deviceId);
+    public static DrugTab DrugTab.findDrugTab(String drugID) {
+        if (drugID == null || drugID.length() == 0) return null;
+        return entityManager().find(DrugTab.class, drugID);
     }
     
-    public static List<Device> Device.findDeviceEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Device o", Device.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<DrugTab> DrugTab.findDrugTabEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM DrugTab o", DrugTab.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<Device> Device.findDeviceEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Device o";
+    public static List<DrugTab> DrugTab.findDrugTabEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM DrugTab o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Device.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery(jpaQuery, DrugTab.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Device.persist() {
+    public void DrugTab.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Device.remove() {
+    public void DrugTab.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Device attached = Device.findDevice(this.deviceId);
+            DrugTab attached = DrugTab.findDrugTab(this.drugID);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Device.flush() {
+    public void DrugTab.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Device.clear() {
+    public void DrugTab.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Device Device.merge() {
+    public DrugTab DrugTab.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Device merged = this.entityManager.merge(this);
+        DrugTab merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

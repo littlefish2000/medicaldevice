@@ -9,6 +9,8 @@
             <table:column id="c_ca_gc_hc_mds_domain_Device_perfnameCode" property="perfnameCode" z="WfH1+LhH5bLNXFNpHQVcQVpoFkc="/>
             <table:column date="true" dateTimePattern="${device_entrydate_date_format}" id="c_ca_gc_hc_mds_domain_Device_entryDate" property="entryDate" z="ggWFQz5+7xaNF0xPt2LE7O9qmEo="/>
             <table:column date="true" dateTimePattern="${device_lastchangedate_date_format}" id="c_ca_gc_hc_mds_domain_Device_lastChangeDate" property="lastChangeDate" z="H9IqkltvSmTNvHWe9kYqL7iMnyA="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Device_riskClassification" property="riskClassification" z="W4nXD59oYrksNWG8wRKUbJCsfzE="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Device_usageCode" property="usageCode" z="j2zpUAXqWJzlu58NH4mTlsjon/0="/>
         </table:table>
     </page:list>
 </div>
