@@ -26,7 +26,5 @@
         <field:input field="commonMethod" id="c_ca_gc_hc_mds_domain_Company_commonMethod" max="3" z="VukUG/iyatGmXp1a8L9EbqglaHw="/>
         <field:input field="contactId" id="c_ca_gc_hc_mds_domain_Company_contactId" validationMessageCode="field_invalid_integer" z="ZlRTmm1jnQuVer1lDIpqdTBgBs4="/>
         <field:datetime dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="c_ca_gc_hc_mds_domain_Company_lastChangeDate" z="user-managed"/>
-        <field:select field="newreg89" id="c_ca_gc_hc_mds_domain_Company_newreg89" items="${yesandnotypes}" path="yesandnotypes" required="true" z="+KSR2EVmVASgP90l5qhr2wvkRMA="/>
-        <field:select field="feeReduction" id="c_ca_gc_hc_mds_domain_Company_feeReduction" items="${yesandnotypes}" path="yesandnotypes" required="true" z="7FdqUrLi6sw8ElCzLbhwWpxW9Ak="/>
     </form:update>
 </div>

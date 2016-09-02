@@ -8,5 +8,11 @@
         <field:input field="contactTitle" id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle" required="true" z="Bt9zKZsUAmRSgbNk6bBRh2Gti5o="/>
         <field:input field="e_MAIL" id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" required="true" z="s9wnkjmJdl4Uv+Xmj8/HU9EnGP0="/>
         <field:select field="company" id="c_ca_gc_hc_mds_domain_CompanyContact_company" itemValue="companyId" items="${companys}" path="/companys" z="WapCiobTOoDgTljGMBreFgFzZLc="/>
+        <field:input field="contactType" id="c_ca_gc_hc_mds_domain_CompanyContact_contactType" required="true" z="puWv1mOdsNIDC5DyK0L0IanoBo4="/>
+        <field:input field="contactStatus" id="c_ca_gc_hc_mds_domain_CompanyContact_contactStatus" required="true" z="lDR2QqAMfRLCXi/bN31OtOwmx34="/>
+        <field:input field="contactPhone" id="c_ca_gc_hc_mds_domain_CompanyContact_contactPhone" z="5E86vpBDc+7Ti68YH5bpIT88QmU="/>
+        <field:input field="contactExt" id="c_ca_gc_hc_mds_domain_CompanyContact_contactExt" z="uD2itbl0ApjSEoSN0X1mGpTYI6k="/>
+        <field:input field="contactFax" id="c_ca_gc_hc_mds_domain_CompanyContact_contactFax" z="CrC4Ge/4NnDfa++L/xkDqsDSOe4="/>
+        <field:input field="language" id="c_ca_gc_hc_mds_domain_CompanyContact_language" z="4011TbdlGs0ocPFuU0HDerWp+Bk="/>
     </form:update>
 </div>

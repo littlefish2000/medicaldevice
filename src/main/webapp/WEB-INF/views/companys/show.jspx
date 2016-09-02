@@ -23,7 +23,5 @@
         <field:display field="commonMethod" id="s_ca_gc_hc_mds_domain_Company_commonMethod" object="${company}" z="Vl7qw96w4iBeIO5YG4hCJXC8WbU="/>
         <field:display field="contactId" id="s_ca_gc_hc_mds_domain_Company_contactId" object="${company}" z="Lyd5fQlNHxLAtcTdnuVyK9QEGUU="/>
         <field:display date="true" dateTimePattern="${company_lastchangedate_date_format}" field="lastChangeDate" id="s_ca_gc_hc_mds_domain_Company_lastChangeDate" object="${company}" z="dS1H2uCms1ul5Zm4AE6IFnLJZio="/>
-        <field:display field="newreg89" id="s_ca_gc_hc_mds_domain_Company_newreg89" object="${company}" z="so2gD9KLoMlFYHxMVzjVSJbhcGU="/>
-        <field:display field="feeReduction" id="s_ca_gc_hc_mds_domain_Company_feeReduction" object="${company}" z="EFkCcs0IpCkK8orAcl5Yi5M+PbM="/>
     </page:show>
 </div>

@@ -207,18 +207,18 @@ public class Company {
     @DateTimeFormat(pattern = "dd/MM/yy")
     private Date lastChangeDate;
     
-    /**
-     */
-    @Column(name = "NEW_REGS_98", nullable = false, length=1,columnDefinition = "char(1) default 'Y'")
-    @Enumerated(EnumType.STRING)
-    private YesAndNoType newreg89 = YesAndNoType.Y;   
-    
-    
-    /**
-     */
-    @Column(name = "FEE_REDUCTION", nullable = false, length=1,columnDefinition = "char(1) default 'N'")
-    @Enumerated(EnumType.STRING)
-    private YesAndNoType feeReduction = YesAndNoType.N;    
+//    /**
+//     */
+//    @Type(type = "fixedLengthCharType")
+//    @Column(name = "NEW_REGS_98", nullable = false, length=1,columnDefinition = "char(1) default 'Y'")
+//    private String newreg89 = "Y";   
+//    
+//    
+//    /**
+//     */
+//    @Type(type = "fixedLengthCharType")
+//    @Column(name = "FEE_REDUCTION", nullable = false, length=1,columnDefinition = "char(1) default 'N'")
+//    private String feeReduction = "";    
     
     /**
      */
@@ -235,8 +235,34 @@ public class Company {
     private Set<CompanyHistory> historys = new HashSet<CompanyHistory>();
     
 
+    
+    @PrePersist
+    void preInsert() {
+//    	if (feeReduction==null) {
+//    		System.out.println("feeReduction is null");
+//    		feeReduction ="";
+//    	}
+    	preUpdateValuesWithWhiteSpace();
+//    	StringUtils.trim(newreg89);
+//    	StringUtils.trim(feeReduction);
+    	
+    }
+
     @PreUpdate
+    void preUpdate() {
+//    	if (feeReduction==null) {
+//    		System.out.println("feeReduction is null");
+//    		feeReduction ="";
+//    	}
+//    	
+        preUpdateValuesWithWhiteSpace();
+//    	StringUtils.trim(newreg89);
+//    	StringUtils.trim(feeReduction);        
+    }   
+
     protected void preUpdateValuesWithWhiteSpace() {
+//    	StringUtils.rightPad(newreg89,1);
+//    	StringUtils.rightPad(feeReduction,1);
     	StringUtils.rightPad(companyName,90);
     	StringUtils.rightPad(addressLine1, 45);
     	StringUtils.rightPad(addressLine2, 45);

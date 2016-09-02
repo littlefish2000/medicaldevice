@@ -8,5 +8,11 @@
         <field:display field="contactTitle" id="s_ca_gc_hc_mds_domain_CompanyContact_contactTitle" object="${companycontact}" z="Gykh095p5cEekXta8xMvrqt8cSg="/>
         <field:display field="e_MAIL" id="s_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" object="${companycontact}" z="QRJc0tgoDrlqIf8E3CTE8tfl0C8="/>
         <field:display field="company" id="s_ca_gc_hc_mds_domain_CompanyContact_company" object="${companycontact}" z="GBjjgQ7dZL6mh4mHNN8rDky9Ytg="/>
+        <field:display field="contactType" id="s_ca_gc_hc_mds_domain_CompanyContact_contactType" object="${companycontact}" z="SdLYSaA1OVOju+kSJqpWG2pmw7U="/>
+        <field:display field="contactStatus" id="s_ca_gc_hc_mds_domain_CompanyContact_contactStatus" object="${companycontact}" z="OzQ+eKr+9gmFPB5sejQ8wUDxaVg="/>
+        <field:display field="contactPhone" id="s_ca_gc_hc_mds_domain_CompanyContact_contactPhone" object="${companycontact}" z="obVi7JiiWoB4/BoAXm7CeVsO63k="/>
+        <field:display field="contactExt" id="s_ca_gc_hc_mds_domain_CompanyContact_contactExt" object="${companycontact}" z="FWucqJRPBgNKzP6DpCBXd1cOgLY="/>
+        <field:display field="contactFax" id="s_ca_gc_hc_mds_domain_CompanyContact_contactFax" object="${companycontact}" z="Aeu08PgtT8Yb7PcKgqzT6CF7MZ8="/>
+        <field:display field="language" id="s_ca_gc_hc_mds_domain_CompanyContact_language" object="${companycontact}" z="Ib7IwPAK1V8LcCVDacOO38GkAsc="/>
     </page:show>
 </div>

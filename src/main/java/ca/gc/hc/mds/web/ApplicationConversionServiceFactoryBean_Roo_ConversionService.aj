@@ -97,7 +97,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<CompanyContact, String> ApplicationConversionServiceFactoryBean.getCompanyContactToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ca.gc.hc.mds.domain.CompanyContact, java.lang.String>() {
             public String convert(CompanyContact companyContact) {
-                return new StringBuilder().append(companyContact.getStatusDate()).append(' ').append(companyContact.getContactName()).append(' ').append(companyContact.getContactTitle()).append(' ').append(companyContact.getE_MAIL()).toString();
+                return new StringBuilder().append(companyContact.getContactType()).append(' ').append(companyContact.getContactStatus()).append(' ').append(companyContact.getStatusDate()).append(' ').append(companyContact.getContactName()).toString();
             }
         };
     }

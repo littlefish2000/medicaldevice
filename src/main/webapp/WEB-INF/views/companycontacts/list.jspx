@@ -7,8 +7,9 @@
             <table:column date="true" dateTimePattern="${companyContact_statusdate_date_format}" id="c_ca_gc_hc_mds_domain_CompanyContact_statusDate" property="statusDate" z="Hgh4cGSYSg02Fn6ma1XzkURt5zg="/>
             <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactName" property="contactName" z="faoXyR25Usg1ZfFqjnh6oHE831o="/>
             <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactTitle" property="contactTitle" z="M3e3FaDi8bDd59yxfOHpWCidGzo="/>
-            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_e_MAIL" property="e_MAIL" z="6QdwuSu8tgtS1eXchLlswgcqEEs="/>
-            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_company" property="company" z="hwjAQAmMVYU5J8tmoq+Q8K1OzRU="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactType" property="contactType" z="ZP0nXPL/yETu/KtccMGGQm2wIVQ="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactStatus" property="contactStatus" z="oI9cOhUzyhjS65s70miyMJEbXIE="/>
+            <table:column id="c_ca_gc_hc_mds_domain_CompanyContact_contactPhone" property="contactPhone" z="nyN7hhch/mIehPgqMV82tfiBJTM="/>
         </table:table>
     </page:list>
 </div>

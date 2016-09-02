@@ -17,6 +17,22 @@ privileged aspect CompanyContact_Roo_JavaBean {
         this.companyContactId = companyContactId;
     }
     
+    public String CompanyContact.getContactType() {
+        return this.contactType;
+    }
+    
+    public void CompanyContact.setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+    
+    public String CompanyContact.getContactStatus() {
+        return this.contactStatus;
+    }
+    
+    public void CompanyContact.setContactStatus(String contactStatus) {
+        this.contactStatus = contactStatus;
+    }
+    
     public Date CompanyContact.getStatusDate() {
         return this.statusDate;
     }
@@ -41,12 +57,44 @@ privileged aspect CompanyContact_Roo_JavaBean {
         this.contactTitle = contactTitle;
     }
     
+    public String CompanyContact.getContactPhone() {
+        return this.contactPhone;
+    }
+    
+    public void CompanyContact.setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+    
+    public String CompanyContact.getContactExt() {
+        return this.contactExt;
+    }
+    
+    public void CompanyContact.setContactExt(String contactExt) {
+        this.contactExt = contactExt;
+    }
+    
+    public String CompanyContact.getContactFax() {
+        return this.contactFax;
+    }
+    
+    public void CompanyContact.setContactFax(String contactFax) {
+        this.contactFax = contactFax;
+    }
+    
     public String CompanyContact.getE_MAIL() {
         return this.e_MAIL;
     }
     
     public void CompanyContact.setE_MAIL(String e_MAIL) {
         this.e_MAIL = e_MAIL;
+    }
+    
+    public String CompanyContact.getLanguage() {
+        return this.language;
+    }
+    
+    public void CompanyContact.setLanguage(String language) {
+        this.language = language;
     }
     
     public Company CompanyContact.getCompany() {
