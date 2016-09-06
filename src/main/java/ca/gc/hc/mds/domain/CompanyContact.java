@@ -20,6 +20,7 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,9 +32,9 @@ import javax.validation.constraints.NotNull;
         "findCompanyContactsByCompany" })
 public class CompanyContact {
 
-    @TableGenerator(name = "COMPANYCONTACT_GENERATOR", table = "CONTROL_TEST", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "COMPANY_CONTACT_ID", initialValue = 1, allocationSize = 1)
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "COMPANYCONTACT_GENERATOR")
+    @GeneratedValue(generator="companycontact_seq")
+    @SequenceGenerator(name="companycontact_seq",sequenceName="SEQ_COMPANY_CONTACT_ID", allocationSize=1)    
     @Column(name = "COMPANY_CONTACT_ID")
     private Long companyContactId;
 

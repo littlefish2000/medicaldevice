@@ -207,18 +207,18 @@ public class Company {
     @DateTimeFormat(pattern = "dd/MM/yy")
     private Date lastChangeDate;
     
-//    /**
-//     */
-//    @Type(type = "fixedLengthCharType")
-//    @Column(name = "NEW_REGS_98", nullable = false, length=1,columnDefinition = "char(1) default 'Y'")
-//    private String newreg89 = "Y";   
-//    
-//    
-//    /**
-//     */
-//    @Type(type = "fixedLengthCharType")
-//    @Column(name = "FEE_REDUCTION", nullable = false, length=1,columnDefinition = "char(1) default 'N'")
-//    private String feeReduction = "";    
+    /**
+     */
+    @Type(type = "fixedLengthCharType")
+    @Column(name = "NEW_REGS_98", nullable = false, length=1,columnDefinition = "char(1) default 'Y'")
+    private String newreg89 = "Y";   
+    
+    
+    /**
+     */
+    @Type(type = "fixedLengthCharType")
+    @Column(name = "FEE_REDUCTION", nullable = false, length=1,columnDefinition = "char(1) default 'N'")
+    private String feeReduction = "N";    
     
     /**
      */

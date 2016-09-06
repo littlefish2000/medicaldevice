@@ -152,6 +152,22 @@ privileged aspect Company_Roo_JavaBean {
         this.lastChangeDate = lastChangeDate;
     }
     
+    public String Company.getNewreg89() {
+        return this.newreg89;
+    }
+    
+    public void Company.setNewreg89(String newreg89) {
+        this.newreg89 = newreg89;
+    }
+    
+    public String Company.getFeeReduction() {
+        return this.feeReduction;
+    }
+    
+    public void Company.setFeeReduction(String feeReduction) {
+        this.feeReduction = feeReduction;
+    }
+    
     public Set<CompanyContact> Company.getContacts() {
         return this.contacts;
     }

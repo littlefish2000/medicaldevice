@@ -17,6 +17,7 @@
 		modelAttribute="company" path="/companys" versionField="none"
 		z="zPr/TexwsjgWArmVu4HsrJcDrvg=">
 		<spring:message code="button_save" var="save_button" htmlEscape="false" />
+		<spring:eval expression="company.getCompanyId()" var="compidvar" />
 		<spring:url value="/companys/{variableName}?form" var="cancel_url">
 		   <spring:param name="variableName" value="${compidvar}" />
 		</spring:url>			
@@ -24,7 +25,6 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="row">
-						<spring:eval expression="company.getCompanyId()" var="compidvar" />
 						<label for="s_ca_gc_hc_mds_domain_Company_companyId"
 							class="control-label col-lg-6">Company ID:</label>
 						<div class="col-lg-5">
