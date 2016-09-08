@@ -20,6 +20,7 @@
         <field:datetime dateTimePattern="${correspondence_bfdate_date_format}" field="bfDate" id="c_ca_gc_hc_mds_domain_Correspondence_bfDate" z="YazIMdwZUPSC+MUOmqDoEjpkBKQ="/>
         <field:select field="responseReceived" id="c_ca_gc_hc_mds_domain_Correspondence_responseReceived" items="${yesandnotypes}" path="yesandnotypes" required="true" z="j8jai8mTr42nu0Wwl5iL4XWxWB4="/>
         <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Correspondence_companyName" required="true" z="1PCLrTGXXuD7N42n0pVeEqMzuo4="/>
+        <field:textarea field="corrLicenceName" id="c_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" required="true" z="4OOHDKX319kHOZdm4jX8066ViZU="/>
         <field:input field="postalCode" id="c_ca_gc_hc_mds_domain_Correspondence_postalCode" max="12" min="0" required="true" z="xKiKgI8/NJ7JoXbXXstJdYsVB5I="/>
         <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Correspondence_city" required="true" z="KzuAtlSxZhifZPJ/zYliXhmNY28="/>
         <field:input field="countryCd" id="c_ca_gc_hc_mds_domain_Correspondence_countryCd" max="2" min="0" required="true" z="QQsrSkG589xvx/narvGc2YLcvfw="/>
@@ -27,6 +28,5 @@
         <field:textarea field="remarks" id="c_ca_gc_hc_mds_domain_Correspondence_remarks" required="true" z="LBDHaUPrgyOT8Nmw5uXKtjMwtGc="/>
         <field:input field="divisionCd" id="c_ca_gc_hc_mds_domain_Correspondence_divisionCd" max="3" min="0" required="true" z="zCMyGMbUsv0T4zpmT61bOl5zn84="/>
         <field:input field="companyDetails" id="c_ca_gc_hc_mds_domain_Correspondence_companyDetails" z="LgNU9BQT1nJIYCuMExy9v7896So="/>
-        <field:textarea field="corrLicenceName" id="c_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" required="true" z="4OOHDKX319kHOZdm4jX8066ViZU="/>
     </form:update>
 </div>

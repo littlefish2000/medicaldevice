@@ -9,6 +9,9 @@
         <field:input field="certificateId" id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" max="30" min="0" required="true" z="cOkatgkDlFHaz24nd3LLDUbxJc0="/>
         <field:input field="incidentId" id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" required="true" validationMessageCode="field_invalid_integer" z="+T0CyI/udyhEA1izuU6C3LCcLvk="/>
         <field:input field="corrcompanyId" id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" required="true" validationMessageCode="field_invalid_integer" z="wQlcDCioQYQiWGouolaAGRpqjOU="/>
+        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine1" required="true" z="mXT16HfNn47TRO8QANl4SfNg1PU="/>
+        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine2" required="true" z="p9uesMrELNBQNACSZvpXJzgIzI4="/>
+        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine3" required="true" z="OlSleFafC0cKQVtmnYMIhiARfow="/>
         <field:select field="inboundOutbound" id="c_ca_gc_hc_mds_domain_Correspondence_inboundOutbound" items="${inouttypes}" path="inouttypes" required="true" z="3aVI3tYzex4fj8f/TpTtKfmIxe0="/>
         <field:input field="applicableArea" id="c_ca_gc_hc_mds_domain_Correspondence_applicableArea" max="1" min="0" required="true" z="ma17cmdIghNFXQiENIj0LMmCGRI="/>
         <field:input field="regulatorySection" id="c_ca_gc_hc_mds_domain_Correspondence_regulatorySection" required="true" z="xVzFnsl7jGgd2jTn2bzSZ5jT35Q="/>
@@ -17,16 +20,13 @@
         <field:datetime dateTimePattern="${correspondence_bfdate_date_format}" field="bfDate" id="c_ca_gc_hc_mds_domain_Correspondence_bfDate" z="YazIMdwZUPSC+MUOmqDoEjpkBKQ="/>
         <field:select field="responseReceived" id="c_ca_gc_hc_mds_domain_Correspondence_responseReceived" items="${yesandnotypes}" path="yesandnotypes" required="true" z="j8jai8mTr42nu0Wwl5iL4XWxWB4="/>
         <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Correspondence_companyName" required="true" z="1PCLrTGXXuD7N42n0pVeEqMzuo4="/>
-        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine1" required="true" z="mXT16HfNn47TRO8QANl4SfNg1PU="/>
-        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine2" required="true" z="p9uesMrELNBQNACSZvpXJzgIzI4="/>
-        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine3" required="true" z="OlSleFafC0cKQVtmnYMIhiARfow="/>
+        <field:textarea field="corrLicenceName" id="c_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" required="true" z="4OOHDKX319kHOZdm4jX8066ViZU="/>
         <field:input field="postalCode" id="c_ca_gc_hc_mds_domain_Correspondence_postalCode" max="12" min="0" required="true" z="xKiKgI8/NJ7JoXbXXstJdYsVB5I="/>
         <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Correspondence_city" required="true" z="KzuAtlSxZhifZPJ/zYliXhmNY28="/>
         <field:input field="countryCd" id="c_ca_gc_hc_mds_domain_Correspondence_countryCd" max="2" min="0" required="true" z="QQsrSkG589xvx/narvGc2YLcvfw="/>
         <field:input field="regionCd" id="c_ca_gc_hc_mds_domain_Correspondence_regionCd" max="3" min="0" required="true" z="nME6XMslP2C8yginYx4JPLWf3Fc="/>
         <field:textarea field="remarks" id="c_ca_gc_hc_mds_domain_Correspondence_remarks" required="true" z="LBDHaUPrgyOT8Nmw5uXKtjMwtGc="/>
         <field:input field="divisionCd" id="c_ca_gc_hc_mds_domain_Correspondence_divisionCd" max="3" min="0" required="true" z="zCMyGMbUsv0T4zpmT61bOl5zn84="/>
-        <field:textarea field="corrLicenceName" id="c_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" required="true" z="4OOHDKX319kHOZdm4jX8066ViZU="/>
         <field:input field="companyDetails" id="c_ca_gc_hc_mds_domain_Correspondence_companyDetails" z="LgNU9BQT1nJIYCuMExy9v7896So="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Correspondence" render="${not empty dependencies}" z="JleEQfut0KxUE8z9TqpJGoq9WaQ="/>
