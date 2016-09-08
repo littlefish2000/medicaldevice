@@ -4,6 +4,10 @@
 package ca.gc.hc.mds.domain;
 
 import ca.gc.hc.mds.domain.Correspondence;
+import ca.gc.hc.mds.reference.InOutType;
+import ca.gc.hc.mds.reference.RegMfgType;
+import ca.gc.hc.mds.reference.YesAndNoType;
+import java.util.Date;
 
 privileged aspect Correspondence_Roo_JavaBean {
     
@@ -55,12 +59,84 @@ privileged aspect Correspondence_Roo_JavaBean {
         this.incidentId = incidentId;
     }
     
+    public InOutType Correspondence.getInboundOutbound() {
+        return this.inboundOutbound;
+    }
+    
+    public void Correspondence.setInboundOutbound(InOutType inboundOutbound) {
+        this.inboundOutbound = inboundOutbound;
+    }
+    
+    public String Correspondence.getApplicableArea() {
+        return this.applicableArea;
+    }
+    
+    public void Correspondence.setApplicableArea(String applicableArea) {
+        this.applicableArea = applicableArea;
+    }
+    
+    public String Correspondence.getRegulatorySection() {
+        return this.regulatorySection;
+    }
+    
+    public void Correspondence.setRegulatorySection(String regulatorySection) {
+        this.regulatorySection = regulatorySection;
+    }
+    
+    public Date Correspondence.getLetterDate() {
+        return this.letterDate;
+    }
+    
+    public void Correspondence.setLetterDate(Date letterDate) {
+        this.letterDate = letterDate;
+    }
+    
+    public RegMfgType Correspondence.getRegOrMfg() {
+        return this.regOrMfg;
+    }
+    
+    public void Correspondence.setRegOrMfg(RegMfgType regOrMfg) {
+        this.regOrMfg = regOrMfg;
+    }
+    
+    public Date Correspondence.getBfDate() {
+        return this.bfDate;
+    }
+    
+    public void Correspondence.setBfDate(Date bfDate) {
+        this.bfDate = bfDate;
+    }
+    
+    public YesAndNoType Correspondence.getResponseReceived() {
+        return this.responseReceived;
+    }
+    
+    public void Correspondence.setResponseReceived(YesAndNoType responseReceived) {
+        this.responseReceived = responseReceived;
+    }
+    
     public Long Correspondence.getCorrcompanyId() {
         return this.corrcompanyId;
     }
     
     public void Correspondence.setCorrcompanyId(Long corrcompanyId) {
         this.corrcompanyId = corrcompanyId;
+    }
+    
+    public String Correspondence.getCompanyName() {
+        return this.companyName;
+    }
+    
+    public void Correspondence.setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+    
+    public String Correspondence.getCorrLicenceName() {
+        return this.corrLicenceName;
+    }
+    
+    public void Correspondence.setCorrLicenceName(String corrLicenceName) {
+        this.corrLicenceName = corrLicenceName;
     }
     
     public String Correspondence.getAddressLine1() {
@@ -85,6 +161,62 @@ privileged aspect Correspondence_Roo_JavaBean {
     
     public void Correspondence.setAddressLine3(String addressLine3) {
         this.addressLine3 = addressLine3;
+    }
+    
+    public String Correspondence.getPostalCode() {
+        return this.postalCode;
+    }
+    
+    public void Correspondence.setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+    
+    public String Correspondence.getCity() {
+        return this.city;
+    }
+    
+    public void Correspondence.setCity(String city) {
+        this.city = city;
+    }
+    
+    public String Correspondence.getCountryCd() {
+        return this.countryCd;
+    }
+    
+    public void Correspondence.setCountryCd(String countryCd) {
+        this.countryCd = countryCd;
+    }
+    
+    public String Correspondence.getRegionCd() {
+        return this.regionCd;
+    }
+    
+    public void Correspondence.setRegionCd(String regionCd) {
+        this.regionCd = regionCd;
+    }
+    
+    public String Correspondence.getRemarks() {
+        return this.remarks;
+    }
+    
+    public void Correspondence.setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+    
+    public String Correspondence.getDivisionCd() {
+        return this.divisionCd;
+    }
+    
+    public void Correspondence.setDivisionCd(String divisionCd) {
+        this.divisionCd = divisionCd;
+    }
+    
+    public String Correspondence.getCompanyDetails() {
+        return this.companyDetails;
+    }
+    
+    public void Correspondence.setCompanyDetails(String companyDetails) {
+        this.companyDetails = companyDetails;
     }
     
 }

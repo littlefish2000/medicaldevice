@@ -5,13 +5,13 @@
         <put-attribute name="body" value="/WEB-INF/views/correspondences/list.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/show">
-        <put-attribute name="body" value="/WEB-INF/views/correspondences/show.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/correspondenceupdate.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/create">
-        <put-attribute name="body" value="/WEB-INF/views/correspondences/correspondenceupdate.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/create.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/update">
-        <put-attribute name="body" value="/WEB-INF/views/correspondences/correspondenceupdate.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/update.jspx"/>
     </definition>
 <definition extends="default" name="correspondences/findCorrespondencesByApplicationId">
         <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesByApplicationId.jspx"/>
@@ -27,5 +27,8 @@
     </definition>
 <definition extends="default" name="correspondences/findCorrespondencesBySeqcorrId">
         <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesBySeqcorrId.jspx"/>
+    </definition>
+<definition extends="default" name="correspondences/findCorrespondencesByIncidentId">
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesByIncidentId.jspx"/>
     </definition>
 </tiles-definitions>

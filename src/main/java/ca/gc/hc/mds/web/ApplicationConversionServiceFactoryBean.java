@@ -8,7 +8,9 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 
 import ca.gc.hc.mds.domain.RenAuthCompanyPK;
 import ca.gc.hc.mds.domain.RenLicenceInfoPK;
+import ca.gc.hc.mds.reference.InOutType;
 import ca.gc.hc.mds.reference.LicenceStatusType;
+import ca.gc.hc.mds.reference.RegMfgType;
 import ca.gc.hc.mds.reference.StatusType;
 import ca.gc.hc.mds.reference.YesAndNoType;
 
@@ -102,8 +104,36 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
             }
         };
     }    
-	    
-	
+    Converter<RegMfgType, String> getRegMfgTypeConverter() {
+        return new Converter<RegMfgType, String>() {
+            public String convert(RegMfgType properties) {
+                switch(properties){
+                case R:
+                    return "Regulatory";
+                case M:
+                    return "Manufacturer";
+                default: throw new AssertionError();
+                }
+
+            }
+        };
+    }
+    
+    Converter<InOutType, String> getInOutTypeConverter() {
+        return new Converter<InOutType, String>() {
+            public String convert(InOutType properties) {
+                switch(properties){
+                case I:
+                    return "In";
+                case O:
+                    return "Out";
+                default: throw new AssertionError();
+                }
+
+            }
+        };
+    }
+    
 	@Override
 	protected void installFormatters(FormatterRegistry registry) {
 		super.installFormatters(registry);
@@ -113,5 +143,7 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		registry.addConverter(getLicenceStatusTypeConverter());
 		registry.addConverter(geYesAndNoTypeConverter());
 		registry.addConverter(getStatusTypeConverter());
+		registry.addConverter(getRegMfgTypeConverter());
+		registry.addConverter(getInOutTypeConverter());
 	}
 }

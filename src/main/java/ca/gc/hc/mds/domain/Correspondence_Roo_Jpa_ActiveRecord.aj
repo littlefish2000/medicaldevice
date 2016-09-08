@@ -14,7 +14,7 @@ privileged aspect Correspondence_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Correspondence.entityManager;
     
-    public static final List<String> Correspondence.fieldNames4OrderClauseFilter = java.util.Arrays.asList("seqcorrId", "applicationId", "orginallicenceId", "companyId", "certificateId", "incidentId", "corrcompanyId", "addressLine1", "addressLine2", "addressLine3");
+    public static final List<String> Correspondence.fieldNames4OrderClauseFilter = java.util.Arrays.asList("seqcorrId", "applicationId", "orginallicenceId", "companyId", "certificateId", "incidentId", "inboundOutbound", "applicableArea", "regulatorySection", "letterDate", "regOrMfg", "bfDate", "responseReceived", "corrcompanyId", "companyName", "corrLicenceName", "addressLine1", "addressLine2", "addressLine3", "postalCode", "city", "countryCd", "regionCd", "remarks", "divisionCd", "companyDetails");
     
     public static final EntityManager Correspondence.entityManager() {
         EntityManager em = new Correspondence().entityManager;

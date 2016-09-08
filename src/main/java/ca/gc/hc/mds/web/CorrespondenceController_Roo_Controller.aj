@@ -38,6 +38,7 @@ privileged aspect CorrespondenceController_Roo_Controller {
     
     @RequestMapping(value = "/{seqcorrId}", produces = "text/html")
     public String CorrespondenceController.show(@PathVariable("seqcorrId") Long seqcorrId, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("correspondence", Correspondence.findCorrespondence(seqcorrId));
         uiModel.addAttribute("itemId", seqcorrId);
         return "correspondences/show";
@@ -54,18 +55,8 @@ privileged aspect CorrespondenceController_Roo_Controller {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findAllCorrespondences(sortFieldName, sortOrder));
         }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String CorrespondenceController.update(@Valid Correspondence correspondence, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, correspondence);
-            return "correspondences/update";
-        }
-        uiModel.asMap().clear();
-        correspondence.merge();
-        return "redirect:/correspondences/" + encodeUrlPathSegment(correspondence.getSeqcorrId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{seqcorrId}", params = "form", produces = "text/html")
@@ -82,10 +73,6 @@ privileged aspect CorrespondenceController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/correspondences";
-    }
-    
-    void CorrespondenceController.populateEditForm(Model uiModel, Correspondence correspondence) {
-        uiModel.addAttribute("correspondence", correspondence);
     }
     
     String CorrespondenceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

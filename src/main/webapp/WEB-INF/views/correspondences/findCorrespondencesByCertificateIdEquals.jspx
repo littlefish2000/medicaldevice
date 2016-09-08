@@ -3,6 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:find finderName="ByCertificateIdEquals" id="ff_ca_gc_hc_mds_domain_Correspondence" path="/correspondences" z="gWz7wyII397wvklu9dK6kLsGJoo=">
-        <field:input disableFormBinding="true" field="certificateId" id="f_ca_gc_hc_mds_domain_Correspondence_certificateId" required="true" z="Y094TPgAIZgOeWrV+Is7gfCsWQ4="/>
+        <field:input disableFormBinding="true" field="certificateId" id="f_ca_gc_hc_mds_domain_Correspondence_certificateId" max="30" min="0" required="true" z="QRWQquXmsigePZmCUXGiDrHs924="/>
     </form:find>
 </div>

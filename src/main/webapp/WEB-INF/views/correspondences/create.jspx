@@ -3,15 +3,31 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ca_gc_hc_mds_domain_Correspondence" modelAttribute="correspondence" path="/correspondences" render="${empty dependencies}" z="AZlA2i1I7J/R/QmkxJ7G/O4DTi4=">
-        <field:input field="applicationId" id="c_ca_gc_hc_mds_domain_Correspondence_applicationId" validationMessageCode="field_invalid_integer" z="WmzURCuVxpOar8knWA2GQ0j/Xc8="/>
-        <field:input field="orginallicenceId" id="c_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" validationMessageCode="field_invalid_integer" z="rV3fPIeSPhUTHhdwOi05kaIXP70="/>
-        <field:input field="companyId" id="c_ca_gc_hc_mds_domain_Correspondence_companyId" validationMessageCode="field_invalid_integer" z="Cn4Wv6+clmEmLh1mMXkK3RrEJ5A="/>
-        <field:input field="certificateId" id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" z="4pi+NfMNnB2/Q3zDxncF0N85EQE="/>
-        <field:input field="incidentId" id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" validationMessageCode="field_invalid_integer" z="xygayxoaf2hHjaGgY+Eue2zZuDU="/>
-        <field:input field="corrcompanyId" id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" validationMessageCode="field_invalid_integer" z="FAM2FjLvZ0yl+guHJIgmmjNeUqM="/>
-        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine1" z="0djIFJ1iqCMAMNSJ/p4CfO6xtnc="/>
-        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine2" z="fGabnaAH3AnANQKt982JKXWMDe8="/>
-        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine3" z="xMCpdhJ0D7n9wF2hEYVzkV96bAc="/>
+        <field:input field="applicationId" id="c_ca_gc_hc_mds_domain_Correspondence_applicationId" required="true" validationMessageCode="field_invalid_integer" z="NVpwmwMkL+7NCR8sImsbcIQTcsE="/>
+        <field:input field="orginallicenceId" id="c_ca_gc_hc_mds_domain_Correspondence_orginallicenceId" required="true" validationMessageCode="field_invalid_integer" z="rnUUOKTQsX2SygtR2E+FZoZRlA8="/>
+        <field:input field="companyId" id="c_ca_gc_hc_mds_domain_Correspondence_companyId" required="true" validationMessageCode="field_invalid_integer" z="VYRU3RaxFGGzTCz+XsIxcNCQICk="/>
+        <field:input field="certificateId" id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" max="30" min="0" required="true" z="cOkatgkDlFHaz24nd3LLDUbxJc0="/>
+        <field:input field="incidentId" id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" required="true" validationMessageCode="field_invalid_integer" z="+T0CyI/udyhEA1izuU6C3LCcLvk="/>
+        <field:input field="corrcompanyId" id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" required="true" validationMessageCode="field_invalid_integer" z="wQlcDCioQYQiWGouolaAGRpqjOU="/>
+        <field:select field="inboundOutbound" id="c_ca_gc_hc_mds_domain_Correspondence_inboundOutbound" items="${inouttypes}" path="inouttypes" required="true" z="3aVI3tYzex4fj8f/TpTtKfmIxe0="/>
+        <field:input field="applicableArea" id="c_ca_gc_hc_mds_domain_Correspondence_applicableArea" max="1" min="0" required="true" z="ma17cmdIghNFXQiENIj0LMmCGRI="/>
+        <field:input field="regulatorySection" id="c_ca_gc_hc_mds_domain_Correspondence_regulatorySection" required="true" z="xVzFnsl7jGgd2jTn2bzSZ5jT35Q="/>
+        <field:datetime dateTimePattern="${correspondence_letterdate_date_format}" field="letterDate" id="c_ca_gc_hc_mds_domain_Correspondence_letterDate" required="true" z="SRITgJQ4FBbyVIQxSV0x8ck5Btg="/>
+        <field:select field="regOrMfg" id="c_ca_gc_hc_mds_domain_Correspondence_regOrMfg" items="${regmfgtypes}" path="regmfgtypes" required="true" z="e2fq0M1Z5AHMM1U4g4/AaG4cmfQ="/>
+        <field:datetime dateTimePattern="${correspondence_bfdate_date_format}" field="bfDate" id="c_ca_gc_hc_mds_domain_Correspondence_bfDate" z="YazIMdwZUPSC+MUOmqDoEjpkBKQ="/>
+        <field:select field="responseReceived" id="c_ca_gc_hc_mds_domain_Correspondence_responseReceived" items="${yesandnotypes}" path="yesandnotypes" required="true" z="j8jai8mTr42nu0Wwl5iL4XWxWB4="/>
+        <field:textarea field="companyName" id="c_ca_gc_hc_mds_domain_Correspondence_companyName" required="true" z="1PCLrTGXXuD7N42n0pVeEqMzuo4="/>
+        <field:textarea field="addressLine1" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine1" required="true" z="mXT16HfNn47TRO8QANl4SfNg1PU="/>
+        <field:textarea field="addressLine2" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine2" required="true" z="p9uesMrELNBQNACSZvpXJzgIzI4="/>
+        <field:textarea field="addressLine3" id="c_ca_gc_hc_mds_domain_Correspondence_addressLine3" required="true" z="OlSleFafC0cKQVtmnYMIhiARfow="/>
+        <field:input field="postalCode" id="c_ca_gc_hc_mds_domain_Correspondence_postalCode" max="12" min="0" required="true" z="xKiKgI8/NJ7JoXbXXstJdYsVB5I="/>
+        <field:textarea field="city" id="c_ca_gc_hc_mds_domain_Correspondence_city" required="true" z="KzuAtlSxZhifZPJ/zYliXhmNY28="/>
+        <field:input field="countryCd" id="c_ca_gc_hc_mds_domain_Correspondence_countryCd" max="2" min="0" required="true" z="QQsrSkG589xvx/narvGc2YLcvfw="/>
+        <field:input field="regionCd" id="c_ca_gc_hc_mds_domain_Correspondence_regionCd" max="3" min="0" required="true" z="nME6XMslP2C8yginYx4JPLWf3Fc="/>
+        <field:textarea field="remarks" id="c_ca_gc_hc_mds_domain_Correspondence_remarks" required="true" z="LBDHaUPrgyOT8Nmw5uXKtjMwtGc="/>
+        <field:input field="divisionCd" id="c_ca_gc_hc_mds_domain_Correspondence_divisionCd" max="3" min="0" required="true" z="zCMyGMbUsv0T4zpmT61bOl5zn84="/>
+        <field:textarea field="corrLicenceName" id="c_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" required="true" z="4OOHDKX319kHOZdm4jX8066ViZU="/>
+        <field:input field="companyDetails" id="c_ca_gc_hc_mds_domain_Correspondence_companyDetails" z="LgNU9BQT1nJIYCuMExy9v7896So="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ca_gc_hc_mds_domain_Correspondence" render="${not empty dependencies}" z="JleEQfut0KxUE8z9TqpJGoq9WaQ="/>
 </div>
