@@ -28,4 +28,7 @@
 <definition extends="default" name="correspondences/findCorrespondencesBySeqcorrId">
         <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesBySeqcorrId.jspx"/>
     </definition>
+<definition extends="default" name="correspondences/findCorrespondencesByIncidentId">
+        <put-attribute name="body" value="/WEB-INF/views/correspondences/findCorrespondencesByIncidentId.jspx"/>
+    </definition>
 </tiles-definitions>
