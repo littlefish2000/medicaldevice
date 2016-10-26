@@ -12,5 +12,21 @@
         <field:display field="addressLine1" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine1" object="${correspondence}" z="bGxhxUK5RCCxT7VGonNR4KXP8mc="/>
         <field:display field="addressLine2" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine2" object="${correspondence}" z="qNb02eNcqIt0mvMojhWkzDlxsAI="/>
         <field:display field="addressLine3" id="s_ca_gc_hc_mds_domain_Correspondence_addressLine3" object="${correspondence}" z="Uj/q4cYne3RTfeHWkqiRvTxRB+c="/>
+        <field:display field="inboundOutbound" id="s_ca_gc_hc_mds_domain_Correspondence_inboundOutbound" object="${correspondence}" z="wPp3EvUneFba6q6O0PzxZtCej1M="/>
+        <field:display field="applicableArea" id="s_ca_gc_hc_mds_domain_Correspondence_applicableArea" object="${correspondence}" z="AxM2symZkaaLGGWKMdzs36Xh5QU="/>
+        <field:display field="regulatorySection" id="s_ca_gc_hc_mds_domain_Correspondence_regulatorySection" object="${correspondence}" z="MnyxjeRQCsUJfXqOnswqIg697Aw="/>
+        <field:display date="true" dateTimePattern="${correspondence_letterdate_date_format}" field="letterDate" id="s_ca_gc_hc_mds_domain_Correspondence_letterDate" object="${correspondence}" z="UCivc2qlgvheZGCCfx9hoy23o+k="/>
+        <field:display field="regOrMfg" id="s_ca_gc_hc_mds_domain_Correspondence_regOrMfg" object="${correspondence}" z="MAhC8IMlZs5e5UmjuhT3mxve66o="/>
+        <field:display date="true" dateTimePattern="${correspondence_bfdate_date_format}" field="bfDate" id="s_ca_gc_hc_mds_domain_Correspondence_bfDate" object="${correspondence}" z="RUp91DrKHUMSJ6oy2LP33jqAM4k="/>
+        <field:display field="responseReceived" id="s_ca_gc_hc_mds_domain_Correspondence_responseReceived" object="${correspondence}" z="K0k8aJBRky+obDCpC/RD940QwT8="/>
+        <field:display field="companyName" id="s_ca_gc_hc_mds_domain_Correspondence_companyName" object="${correspondence}" z="wuFjl+l+UcrUdvB+FFRn7+kZcTQ="/>
+        <field:display field="corrLicenceName" id="s_ca_gc_hc_mds_domain_Correspondence_corrLicenceName" object="${correspondence}" z="6vWv2OqAiCl1aTS5GADv6uBbwqQ="/>
+        <field:display field="postalCode" id="s_ca_gc_hc_mds_domain_Correspondence_postalCode" object="${correspondence}" z="BwTsA1Xk9WzCS+GwBCOqbO3Nmjg="/>
+        <field:display field="city" id="s_ca_gc_hc_mds_domain_Correspondence_city" object="${correspondence}" z="MUqJy5s+RVM3ytzMSFiI09RAgWM="/>
+        <field:display field="countryCd" id="s_ca_gc_hc_mds_domain_Correspondence_countryCd" object="${correspondence}" z="mfm6j6c3ZXDjPzVHreWtqESpEnk="/>
+        <field:display field="regionCd" id="s_ca_gc_hc_mds_domain_Correspondence_regionCd" object="${correspondence}" z="tzpXCMPp1cMlqFEU7w5HXed+/Qo="/>
+        <field:display field="remarks" id="s_ca_gc_hc_mds_domain_Correspondence_remarks" object="${correspondence}" z="NfxqoYfZefdcnDlOUPL7fKiQScE="/>
+        <field:display field="divisionCd" id="s_ca_gc_hc_mds_domain_Correspondence_divisionCd" object="${correspondence}" z="fNE/RWTHAzB/pgPBf0QtEg/sRJA="/>
+        <field:display field="companyDetails" id="s_ca_gc_hc_mds_domain_Correspondence_companyDetails" object="${correspondence}" z="/7v4V8DzNKZYwyJtG15uqOZ5N4g="/>
     </page:show>
 </div>

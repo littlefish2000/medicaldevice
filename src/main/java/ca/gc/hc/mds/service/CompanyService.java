@@ -1,5 +1,7 @@
 package ca.gc.hc.mds.service;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.MessageSource;
 
 import ca.gc.hc.mds.domain.Company;
+import ca.gc.hc.mds.domain.CompanyContact;
 import ca.gc.hc.mds.transparent.TranCompanyFinance;
 
 @Configurable
@@ -102,5 +105,16 @@ public class CompanyService {
 				.setParameter("companyId", company.getCompanyId()).getSingleResult();
 
 		return result;
+    }
+    
+    public static List<CompanyContact> findCompanyContactsByCompanyId(Long companyId) {
+        if (companyId == null) throw new IllegalArgumentException("The company id argument is required");
+        Company company = new Company();
+        company.setCompanyId(companyId);
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM CompanyContact AS o WHERE o.company = :company");
+
+        TypedQuery<CompanyContact> q = entityManager().createQuery(queryBuilder.toString(), CompanyContact.class);
+        q.setParameter("company", company);
+        return q.getResultList();    	
     }
 }

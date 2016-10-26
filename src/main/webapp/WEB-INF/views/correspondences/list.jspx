@@ -9,7 +9,7 @@
             <table:column id="c_ca_gc_hc_mds_domain_Correspondence_companyId" property="companyId" z="CTHCM5Q0a5zQtOW1JTumrDJEfSo="/>
             <table:column id="c_ca_gc_hc_mds_domain_Correspondence_certificateId" property="certificateId" z="J2dpNOo4Slr5JO8iSsrOaYFoW+Q="/>
             <table:column id="c_ca_gc_hc_mds_domain_Correspondence_incidentId" property="incidentId" z="oPnKIPB3roUuA77PCUK1wLkjNgo="/>
-            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_corrcompanyId" property="corrcompanyId" z="JIFWWizvOaWvCFJV6vsIcwOUTbM="/>
+            <table:column id="c_ca_gc_hc_mds_domain_Correspondence_inboundOutbound" property="inboundOutbound" z="pO6Jq9eoVBqiOF+E8Xt1UAJHOBA="/>
         </table:table>
     </page:list>
 </div>

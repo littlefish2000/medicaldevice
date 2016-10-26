@@ -33,6 +33,14 @@ privileged aspect Correspondence_Roo_Finder {
         return ((Long) q.getSingleResult());
     }
     
+    public static Long Correspondence.countFindCorrespondencesByIncidentId(Long incidentId) {
+        if (incidentId == null) throw new IllegalArgumentException("The incidentId argument is required");
+        EntityManager em = Correspondence.entityManager();
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Correspondence AS o WHERE o.incidentId = :incidentId", Long.class);
+        q.setParameter("incidentId", incidentId);
+        return ((Long) q.getSingleResult());
+    }
+    
     public static Long Correspondence.countFindCorrespondencesByOrginallicenceIdEquals(Long orginallicenceId) {
         if (orginallicenceId == null) throw new IllegalArgumentException("The orginallicenceId argument is required");
         EntityManager em = Correspondence.entityManager();
@@ -115,6 +123,29 @@ privileged aspect Correspondence_Roo_Finder {
         }
         TypedQuery<Correspondence> q = em.createQuery(queryBuilder.toString(), Correspondence.class);
         q.setParameter("companyId", companyId);
+        return q;
+    }
+    
+    public static TypedQuery<Correspondence> Correspondence.findCorrespondencesByIncidentId(Long incidentId) {
+        if (incidentId == null) throw new IllegalArgumentException("The incidentId argument is required");
+        EntityManager em = Correspondence.entityManager();
+        TypedQuery<Correspondence> q = em.createQuery("SELECT o FROM Correspondence AS o WHERE o.incidentId = :incidentId", Correspondence.class);
+        q.setParameter("incidentId", incidentId);
+        return q;
+    }
+    
+    public static TypedQuery<Correspondence> Correspondence.findCorrespondencesByIncidentId(Long incidentId, String sortFieldName, String sortOrder) {
+        if (incidentId == null) throw new IllegalArgumentException("The incidentId argument is required");
+        EntityManager em = Correspondence.entityManager();
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Correspondence AS o WHERE o.incidentId = :incidentId");
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            queryBuilder.append(" ORDER BY ").append(sortFieldName);
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                queryBuilder.append(" ").append(sortOrder);
+            }
+        }
+        TypedQuery<Correspondence> q = em.createQuery(queryBuilder.toString(), Correspondence.class);
+        q.setParameter("incidentId", incidentId);
         return q;
     }
     

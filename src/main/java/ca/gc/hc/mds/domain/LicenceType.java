@@ -25,7 +25,7 @@ public class LicenceType {
     
 
     
-    @Column(name = "LICTYPE_DESC", columnDefinition = "char",nullable=false, length=35)
+    @Column(name = "LICTYPE_DESC", columnDefinition = "char",nullable=false, length=50)
     @Type(type = "fixedLengthCharType")
     @Length(min=0,max = 50,message ="The value must be 0-50 characters")
     private String lictypeDesc;

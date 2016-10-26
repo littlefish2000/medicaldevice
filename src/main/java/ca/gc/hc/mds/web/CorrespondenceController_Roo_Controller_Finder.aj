@@ -28,6 +28,7 @@ privileged aspect CorrespondenceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByApplicationId(applicationId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
     }
     
@@ -47,6 +48,7 @@ privileged aspect CorrespondenceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByCertificateIdEquals(certificateId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
     }
     
@@ -66,6 +68,27 @@ privileged aspect CorrespondenceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByCompanyIdEquals(companyId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
+        return "correspondences/list";
+    }
+    
+    @RequestMapping(params = { "find=ByIncidentId", "form" }, method = RequestMethod.GET)
+    public String CorrespondenceController.findCorrespondencesByIncidentIdForm(Model uiModel) {
+        return "correspondences/findCorrespondencesByIncidentId";
+    }
+    
+    @RequestMapping(params = "find=ByIncidentId", method = RequestMethod.GET)
+    public String CorrespondenceController.findCorrespondencesByIncidentId(@RequestParam("incidentId") Long incidentId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByIncidentId(incidentId, sortFieldName, sortOrder).setFirstResult(firstResult).setMaxResults(sizeNo).getResultList());
+            float nrOfPages = (float) Correspondence.countFindCorrespondencesByIncidentId(incidentId) / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByIncidentId(incidentId, sortFieldName, sortOrder).getResultList());
+        }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
     }
     
@@ -85,6 +108,7 @@ privileged aspect CorrespondenceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesByOrginallicenceIdEquals(orginallicenceId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
     }
     
@@ -104,6 +128,7 @@ privileged aspect CorrespondenceController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("correspondences", Correspondence.findCorrespondencesBySeqcorrId(seqcorrId, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "correspondences/list";
     }
     
